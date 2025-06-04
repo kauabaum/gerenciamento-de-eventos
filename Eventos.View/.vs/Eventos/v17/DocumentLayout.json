@@ -1,0 +1,57 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Marcelo38548\\OneDrive - Sistema Fiep\\source\\Projeto Eventos\\Eventos.View\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|c:\\users\\marcelo38548\\onedrive - sistema fiep\\source\\projeto eventos\\eventos.view\\paisview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:paisview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|c:\\users\\marcelo38548\\onedrive - sistema fiep\\source\\projeto eventos\\eventos.view\\estadoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:estadoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EstadoView.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Marcelo38548\\OneDrive - Sistema Fiep\\source\\Projeto Eventos\\Eventos.View\\EstadoView.cs",
+              "RelativeDocumentMoniker": "EstadoView.cs",
+              "ToolTip": "C:\\Users\\Marcelo38548\\OneDrive - Sistema Fiep\\source\\Projeto Eventos\\Eventos.View\\EstadoView.cs [Design]",
+              "RelativeToolTip": "EstadoView.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T14:04:46.364Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PaisView.cs",
+              "DocumentMoniker": "C:\\Users\\Marcelo38548\\OneDrive - Sistema Fiep\\source\\Projeto Eventos\\Eventos.View\\PaisView.cs",
+              "RelativeDocumentMoniker": "PaisView.cs",
+              "ToolTip": "C:\\Users\\Marcelo38548\\OneDrive - Sistema Fiep\\source\\Projeto Eventos\\Eventos.View\\PaisView.cs*",
+              "RelativeToolTip": "PaisView.cs*",
+              "ViewState": "AgIAADUAAAAAAAAAAADgv0gAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T13:51:54.805Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
