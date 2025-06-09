@@ -161,6 +161,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProdutoDAO.cs" />
     <Compile Include="ClienteDAO .cs" />
     <Compile Include="RuaDAO.cs" />
     <Compile Include="CategoriaDAO.cs" />
