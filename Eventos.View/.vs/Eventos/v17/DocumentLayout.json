@@ -3,8 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|c:\\users\\aluno sesi senai\\source\\repos\\projeto-eventos\\eventos.view\\produtoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:produtoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC46E01A-EED6-41C9-998F-B241DBA9A772}|..\\Eventos.DAO\\Eventos.DAO.csproj|c:\\users\\aluno sesi senai\\source\\repos\\projeto-eventos\\eventos.dao\\produtodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|c:\\users\\aluno sesi senai\\source\\repos\\projeto-eventos\\eventos.view\\produtoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:produtoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|c:\\users\\aluno sesi senai\\source\\repos\\projeto-eventos\\eventos.view\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +25,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,7 +45,46 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProdutoDAO.cs",
+              "DocumentMoniker": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.DAO\\ProdutoDAO.cs",
+              "RelativeDocumentMoniker": "..\\Eventos.DAO\\ProdutoDAO.cs",
+              "ToolTip": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.DAO\\ProdutoDAO.cs",
+              "RelativeToolTip": "..\\Eventos.DAO\\ProdutoDAO.cs",
+              "ViewState": "AQIAANMAAAAAAAAAAAAcwJMAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T14:30:53.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ProdutoView.cs",
+              "DocumentMoniker": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\ProdutoView.cs",
+              "RelativeDocumentMoniker": "ProdutoView.cs",
+              "ToolTip": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\ProdutoView.cs",
+              "RelativeToolTip": "ProdutoView.cs",
+              "ViewState": "AQIAAMwAAAAAAAAAAAAswCIBAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T14:27:39.365Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Principal.cs",
+              "DocumentMoniker": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\Principal.cs",
+              "RelativeDocumentMoniker": "Principal.cs",
+              "ToolTip": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\Principal.cs",
+              "RelativeToolTip": "Principal.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABYAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T14:26:45.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ProdutoView.cs [Design]",
               "DocumentMoniker": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\ProdutoView.cs",
               "RelativeDocumentMoniker": "ProdutoView.cs",

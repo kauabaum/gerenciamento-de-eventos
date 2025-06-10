@@ -346,5 +346,21 @@ namespace Eventos.View
         {
             CarregarDados();
         }
+
+        private void btnAdicionarCategoriaProduto_Click(object sender, EventArgs e)
+        {
+                frmCategoriaView add = new frmCategoriaView();
+                add.ShowDialog();
+        }
+
+        private void btnAdicionarCorProduto_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnAdicionarTemaProduto_Click(object sender, EventArgs e)
+        {
+            frmTemaView add = new frmTemaView();
+            add.ShowDialog();
+        }
     }
 }

@@ -246,6 +246,7 @@
             this.btnAdicionarCategoriaProduto.TabIndex = 39;
             this.toolTip1.SetToolTip(this.btnAdicionarCategoriaProduto, "Adicionar País");
             this.btnAdicionarCategoriaProduto.UseVisualStyleBackColor = true;
+            this.btnAdicionarCategoriaProduto.Click += new System.EventHandler(this.btnAdicionarCategoriaProduto_Click);
             // 
             // btnAdicionarCorProduto
             // 
@@ -257,6 +258,7 @@
             this.btnAdicionarCorProduto.TabIndex = 45;
             this.toolTip1.SetToolTip(this.btnAdicionarCorProduto, "Adicionar País");
             this.btnAdicionarCorProduto.UseVisualStyleBackColor = true;
+            this.btnAdicionarCorProduto.Click += new System.EventHandler(this.btnAdicionarCorProduto_Click);
             // 
             // btnAdicionarTemaProduto
             // 
@@ -268,6 +270,7 @@
             this.btnAdicionarTemaProduto.TabIndex = 48;
             this.toolTip1.SetToolTip(this.btnAdicionarTemaProduto, "Adicionar País");
             this.btnAdicionarTemaProduto.UseVisualStyleBackColor = true;
+            this.btnAdicionarTemaProduto.Click += new System.EventHandler(this.btnAdicionarTemaProduto_Click);
             // 
             // txtQuantidadeProduto
             // 
