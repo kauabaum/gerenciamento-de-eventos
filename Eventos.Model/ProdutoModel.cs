@@ -9,18 +9,18 @@ namespace Eventos.Model
 {
     public class Produto
     {
-        public int IdCliente { get; set; }
-        public string Nome { get; set; }
-        public string Cpf { get; set; }
-        public string Email { get; set; }
-        public string Celular { get; set; }
-        public string Cep { get; set; }
-        public int NumResidencia { get; set; }
-        public int IdRua { get; set; }
-        public string RuaNome { get; set; }
-        public int IdBairro { get; set; }
-        public string BairroNome { get; set; }
-        public int IdCidade { get; set; }
-        public string CidadeNome { get; set; }
+        public int IdProduto { get; set; }
+        public string Descricao { get; set; }
+        public string Tamanho { get; set; }
+        public double Quantidade { get; set; }
+        public double Valor { get; set; }
+        public double Custo { get; set; }
+        public int IdCor { get; set; }
+        public string CorNome { get; set; }
+        public string Cor_rgb_hexa_cmyk { get; set; }
+        public int IdTema { get; set; }
+        public string TemaNome { get; set; }
+        public int IdCategoria { get; set; }
+        public string CategoriaNome { get; set; }
     }
 }

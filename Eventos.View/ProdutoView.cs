@@ -29,7 +29,7 @@ namespace Eventos.View
             txtEmail.Enabled = false;
             mskCelular.Enabled = false;
             txtEndereco.Enabled = false;
-            txtNumero.Enabled = false;
+            txtCustoProduto.Enabled = false;
             mskCep.Enabled = false;
             txtBairroCliente.Enabled = false;
             txtCidadeCliente.Enabled = false;
@@ -45,7 +45,7 @@ namespace Eventos.View
             txtEmail.Enabled = true;
             mskCelular.Enabled = true;
             txtEndereco.Enabled = false;
-            txtNumero.Enabled = true;
+            txtCustoProduto.Enabled = true;
             mskCep.Enabled = true;
             txtBairroCliente.Enabled = false;
             txtCidadeCliente.Enabled = false;
@@ -59,7 +59,7 @@ namespace Eventos.View
             txtEmail.Enabled = false;
             mskCelular.Enabled = false;
             txtEndereco.Enabled = false;
-            txtNumero.Enabled = false;
+            txtCustoProduto.Enabled = false;
             mskCep.Enabled = false;
             txtBairroCliente.Enabled = false;
             txtCidadeCliente.Enabled = false;
@@ -74,7 +74,7 @@ namespace Eventos.View
                 string cpf = mskCpf.Text;
                 string email = txtEmail.Text;
                 string celular = mskCelular.Text;
-                string numero = txtNumero.Text;
+                string numero = txtCustoProduto.Text;
                 string cep = mskCep.Text;
                 string idrua = txtIdRua.Text;
 
@@ -120,12 +120,12 @@ namespace Eventos.View
                     return;
                 }
 
-                if (clienteIdSelecionado.HasValue)
+                if (produtoIdSelecionado.HasValue)
                 {
                     // Atualizar o cliente existente
-                    Cliente clienteAtualizado = new Cliente()
+                    Produto produtoAtualizado = new Produto()
                     {
-                        IdCliente = clienteIdSelecionado.Value,
+                        IdCliente = produtoIdSelecionado.Value,
                         Nome = descricao,
                         Cpf = cpf,
                         Email = email,
@@ -135,13 +135,13 @@ namespace Eventos.View
                         IdRua = Convert.ToInt32(idrua)
                     };
 
-                    clienteDao.Update(clienteAtualizado);
+                    produtoDao.Update(produtoAtualizado);
                     MessageBox.Show("Cliente atualizado com sucesso!");
                 }
                 else
                 {
                     // Adicionar novo cliente
-                    Cliente novoCliente = new Cliente()
+                    Produto novoProduto = new Produto()
                     {
                         Nome = descricao,
                         Cpf = cpf,
@@ -167,8 +167,8 @@ namespace Eventos.View
                 mskCelular.Enabled = false;
                 txtEndereco.Text = string.Empty;
                 txtEndereco.Enabled = false;
-                txtNumero.Text = string.Empty;
-                txtNumero.Enabled = false;
+                txtCustoProduto.Text = string.Empty;
+                txtCustoProduto.Enabled = false;
                 mskCep.Text = string.Empty;
                 mskCep.Enabled = false;
                 txtBairroCliente.Text = string.Empty;
@@ -177,7 +177,7 @@ namespace Eventos.View
                 txtCidadeCliente.Enabled = false;
                 txtIdRua.Text = string.Empty;
                 txtIdRua.Enabled = false;
-                clienteIdSelecionado = null;
+                produtoIdSelecionado = null;
 
                 // Recarregar os dados no DataGridView após salvar
                 CarregarDados();
@@ -188,7 +188,7 @@ namespace Eventos.View
             }
         }
 
-        private int? clienteIdSelecionado = null;
+        private int? produtoIdSelecionado = null;
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
@@ -202,12 +202,12 @@ namespace Eventos.View
                     return;
                 }
 
-                if (clienteIdSelecionado.HasValue)
+                if (produtoIdSelecionado.HasValue)
                 {
                     // Excluir o Cliente
-                    Cliente produtoAtualizado = new Produto()
+                    Produto produtoAtualizado = new Produto()
                     {
-                        IdCliente = clienteIdSelecionado.Value,
+                        IdCliente = produtoIdSelecionado.Value,
                         Nome = descricao,
                     };
 
@@ -225,8 +225,8 @@ namespace Eventos.View
                     mskCelular.Enabled = false;
                     txtEndereco.Text = string.Empty;
                     txtEndereco.Enabled = false;
-                    txtNumero.Text = string.Empty;
-                    txtNumero.Enabled = false;
+                    txtCustoProduto.Text = string.Empty;
+                    txtCustoProduto.Enabled = false;
                     mskCep.Text = string.Empty;
                     mskCep.Enabled = false;
                     txtBairroCliente.Text = string.Empty;
@@ -235,7 +235,7 @@ namespace Eventos.View
                     txtCidadeCliente.Enabled = false;
                     txtIdRua.Text = string.Empty;
                     txtIdRua.Enabled = false;
-                    clienteIdSelecionado = null;
+                    produtoIdSelecionado = null;
 
                     // Recarregar os dados no DataGridView após salvar
                     CarregarDados();
@@ -260,9 +260,9 @@ namespace Eventos.View
                     return;
                 }
 
-                var cliente = produtoDao.GetByProduto(descricao);
+                var produto = produtoDao.GetByProduto(descricao);
 
-                if (cliente != null)
+                if (produto != null)
                 {
                     // Se o cliente for encontrado, mostrar os dados no DataGridView
                     DataTable dataTable = produtoDao.GetProdutoAsDataTable(descricao);
@@ -284,8 +284,8 @@ namespace Eventos.View
                 mskCelular.Enabled = false;
                 txtEndereco.Text = string.Empty;
                 txtEndereco.Enabled = false;
-                txtNumero.Text = string.Empty;
-                txtNumero.Enabled = false;
+                txtCustoProduto.Text = string.Empty;
+                txtCustoProduto.Enabled = false;
                 mskCep.Text = string.Empty;
                 mskCep.Enabled = false;
                 txtBairroCliente.Text = string.Empty;
@@ -294,7 +294,7 @@ namespace Eventos.View
                 txtCidadeCliente.Enabled = false;
                 txtIdRua.Text = string.Empty;
                 txtIdRua.Enabled = false;
-                clienteIdSelecionado = null;
+                produtoIdSelecionado = null;
 
             }
             catch (Exception ex)
@@ -316,8 +316,8 @@ namespace Eventos.View
             mskCelular.Enabled = false;
             txtEndereco.Text = string.Empty;
             txtEndereco.Enabled = false;
-            txtNumero.Text = string.Empty;
-            txtNumero.Enabled = false;
+            txtCustoProduto.Text = string.Empty;
+            txtCustoProduto.Enabled = false;
             mskCep.Text = string.Empty;
             mskCep.Enabled = false;
             txtBairroCliente.Text = string.Empty;
@@ -326,7 +326,7 @@ namespace Eventos.View
             txtCidadeCliente.Enabled = false;
             txtIdRua.Text = string.Empty;
             txtIdRua.Enabled = false;
-            clienteIdSelecionado = null;
+            produtoIdSelecionado = null;
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -355,7 +355,7 @@ namespace Eventos.View
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 // Obter o ID do cliente selecionado no DataGridView
-                clienteIdSelecionado = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Id"].Value);
+                produtoIdSelecionado = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Id"].Value);
 
                 // Obter a descrição do cliente e carregar no TextBox
                 string nome = dataGridView1.SelectedRows[0].Cells["Nome"].Value.ToString();
@@ -374,7 +374,7 @@ namespace Eventos.View
                 txtEmail.Text = email;
                 mskCelular.Text = celular;
                 mskCep.Text = cep;
-                txtNumero.Text = num_residencia;
+                txtCustoProduto.Text = num_residencia;
                 txtEndereco.Text = endereco;
                 txtBairroCliente.Text = bairro;
                 txtCidadeCliente.Text = cidade;
@@ -385,7 +385,7 @@ namespace Eventos.View
                 txtEmail.Enabled = true;
                 mskCelular.Enabled = true;
                 mskCep.Enabled = true;
-                txtNumero.Enabled = true;
+                txtCustoProduto.Enabled = true;
                 txtEndereco.Enabled = false;
                 txtBairroCliente.Enabled = false;
                 txtCidadeCliente.Enabled = false;

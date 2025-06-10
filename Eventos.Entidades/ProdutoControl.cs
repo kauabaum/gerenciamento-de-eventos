@@ -14,7 +14,7 @@ namespace Eventos.Control
     {
         private ProdutoDAO produtoDAO = new ProdutoDAO();
 
-        public DataTable GetAllProduto()
+        public DataTable GetAllProdutos()
         {
             return produtoDAO.GetAll();
         }

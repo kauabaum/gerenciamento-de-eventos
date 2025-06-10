@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClienteView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProdutoView));
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnLocalizar = new System.Windows.Forms.Button();
-            this.lblNome = new System.Windows.Forms.Label();
+            this.lblNomeProduto = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblMensagem = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -45,25 +45,16 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnMostrarTodos = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnAddEndereco = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtCustoProduto = new System.Windows.Forms.TextBox();
             this.txtEndereco = new System.Windows.Forms.TextBox();
-            this.txtNumero = new System.Windows.Forms.TextBox();
-            this.btnBuscaCep = new System.Windows.Forms.Button();
-            this.txtBairroCliente = new System.Windows.Forms.TextBox();
-            this.txtCidadeCliente = new System.Windows.Forms.TextBox();
-            this.txtIdRua = new System.Windows.Forms.TextBox();
-            this.lblCpf = new System.Windows.Forms.Label();
+            this.lblTamanhoProduto = new System.Windows.Forms.Label();
             this.lblCelular = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.mskCpf = new System.Windows.Forms.MaskedTextBox();
-            this.mskCelular = new System.Windows.Forms.MaskedTextBox();
+            this.lblDescricaoProduto = new System.Windows.Forms.Label();
             this.lblEndereco = new System.Windows.Forms.Label();
-            this.lblNumero = new System.Windows.Forms.Label();
-            this.mskCep = new System.Windows.Forms.MaskedTextBox();
-            this.lblCep = new System.Windows.Forms.Label();
-            this.lblBairroCliente = new System.Windows.Forms.Label();
-            this.lblCidadeCliente = new System.Windows.Forms.Label();
+            this.lblCustoProduto = new System.Windows.Forms.Label();
+            this.txtTamanhoProduto = new System.Windows.Forms.TextBox();
+            this.txtValorProduto = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,22 +109,22 @@
             this.btnLocalizar.UseVisualStyleBackColor = true;
             this.btnLocalizar.Click += new System.EventHandler(this.btnLocalizar_Click);
             // 
-            // lblNome
+            // lblNomeProduto
             // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(10, 104);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(175, 25);
-            this.lblNome.TabIndex = 4;
-            this.lblNome.Text = "Nome Completo :";
+            this.lblNomeProduto.AutoSize = true;
+            this.lblNomeProduto.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeProduto.Location = new System.Drawing.Point(9, 96);
+            this.lblNomeProduto.Name = "lblNomeProduto";
+            this.lblNomeProduto.Size = new System.Drawing.Size(160, 25);
+            this.lblNomeProduto.TabIndex = 4;
+            this.lblNomeProduto.Text = "Nome Produto :";
             // 
             // txtNome
             // 
             this.txtNome.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(183, 103);
+            this.txtNome.Location = new System.Drawing.Point(182, 95);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(412, 30);
+            this.txtNome.Size = new System.Drawing.Size(315, 30);
             this.txtNome.TabIndex = 5;
             this.toolTip1.SetToolTip(this.txtNome, "Digite o Nome do Cliente");
             // 
@@ -230,212 +221,114 @@
             this.btnMostrarTodos.UseVisualStyleBackColor = true;
             this.btnMostrarTodos.Click += new System.EventHandler(this.btnMostrarTodos_Click);
             // 
-            // btnAddEndereco
-            // 
-            this.btnAddEndereco.Image = ((System.Drawing.Image)(resources.GetObject("btnAddEndereco.Image")));
-            this.btnAddEndereco.Location = new System.Drawing.Point(241, 231);
-            this.btnAddEndereco.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAddEndereco.Name = "btnAddEndereco";
-            this.btnAddEndereco.Size = new System.Drawing.Size(46, 47);
-            this.btnAddEndereco.TabIndex = 15;
-            this.toolTip1.SetToolTip(this.btnAddEndereco, "Adicionar Novo Endereço");
-            this.btnAddEndereco.UseVisualStyleBackColor = true;
-            this.btnAddEndereco.Click += new System.EventHandler(this.btnAddEndereco_Click);
-            // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(91, 148);
+            this.txtEmail.Location = new System.Drawing.Point(130, 140);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(429, 30);
+            this.txtEmail.Size = new System.Drawing.Size(367, 30);
             this.txtEmail.TabIndex = 19;
             this.toolTip1.SetToolTip(this.txtEmail, "Digite aqui o E-mail");
+            // 
+            // txtCustoProduto
+            // 
+            this.txtCustoProduto.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustoProduto.Location = new System.Drawing.Point(701, 186);
+            this.txtCustoProduto.Name = "txtCustoProduto";
+            this.txtCustoProduto.Size = new System.Drawing.Size(106, 30);
+            this.txtCustoProduto.TabIndex = 27;
+            this.toolTip1.SetToolTip(this.txtCustoProduto, "Digite o Número Residencial");
             // 
             // txtEndereco
             // 
             this.txtEndereco.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEndereco.Location = new System.Drawing.Point(131, 193);
+            this.txtEndereco.Location = new System.Drawing.Point(151, 185);
             this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(474, 30);
+            this.txtEndereco.Size = new System.Drawing.Size(453, 30);
             this.txtEndereco.TabIndex = 25;
             // 
-            // txtNumero
+            // lblTamanhoProduto
             // 
-            this.txtNumero.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumero.Location = new System.Drawing.Point(718, 193);
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(90, 30);
-            this.txtNumero.TabIndex = 27;
-            this.toolTip1.SetToolTip(this.txtNumero, "Digite o Número Residencial");
-            // 
-            // btnBuscaCep
-            // 
-            this.btnBuscaCep.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscaCep.Image")));
-            this.btnBuscaCep.Location = new System.Drawing.Point(191, 231);
-            this.btnBuscaCep.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBuscaCep.Name = "btnBuscaCep";
-            this.btnBuscaCep.Size = new System.Drawing.Size(46, 47);
-            this.btnBuscaCep.TabIndex = 30;
-            this.toolTip1.SetToolTip(this.btnBuscaCep, "Buscar Endereço");
-            this.btnBuscaCep.UseVisualStyleBackColor = true;
-            this.btnBuscaCep.Click += new System.EventHandler(this.btnBuscaCep_Click);
-            // 
-            // txtBairroCliente
-            // 
-            this.txtBairroCliente.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBairroCliente.Location = new System.Drawing.Point(369, 237);
-            this.txtBairroCliente.Name = "txtBairroCliente";
-            this.txtBairroCliente.Size = new System.Drawing.Size(166, 30);
-            this.txtBairroCliente.TabIndex = 32;
-            // 
-            // txtCidadeCliente
-            // 
-            this.txtCidadeCliente.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCidadeCliente.Location = new System.Drawing.Point(623, 238);
-            this.txtCidadeCliente.Name = "txtCidadeCliente";
-            this.txtCidadeCliente.Size = new System.Drawing.Size(186, 30);
-            this.txtCidadeCliente.TabIndex = 34;
-            // 
-            // txtIdRua
-            // 
-            this.txtIdRua.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdRua.Location = new System.Drawing.Point(15, 198);
-            this.txtIdRua.Name = "txtIdRua";
-            this.txtIdRua.Size = new System.Drawing.Size(72, 21);
-            this.txtIdRua.TabIndex = 35;
-            this.toolTip1.SetToolTip(this.txtIdRua, "Digite aqui o Estado");
-            // 
-            // lblCpf
-            // 
-            this.lblCpf.AutoSize = true;
-            this.lblCpf.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCpf.Location = new System.Drawing.Point(601, 104);
-            this.lblCpf.Name = "lblCpf";
-            this.lblCpf.Size = new System.Drawing.Size(62, 25);
-            this.lblCpf.TabIndex = 16;
-            this.lblCpf.Text = "CPF :";
+            this.lblTamanhoProduto.AutoSize = true;
+            this.lblTamanhoProduto.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTamanhoProduto.Location = new System.Drawing.Point(503, 97);
+            this.lblTamanhoProduto.Name = "lblTamanhoProduto";
+            this.lblTamanhoProduto.Size = new System.Drawing.Size(113, 25);
+            this.lblTamanhoProduto.TabIndex = 16;
+            this.lblTamanhoProduto.Text = "Tamanho :";
             // 
             // lblCelular
             // 
             this.lblCelular.AutoSize = true;
             this.lblCelular.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCelular.Location = new System.Drawing.Point(526, 148);
+            this.lblCelular.Location = new System.Drawing.Point(503, 141);
             this.lblCelular.Name = "lblCelular";
-            this.lblCelular.Size = new System.Drawing.Size(91, 25);
+            this.lblCelular.Size = new System.Drawing.Size(74, 25);
             this.lblCelular.TabIndex = 20;
-            this.lblCelular.Text = "Celular :";
+            this.lblCelular.Text = "Valor :";
             // 
-            // lblEmail
+            // lblDescricaoProduto
             // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(10, 148);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(85, 25);
-            this.lblEmail.TabIndex = 18;
-            this.lblEmail.Text = "E-mail :";
-            // 
-            // mskCpf
-            // 
-            this.mskCpf.Font = new System.Drawing.Font("Tahoma", 14.25F);
-            this.mskCpf.Location = new System.Drawing.Point(669, 104);
-            this.mskCpf.Mask = "000,000,000-00";
-            this.mskCpf.Name = "mskCpf";
-            this.mskCpf.Size = new System.Drawing.Size(140, 30);
-            this.mskCpf.TabIndex = 22;
-            this.toolTip1.SetToolTip(this.mskCpf, "Digite somente os números do CPF");
-            // 
-            // mskCelular
-            // 
-            this.mskCelular.Font = new System.Drawing.Font("Tahoma", 14.25F);
-            this.mskCelular.Location = new System.Drawing.Point(623, 148);
-            this.mskCelular.Mask = "+00 00 0 0000-0000";
-            this.mskCelular.Name = "mskCelular";
-            this.mskCelular.Size = new System.Drawing.Size(186, 30);
-            this.mskCelular.TabIndex = 23;
-            this.toolTip1.SetToolTip(this.mskCelular, "Digite o Celular");
+            this.lblDescricaoProduto.AutoSize = true;
+            this.lblDescricaoProduto.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescricaoProduto.Location = new System.Drawing.Point(9, 140);
+            this.lblDescricaoProduto.Name = "lblDescricaoProduto";
+            this.lblDescricaoProduto.Size = new System.Drawing.Size(115, 25);
+            this.lblDescricaoProduto.TabIndex = 18;
+            this.lblDescricaoProduto.Text = "Descrição :";
             // 
             // lblEndereco
             // 
             this.lblEndereco.AutoSize = true;
             this.lblEndereco.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndereco.Location = new System.Drawing.Point(12, 194);
+            this.lblEndereco.Location = new System.Drawing.Point(11, 186);
             this.lblEndereco.Name = "lblEndereco";
-            this.lblEndereco.Size = new System.Drawing.Size(113, 25);
+            this.lblEndereco.Size = new System.Drawing.Size(134, 25);
             this.lblEndereco.TabIndex = 24;
-            this.lblEndereco.Text = "Endereço :";
+            this.lblEndereco.Text = "Quantidade :";
             // 
-            // lblNumero
+            // lblCustoProduto
             // 
-            this.lblNumero.AutoSize = true;
-            this.lblNumero.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumero.Location = new System.Drawing.Point(621, 194);
-            this.lblNumero.Name = "lblNumero";
-            this.lblNumero.Size = new System.Drawing.Size(100, 25);
-            this.lblNumero.TabIndex = 26;
-            this.lblNumero.Text = "Número :";
+            this.lblCustoProduto.AutoSize = true;
+            this.lblCustoProduto.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustoProduto.Location = new System.Drawing.Point(617, 190);
+            this.lblCustoProduto.Name = "lblCustoProduto";
+            this.lblCustoProduto.Size = new System.Drawing.Size(78, 25);
+            this.lblCustoProduto.TabIndex = 26;
+            this.lblCustoProduto.Text = "Custo :";
             // 
-            // mskCep
+            // txtTamanhoProduto
             // 
-            this.mskCep.Font = new System.Drawing.Font("Tahoma", 14.25F);
-            this.mskCep.Location = new System.Drawing.Point(69, 237);
-            this.mskCep.Mask = "00,000-000";
-            this.mskCep.Name = "mskCep";
-            this.mskCep.Size = new System.Drawing.Size(112, 30);
-            this.mskCep.TabIndex = 29;
-            this.toolTip1.SetToolTip(this.mskCep, "Digite o CEP");
+            this.txtTamanhoProduto.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTamanhoProduto.Location = new System.Drawing.Point(622, 97);
+            this.txtTamanhoProduto.Name = "txtTamanhoProduto";
+            this.txtTamanhoProduto.Size = new System.Drawing.Size(185, 30);
+            this.txtTamanhoProduto.TabIndex = 37;
+            this.toolTip1.SetToolTip(this.txtTamanhoProduto, "Digite o Nome do Cliente");
             // 
-            // lblCep
+            // txtValorProduto
             // 
-            this.lblCep.AutoSize = true;
-            this.lblCep.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCep.Location = new System.Drawing.Point(9, 239);
-            this.lblCep.Name = "lblCep";
-            this.lblCep.Size = new System.Drawing.Size(63, 25);
-            this.lblCep.TabIndex = 28;
-            this.lblCep.Text = "CEP :";
+            this.txtValorProduto.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorProduto.Location = new System.Drawing.Point(583, 139);
+            this.txtValorProduto.Name = "txtValorProduto";
+            this.txtValorProduto.Size = new System.Drawing.Size(224, 30);
+            this.txtValorProduto.TabIndex = 38;
+            this.toolTip1.SetToolTip(this.txtValorProduto, "Digite o Nome do Cliente");
             // 
-            // lblBairroCliente
-            // 
-            this.lblBairroCliente.AutoSize = true;
-            this.lblBairroCliente.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBairroCliente.Location = new System.Drawing.Point(287, 239);
-            this.lblBairroCliente.Name = "lblBairroCliente";
-            this.lblBairroCliente.Size = new System.Drawing.Size(82, 25);
-            this.lblBairroCliente.TabIndex = 31;
-            this.lblBairroCliente.Text = "Bairro :";
-            // 
-            // lblCidadeCliente
-            // 
-            this.lblCidadeCliente.AutoSize = true;
-            this.lblCidadeCliente.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCidadeCliente.Location = new System.Drawing.Point(536, 239);
-            this.lblCidadeCliente.Name = "lblCidadeCliente";
-            this.lblCidadeCliente.Size = new System.Drawing.Size(90, 25);
-            this.lblCidadeCliente.TabIndex = 33;
-            this.lblCidadeCliente.Text = "Cidade :";
-            // 
-            // frmClienteView
+            // frmProdutoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 497);
-            this.Controls.Add(this.txtCidadeCliente);
-            this.Controls.Add(this.lblCidadeCliente);
-            this.Controls.Add(this.txtBairroCliente);
-            this.Controls.Add(this.lblBairroCliente);
-            this.Controls.Add(this.mskCep);
-            this.Controls.Add(this.lblCep);
-            this.Controls.Add(this.txtNumero);
-            this.Controls.Add(this.lblNumero);
+            this.Controls.Add(this.txtValorProduto);
+            this.Controls.Add(this.txtTamanhoProduto);
+            this.Controls.Add(this.txtCustoProduto);
+            this.Controls.Add(this.lblCustoProduto);
             this.Controls.Add(this.txtEndereco);
-            this.Controls.Add(this.mskCelular);
-            this.Controls.Add(this.mskCpf);
             this.Controls.Add(this.lblCelular);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.lblCpf);
-            this.Controls.Add(this.btnAddEndereco);
+            this.Controls.Add(this.lblDescricaoProduto);
+            this.Controls.Add(this.lblTamanhoProduto);
             this.Controls.Add(this.btnMostrarTodos);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnSair);
@@ -443,18 +336,16 @@
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.lblMensagem);
             this.Controls.Add(this.txtNome);
-            this.Controls.Add(this.lblNome);
+            this.Controls.Add(this.lblNomeProduto);
             this.Controls.Add(this.btnLocalizar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.lblEndereco);
-            this.Controls.Add(this.txtIdRua);
-            this.Controls.Add(this.btnBuscaCep);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "frmClienteView";
+            this.Name = "frmProdutoView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliente";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -469,7 +360,7 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnLocalizar;
-        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.Label lblNomeProduto;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblMensagem;
         private System.Windows.Forms.Button btnExcluir;
@@ -480,24 +371,15 @@
         private System.Windows.Forms.Button btnMostrarTodos;
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Button btnAddEndereco;
-        private System.Windows.Forms.Label lblCpf;
+        private System.Windows.Forms.Label lblTamanhoProduto;
         private System.Windows.Forms.Label lblCelular;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.MaskedTextBox mskCpf;
-        private System.Windows.Forms.MaskedTextBox mskCelular;
+        private System.Windows.Forms.Label lblDescricaoProduto;
         private System.Windows.Forms.Label lblEndereco;
         private System.Windows.Forms.TextBox txtEndereco;
-        private System.Windows.Forms.Label lblNumero;
-        private System.Windows.Forms.TextBox txtNumero;
-        private System.Windows.Forms.MaskedTextBox mskCep;
-        private System.Windows.Forms.Label lblCep;
-        private System.Windows.Forms.Button btnBuscaCep;
-        private System.Windows.Forms.TextBox txtBairroCliente;
-        private System.Windows.Forms.Label lblBairroCliente;
-        private System.Windows.Forms.TextBox txtCidadeCliente;
-        private System.Windows.Forms.Label lblCidadeCliente;
-        private System.Windows.Forms.TextBox txtIdRua;
+        private System.Windows.Forms.Label lblCustoProduto;
+        private System.Windows.Forms.TextBox txtCustoProduto;
+        private System.Windows.Forms.TextBox txtTamanhoProduto;
+        private System.Windows.Forms.TextBox txtValorProduto;
     }
 }

@@ -26,27 +26,31 @@ namespace Eventos.DAO
             {
                 conn.Open();
 
-                string query = "SELECT cliente.id_cliente AS Id, \r\n" +
-                    "   cliente.nome AS Nome, \r\n" +
-                    "   cliente.cpf AS CPF, \r\n" +
-                    "   cliente.email AS E_mail, \r\n" +
-                    "   cliente.celular AS Celular, \r\n" +
-                    "   cliente.cep AS CEP, \r\n" +
-                    "   cliente.num_residencia AS Nº, \r\n" +
-                    "   rua.rua_nome AS Endereço, \r\n" +
-                    "   bairro.bairro_nome AS Bairro, \r\n" +
-                    "   cidade.cidade_nome AS Cidade, \r\n" +
-                    "   rua.id_rua AS Id_Rua \r\n" +
+                string query = "SELECT produto.id_produto AS Id_Produto, \r\n" +
+                    "   produto.descricao AS Descrição, \r\n" +
+                    "   produto.tamanho AS Tamanho, \r\n" +
+                    "   produto.quantidade AS Quantidade, \r\n" +
+                    "   produto.valor AS Valor, \r\n" +
+                    "   produto.custo AS Custo, \r\n" +
+                    "   produto.id_cor AS Id_Cor, \r\n" +
+                    "   produto.id_tema AS Id_Tema, \r\n" +
+                    "   produto.id_categoria AS Id_Categoria, \r\n" +
+                    "   cor.cor_nome AS Nome_Cor, \r\n" +
+                    "   tema.tema_nome AS Nome_Tema, \r\n" +
+                    "   categoria.categoria_nome AS Nome_Categoria \r\n" +
                     "FROM \r\n" +
-                    "   cliente \r\n" +
+                    "   produto \r\n" +
                     "INNER JOIN \r\n" +
-                    "   rua ON cliente.cep = rua.cep_rua \r\n" +
+                    "   cor ON produto.id_cor = cor.id_cor \r\n" +
                     "INNER JOIN \r\n" +
-                    "   bairro ON rua.id_bairro = bairro.id_bairro \r\n" +
+                    "    tema ON produto.id_tema = tema.id_tema \r\n" +
                     "INNER JOIN \r\n" +
-                    "   cidade ON bairro.id_cidade = cidade.id_cidade \r\n" +
+                    "   categoria ON produto.id_categoria = categoria.id_categoria \r\n" +
+                    "WHERE \r\n" +
+                    "   descricao \r\n" +
+                    "LIKE CONCAT('%',@descricao,'%') \r\n" +
                     "ORDER BY \r\n" +
-                    "   cliente.nome";
+                    "   produto.descricao \r\n";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
@@ -63,30 +67,31 @@ namespace Eventos.DAO
         public DataTable GetProdutoAsDataTable(string descricao)
         {
 
-            string query = "SELECT cliente.id_cliente AS Id, \r\n" +
-                    "   cliente.nome AS Nome, \r\n" +
-                    "   cliente.cpf AS CPF, \r\n" +
-                    "   cliente.email AS E_mail, \r\n" +
-                    "   cliente.celular AS Celular, \r\n" +
-                    "   cliente.cep AS CEP, \r\n" +
-                    "   cliente.num_residencia AS Nº, \r\n" +
-                    "   rua.rua_nome AS Endereço, \r\n" +
-                    "   bairro.bairro_nome AS Bairro, \r\n" +
-                    "   cidade.cidade_nome AS Cidade, \r\n" +
-                    "   rua.id_rua AS Id_Rua \r\n" +
-                    "FROM \r\n" +
-                    "   cliente \r\n" +
-                    "INNER JOIN \r\n" +
-                    "   rua ON cliente.cep = rua.cep_rua \r\n" +
-                    "INNER JOIN \r\n" +
-                    "   bairro ON rua.id_bairro = bairro.id_bairro \r\n" +
-                    "INNER JOIN \r\n" +
-                    "   cidade ON bairro.id_cidade = cidade.id_cidade \r\n" +
-                    "WHERE \r\n" +
-                    "   nome \r\n" +
-                    "LIKE CONCAT('%',@nome,'%') \r\n" +
-                    "ORDER BY \r\n" +
-                    "   cliente.nome \r\n";
+            string query = "SELECT produto.id_produto AS Id_Produto, \r\n" +
+                "   produto.descricao AS Descrição, \r\n" +
+                "   produto.tamanho AS Tamanho, \r\n" +
+                "   produto.quantidade AS Quantidade, \r\n" +
+                "   produto.valor AS Valor, \r\n" +
+                "   produto.custo AS Custo, \r\n" +
+                "   produto.id_cor AS Id_Cor, \r\n" +
+                "   produto.id_tema AS Id_Tema, \r\n" +
+                "   produto.id_categoria AS Id_Categoria, \r\n" +
+                "   cor.cor_nome AS Nome_Cor, \r\n" +
+                "   tema.tema_nome AS Nome_Tema, \r\n" +
+                "   categoria.categoria_nome AS Nome_Categoria \r\n" +
+                "FROM \r\n" +
+                "   produto \r\n" +
+                "INNER JOIN \r\n" +
+                "   cor ON produto.id_cor = cor.id_cor \r\n" +
+                "INNER JOIN \r\n" +
+                "    tema ON produto.id_tema = tema.id_tema \r\n" +
+                "INNER JOIN \r\n" +
+                "   categoria ON produto.id_categoria = categoria.id_categoria \r\n" +
+                "WHERE \r\n" +
+                "   descricao \r\n" +
+                "LIKE CONCAT('%',@descricao,'%') \r\n" +
+                "ORDER BY \r\n" +
+                "   produto.descricao \r\n";
 
 
             using (MySqlConnection conn = dbContext.GetConnection())
@@ -113,32 +118,34 @@ namespace Eventos.DAO
                 conn.Open();
 
 
-                string query = "SELECT cliente.id_cliente AS Id, \r\n" +
-                    "   cliente.nome AS Nome, \r\n" +
-                    "   cliente.cpf AS CPF, \r\n" +
-                    "   cliente.email AS E_mail, \r\n" +
-                    "   cliente.celular AS Celular, \r\n" +
-                    "   cliente.cep AS CEP, \r\n" +
-                    "   cliente.num_residencia AS Nº, \r\n" +
-                    "   rua.rua_nome AS Endereço, \r\n" +
-                    "   bairro.bairro_nome AS Bairro, \r\n" +
-                    "   cidade.cidade_nome AS Cidade \r\n" +
+                string query = "SELECT produto.id_produto AS Id_Produto, \r\n" +
+                    "   produto.descricao AS Descrição, \r\n" +
+                    "   produto.tamanho AS Tamanho, \r\n" +
+                    "   produto.quantidade AS Quantidade, \r\n" +
+                    "   produto.valor AS Valor, \r\n" +
+                    "   produto.custo AS Custo, \r\n" +
+                    "   produto.id_cor AS Id_Cor, \r\n" +
+                    "   produto.id_tema AS Id_Tema, \r\n" +
+                    "   produto.id_categoria AS Id_Categoria, \r\n" +
+                    "   cor.cor_nome AS Nome_Cor, \r\n" +
+                    "   tema.tema_nome AS Nome_Tema, \r\n" +
+                    "   categoria.categoria_nome AS Nome_Categoria \r\n" +
                     "FROM \r\n" +
-                    "   cliente \r\n" +
+                    "   produto \r\n" +
                     "INNER JOIN \r\n" +
-                    "   rua ON cliente.cep = rua.cep_rua \r\n" +
+                    "   cor ON produto.id_cor = cor.id_cor \r\n" +
                     "INNER JOIN \r\n" +
-                    "   bairro ON rua.id_bairro = bairro.id_bairro \r\n" +
+                    "    tema ON produto.id_tema = tema.id_tema \r\n" +
                     "INNER JOIN \r\n" +
-                    "   cidade ON bairro.id_cidade = cidade.id_cidade \r\n" +
+                    "   categoria ON produto.id_categoria = categoria.id_categoria \r\n" +
                     "WHERE \r\n" +
-                    "   nome \r\n" +
-                    "LIKE CONCAT('%',@nome,'%') \r\n" +
+                    "   descricao \r\n" +
+                    "LIKE CONCAT('%',@descricao,'%') \r\n" +
                     "ORDER BY \r\n" +
-                    "   cliente.nome \r\n";
+                    "   produto.descricao \r\n";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@nome", Descricao);
+                cmd.Parameters.AddWithValue("@descricao", Descricao);
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -146,16 +153,19 @@ namespace Eventos.DAO
                     {
                         produto = new Produto()
                         {
-                            IdCliente = reader.GetInt32("Id"),
-                            Nome = reader.GetString("Nome"),
-                            Cpf = reader.GetString("CPF"),
-                            Email = reader.GetString("E_mail"),
-                            Celular = reader.GetString("Celular"),
-                            Cep = reader.GetString("CEP"),
-                            NumResidencia = reader.GetInt32("Nº"),
-                            RuaNome = reader.GetString("Endereço"),
-                            BairroNome = reader.GetString("Bairro"),
-                            CidadeNome = reader.GetString("Cidade")
+                            IdProduto = reader.GetInt32("Id"),
+                            Descricao = reader.GetString("Descrição"),
+                            Tamanho = reader.GetString("Tamanho"),
+                            Quantidade = reader.GetDouble("Quantidade"),
+                            Valor = reader.GetDouble("Valor"),
+                            Custo = reader.GetDouble("Custo"),
+                            IdCor = reader.GetInt32("IdCor"),
+                            CorNome = reader.GetString("Nome Cor"),
+                            Cor_rgb_hexa_cmyk = reader.GetString("Cor RGB HEXA CMYK"),
+                            IdTema = reader.GetInt32("IdTema"),
+                            TemaNome = reader.GetString("Nome Tema"),
+                            IdCategoria = reader.GetInt32("IdCategoria"),
+                            CategoriaNome = reader.GetString("Nome Categoria")
                         };
                     }
                 }
@@ -172,26 +182,22 @@ namespace Eventos.DAO
 
                 // Insere na tabela cliente
                 string query = "INSERT INTO \r\n" +
-                    "cliente \r\n" +
-                        "(nome, cpf, email, celular, cep, \r\n" +
-                        " num_residencia, id_rua) \r\n" +
+                    "produto \r\n" +
+                        "(descricao, tamanho, quantidade, valor, custo, id_cor \r\n" +
+                        " id_tema, id_categoria) \r\n" +
                     "VALUES \r\n" +
-                        "(@nome, @cpf, @email, @celular, @cep, \r\n" +
-                        " @num_residencia, @id_rua); \r\n" +
-                    "UPDATE cliente \r\n" +
-                        "SET cep = CONCAT(SUBSTRING(cep, 1, 2), \r\n" +
-                        " '.', SUBSTRING(cep, 3, 3), '-', \r\n" +
-                        " SUBSTRING(cep, 6, 3)) \r\n" +
-                        "WHERE LENGTH(cep) = 8;";
+                        "(@descricao, @tamanho, @quantidade, @valor, @custo, @id_cor \r\n" +
+                        " @id_tema, @id_categoria);";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@nome", produto.Nome);
-                cmd.Parameters.AddWithValue("@cpf", produto.Cpf);
-                cmd.Parameters.AddWithValue("@email", produto.Email);
-                cmd.Parameters.AddWithValue("@celular", produto.Celular);
-                cmd.Parameters.AddWithValue("@cep", produto.Cep);
-                cmd.Parameters.AddWithValue("@num_residencia", produto.NumResidencia);
-                cmd.Parameters.AddWithValue("@id_rua", produto.IdRua);
+                cmd.Parameters.AddWithValue("@descricao", produto.Descricao);
+                cmd.Parameters.AddWithValue("@tamanho", produto.Tamanho);
+                cmd.Parameters.AddWithValue("@quantidade", produto.Quantidade);
+                cmd.Parameters.AddWithValue("@valor", produto.Valor);
+                cmd.Parameters.AddWithValue("@custo", produto.Custo);
+                cmd.Parameters.AddWithValue("@id_cor", produto.IdCor);
+                cmd.Parameters.AddWithValue("@id_tema", produto.IdTema);
+                cmd.Parameters.AddWithValue("@id_categoria", produto.IdCategoria);
                 cmd.ExecuteNonQuery();
             }
         }
@@ -204,32 +210,28 @@ namespace Eventos.DAO
                 conn.Open();
 
                 string query = "UPDATE \r\n" +
-                    "   cliente \r\n" +
+                    "   produto \r\n" +
                     "SET \r\n" +
-                    "   cliente.nome = @nome, \r\n" +
-                    "   cliente.cpf = @cpf, \r\n" +
-                    "   cliente.email = @email, \r\n" +
-                    "   cliente.celular = @celular, \r\n" +
-                    "   cliente.cep = @cep, \r\n" +
-                    "   cliente.num_residencia = @num_residencia, \r\n" +
-                    "   cliente.id_rua = @id_rua \r\n" +
+                    "   produto.descricao = @descricao, \r\n" +
+                    "   produto.tamanho = @tamanho, \r\n" +
+                    "   produto.quantidade = @quantidade, \r\n" +
+                    "   produto.valor = @valor, \r\n" +
+                    "   produto.custo = @custo, \r\n" +
+                    "   produto.id_cor = @id_cor, \r\n" +
+                    "   produto.id_tema = @id_tema, \r\n" +
+                    "   produto.id_categoria = @id_categoria, \r\n" +
                     "WHERE \r\n" +
-                    "   cliente.id_cliente = @id_cliente;\r\n" +
-                    "UPDATE cliente \r\n" +
-                        "SET cep = CONCAT(SUBSTRING(cep, 1, 2), \r\n" +
-                        " '.', SUBSTRING(cep, 3, 3), '-', \r\n" +
-                        " SUBSTRING(cep, 6, 3)) \r\n" +
-                        "WHERE LENGTH(cep) = 8;";
+                    "   produto.id_produto = @id_produto;\r\n";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@nome", produto.Nome);
-                cmd.Parameters.AddWithValue("@cpf", produto.Cpf);
-                cmd.Parameters.AddWithValue("@email", produto.Email);
-                cmd.Parameters.AddWithValue("@celular", produto.Celular);
-                cmd.Parameters.AddWithValue("@cep", produto.Cep);
-                cmd.Parameters.AddWithValue("@num_residencia", produto.NumResidencia);
-                cmd.Parameters.AddWithValue("@id_rua", produto.IdRua);
-                cmd.Parameters.AddWithValue("@id_cliente", produto.IdCliente);
+                cmd.Parameters.AddWithValue("@descricao", produto.Descricao);
+                cmd.Parameters.AddWithValue("@tamanho", produto.Tamanho);
+                cmd.Parameters.AddWithValue("@quantidade", produto.Quantidade);
+                cmd.Parameters.AddWithValue("@valor", produto.Valor);
+                cmd.Parameters.AddWithValue("@custo", produto.Custo);
+                cmd.Parameters.AddWithValue("@id_cor", produto.IdCor);
+                cmd.Parameters.AddWithValue("@id_tema", produto.IdTema);
+                cmd.Parameters.AddWithValue("@id_categoria", produto.IdCategoria);
                 cmd.ExecuteNonQuery();
             }
         }
@@ -243,13 +245,13 @@ namespace Eventos.DAO
 
                 string query = "DELETE \r\n" +
                     "FROM \r\n" +
-                    "   cliente \r\n" +
+                    "   produto \r\n" +
                     "WHERE \r\n" +
-                    "   cliente.id_cliente = @id";
+                    "   produto.id_produto = @id";
 
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@id", produto.IdCliente);
+                cmd.Parameters.AddWithValue("@id", produto.IdProduto);
                 cmd.ExecuteNonQuery();
             }
         }
