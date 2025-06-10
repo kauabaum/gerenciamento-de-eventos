@@ -24,99 +24,100 @@ namespace Eventos.View
         public frmProdutoView()
         {
             InitializeComponent();
-            txtNome.Enabled = false;
-            mskCpf.Enabled = false;
-            txtEmail.Enabled = false;
-            mskCelular.Enabled = false;
-            txtEndereco.Enabled = false;
+            txtDescricaoProduto.Enabled = false;
+            txtQuantidadeProduto.Enabled = false;
             txtCustoProduto.Enabled = false;
-            mskCep.Enabled = false;
-            txtBairroCliente.Enabled = false;
-            txtCidadeCliente.Enabled = false;
-            txtIdRua.Enabled = false;
+            txtTamanhoProduto.Enabled = false;
+            txtValorProduto.Enabled = false;
+            cmbCategoriaProduto.Enabled = false;
+            cmbCorProduto.Enabled = false;
+            cmbTemaProduto.Enabled = false;
             CarregarDados();
 
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            txtNome.Enabled = true;
-            mskCpf.Enabled = true;
-            txtEmail.Enabled = true;
-            mskCelular.Enabled = true;
-            txtEndereco.Enabled = false;
+            txtDescricaoProduto.Enabled = true;
+            txtQuantidadeProduto.Enabled = true;
             txtCustoProduto.Enabled = true;
-            mskCep.Enabled = true;
-            txtBairroCliente.Enabled = false;
-            txtCidadeCliente.Enabled = false;
-            txtIdRua.Enabled = false;
+            txtTamanhoProduto.Enabled = true;
+            txtValorProduto.Enabled = true;
+            cmbCategoriaProduto.Enabled = true;
+            cmbCorProduto.Enabled = true;
+            cmbTemaProduto.Enabled = true;
         }
 
         private void btnLocalizar_Click(object sender, EventArgs e)
         {
-            txtNome.Enabled = true;
-            mskCpf.Enabled = false;
-            txtEmail.Enabled = false;
-            mskCelular.Enabled = false;
-            txtEndereco.Enabled = false;
+            txtDescricaoProduto.Enabled = false;
+            txtQuantidadeProduto.Enabled = false;
             txtCustoProduto.Enabled = false;
-            mskCep.Enabled = false;
-            txtBairroCliente.Enabled = false;
-            txtCidadeCliente.Enabled = false;
-            txtIdRua.Enabled = false;
+            txtTamanhoProduto.Enabled = false;
+            txtValorProduto.Enabled = false;
+            cmbCategoriaProduto.Enabled = false;
+            cmbCorProduto.Enabled = false;
+            cmbTemaProduto.Enabled = false;
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             try
             {
-                string descricao = txtNome.Text;
-                string cpf = mskCpf.Text;
-                string email = txtEmail.Text;
-                string celular = mskCelular.Text;
-                string numero = txtCustoProduto.Text;
-                string cep = mskCep.Text;
-                string idrua = txtIdRua.Text;
+                string descricao = txtDescricaoProduto.Text;
+                string custo = txtCustoProduto.Text;
+                string tamanho = txtTamanhoProduto.Text;
+                string quantidade = txtQuantidadeProduto.Text;
+                string valor = txtValorProduto.Text;
+                string idcor = cmbCorProduto.Text;
+                string idtema = cmbTemaProduto.Text;
+                string idcategoria = cmbCategoriaProduto.Text;
 
                 if (string.IsNullOrEmpty(descricao))
                 {
-                    MessageBox.Show("O Nome é obrigatório.");
+                    MessageBox.Show("A Descrição é obrigatório.");
                     return;
                 }
 
-                if (string.IsNullOrEmpty(cpf))
+                if (string.IsNullOrEmpty(tamanho))
                 {
-                    MessageBox.Show("O CPF é obrigatório.");
+                    MessageBox.Show("O Tamanho é obrigatório.");
                     return;
                 }
 
-                if (string.IsNullOrEmpty(email))
+                if (string.IsNullOrEmpty(custo))
                 {
-                    MessageBox.Show("O E-mail é obrigatório.");
+                    MessageBox.Show("O Custo é obrigatório.");
                     return;
                 }
 
-                if (string.IsNullOrEmpty(celular))
+                if (string.IsNullOrEmpty(quantidade))
                 {
-                    MessageBox.Show("O Celular é obrigatório.");
+                    MessageBox.Show("A Quantidade é obrigatório.");
                     return;
                 }
 
-                if (string.IsNullOrEmpty(idrua))
+                if (string.IsNullOrEmpty(valor))
                 {
-                    MessageBox.Show("O Endereço é obrigatório.");
+                    MessageBox.Show("O Valor é obrigatório.");
                     return;
                 }
 
-                if (string.IsNullOrEmpty(numero))
+                if (string.IsNullOrEmpty(idcor))
                 {
-                    MessageBox.Show("O Número da Residência é obrigatório.");
+                    MessageBox.Show("A Cor é obrigatório.");
                     return;
                 }
 
-                if (string.IsNullOrEmpty(cep))
+                if (string.IsNullOrEmpty(idtema))
                 {
-                    MessageBox.Show("O CEP é obrigatório.");
+                    MessageBox.Show("O Tema é obrigatório.");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(idcategoria))
+                {
+                    MessageBox.Show("A Categoria é obrigatório.");
                     return;
                 }
 
@@ -125,58 +126,48 @@ namespace Eventos.View
                     // Atualizar o cliente existente
                     Produto produtoAtualizado = new Produto()
                     {
-                        IdCliente = produtoIdSelecionado.Value,
-                        Nome = descricao,
-                        Cpf = cpf,
-                        Email = email,
-                        Celular = celular,
-                        Cep = cep,
-                        NumResidencia = Convert.ToInt32(numero),
-                        IdRua = Convert.ToInt32(idrua)
+                        IdProduto = produtoIdSelecionado.Value,
+                        Descricao = descricao,
+                        Tamanho = tamanho,
+                        Quantidade = Convert.ToInt32(quantidade),
+                        Custo = Convert.ToInt32(custo),
+                        Valor = Convert.ToInt32(valor),
+                        IdTema = Convert.ToInt32(idtema),
+                        IdCategoria = Convert.ToInt32(idcategoria),
+                        IdCor = Convert.ToInt32(idcor)
+
                     };
 
                     produtoDao.Update(produtoAtualizado);
-                    MessageBox.Show("Cliente atualizado com sucesso!");
+                    MessageBox.Show("Produto atualizado com sucesso!");
                 }
                 else
                 {
                     // Adicionar novo cliente
                     Produto novoProduto = new Produto()
                     {
-                        Nome = descricao,
-                        Cpf = cpf,
-                        Email = email,
-                        Celular = celular,
-                        NumResidencia = Convert.ToInt32(numero),
-                        Cep = cep,
-                        IdRua = Convert.ToInt32(idrua)
+                        IdProduto = produtoIdSelecionado.Value,
+                        Descricao = descricao,
+                        Tamanho = tamanho,
+                        Quantidade = Convert.ToInt32(quantidade),
+                        Custo = Convert.ToInt32(custo),
+                        Valor = Convert.ToInt32(valor),
+                        IdTema = Convert.ToInt32(idtema),
+                        IdCategoria = Convert.ToInt32(idcategoria),
+                        IdCor = Convert.ToInt32(idcor)
                     };
 
                     produtoDao.Add(novoProduto);
-                    MessageBox.Show("Cliente salvo com sucesso!");
+                    MessageBox.Show("Produto salvo com sucesso!");
                 }
 
                 // Limpar o TextBox
-                txtNome.Text = string.Empty;
-                txtNome.Enabled = false;
-                mskCpf.Text = string.Empty;
-                mskCpf.Enabled = false;
-                txtEmail.Text = string.Empty;
-                txtEmail.Enabled = false;
-                mskCelular.Text = string.Empty;
-                mskCelular.Enabled = false;
-                txtEndereco.Text = string.Empty;
-                txtEndereco.Enabled = false;
+                txtDescricaoProduto.Text = string.Empty;
+                txtDescricaoProduto.Enabled = false;
+                txtQuantidadeProduto.Text = string.Empty;
+                txtQuantidadeProduto.Enabled = false;
                 txtCustoProduto.Text = string.Empty;
                 txtCustoProduto.Enabled = false;
-                mskCep.Text = string.Empty;
-                mskCep.Enabled = false;
-                txtBairroCliente.Text = string.Empty;
-                txtBairroCliente.Enabled = false;
-                txtCidadeCliente.Text = string.Empty;
-                txtCidadeCliente.Enabled = false;
-                txtIdRua.Text = string.Empty;
-                txtIdRua.Enabled = false;
                 produtoIdSelecionado = null;
 
                 // Recarregar os dados no DataGridView após salvar
@@ -194,7 +185,7 @@ namespace Eventos.View
         {
             try
             {
-                string descricao = txtNome.Text;
+                string descricao = txtDescricaoProduto.Text;
 
                 if (string.IsNullOrEmpty(descricao))
                 {
@@ -207,34 +198,20 @@ namespace Eventos.View
                     // Excluir o Cliente
                     Produto produtoAtualizado = new Produto()
                     {
-                        IdCliente = produtoIdSelecionado.Value,
-                        Nome = descricao,
+                        IdProduto = produtoIdSelecionado.Value,
+                        Descricao = descricao,
                     };
 
                     produtoDao.Delete(produtoAtualizado);
-                    MessageBox.Show("Cliente Excluído com sucesso!");
+                    MessageBox.Show("Produto Excluído com sucesso!");
 
                     // Limpar o TextBox
-                    txtNome.Text = string.Empty;
-                    txtNome.Enabled = false;
-                    mskCpf.Text = string.Empty;
-                    mskCpf.Enabled = false;
-                    txtEmail.Text = string.Empty;
-                    txtEmail.Enabled = false;
-                    mskCelular.Text = string.Empty;
-                    mskCelular.Enabled = false;
-                    txtEndereco.Text = string.Empty;
-                    txtEndereco.Enabled = false;
+                    txtDescricaoProduto.Text = string.Empty;
+                    txtDescricaoProduto.Enabled = false;
+                    txtQuantidadeProduto.Text = string.Empty;
+                    txtQuantidadeProduto.Enabled = false;
                     txtCustoProduto.Text = string.Empty;
                     txtCustoProduto.Enabled = false;
-                    mskCep.Text = string.Empty;
-                    mskCep.Enabled = false;
-                    txtBairroCliente.Text = string.Empty;
-                    txtBairroCliente.Enabled = false;
-                    txtCidadeCliente.Text = string.Empty;
-                    txtCidadeCliente.Enabled = false;
-                    txtIdRua.Text = string.Empty;
-                    txtIdRua.Enabled = false;
                     produtoIdSelecionado = null;
 
                     // Recarregar os dados no DataGridView após salvar
@@ -252,7 +229,7 @@ namespace Eventos.View
         {
             try
             {
-                string descricao = txtNome.Text;
+                string descricao = txtDescricaoProduto.Text;
 
                 if (string.IsNullOrEmpty(descricao))
                 {
@@ -274,27 +251,14 @@ namespace Eventos.View
                 }
 
                 // Limpar o TextBox
-                txtNome.Text = string.Empty;
-                txtNome.Enabled = false;
-                mskCpf.Text = string.Empty;
-                mskCpf.Enabled = false;
-                txtEmail.Text = string.Empty;
-                txtEmail.Enabled = false;
-                mskCelular.Text = string.Empty;
-                mskCelular.Enabled = false;
-                txtEndereco.Text = string.Empty;
-                txtEndereco.Enabled = false;
-                txtCustoProduto.Text = string.Empty;
+                txtDescricaoProduto.Enabled = false;
+                txtQuantidadeProduto.Enabled = false;
                 txtCustoProduto.Enabled = false;
-                mskCep.Text = string.Empty;
-                mskCep.Enabled = false;
-                txtBairroCliente.Text = string.Empty;
-                txtBairroCliente.Enabled = false;
-                txtCidadeCliente.Text = string.Empty;
-                txtCidadeCliente.Enabled = false;
-                txtIdRua.Text = string.Empty;
-                txtIdRua.Enabled = false;
-                produtoIdSelecionado = null;
+                txtTamanhoProduto.Enabled = false;
+                txtValorProduto.Enabled = false;
+                cmbCategoriaProduto.Enabled = false;
+                cmbCorProduto.Enabled = false;
+                cmbTemaProduto.Enabled = false;
 
             }
             catch (Exception ex)
@@ -306,27 +270,14 @@ namespace Eventos.View
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             // Limpar o TextBox
-            txtNome.Text = string.Empty;
-            txtNome.Enabled = false;
-            mskCpf.Text = string.Empty;
-            mskCpf.Enabled = false;
-            txtEmail.Text = string.Empty;
-            txtEmail.Enabled = false;
-            mskCelular.Text = string.Empty;
-            mskCelular.Enabled = false;
-            txtEndereco.Text = string.Empty;
-            txtEndereco.Enabled = false;
-            txtCustoProduto.Text = string.Empty;
+            txtDescricaoProduto.Enabled = false;
+            txtQuantidadeProduto.Enabled = false;
             txtCustoProduto.Enabled = false;
-            mskCep.Text = string.Empty;
-            mskCep.Enabled = false;
-            txtBairroCliente.Text = string.Empty;
-            txtBairroCliente.Enabled = false;
-            txtCidadeCliente.Text = string.Empty;
-            txtCidadeCliente.Enabled = false;
-            txtIdRua.Text = string.Empty;
-            txtIdRua.Enabled = false;
-            produtoIdSelecionado = null;
+            txtTamanhoProduto.Enabled = false;
+            txtValorProduto.Enabled = false;
+            cmbCategoriaProduto.Enabled = false;
+            cmbCorProduto.Enabled = false;
+            cmbTemaProduto.Enabled = false;
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -358,101 +309,42 @@ namespace Eventos.View
                 produtoIdSelecionado = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Id"].Value);
 
                 // Obter a descrição do cliente e carregar no TextBox
-                string nome = dataGridView1.SelectedRows[0].Cells["Nome"].Value.ToString();
-                string cpf = dataGridView1.SelectedRows[0].Cells["CPF"].Value.ToString();
-                string email = dataGridView1.SelectedRows[0].Cells["E_mail"].Value.ToString();
-                string celular = dataGridView1.SelectedRows[0].Cells["Celular"].Value.ToString();
-                string cep = dataGridView1.SelectedRows[0].Cells["CEP"].Value.ToString();
-                string num_residencia = dataGridView1.SelectedRows[0].Cells["Nº"].Value.ToString();
-                string endereco = dataGridView1.SelectedRows[0].Cells["Endereço"].Value.ToString();
-                string bairro = dataGridView1.SelectedRows[0].Cells["Bairro"].Value.ToString();
-                string cidade = dataGridView1.SelectedRows[0].Cells["Cidade"].Value.ToString();
-                string id_rua = dataGridView1.SelectedRows[0].Cells["Id_Rua"].Value.ToString();
+                string descricao = dataGridView1.SelectedRows[0].Cells["Descrição"].Value.ToString();
+                string quantidade = dataGridView1.SelectedRows[0].Cells["Quantidade"].Value.ToString();
+                string custo = dataGridView1.SelectedRows[0].Cells["Custo"].Value.ToString();
+                string tamanho = dataGridView1.SelectedRows[0].Cells["Tamanho"].Value.ToString();
+                string valor = dataGridView1.SelectedRows[0].Cells["Valor"].Value.ToString();
+                string id_cor = dataGridView1.SelectedRows[0].Cells["Id_Cor"].Value.ToString();
+                string id_categoria = dataGridView1.SelectedRows[0].Cells["Id_Categoria"].Value.ToString();
+                string id_tema = dataGridView1.SelectedRows[0].Cells["Id_Tema"].Value.ToString();
 
-                txtNome.Text = nome;
-                mskCpf.Text = cpf;
-                txtEmail.Text = email;
-                mskCelular.Text = celular;
-                mskCep.Text = cep;
-                txtCustoProduto.Text = num_residencia;
-                txtEndereco.Text = endereco;
-                txtBairroCliente.Text = bairro;
-                txtCidadeCliente.Text = cidade;
-                txtIdRua.Text = id_rua;
+                txtDescricaoProduto.Text = descricao;
+                txtQuantidadeProduto.Text = quantidade;
+                txtCustoProduto.Text = descricao;
+                txtTamanhoProduto.Text = tamanho;
+                txtValorProduto.Text = valor;
+                cmbCategoriaProduto.Text = id_categoria;
+                cmbCorProduto.Text = id_cor;
+                cmbTemaProduto.Text = id_tema;
 
-                txtNome.Enabled = true;
-                mskCpf.Enabled = true;
-                txtEmail.Enabled = true;
-                mskCelular.Enabled = true;
-                mskCep.Enabled = true;
-                txtCustoProduto.Enabled = true;
-                txtEndereco.Enabled = false;
-                txtBairroCliente.Enabled = false;
-                txtCidadeCliente.Enabled = false;
-                txtIdRua.Enabled = false;
+                txtDescricaoProduto.Enabled = false;
+                txtQuantidadeProduto.Enabled = false;
+                txtCustoProduto.Enabled = false;
+                txtTamanhoProduto.Enabled = false;
+                txtValorProduto.Enabled = false;
+                cmbCategoriaProduto.Enabled = false;
+                cmbCorProduto.Enabled = false;
+                cmbTemaProduto.Enabled = false;
             }
             else
             {
-                MessageBox.Show("Selecione um cliente para editar.");
+                MessageBox.Show("Selecione um produto para editar.");
             }
         }
 
         private void btnMostrarTodos_Click(object sender, EventArgs e)
         {
             CarregarDados();
-        }
-
-        private void btnAddCliente_Click(object sender, EventArgs e)
-        {
-            txtNome.Clear();
-            txtNome.Enabled = false;
-
-            frmClienteView add = new frmClienteView();
-            add.ShowDialog();
-        }
-
-        private RuaDAO ruaDAO = new RuaDAO();
-
-        public ProdutoDAO ProdutoDAO { get => produtoDao; set => produtoDao = value; }
-
-        private void btnBuscaCep_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string cep = mskCep.Text.Trim();
-
-                if (string.IsNullOrEmpty(cep))
-                {
-                    MessageBox.Show("O CEP é obrigatório.");
-                    return;
-                }
-
-                // Busca o endereço pelo CEP
-                var rua = ruaDAO.GetByCep(cep);
-
-                if (rua != null)
-                {
-                    // Preenche os campos com os dados retornados
-                    txtEndereco.Text = rua.Rua_nome;
-                    txtBairroCliente.Text = rua.Bairro_nome;
-                    txtCidadeCliente.Text = rua.Cidade_nome;
-                    txtIdRua.Text = rua.IdRua.ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Endereço não encontrado.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao carregar Endereço: {ex.Message}");
-            }
-        }
-
-        private void btnAddEndereco_Click(object sender, EventArgs e)
-        {
-            frmRuaView add = new frmRuaView();
-            add.ShowDialog();
         }
     }
 }

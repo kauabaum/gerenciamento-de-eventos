@@ -42,8 +42,8 @@ namespace Eventos.View
 
         private void produtosToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            //frmProdutoView add = new frmProdutoView();
-            //add.ShowDialog();
+            frmProdutoView add = new frmProdutoView();
+            add.ShowDialog();
         }
     }
 }
