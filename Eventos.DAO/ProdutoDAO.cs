@@ -46,9 +46,6 @@ namespace Eventos.DAO
                     "    tema ON produto.id_tema = tema.id_tema \r\n" +
                     "INNER JOIN \r\n" +
                     "   categoria ON produto.id_categoria = categoria.id_categoria \r\n" +
-                    "WHERE \r\n" +
-                    "   descricao \r\n" +
-                    "LIKE CONCAT('%',@descricao,'%') \r\n" +
                     "ORDER BY \r\n" +
                     "   produto.descricao \r\n";
 
@@ -89,7 +86,6 @@ namespace Eventos.DAO
                 "   categoria ON produto.id_categoria = categoria.id_categoria \r\n" +
                 "WHERE \r\n" +
                 "   descricao \r\n" +
-                "LIKE CONCAT('%',@descricao,'%') \r\n" +
                 "ORDER BY \r\n" +
                 "   produto.descricao \r\n";
 
@@ -99,7 +95,7 @@ namespace Eventos.DAO
                 conn.Open();
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@nome", descricao);
+                cmd.Parameters.AddWithValue("@descricao", descricao);
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();
@@ -153,19 +149,19 @@ namespace Eventos.DAO
                     {
                         produto = new Produto()
                         {
-                            IdProduto = reader.GetInt32("Id"),
+                            IdProduto = reader.GetInt32("Id_Produto"),
                             Descricao = reader.GetString("Descrição"),
                             Tamanho = reader.GetString("Tamanho"),
                             Quantidade = reader.GetDouble("Quantidade"),
                             Valor = reader.GetDouble("Valor"),
                             Custo = reader.GetDouble("Custo"),
-                            IdCor = reader.GetInt32("IdCor"),
-                            CorNome = reader.GetString("Nome Cor"),
-                            Cor_rgb_hexa_cmyk = reader.GetString("Cor RGB HEXA CMYK"),
-                            IdTema = reader.GetInt32("IdTema"),
-                            TemaNome = reader.GetString("Nome Tema"),
-                            IdCategoria = reader.GetInt32("IdCategoria"),
-                            CategoriaNome = reader.GetString("Nome Categoria")
+                            IdCor = reader.GetInt32("Id_Cor"),
+                            CorNome = reader.GetString("Nome_Cor"),
+                            Cor_rgb_hexa_cmyk = reader.GetString("Cor_RGB_HEXA_CMYK"),
+                            IdTema = reader.GetInt32("Id_Tema"),
+                            TemaNome = reader.GetString("Nome_Tema"),
+                            IdCategoria = reader.GetInt32("Id_Categoria"),
+                            CategoriaNome = reader.GetString("Nome_Categoria")
                         };
                     }
                 }
@@ -247,11 +243,11 @@ namespace Eventos.DAO
                     "FROM \r\n" +
                     "   produto \r\n" +
                     "WHERE \r\n" +
-                    "   produto.id_produto = @id";
+                    "   produto.id_produto = @id_produto";
 
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@id", produto.IdProduto);
+                cmd.Parameters.AddWithValue("@id_produto", produto.IdProduto);
                 cmd.ExecuteNonQuery();
             }
         }

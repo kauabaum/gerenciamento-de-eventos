@@ -138,7 +138,7 @@ namespace Eventos.View
 
                     };
 
-                    produtoDao.Update(produtoAtualizado);
+                    produtoDAO.Update(produtoAtualizado);
                     MessageBox.Show("Produto atualizado com sucesso!");
                 }
                 else
@@ -157,7 +157,7 @@ namespace Eventos.View
                         IdCor = Convert.ToInt32(idcor)
                     };
 
-                    produtoDao.Add(novoProduto);
+                    produtoDAO.Add(novoProduto);
                     MessageBox.Show("Produto salvo com sucesso!");
                 }
 
@@ -202,7 +202,7 @@ namespace Eventos.View
                         Descricao = descricao,
                     };
 
-                    produtoDao.Delete(produtoAtualizado);
+                    produtoDAO.Delete(produtoAtualizado);
                     MessageBox.Show("Produto Excluído com sucesso!");
 
                     // Limpar o TextBox
@@ -237,12 +237,12 @@ namespace Eventos.View
                     return;
                 }
 
-                var produto = produtoDao.GetByProduto(descricao);
+                var produto = produtoDAO.GetByProduto(descricao);
 
                 if (produto != null)
                 {
                     // Se o cliente for encontrado, mostrar os dados no DataGridView
-                    DataTable dataTable = produtoDao.GetProdutoAsDataTable(descricao);
+                    DataTable dataTable = produtoDAO.GetProdutoAsDataTable(descricao);
                     dataGridView1.DataSource = dataTable;
                 }
                 else
@@ -286,14 +286,14 @@ namespace Eventos.View
         }
 
         // Carrega dados no GRID
-        private ProdutoDAO produtoDao = new ProdutoDAO();
-        //private ClienteDAO clienteDAO = new ClienteDAO();
+        private ProdutoDAO produtoDAO = new ProdutoDAO();
         private void CarregarDados()
         {
             try
             {
-                DataTable dataTable = produtoDao.GetAll();
+                DataTable dataTable = produtoDAO.GetAll();
                 dataGridView1.DataSource = dataTable;
+
             }
             catch (Exception ex)
             {
@@ -361,6 +361,49 @@ namespace Eventos.View
         {
             frmTemaView add = new frmTemaView();
             add.ShowDialog();
+        }
+        private CategoriaDAO categoriaDAO = new CategoriaDAO();
+        public void CarregarCategoria()
+        {
+            try
+            {
+                // Obtém os dados do banco de dados usando o CidadeDAO
+                DataTable dataTable = categoriaDAO.GetAll();
+
+                // Verifica se as colunas necessárias estão presentes
+                if (!dataTable.Columns.Contains("Categoria") || !dataTable.Columns.Contains("Id"))
+                {
+                    MessageBox.Show("Não foram encontrados os dados de categoria");
+                    return;
+                }
+
+                // Cria uma lista de objetos CidadeEstado a partir do DataTable
+                List<Categoria> listaDeCategorias = new List<Categoria>();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    // Obtém os valores das colunas Cidade, Id e Estado
+                    int IdCategoria = Convert.ToInt32(row["Id"]);
+                    string Categoria_nome = row["Cidade"].ToString();
+
+                    // Adiciona o objeto CidadeEstado à lista
+                    listaDeCategorias.Add(Categoria);
+                }
+
+                // Limpa os itens anteriores do ComboBox e define a nova fonte de dados
+                cmbCategoriaProduto.DataSource = null;
+
+                // Define a fonte de dados do ComboBox, exibindo o cidade e estado com o id como valor
+                cmbCategoriaProduto.DataSource = listaDeCategorias;
+                cmbCategoriaProduto.DisplayMember = "CategoriaConcatenado";  // Exibirá o nome do cidade e do Estado no ComboBox
+                cmbCategoriaProduto.ValueMember = "IdCategoria";       // Associará o IdCidade como valor
+
+                // Acessa o id_cidade selecionado diretamente pelo SelectedValue
+                int categoriaSelecionado = Convert.ToInt32(cmbCategoriaProduto.SelectedValue);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar dados: {ex.Message}");
+            }
         }
     }
 }

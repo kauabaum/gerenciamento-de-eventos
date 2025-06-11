@@ -1,7 +1,7 @@
 -- Geração de Modelo físico
 -- Sql ANSI 2003 - brModelo.
 
-DROP DATABASE `eventos`;
+-- DROP DATABASE `eventos`;
 
 CREATE DATABASE IF NOT EXISTS `eventos`;
 

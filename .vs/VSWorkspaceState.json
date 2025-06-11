@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Eventos.View"
   ],
-  "SelectedNode": "\\Eventos.sln",
+  "SelectedNode": "\\Eventos.View\\Eventos.View.csproj.user",
   "PreviewInSolutionExplorer": false
 }
