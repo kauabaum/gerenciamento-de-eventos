@@ -33,7 +33,8 @@ namespace Eventos.View
             cmbCorProduto.Enabled = false;
             cmbTemaProduto.Enabled = false;
             CarregarDados();
-
+            CarregarCategoria();
+            CarregarTema();
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -46,6 +47,8 @@ namespace Eventos.View
             cmbCategoriaProduto.Enabled = true;
             cmbCorProduto.Enabled = true;
             cmbTemaProduto.Enabled = true;
+            CarregarCategoria();
+            CarregarTema();
         }
 
         private void btnLocalizar_Click(object sender, EventArgs e)
@@ -172,6 +175,8 @@ namespace Eventos.View
 
                 // Recarregar os dados no DataGridView após salvar
                 CarregarDados();
+                CarregarCategoria();
+                CarregarTema();
             }
             catch (Exception ex)
             {
@@ -216,6 +221,8 @@ namespace Eventos.View
 
                     // Recarregar os dados no DataGridView após salvar
                     CarregarDados();
+                    CarregarCategoria();
+                    CarregarTema();
                 }
             }
             catch (Exception ex)
@@ -345,6 +352,8 @@ namespace Eventos.View
         private void btnMostrarTodos_Click(object sender, EventArgs e)
         {
             CarregarDados();
+            CarregarCategoria();
+            CarregarTema();
         }
 
         private void btnAdicionarCategoriaProduto_Click(object sender, EventArgs e)
@@ -362,43 +371,52 @@ namespace Eventos.View
             frmTemaView add = new frmTemaView();
             add.ShowDialog();
         }
-        private CategoriaDAO categoriaDAO = new CategoriaDAO();
-        public void CarregarCategoria()
+
+        private TemaDAO temaDAO = new TemaDAO();
+        private void CarregarTema()
         {
             try
             {
-                // Obtém os dados do banco de dados usando o CidadeDAO
+                // Obtém os dados do banco de dados usando o EstadoDAO
+                DataTable dataTable = temaDAO.GetAll();
+
+                // Verifica se as colunas necessárias estão presentes
+                if (dataTable.Columns.Contains("Tema") && dataTable.Columns.Contains("Id"))
+                {
+                    cmbTemaProduto.DataSource = dataTable;
+                    cmbTemaProduto.DisplayMember = "Tema";
+                    cmbTemaProduto.ValueMember = "Id";
+                }
+                else
+                {
+                    MessageBox.Show("Não Localizado!!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar dados: {ex.Message}");
+            }
+        }
+
+        private CategoriaDAO categoriaDAO = new CategoriaDAO();
+        private void CarregarCategoria()
+        {
+            try
+            {
+                // Obtém os dados do banco de dados usando o EstadoDAO
                 DataTable dataTable = categoriaDAO.GetAll();
 
                 // Verifica se as colunas necessárias estão presentes
-                if (!dataTable.Columns.Contains("Categoria") || !dataTable.Columns.Contains("Id"))
+                if (dataTable.Columns.Contains("Categoria") && dataTable.Columns.Contains("Id"))
                 {
-                    MessageBox.Show("Não foram encontrados os dados de categoria");
-                    return;
+                    cmbCategoriaProduto.DataSource = dataTable;
+                    cmbCategoriaProduto.DisplayMember = "Categoria";
+                    cmbCategoriaProduto.ValueMember = "Id";
                 }
-
-                // Cria uma lista de objetos CidadeEstado a partir do DataTable
-                List<Categoria> listaDeCategorias = new List<Categoria>();
-                foreach (DataRow row in dataTable.Rows)
+                else
                 {
-                    // Obtém os valores das colunas Cidade, Id e Estado
-                    int IdCategoria = Convert.ToInt32(row["Id"]);
-                    string Categoria_nome = row["Cidade"].ToString();
-
-                    // Adiciona o objeto CidadeEstado à lista
-                    listaDeCategorias.Add(Categoria);
+                    MessageBox.Show("Não Localizado!!!");
                 }
-
-                // Limpa os itens anteriores do ComboBox e define a nova fonte de dados
-                cmbCategoriaProduto.DataSource = null;
-
-                // Define a fonte de dados do ComboBox, exibindo o cidade e estado com o id como valor
-                cmbCategoriaProduto.DataSource = listaDeCategorias;
-                cmbCategoriaProduto.DisplayMember = "CategoriaConcatenado";  // Exibirá o nome do cidade e do Estado no ComboBox
-                cmbCategoriaProduto.ValueMember = "IdCategoria";       // Associará o IdCidade como valor
-
-                // Acessa o id_cidade selecionado diretamente pelo SelectedValue
-                int categoriaSelecionado = Convert.ToInt32(cmbCategoriaProduto.SelectedValue);
             }
             catch (Exception ex)
             {
