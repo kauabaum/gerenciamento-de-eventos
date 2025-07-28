@@ -169,6 +169,7 @@
     <Compile Include="CidadeModel.cs" />
     <Compile Include="PaisModel.cs" />
     <Compile Include="EstadoModel.cs" />
+    <Compile Include="CorModel.cs" />
     <Compile Include="TemaModel.cs" />
     <Compile Include="UsuarioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

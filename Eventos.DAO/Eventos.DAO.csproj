@@ -170,6 +170,7 @@
     <Compile Include="CidadeDAO.cs" />
     <Compile Include="PaisDAO.cs" />
     <Compile Include="EstadoDAO.cs" />
+    <Compile Include="CorDAO.cs" />
     <Compile Include="TemaDAO.cs" />
     <Compile Include="UsuarioDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

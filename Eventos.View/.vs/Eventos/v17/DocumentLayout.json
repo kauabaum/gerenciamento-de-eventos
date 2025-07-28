@@ -3,24 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5FE4EC18-B624-48E4-9F12-2F0388B6D2D3}|..\\Eventos.Entidades\\Eventos.Control.csproj|c:\\users\\aluno sesi senai\\source\\repos\\projeto-eventos\\eventos.entidades\\produtocontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8E4CCAC2-272D-4989-A1AA-AE50B5170DCB}|..\\Eventos.Model\\Eventos.Model.csproj|c:\\users\\aluno sesi senai\\source\\repos\\projeto-eventos\\eventos.model\\produtomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC46E01A-EED6-41C9-998F-B241DBA9A772}|..\\Eventos.DAO\\Eventos.DAO.csproj|c:\\users\\aluno sesi senai\\source\\repos\\projeto-eventos\\eventos.dao\\produtodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC46E01A-EED6-41C9-998F-B241DBA9A772}|..\\Eventos.DAO\\Eventos.DAO.csproj|c:\\users\\aluno sesi senai\\source\\repos\\projeto-eventos\\eventos.dao\\clientedao .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|c:\\users\\aluno sesi senai\\source\\repos\\projeto-eventos\\eventos.view\\produtoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\produtoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:produtoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\produtoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|c:\\users\\aluno sesi senai\\source\\repos\\projeto-eventos\\eventos.view\\corview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:corview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|c:\\users\\aluno sesi senai\\source\\repos\\projeto-eventos\\eventos.view\\corview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:corview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|c:\\users\\aluno sesi senai\\source\\repos\\projeto-eventos\\eventos.view\\produtoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:produtoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC46E01A-EED6-41C9-998F-B241DBA9A772}|..\\Eventos.DAO\\Eventos.DAO.csproj|c:\\users\\aluno sesi senai\\source\\repos\\projeto-eventos\\eventos.dao\\cordao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +29,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,77 +49,63 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProdutoControl.cs",
-              "DocumentMoniker": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.Entidades\\ProdutoControl.cs",
-              "RelativeDocumentMoniker": "..\\Eventos.Entidades\\ProdutoControl.cs",
-              "ToolTip": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.Entidades\\ProdutoControl.cs",
-              "RelativeToolTip": "..\\Eventos.Entidades\\ProdutoControl.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T14:38:12.648Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ProdutoModel.cs",
-              "DocumentMoniker": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.Model\\ProdutoModel.cs",
-              "RelativeDocumentMoniker": "..\\Eventos.Model\\ProdutoModel.cs",
-              "ToolTip": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.Model\\ProdutoModel.cs",
-              "RelativeToolTip": "..\\Eventos.Model\\ProdutoModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "CorView.cs",
+              "DocumentMoniker": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\CorView.cs",
+              "RelativeDocumentMoniker": "CorView.cs",
+              "ToolTip": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\CorView.cs",
+              "RelativeToolTip": "CorView.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T14:38:01.854Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProdutoDAO.cs",
-              "DocumentMoniker": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.DAO\\ProdutoDAO.cs",
-              "RelativeDocumentMoniker": "..\\Eventos.DAO\\ProdutoDAO.cs",
-              "ToolTip": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.DAO\\ProdutoDAO.cs",
-              "RelativeToolTip": "..\\Eventos.DAO\\ProdutoDAO.cs",
-              "ViewState": "AQIAAN4AAAAAAAAAAAAAAKgAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T14:35:14.831Z",
+              "WhenOpened": "2025-07-28T14:30:14.524Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ClienteDAO .cs",
-              "DocumentMoniker": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.DAO\\ClienteDAO .cs",
-              "RelativeDocumentMoniker": "..\\Eventos.DAO\\ClienteDAO .cs",
-              "ToolTip": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.DAO\\ClienteDAO .cs",
-              "RelativeToolTip": "..\\Eventos.DAO\\ClienteDAO .cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T14:35:12.971Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "ProdutoView.cs [Design]",
               "DocumentMoniker": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\ProdutoView.cs",
               "RelativeDocumentMoniker": "ProdutoView.cs",
               "ToolTip": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\ProdutoView.cs [Design]",
               "RelativeToolTip": "ProdutoView.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T13:44:34.478Z",
+              "WhenOpened": "2025-07-28T13:59:52.879Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CorView.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\CorView.cs",
+              "RelativeDocumentMoniker": "CorView.cs",
+              "ToolTip": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\CorView.cs [Design]",
+              "RelativeToolTip": "CorView.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-28T13:59:33.938Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "CorDAO.cs",
+              "DocumentMoniker": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.DAO\\CorDAO.cs",
+              "RelativeDocumentMoniker": "..\\Eventos.DAO\\CorDAO.cs",
+              "ToolTip": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.DAO\\CorDAO.cs",
+              "RelativeToolTip": "..\\Eventos.DAO\\CorDAO.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB4AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-28T13:54:29.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "ProdutoView.cs",
               "DocumentMoniker": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\ProdutoView.cs",
               "RelativeDocumentMoniker": "ProdutoView.cs",
               "ToolTip": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\ProdutoView.cs",
               "RelativeToolTip": "ProdutoView.cs",
-              "ViewState": "AQIAAKAAAAAAAAAAAAAiwOkAAAAAAAAA",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAgwJIAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-10T14:27:39.365Z",
               "EditorCaption": ""

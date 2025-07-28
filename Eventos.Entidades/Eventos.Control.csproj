@@ -169,6 +169,7 @@
     <Compile Include="CidadeControl.cs" />
     <Compile Include="PaisControl.cs" />
     <Compile Include="EstadoControl.cs" />
+    <Compile Include="CorControl.cs" />
     <Compile Include="TemaControl.cs" />
     <Compile Include="UsuarioControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

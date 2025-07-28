@@ -35,6 +35,7 @@ namespace Eventos.View
             CarregarDados();
             CarregarCategoria();
             CarregarTema();
+            CarregarCor();
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -49,6 +50,7 @@ namespace Eventos.View
             cmbTemaProduto.Enabled = true;
             CarregarCategoria();
             CarregarTema();
+            CarregarCor();
         }
 
         private void btnLocalizar_Click(object sender, EventArgs e)
@@ -176,6 +178,7 @@ namespace Eventos.View
                 // Recarregar os dados no DataGridView após salvar
                 CarregarDados();
                 CarregarCategoria();
+                CarregarCor();
                 CarregarTema();
             }
             catch (Exception ex)
@@ -223,6 +226,7 @@ namespace Eventos.View
                     CarregarDados();
                     CarregarCategoria();
                     CarregarTema();
+                    CarregarCor();
                 }
             }
             catch (Exception ex)
@@ -354,6 +358,7 @@ namespace Eventos.View
             CarregarDados();
             CarregarCategoria();
             CarregarTema();
+            CarregarCor();
         }
 
         private void btnAdicionarCategoriaProduto_Click(object sender, EventArgs e)
@@ -364,6 +369,8 @@ namespace Eventos.View
 
         private void btnAdicionarCorProduto_Click(object sender, EventArgs e)
         {
+            frmCorView add = new frmCorView();
+            add.ShowDialog();
         }
 
         private void btnAdicionarTemaProduto_Click(object sender, EventArgs e)
@@ -386,6 +393,32 @@ namespace Eventos.View
                     cmbTemaProduto.DataSource = dataTable;
                     cmbTemaProduto.DisplayMember = "Tema";
                     cmbTemaProduto.ValueMember = "Id";
+                }
+                else
+                {
+                    MessageBox.Show("Não Localizado!!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar dados: {ex.Message}");
+            }
+        }
+        private CorDAO corDAO = new CorDAO();
+        private void CarregarCor()
+        {
+            try
+            {
+                // Obtém os dados do banco de dados usando o EstadoDAO
+                DataTable dataTable = corDAO.GetAll();
+
+                // Verifica se as colunas necessárias estão presentes
+                if (dataTable.Columns.Contains("Cor") && dataTable.Columns.Contains("Id") && dataTable.Columns.Contains("Cod_Cor"))
+                {
+                    cmbCorProduto.DataSource = dataTable;
+                    cmbCorProduto.DisplayMember = "Cor";
+                    cmbCorProduto.ValueMember = "Id";
+                    cmbCorProduto.DisplayMember = "Cod_Cor";
                 }
                 else
                 {
