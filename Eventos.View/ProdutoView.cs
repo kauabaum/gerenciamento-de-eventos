@@ -48,6 +48,14 @@ namespace Eventos.View
             cmbCategoriaProduto.Enabled = true;
             cmbCorProduto.Enabled = true;
             cmbTemaProduto.Enabled = true;
+            cmbTemaProduto.ResetText();
+            cmbCorProduto.ResetText();
+            cmbCategoriaProduto.ResetText();
+            txtValorProduto.ResetText();
+            txtTamanhoProduto.ResetText();
+            txtCustoProduto.ResetText();
+            txtQuantidadeProduto.ResetText();
+            txtDescricaoProduto.ResetText();
             CarregarCategoria();
             CarregarTema();
             CarregarCor();
@@ -63,6 +71,13 @@ namespace Eventos.View
             cmbCategoriaProduto.Enabled = false;
             cmbCorProduto.Enabled = false;
             cmbTemaProduto.Enabled = false;
+            cmbTemaProduto.ResetText();
+            cmbCorProduto.ResetText();
+            cmbCategoriaProduto.ResetText();
+            txtValorProduto.ResetText();
+            txtTamanhoProduto.ResetText();
+            txtCustoProduto.ResetText();
+            txtQuantidadeProduto.ResetText();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -117,7 +132,7 @@ namespace Eventos.View
                         Custo = Convert.ToDouble(custo),
                         Valor = Convert.ToDouble(valor),
                         IdTema = cmbTemaProduto.SelectedValue.GetHashCode(),
-                        IdCategoria = cmbCorProduto.SelectedValue.GetHashCode(),
+                        IdCategoria = cmbCategoriaProduto.SelectedValue.GetHashCode(),
                         IdCor = cmbCorProduto.SelectedValue.GetHashCode()
 
                     };
@@ -152,6 +167,14 @@ namespace Eventos.View
                 txtCustoProduto.Text = string.Empty;
                 txtCustoProduto.Enabled = false;
                 produtoIdSelecionado = null;
+                cmbTemaProduto.ResetText();
+                cmbCorProduto.ResetText();
+                cmbCategoriaProduto.ResetText();
+                txtValorProduto.ResetText();
+                txtTamanhoProduto.ResetText();
+                txtCustoProduto.ResetText();
+                txtQuantidadeProduto.ResetText();
+                txtDescricaoProduto.ResetText();
 
                 // Recarregar os dados no DataGridView após salvar
                 CarregarDados();
@@ -199,6 +222,14 @@ namespace Eventos.View
                     txtCustoProduto.Text = string.Empty;
                     txtCustoProduto.Enabled = false;
                     produtoIdSelecionado = null;
+                    cmbTemaProduto.ResetText();
+                    cmbCorProduto.ResetText();
+                    cmbCategoriaProduto.ResetText();
+                    txtValorProduto.ResetText();
+                    txtTamanhoProduto.ResetText();
+                    txtCustoProduto.ResetText();
+                    txtQuantidadeProduto.ResetText();
+                    txtDescricaoProduto.ResetText();
 
                     // Recarregar os dados no DataGridView após salvar
                     CarregarDados();
@@ -233,6 +264,7 @@ namespace Eventos.View
                     // Se o cliente for encontrado, mostrar os dados no DataGridView
                     DataTable dataTable = produtoDAO.GetProdutoAsDataTable(descricao);
                     dataGridView1.DataSource = dataTable;
+
                 }
                 else
                 {
@@ -248,6 +280,14 @@ namespace Eventos.View
                 cmbCategoriaProduto.Enabled = false;
                 cmbCorProduto.Enabled = false;
                 cmbTemaProduto.Enabled = false;
+                cmbTemaProduto.ResetText();
+                cmbCorProduto.ResetText();
+                cmbCategoriaProduto.ResetText();
+                txtValorProduto.ResetText();
+                txtTamanhoProduto.ResetText();
+                txtCustoProduto.ResetText();
+                txtQuantidadeProduto.ResetText();
+                txtDescricaoProduto.ResetText();
 
             }
             catch (Exception ex)
@@ -267,6 +307,14 @@ namespace Eventos.View
             cmbCategoriaProduto.Enabled = false;
             cmbCorProduto.Enabled = false;
             cmbTemaProduto.Enabled = false;
+            cmbTemaProduto.ResetText();
+            cmbCorProduto.ResetText();
+            cmbCategoriaProduto.ResetText();
+            txtValorProduto.ResetText();
+            txtTamanhoProduto.ResetText();
+            txtCustoProduto.ResetText();
+            txtQuantidadeProduto.ResetText();
+            txtDescricaoProduto.ResetText();
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -295,7 +343,7 @@ namespace Eventos.View
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 // Obter o ID do cliente selecionado no DataGridView
-                produtoIdSelecionado = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Id"].Value);
+                produtoIdSelecionado = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Id_Produto"].Value);
 
                 // Obter a descrição do cliente e carregar no TextBox
                 string descricao = dataGridView1.SelectedRows[0].Cells["Descrição"].Value.ToString();
@@ -303,27 +351,27 @@ namespace Eventos.View
                 string custo = dataGridView1.SelectedRows[0].Cells["Custo"].Value.ToString();
                 string tamanho = dataGridView1.SelectedRows[0].Cells["Tamanho"].Value.ToString();
                 string valor = dataGridView1.SelectedRows[0].Cells["Valor"].Value.ToString();
-                string id_cor = dataGridView1.SelectedRows[0].Cells["Id_Cor"].Value.ToString();
-                string id_categoria = dataGridView1.SelectedRows[0].Cells["Id_Categoria"].Value.ToString();
-                string id_tema = dataGridView1.SelectedRows[0].Cells["Id_Tema"].Value.ToString();
+                string id_cor = dataGridView1.SelectedRows[0].Cells["Cod_Cor"].Value.ToString();
+                string id_categoria = dataGridView1.SelectedRows[0].Cells["Nome_Categoria"].Value.ToString();
+                string id_tema = dataGridView1.SelectedRows[0].Cells["Nome_Tema"].Value.ToString();
 
                 txtDescricaoProduto.Text = descricao;
                 txtQuantidadeProduto.Text = quantidade;
-                txtCustoProduto.Text = descricao;
+                txtCustoProduto.Text = custo;
                 txtTamanhoProduto.Text = tamanho;
                 txtValorProduto.Text = valor;
                 cmbCategoriaProduto.Text = id_categoria;
                 cmbCorProduto.Text = id_cor;
                 cmbTemaProduto.Text = id_tema;
 
-                txtDescricaoProduto.Enabled = false;
-                txtQuantidadeProduto.Enabled = false;
-                txtCustoProduto.Enabled = false;
-                txtTamanhoProduto.Enabled = false;
-                txtValorProduto.Enabled = false;
-                cmbCategoriaProduto.Enabled = false;
-                cmbCorProduto.Enabled = false;
-                cmbTemaProduto.Enabled = false;
+                txtDescricaoProduto.Enabled = true;
+                txtQuantidadeProduto.Enabled = true;
+                txtCustoProduto.Enabled = true;
+                txtTamanhoProduto.Enabled = true;
+                txtValorProduto.Enabled = true;
+                cmbCategoriaProduto.Enabled = true;
+                cmbCorProduto.Enabled = true;
+                cmbTemaProduto.Enabled = true;
             }
             else
             {
@@ -337,6 +385,14 @@ namespace Eventos.View
             CarregarCategoria();
             CarregarTema();
             CarregarCor();
+            cmbTemaProduto.ResetText();
+            cmbCorProduto.ResetText();
+            cmbCategoriaProduto.ResetText();
+            txtValorProduto.ResetText();
+            txtTamanhoProduto.ResetText();
+            txtCustoProduto.ResetText();
+            txtQuantidadeProduto.ResetText();
+            txtDescricaoProduto.ResetText();
         }
 
         private void btnAdicionarCategoriaProduto_Click(object sender, EventArgs e)
@@ -388,6 +444,7 @@ namespace Eventos.View
             try
             {
                 // Obtém os dados do banco de dados usando o EstadoDAO
+
                 DataTable dataTable = corDAO.GetAll();
 
                 // Verifica se as colunas necessárias estão presentes

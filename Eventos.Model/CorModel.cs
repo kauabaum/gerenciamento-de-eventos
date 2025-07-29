@@ -12,5 +12,11 @@ namespace Eventos.Model
         public int IdCor { get; set; }
         public string CorNome { get; set; }
         public string CodCor { get; set; }
+
+        public string CorCodConcatenado
+        {
+            get { return $"{CorNome} - {CodCor}"; }
+        }
     }
+
 }

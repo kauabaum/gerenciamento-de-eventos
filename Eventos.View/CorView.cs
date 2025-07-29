@@ -24,17 +24,24 @@ namespace Eventos.View
         {
             InitializeComponent();
             txtCor.Enabled = false;
+            txtCodCor.Enabled = false;
             CarregarDados();
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             txtCor.Enabled = true;
+            txtCodCor.Enabled = true;
+            txtCodCor.ResetText();
+            txtCor.ResetText();
         }
 
         private void btnLocalizar_Click(object sender, EventArgs e)
         {
             txtCor.Enabled = true;
+            txtCodCor.Enabled = true;
+            txtCodCor.ResetText();
+            txtCor.ResetText();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -132,6 +139,9 @@ namespace Eventos.View
                     txtCor.Text = string.Empty;
                     txtCor.Enabled = false;
                     corIdSelecionado = null;
+                    txtCodCor.Enabled = false;
+                    txtCodCor.ResetText();
+                    txtCor.ResetText();
 
                     // Recarregar os dados no DataGridView após salvar
                     CarregarDados();
@@ -189,8 +199,10 @@ namespace Eventos.View
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            txtCor.Clear();
             txtCor.Enabled = false;
+            txtCodCor.Enabled = false;
+            txtCodCor.ResetText();
+            txtCor.ResetText();
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -222,7 +234,7 @@ namespace Eventos.View
                 // Obter a descrição do cor e carregar no TextBox
                 string descricao = dataGridView1.SelectedRows[0].Cells["Cor"].Value.ToString();
                 txtCor.Text = descricao;
-                string cod_cor = dataGridView1.SelectedRows[0].Cells["CodCor"].Value.ToString();
+                string cod_cor = dataGridView1.SelectedRows[0].Cells["Cod_Cor"].Value.ToString();
                 txtCodCor.Text = cod_cor;
 
                 txtCor.Enabled = true;

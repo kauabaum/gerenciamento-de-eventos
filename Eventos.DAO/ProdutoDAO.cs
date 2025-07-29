@@ -87,7 +87,7 @@ namespace Eventos.DAO
                 "INNER JOIN \r\n" +
                 "   categoria ON produto.id_categoria = categoria.id_categoria \r\n" +
                 "WHERE \r\n" +
-                "   descricao \r\n" +
+                "    produto.descricao LIKE CONCAT('%',@descricao,'%') \r\n" +
                 "ORDER BY \r\n" +
                 "   produto.descricao \r\n";
 
@@ -218,11 +218,12 @@ namespace Eventos.DAO
                     "   produto.custo = @custo, \r\n" +
                     "   produto.id_cor = @id_cor, \r\n" +
                     "   produto.id_tema = @id_tema, \r\n" +
-                    "   produto.id_categoria = @id_categoria, \r\n" +
+                    "   produto.id_categoria = @id_categoria \r\n" +
                     "WHERE \r\n" +
-                    "   produto.id_produto = @id_produto;\r\n";
+                    "   produto.id_produto = @id_produto\r\n";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@id_produto", produto.IdProduto);
                 cmd.Parameters.AddWithValue("@descricao", produto.Descricao);
                 cmd.Parameters.AddWithValue("@tamanho", produto.Tamanho);
                 cmd.Parameters.AddWithValue("@quantidade", produto.Quantidade);

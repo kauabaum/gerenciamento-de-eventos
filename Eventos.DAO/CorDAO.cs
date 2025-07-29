@@ -148,7 +148,7 @@ namespace Eventos.DAO
                 string query = "UPDATE \r\n" +
                     "   cor \r\n" +
                     "SET \r\n" +
-                    "   cor.cor_nome = @cor_nome \r\n" +
+                    "   cor.cor_nome = @cor_nome, \r\n" +
                     "   cor.cod_rgb_hexa_cmyk = @cod_rgb_hexa_cmyk\r\n" +
                     "WHERE \r\n" +
                     "   cor.id_cor = @id";
@@ -158,6 +158,7 @@ namespace Eventos.DAO
                 cmd.Parameters.AddWithValue("@cor_nome", cor.CorNome);
                 cmd.Parameters.AddWithValue("@id", cor.IdCor);
                 cmd.Parameters.AddWithValue("@cod_rgb_hexa_cmyk", cor.CodCor);
+
                 cmd.ExecuteNonQuery();
             }
         }
