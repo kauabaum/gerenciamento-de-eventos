@@ -55,7 +55,7 @@ namespace Eventos.View
 
         private void btnLocalizar_Click(object sender, EventArgs e)
         {
-            txtDescricaoProduto.Enabled = false;
+            txtDescricaoProduto.Enabled = true;
             txtQuantidadeProduto.Enabled = false;
             txtCustoProduto.Enabled = false;
             txtTamanhoProduto.Enabled = false;
@@ -74,9 +74,6 @@ namespace Eventos.View
                 string tamanho = txtTamanhoProduto.Text;
                 string quantidade = txtQuantidadeProduto.Text;
                 string valor = txtValorProduto.Text;
-                string idcor = cmbCorProduto.Text;
-                string idtema = cmbTemaProduto.Text;
-                string idcategoria = cmbCategoriaProduto.Text;
 
                 if (string.IsNullOrEmpty(descricao))
                 {
@@ -108,24 +105,6 @@ namespace Eventos.View
                     return;
                 }
 
-                if (string.IsNullOrEmpty(idcor))
-                {
-                    MessageBox.Show("A Cor é obrigatório.");
-                    return;
-                }
-
-                if (string.IsNullOrEmpty(idtema))
-                {
-                    MessageBox.Show("O Tema é obrigatório.");
-                    return;
-                }
-
-                if (string.IsNullOrEmpty(idcategoria))
-                {
-                    MessageBox.Show("A Categoria é obrigatório.");
-                    return;
-                }
-
                 if (produtoIdSelecionado.HasValue)
                 {
                     // Atualizar o cliente existente
@@ -134,12 +113,12 @@ namespace Eventos.View
                         IdProduto = produtoIdSelecionado.Value,
                         Descricao = descricao,
                         Tamanho = tamanho,
-                        Quantidade = Convert.ToInt32(quantidade),
-                        Custo = Convert.ToInt32(custo),
-                        Valor = Convert.ToInt32(valor),
-                        IdTema = Convert.ToInt32(idtema),
-                        IdCategoria = Convert.ToInt32(idcategoria),
-                        IdCor = Convert.ToInt32(idcor)
+                        Quantidade = Convert.ToDouble(quantidade),
+                        Custo = Convert.ToDouble(custo),
+                        Valor = Convert.ToDouble(valor),
+                        IdTema = cmbTemaProduto.SelectedValue.GetHashCode(),
+                        IdCategoria = cmbCorProduto.SelectedValue.GetHashCode(),
+                        IdCor = cmbCorProduto.SelectedValue.GetHashCode()
 
                     };
 
@@ -151,15 +130,14 @@ namespace Eventos.View
                     // Adicionar novo cliente
                     Produto novoProduto = new Produto()
                     {
-                        IdProduto = produtoIdSelecionado.Value,
                         Descricao = descricao,
                         Tamanho = tamanho,
-                        Quantidade = Convert.ToInt32(quantidade),
-                        Custo = Convert.ToInt32(custo),
-                        Valor = Convert.ToInt32(valor),
-                        IdTema = Convert.ToInt32(idtema),
-                        IdCategoria = Convert.ToInt32(idcategoria),
-                        IdCor = Convert.ToInt32(idcor)
+                        Quantidade = Convert.ToDouble(quantidade),
+                        Custo = Convert.ToDouble(custo),
+                        Valor = Convert.ToDouble(valor),
+                        IdTema = Convert.ToInt32(cmbTemaProduto.SelectedValue),
+                        IdCategoria = Convert.ToInt32(cmbCategoriaProduto.SelectedValue),
+                        IdCor = Convert.ToInt32(cmbCorProduto.SelectedValue)
                     };
 
                     produtoDAO.Add(novoProduto);

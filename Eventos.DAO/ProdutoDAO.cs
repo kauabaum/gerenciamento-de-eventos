@@ -36,6 +36,7 @@ namespace Eventos.DAO
                     "   produto.id_tema AS Id_Tema, \r\n" +
                     "   produto.id_categoria AS Id_Categoria, \r\n" +
                     "   cor.cor_nome AS Nome_Cor, \r\n" +
+                    "   cor.cod_rgb_hexa_cmyk AS Cod_Cor, \r\n" +
                     "   tema.tema_nome AS Nome_Tema, \r\n" +
                     "   categoria.categoria_nome AS Nome_Categoria \r\n" +
                     "FROM \r\n" +
@@ -74,6 +75,7 @@ namespace Eventos.DAO
                 "   produto.id_tema AS Id_Tema, \r\n" +
                 "   produto.id_categoria AS Id_Categoria, \r\n" +
                 "   cor.cor_nome AS Nome_Cor, \r\n" +
+                "   cor.cod_rgb_hexa_cmyk AS Cod_Cor, \r\n" +
                 "   tema.tema_nome AS Nome_Tema, \r\n" +
                 "   categoria.categoria_nome AS Nome_Categoria \r\n" +
                 "FROM \r\n" +
@@ -104,7 +106,7 @@ namespace Eventos.DAO
             }
         }
 
-        // Carregar dados da Pesquisa pelo nome do cliente
+        // Carregar dados da Pesquisa pelo nome do cliente TALVEZ AQUI
         public Produto GetByProduto(string Descricao)
         {
             Produto produto = null;
@@ -123,17 +125,18 @@ namespace Eventos.DAO
                     "   produto.id_cor AS Id_Cor, \r\n" +
                     "   produto.id_tema AS Id_Tema, \r\n" +
                     "   produto.id_categoria AS Id_Categoria, \r\n" +
-                    "   cor.cor_nome AS Nome_Cor, \r\n" +
+                    "   cor.cod_rgb_hexa_cmyk AS Cod_Cor, \r\n" +
+                    "   cor.cor_nome AS Nome_Cor, \r\n" + 
                     "   tema.tema_nome AS Nome_Tema, \r\n" +
                     "   categoria.categoria_nome AS Nome_Categoria \r\n" +
                     "FROM \r\n" +
                     "   produto \r\n" +
                     "INNER JOIN \r\n" +
+                    "   categoria ON produto.id_categoria = categoria.id_categoria \r\n" +
+                    "INNER JOIN \r\n" +
                     "   cor ON produto.id_cor = cor.id_cor \r\n" +
                     "INNER JOIN \r\n" +
-                    "    tema ON produto.id_tema = tema.id_tema \r\n" +
-                    "INNER JOIN \r\n" +
-                    "   categoria ON produto.id_categoria = categoria.id_categoria \r\n" +
+                    "   tema ON produto.id_tema = tema.id_tema \r\n" +
                     "WHERE \r\n" +
                     "   descricao \r\n" +
                     "LIKE CONCAT('%',@descricao,'%') \r\n" +
@@ -157,7 +160,7 @@ namespace Eventos.DAO
                             Custo = reader.GetDouble("Custo"),
                             IdCor = reader.GetInt32("Id_Cor"),
                             CorNome = reader.GetString("Nome_Cor"),
-                            Cor_rgb_hexa_cmyk = reader.GetString("Cor_RGB_HEXA_CMYK"),
+                            CodCor = reader.GetString("Cod_Cor"),
                             IdTema = reader.GetInt32("Id_Tema"),
                             TemaNome = reader.GetString("Nome_Tema"),
                             IdCategoria = reader.GetInt32("Id_Categoria"),
@@ -179,10 +182,10 @@ namespace Eventos.DAO
                 // Insere na tabela cliente
                 string query = "INSERT INTO \r\n" +
                     "produto \r\n" +
-                        "(descricao, tamanho, quantidade, valor, custo, id_cor \r\n" +
+                        "(descricao, tamanho, quantidade, valor, custo, id_cor, \r\n" +
                         " id_tema, id_categoria) \r\n" +
                     "VALUES \r\n" +
-                        "(@descricao, @tamanho, @quantidade, @valor, @custo, @id_cor \r\n" +
+                        "(@descricao, @tamanho, @quantidade, @valor, @custo, @id_cor, \r\n" +
                         " @id_tema, @id_categoria);";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);

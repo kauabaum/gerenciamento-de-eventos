@@ -17,7 +17,7 @@ namespace Eventos.Model
         public double Custo { get; set; }
         public int IdCor { get; set; }
         public string CorNome { get; set; }
-        public string Cor_rgb_hexa_cmyk { get; set; }
+        public string CodCor { get; set; }
         public int IdTema { get; set; }
         public string TemaNome { get; set; }
         public int IdCategoria { get; set; }
