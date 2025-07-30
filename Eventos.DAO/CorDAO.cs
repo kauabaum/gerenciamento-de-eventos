@@ -132,7 +132,7 @@ namespace Eventos.DAO
                 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@cor_nome", cor.CorNome);
-                cmd.Parameters.AddWithValue("@cod_rgb_hexa_cmyk", cor.CorNome);
+                cmd.Parameters.AddWithValue("@cod_rgb_hexa_cmyk", cor.CodCor);
                 cmd.ExecuteNonQuery();
             }
         }

@@ -194,12 +194,14 @@ namespace Eventos.View
         {
             try
             {
-                string descricao = txtDescricaoProduto.Text;
-
-                if (string.IsNullOrEmpty(descricao))
+                if (dataGridView1.SelectedRows.Count > 0)
                 {
-                    MessageBox.Show("A descrição é obrigatória.");
-                    return;
+                    // Obter o ID do cliente selecionado no DataGridView
+                    produtoIdSelecionado = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Id_Produto"].Value);
+                }
+                else
+                {
+                    MessageBox.Show("Selecione um produto para editar.");
                 }
 
                 if (produtoIdSelecionado.HasValue)
@@ -208,7 +210,6 @@ namespace Eventos.View
                     Produto produtoAtualizado = new Produto()
                     {
                         IdProduto = produtoIdSelecionado.Value,
-                        Descricao = descricao,
                     };
 
                     produtoDAO.Delete(produtoAtualizado);

@@ -127,7 +127,7 @@ namespace Eventos.View
                     // Excluir o Cor
                     Cor corAtualizado = new Cor()
                     {
-                        IdCor = corIdSelecionado.Value,
+                        IdCor = corIdSelecionado.Value, 
                         CorNome = descricao,
                         CodCor = cod_cor
                     };

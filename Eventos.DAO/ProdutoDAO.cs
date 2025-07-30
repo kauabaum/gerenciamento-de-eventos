@@ -32,9 +32,6 @@ namespace Eventos.DAO
                     "   produto.quantidade AS Quantidade, \r\n" +
                     "   produto.valor AS Valor, \r\n" +
                     "   produto.custo AS Custo, \r\n" +
-                    "   produto.id_cor AS Id_Cor, \r\n" +
-                    "   produto.id_tema AS Id_Tema, \r\n" +
-                    "   produto.id_categoria AS Id_Categoria, \r\n" +
                     "   cor.cor_nome AS Nome_Cor, \r\n" +
                     "   cor.cod_rgb_hexa_cmyk AS Cod_Cor, \r\n" +
                     "   tema.tema_nome AS Nome_Tema, \r\n" +
@@ -71,9 +68,6 @@ namespace Eventos.DAO
                 "   produto.quantidade AS Quantidade, \r\n" +
                 "   produto.valor AS Valor, \r\n" +
                 "   produto.custo AS Custo, \r\n" +
-                "   produto.id_cor AS Id_Cor, \r\n" +
-                "   produto.id_tema AS Id_Tema, \r\n" +
-                "   produto.id_categoria AS Id_Categoria, \r\n" +
                 "   cor.cor_nome AS Nome_Cor, \r\n" +
                 "   cor.cod_rgb_hexa_cmyk AS Cod_Cor, \r\n" +
                 "   tema.tema_nome AS Nome_Tema, \r\n" +
@@ -122,9 +116,6 @@ namespace Eventos.DAO
                     "   produto.quantidade AS Quantidade, \r\n" +
                     "   produto.valor AS Valor, \r\n" +
                     "   produto.custo AS Custo, \r\n" +
-                    "   produto.id_cor AS Id_Cor, \r\n" +
-                    "   produto.id_tema AS Id_Tema, \r\n" +
-                    "   produto.id_categoria AS Id_Categoria, \r\n" +
                     "   cor.cod_rgb_hexa_cmyk AS Cod_Cor, \r\n" +
                     "   cor.cor_nome AS Nome_Cor, \r\n" + 
                     "   tema.tema_nome AS Nome_Tema, \r\n" +
