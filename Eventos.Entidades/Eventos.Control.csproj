@@ -161,6 +161,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OrcamentoControl.cs" />
     <Compile Include="ProdutoControl.cs" />
     <Compile Include="ClienteControl.cs" />
     <Compile Include="RuaControl.cs" />

@@ -161,6 +161,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OrcamentoModel.cs" />
     <Compile Include="ProdutoModel.cs" />
     <Compile Include="ClienteModel.cs" />
     <Compile Include="RuaModel .cs" />

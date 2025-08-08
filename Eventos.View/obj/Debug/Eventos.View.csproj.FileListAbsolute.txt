@@ -302,3 +302,4 @@ C:\Users\ALUNO SESI SENAI\Source\Repos\projeto-eventos\Eventos.View\obj\Debug\Ev
 C:\Users\ALUNO SESI SENAI\Source\Repos\projeto-eventos\Eventos.View\obj\Debug\Eventos.pdb
 C:\Users\ALUNO SESI SENAI\source\repos\projeto-eventos\Eventos.View\obj\Debug\Eventos.View.frmProdutoView.resources
 C:\Users\ALUNO SESI SENAI\Source\Repos\projeto-eventos\Eventos.View\obj\Debug\Eventos.View.frmCorView.resources
+C:\Users\ALUNO SESI SENAI\Source\Repos\projeto-eventos\Eventos.View\obj\Debug\Eventos.View.frmOrcamentoView.resources

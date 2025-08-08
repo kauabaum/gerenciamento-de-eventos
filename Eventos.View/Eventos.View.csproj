@@ -167,6 +167,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OrcamentoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrcamentoView.Designer.cs">
+      <DependentUpon>OrcamentoView.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProdutoView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +247,9 @@
     <Compile Include="TemaView.Designer.cs">
       <DependentUpon>TemaView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="OrcamentoView.resx">
+      <DependentUpon>OrcamentoView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProdutoView.resx">
       <DependentUpon>ProdutoView.cs</DependentUpon>
     </EmbeddedResource>
