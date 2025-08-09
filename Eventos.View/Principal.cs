@@ -45,5 +45,10 @@ namespace Eventos.View
             frmProdutoView add = new frmProdutoView();
             add.ShowDialog();
         }
+        private void OrcamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmOrcamentoView add = new frmOrcamentoView();
+            add.ShowDialog();
+        }
     }
 }

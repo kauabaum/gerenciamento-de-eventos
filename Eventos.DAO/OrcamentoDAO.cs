@@ -26,26 +26,20 @@ namespace Eventos.DAO
             {
                 conn.Open();
 
-                string query = "SELECT Orcamento.id_Orcamento AS Id_Orcamento, \r\n" +
-                    "   Orcamento.descricao AS Descrição, \r\n" +
-                    "   Orcamento.tamanho AS Tamanho, \r\n" +
-                    "   Orcamento.quantidade AS Quantidade, \r\n" +
-                    "   Orcamento.valor AS Valor, \r\n" +
-                    "   Orcamento.custo AS Custo, \r\n" +
-                    "   cor.cor_nome AS Nome_Cor, \r\n" +
-                    "   cor.cod_rgb_hexa_cmyk AS Cod_Cor, \r\n" +
-                    "   tema.tema_nome AS Nome_Tema, \r\n" +
-                    "   categoria.categoria_nome AS Nome_Categoria \r\n" +
+                string query = "SELECT orcamento.id_orcamento AS Id_Orcamento, \r\n" +
+                "   orcamento.tipo_evento AS Tipo_Evento, \r\n" +
+                "   orcamento.total AS Total, \r\n" +
+                "   orcamento.data_emissao AS Data_Emissao, \r\n" +
+                "   orcamento.aprovacao AS Aprovacao, \r\n" +
+                "   orcamento.local_evento AS Local_Evento, \r\n" +
+                "   orcamento.data_evento AS Data_Evento, \r\n" +
+                "   orcamento.hora_evento AS Hora_Evento, \r\n" +
+                "   orcamento.validade AS Validade, \r\n" +
+                "   orcamento.tema AS Tema \r\n" +
                     "FROM \r\n" +
-                    "   Orcamento \r\n" +
-                    "INNER JOIN \r\n" +
-                    "   cor ON Orcamento.id_cor = cor.id_cor \r\n" +
-                    "INNER JOIN \r\n" +
-                    "    tema ON Orcamento.id_tema = tema.id_tema \r\n" +
-                    "INNER JOIN \r\n" +
-                    "   categoria ON Orcamento.id_categoria = categoria.id_categoria \r\n" +
+                    "   orcamento \r\n" +
                     "ORDER BY \r\n" +
-                    "   Orcamento.descricao \r\n";
+                    "   orcamento.tipo_evento \r\n";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
@@ -62,7 +56,7 @@ namespace Eventos.DAO
         public DataTable GetOrcamentoAsDataTable(string tipo_evento)
         {
 
-            string query = "SELECT Orcamento.id_orcamento AS Id_Orcamento, \r\n" +
+            string query = "SELECT orcamento.id_orcamento AS Id_Orcamento, \r\n" +
                 "   orcamento.tipo_evento AS Tipo_Evento, \r\n" +
                 "   orcamento.total AS Total, \r\n" +
                 "   orcamento.data_emissao AS Data_Emissao, \r\n" +
@@ -70,12 +64,10 @@ namespace Eventos.DAO
                 "   orcamento.local_evento AS Local_Evento, \r\n" +
                 "   orcamento.data_evento AS Data_Evento, \r\n" +
                 "   orcamento.hora_evento AS Hora_Evento, \r\n" +
-                "   tema.tema_nome AS Nome_Tema, \r\n" +
-                "   categoria.categoria_nome AS Nome_Categoria \r\n" +
+                "   orcamento.validade AS Validade, \r\n" +
+                "   orcamento.tema AS Tema \r\n" +
                 "FROM \r\n" +
                 "   orcamento \r\n" +
-                "INNER JOIN \r\n" +
-                "    tema ON Orcamento.id_tema = tema.id_tema \r\n" +
                 "WHERE \r\n" +
                 "    orcamento.tipo_evento LIKE CONCAT('%',@tipo_evento,'%') \r\n" +
                 "ORDER BY \r\n" +
@@ -95,49 +87,77 @@ namespace Eventos.DAO
                 return dataTable;
             }
         }
+        public DataTable GetOrcamentoAsDataTableTema(string tema_evento)
+        {
+
+            string query = "SELECT orcamento.id_orcamento AS Id_Orcamento, \r\n" +
+                "   orcamento.tipo_evento AS Tipo_Evento, \r\n" +
+                "   orcamento.total AS Total, \r\n" +
+                "   orcamento.data_emissao AS Data_Emissao, \r\n" +
+                "   orcamento.aprovacao AS Aprovacao, \r\n" +
+                "   orcamento.local_evento AS Local_Evento, \r\n" +
+                "   orcamento.data_evento AS Data_Evento, \r\n" +
+                "   orcamento.hora_evento AS Hora_Evento, \r\n" +
+                "   orcamento.validade AS Validade, \r\n" +
+                "   orcamento.tema AS Tema \r\n" +
+                "FROM \r\n" +
+                "   orcamento \r\n" +
+                "WHERE \r\n" +
+                "    orcamento.tema LIKE CONCAT('%',@tema_evento,'%') \r\n" +
+                "ORDER BY \r\n" +
+                "   orcamento.tema \r\n";
+
+
+            using (MySqlConnection conn = dbContext.GetConnection())
+            {
+                conn.Open();
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@tema_evento", tema_evento);
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+        }
 
         // Carregar dados da Pesquisa pelo nome do cliente TALVEZ AQUI
         public Orcamento GetByOrcamento(string Tipo_evento)
         {
-            Orcamento Orcamento = null;
+            Orcamento orcamento = null;
 
             using (MySqlConnection conn = dbContext.GetConnection())
             {
                 conn.Open();
 
 
-                string query = "SELECT Orcamento.id_Orcamento AS Id_Orcamento, \r\n" +
-                    "   Orcamento.descricao AS Descrição, \r\n" +
-                    "   Orcamento.tamanho AS Tamanho, \r\n" +
-                    "   Orcamento.quantidade AS Quantidade, \r\n" +
-                    "   Orcamento.valor AS Valor, \r\n" +
-                    "   Orcamento.custo AS Custo, \r\n" +
-                    "   cor.cod_rgb_hexa_cmyk AS Cod_Cor, \r\n" +
-                    "   cor.cor_nome AS Nome_Cor, \r\n" + 
-                    "   tema.tema_nome AS Nome_Tema, \r\n" +
-                    "   categoria.categoria_nome AS Nome_Categoria \r\n" +
+                string query = "SELECT orcamento.id_orcamento AS Id_Orcamento, \r\n" +
+                "   orcamento.tipo_evento AS Tipo_Evento, \r\n" +
+                "   orcamento.total AS Total, \r\n" +
+                "   orcamento.data_emissao AS Data_Emissao, \r\n" +
+                "   orcamento.aprovacao AS Aprovacao, \r\n" +
+                "   orcamento.local_evento AS Local_Evento, \r\n" +
+                "   orcamento.data_evento AS Data_Evento, \r\n" +
+                "   orcamento.hora_evento AS Hora_Evento, \r\n" +
+                "   orcamento.validade AS Validade, \r\n" +
+                "   orcamento.tema AS Tema \r\n" +
                     "FROM \r\n" +
-                    "   Orcamento \r\n" +
-                    "INNER JOIN \r\n" +
-                    "   categoria ON Orcamento.id_categoria = categoria.id_categoria \r\n" +
-                    "INNER JOIN \r\n" +
-                    "   cor ON Orcamento.id_cor = cor.id_cor \r\n" +
-                    "INNER JOIN \r\n" +
-                    "   tema ON Orcamento.id_tema = tema.id_tema \r\n" +
+                    "   orcamento \r\n" +
                     "WHERE \r\n" +
-                    "   descricao \r\n" +
-                    "LIKE CONCAT('%',@descricao,'%') \r\n" +
+                    "   tipo_evento \r\n" +
+                    "LIKE CONCAT('%',@tipo_evento,'%') \r\n" +
                     "ORDER BY \r\n" +
-                    "   Orcamento.descricao \r\n";
+                    "   orcamento.tipo_evento \r\n";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@descricao", Tipo_evento);
+                cmd.Parameters.AddWithValue("@tipo_evento", Tipo_evento);
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     if (reader.Read())
                     {
-                        Orcamento = new Orcamento()
+                        orcamento = new Orcamento()
                         {
                             IdOrcamento = reader.GetInt32("Id_Orcamento"),
                             TipoEvento = reader.GetString("Tipo_Evento"),
@@ -147,18 +167,69 @@ namespace Eventos.DAO
                             LocalEvento = reader.GetString("Local_Evento"),
                             DataEvento = reader.GetDateTime("Data_Evento"),
                             HoraEvento = reader.GetString("Hora_Evento"),
-                            IdTema = reader.GetInt32("IdTema"),
-                            TemaNome = reader.GetString("Nome_Tema"),
+                            Tema = reader.GetString("Tema"),
                             Validade = reader.GetString("Validade")
                         };
                     }
                 }
             }
-            return Orcamento;
+            return orcamento;
+        }
+        public Orcamento GetByOrcamentoTema(string Tema_evento)
+        {
+            Orcamento orcamento = null;
+
+            using (MySqlConnection conn = dbContext.GetConnection())
+            {
+                conn.Open();
+
+
+                string query = "SELECT orcamento.id_orcamento AS Id_Orcamento, \r\n" +
+                "   orcamento.tipo_evento AS Tipo_Evento, \r\n" +
+                "   orcamento.total AS Total, \r\n" +
+                "   orcamento.data_emissao AS Data_Emissao, \r\n" +
+                "   orcamento.aprovacao AS Aprovacao, \r\n" +
+                "   orcamento.local_evento AS Local_Evento, \r\n" +
+                "   orcamento.data_evento AS Data_Evento, \r\n" +
+                "   orcamento.hora_evento AS Hora_Evento, \r\n" +
+                "   orcamento.validade AS Validade, \r\n" +
+                "   orcamento.tema AS Tema \r\n" +
+                    "FROM \r\n" +
+                    "   orcamento \r\n" +
+                    "WHERE \r\n" +
+                    "   tema \r\n" +
+                    "LIKE CONCAT('%',@tema_evento,'%') \r\n" +
+                    "ORDER BY \r\n" +
+                    "   orcamento.tema \r\n";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@tema_evento", Tema_evento);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        orcamento = new Orcamento()
+                        {
+                            IdOrcamento = reader.GetInt32("Id_Orcamento"),
+                            TipoEvento = reader.GetString("Tipo_Evento"),
+                            Total = reader.GetDouble("Total"),
+                            DataEmissao = reader.GetDateTime("Data_Emissao"),
+                            Aprovacao = reader.GetString("Aprovacao"),
+                            LocalEvento = reader.GetString("Local_Evento"),
+                            DataEvento = reader.GetDateTime("Data_Evento"),
+                            HoraEvento = reader.GetString("Hora_Evento"),
+                            Tema = reader.GetString("Tema"),
+                            Validade = reader.GetString("Validade")
+                        };
+                    }
+                }
+            }
+            return orcamento;
         }
 
         // Adicionar novo Cliente
-        public void Add(Orcamento Orcamento)
+        public void Add(Orcamento orcamento)
         {
             using (MySqlConnection conn = dbContext.GetConnection())
             {
@@ -166,63 +237,66 @@ namespace Eventos.DAO
 
                 // Insere na tabela cliente
                 string query = "INSERT INTO \r\n" +
-                    "Orcamento \r\n" +
-                        "(descricao, tamanho, quantidade, valor, custo, id_cor, \r\n" +
-                        " id_tema, id_categoria) \r\n" +
+                    "orcamento \r\n" +
+                        "(tipo_evento, total, data_emissao, aprovacao, local_evento, data_evento, \r\n" +
+                        " hora_evento, tema, validade) \r\n" +
                     "VALUES \r\n" +
-                        "(@descricao, @tamanho, @quantidade, @valor, @custo, @id_cor, \r\n" +
-                        " @id_tema, @id_categoria);";
+                        "(@tipo_evento, @total, @data_emissao, @aprovacao, @local_evento, @data_evento, \r\n" +
+                        " @hora_evento, @tema_evento, @validade);";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@descricao", Orcamento.Descricao);
-                cmd.Parameters.AddWithValue("@tamanho", Orcamento.Tamanho);
-                cmd.Parameters.AddWithValue("@quantidade", Orcamento.Quantidade);
-                cmd.Parameters.AddWithValue("@valor", Orcamento.Valor);
-                cmd.Parameters.AddWithValue("@custo", Orcamento.Custo);
-                cmd.Parameters.AddWithValue("@id_cor", Orcamento.IdCor);
-                cmd.Parameters.AddWithValue("@id_tema", Orcamento.IdTema);
-                cmd.Parameters.AddWithValue("@id_categoria", Orcamento.IdCategoria);
+                cmd.Parameters.AddWithValue("@tipo_evento", orcamento.TipoEvento);
+                cmd.Parameters.AddWithValue("@total", orcamento.Total);
+                cmd.Parameters.AddWithValue("@data_emissao", orcamento.DataEmissao);
+                cmd.Parameters.AddWithValue("@aprovacao", orcamento.Aprovacao);
+                cmd.Parameters.AddWithValue("@local_evento", orcamento.LocalEvento);
+                cmd.Parameters.AddWithValue("@data_evento", orcamento.DataEvento);
+                cmd.Parameters.AddWithValue("@hora_evento", orcamento.HoraEvento);
+                cmd.Parameters.AddWithValue("@tema_evento", orcamento.Tema);
+                cmd.Parameters.AddWithValue("@validade", orcamento.Validade);
                 cmd.ExecuteNonQuery();
             }
         }
 
         // Atualizar/editar dados
-        public void Update(Orcamento Orcamento)
+        public void Update(Orcamento orcamento)
         {
             using (MySqlConnection conn = dbContext.GetConnection())
             {
                 conn.Open();
 
                 string query = "UPDATE \r\n" +
-                    "   Orcamento \r\n" +
+                    "   orcamento \r\n" +
                     "SET \r\n" +
-                    "   Orcamento.descricao = @descricao, \r\n" +
-                    "   Orcamento.tamanho = @tamanho, \r\n" +
-                    "   Orcamento.quantidade = @quantidade, \r\n" +
-                    "   Orcamento.valor = @valor, \r\n" +
-                    "   Orcamento.custo = @custo, \r\n" +
-                    "   Orcamento.id_cor = @id_cor, \r\n" +
-                    "   Orcamento.id_tema = @id_tema, \r\n" +
-                    "   Orcamento.id_categoria = @id_categoria \r\n" +
+                    "   orcamento.tipo_evento = @tipo_evento, \r\n" +
+                    "   orcamento.total = @total, \r\n" +
+                    "   orcamento.data_emissao = @data_emissao, \r\n" +
+                    "   orcamento.aprovacao = @aprovacao, \r\n" +
+                    "   orcamento.local_evento = @local_evento, \r\n" +
+                    "   orcamento.data_evento = @data_evento, \r\n" +
+                    "   orcamento.hora_evento = @hora_evento, \r\n" +
+                    "   orcamento.tema = @tema_evento \r\n" +
+                    "   orcamento.validade = @validade \r\n" +
                     "WHERE \r\n" +
-                    "   Orcamento.id_Orcamento = @id_Orcamento\r\n";
+                    "   orcamento.id_orcamento = @id_orcamento\r\n";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@id_Orcamento", Orcamento.IdOrcamento);
-                cmd.Parameters.AddWithValue("@descricao", Orcamento.Descricao);
-                cmd.Parameters.AddWithValue("@tamanho", Orcamento.Tamanho);
-                cmd.Parameters.AddWithValue("@quantidade", Orcamento.Quantidade);
-                cmd.Parameters.AddWithValue("@valor", Orcamento.Valor);
-                cmd.Parameters.AddWithValue("@custo", Orcamento.Custo);
-                cmd.Parameters.AddWithValue("@id_cor", Orcamento.IdCor);
-                cmd.Parameters.AddWithValue("@id_tema", Orcamento.IdTema);
-                cmd.Parameters.AddWithValue("@id_categoria", Orcamento.IdCategoria);
+                cmd.Parameters.AddWithValue("@id_orcamento", orcamento.IdOrcamento);
+                cmd.Parameters.AddWithValue("@tipo_evento", orcamento.TipoEvento);
+                cmd.Parameters.AddWithValue("@total", orcamento.Total);
+                cmd.Parameters.AddWithValue("@data_emissao", orcamento.DataEmissao);
+                cmd.Parameters.AddWithValue("@aprovacao", orcamento.Aprovacao);
+                cmd.Parameters.AddWithValue("@local_evento", orcamento.LocalEvento);
+                cmd.Parameters.AddWithValue("@data_evento", orcamento.DataEvento);
+                cmd.Parameters.AddWithValue("@hora_evento", orcamento.HoraEvento);
+                cmd.Parameters.AddWithValue("@tema_evento", orcamento.Tema);
+                cmd.Parameters.AddWithValue("@validade", orcamento.Validade);
                 cmd.ExecuteNonQuery();
             }
         }
 
         // Excluir Dados
-        public void Delete(Orcamento Orcamento)
+        public void Delete(Orcamento orcamento)
         {
             using (MySqlConnection conn = dbContext.GetConnection())
             {
@@ -230,13 +304,13 @@ namespace Eventos.DAO
 
                 string query = "DELETE \r\n" +
                     "FROM \r\n" +
-                    "   Orcamento \r\n" +
+                    "   orcamento \r\n" +
                     "WHERE \r\n" +
-                    "   Orcamento.id_Orcamento = @id_Orcamento";
+                    "   orcamento.id_orcamento = @id_orcamento";
 
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@id_Orcamento", Orcamento.IdOrcamento);
+                cmd.Parameters.AddWithValue("@id_orcamento", orcamento.IdOrcamento);
                 cmd.ExecuteNonQuery();
             }
         }

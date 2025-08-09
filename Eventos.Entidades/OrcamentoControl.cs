@@ -31,7 +31,7 @@ namespace Eventos.Control
 
         public void AddOrcamento(Orcamento orcamento)
         {
-            OrcamentoDAO.Add(Orcamento);
+            OrcamentoDAO.Add(orcamento);
         }
 
         public void UpdateOrcamento(Orcamento orcamento)

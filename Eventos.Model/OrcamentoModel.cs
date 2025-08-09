@@ -17,8 +17,7 @@ namespace Eventos.Model
         public string LocalEvento { get; set; }
         public DateTime DataEvento { get; set; }
         public string HoraEvento { get; set; }
-        public int IdTema { get; set; }
-        public string TemaNome { get; set; }
+        public string Tema { get; set; }
         public string Validade { get; set; }
     }
 }

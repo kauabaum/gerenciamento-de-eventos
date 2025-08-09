@@ -71,24 +71,24 @@
             // lbl_receber
             // 
             this.lbl_receber.AutoSize = true;
-            this.lbl_receber.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
+            this.lbl_receber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.lbl_receber.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lbl_receber.Location = new System.Drawing.Point(455, 446);
             this.lbl_receber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_receber.Name = "lbl_receber";
-            this.lbl_receber.Size = new System.Drawing.Size(223, 22);
+            this.lbl_receber.Size = new System.Drawing.Size(210, 24);
             this.lbl_receber.TabIndex = 10;
             this.lbl_receber.Text = "Recebimento Pendente";
             // 
             // lbl_Semana
             // 
             this.lbl_Semana.AutoSize = true;
-            this.lbl_Semana.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
+            this.lbl_Semana.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.lbl_Semana.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lbl_Semana.Location = new System.Drawing.Point(476, 92);
             this.lbl_Semana.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Semana.Name = "lbl_Semana";
-            this.lbl_Semana.Size = new System.Drawing.Size(188, 22);
+            this.lbl_Semana.Size = new System.Drawing.Size(178, 24);
             this.lbl_Semana.TabIndex = 9;
             this.lbl_Semana.Text = "Agenda da Semana";
             // 
@@ -132,54 +132,55 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1155, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1155, 26);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // cadastrosToolStripMenuItem
             // 
-            this.cadastrosToolStripMenuItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cadastrosToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(79, 21);
+            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(73, 22);
             this.cadastrosToolStripMenuItem.Text = "Clientes";
             this.cadastrosToolStripMenuItem.Click += new System.EventHandler(this.cadastrosToolStripMenuItem_Click);
             // 
             // produtosToolStripMenuItem2
             // 
-            this.produtosToolStripMenuItem2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
+            this.produtosToolStripMenuItem2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.produtosToolStripMenuItem2.Name = "produtosToolStripMenuItem2";
-            this.produtosToolStripMenuItem2.Size = new System.Drawing.Size(86, 21);
+            this.produtosToolStripMenuItem2.Size = new System.Drawing.Size(81, 22);
             this.produtosToolStripMenuItem2.Text = "Produtos";
             this.produtosToolStripMenuItem2.Click += new System.EventHandler(this.produtosToolStripMenuItem2_Click);
             // 
             // temasToolStripMenuItem
             // 
-            this.temasToolStripMenuItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.temasToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.temasToolStripMenuItem.Name = "temasToolStripMenuItem";
-            this.temasToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.temasToolStripMenuItem.Size = new System.Drawing.Size(66, 22);
             this.temasToolStripMenuItem.Text = "Temas";
             this.temasToolStripMenuItem.Click += new System.EventHandler(this.temasToolStripMenuItem_Click);
             // 
             // categoriasToolStripMenuItem
             // 
-            this.categoriasToolStripMenuItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categoriasToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(100, 21);
+            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.categoriasToolStripMenuItem.Text = "Categorias";
             this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.categoriasToolStripMenuItem_Click);
             // 
             // orcamentosToolStripMenuItem
             // 
-            this.orcamentosToolStripMenuItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orcamentosToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orcamentosToolStripMenuItem.Name = "orcamentosToolStripMenuItem";
-            this.orcamentosToolStripMenuItem.Size = new System.Drawing.Size(110, 21);
+            this.orcamentosToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.orcamentosToolStripMenuItem.Text = "Orçamentos";
+            this.orcamentosToolStripMenuItem.Click += new System.EventHandler(this.OrcamentoToolStripMenuItem_Click);
             // 
             // agendamentosToolStripMenuItem
             // 
-            this.agendamentosToolStripMenuItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.agendamentosToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.agendamentosToolStripMenuItem.Name = "agendamentosToolStripMenuItem";
-            this.agendamentosToolStripMenuItem.Size = new System.Drawing.Size(129, 21);
+            this.agendamentosToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.agendamentosToolStripMenuItem.Text = "Agendamentos";
             // 
             // ajudaToolStripMenuItem
@@ -191,60 +192,60 @@
             this.financeiroToolStripMenuItem1,
             this.clientesToolStripMenuItem1,
             this.produtosToolStripMenuItem});
-            this.ajudaToolStripMenuItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ajudaToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
-            this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(95, 21);
+            this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(88, 22);
             this.ajudaToolStripMenuItem.Text = "Relatórios";
             // 
             // orçamentosToolStripMenuItem1
             // 
             this.orçamentosToolStripMenuItem1.Name = "orçamentosToolStripMenuItem1";
-            this.orçamentosToolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
+            this.orçamentosToolStripMenuItem1.Size = new System.Drawing.Size(175, 22);
             this.orçamentosToolStripMenuItem1.Text = "Orçamentos";
             // 
             // agendamentosToolStripMenuItem1
             // 
             this.agendamentosToolStripMenuItem1.Name = "agendamentosToolStripMenuItem1";
-            this.agendamentosToolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
+            this.agendamentosToolStripMenuItem1.Size = new System.Drawing.Size(175, 22);
             this.agendamentosToolStripMenuItem1.Text = "Agendamentos";
             // 
             // contratosToolStripMenuItem
             // 
             this.contratosToolStripMenuItem.Name = "contratosToolStripMenuItem";
-            this.contratosToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.contratosToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.contratosToolStripMenuItem.Text = "Contratos";
             // 
             // financeiroToolStripMenuItem1
             // 
             this.financeiroToolStripMenuItem1.Name = "financeiroToolStripMenuItem1";
-            this.financeiroToolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
+            this.financeiroToolStripMenuItem1.Size = new System.Drawing.Size(175, 22);
             this.financeiroToolStripMenuItem1.Text = "Financeiro";
             // 
             // clientesToolStripMenuItem1
             // 
             this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
-            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(175, 22);
             this.clientesToolStripMenuItem1.Text = "Clientes";
             // 
             // produtosToolStripMenuItem
             // 
-            this.produtosToolStripMenuItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.produtosToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.produtosToolStripMenuItem.Text = "Produtos";
             // 
             // financeiroToolStripMenuItem
             // 
-            this.financeiroToolStripMenuItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.financeiroToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.financeiroToolStripMenuItem.Name = "financeiroToolStripMenuItem";
-            this.financeiroToolStripMenuItem.Size = new System.Drawing.Size(98, 21);
+            this.financeiroToolStripMenuItem.Size = new System.Drawing.Size(89, 22);
             this.financeiroToolStripMenuItem.Text = "Financeiro";
             // 
             // sairToolStripMenuItem
             // 
-            this.sairToolStripMenuItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F);
+            this.sairToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(50, 21);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(46, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -253,14 +254,14 @@
             this.ajudaToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sobreToolStripMenuItem});
             this.ajudaToolStripMenuItem1.Name = "ajudaToolStripMenuItem1";
-            this.ajudaToolStripMenuItem1.Size = new System.Drawing.Size(24, 21);
+            this.ajudaToolStripMenuItem1.Size = new System.Drawing.Size(24, 22);
             this.ajudaToolStripMenuItem1.Text = "?";
             // 
             // sobreToolStripMenuItem
             // 
-            this.sobreToolStripMenuItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sobreToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.sobreToolStripMenuItem.Text = "Sobre";
             // 
             // frmPrincipal
