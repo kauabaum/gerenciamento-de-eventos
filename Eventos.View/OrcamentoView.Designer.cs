@@ -41,12 +41,14 @@
             this.txtTipoOrcamento = new System.Windows.Forms.TextBox();
             this.txtTemaOrcamento = new System.Windows.Forms.TextBox();
             this.btnMostrarTodosProduto = new System.Windows.Forms.Button();
+            this.txtCliente = new System.Windows.Forms.TextBox();
             this.lblTipoOrcamento = new System.Windows.Forms.Label();
             this.lblTemaOrcamento = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
-            this.txtCliente = new System.Windows.Forms.TextBox();
             this.mskData = new System.Windows.Forms.MaskedTextBox();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +92,7 @@
             // 
             this.btnPesquisarOrcamento.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPesquisarOrcamento.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisarOrcamento.Image")));
-            this.btnPesquisarOrcamento.Location = new System.Drawing.Point(191, 12);
+            this.btnPesquisarOrcamento.Location = new System.Drawing.Point(191, 11);
             this.btnPesquisarOrcamento.Name = "btnPesquisarOrcamento";
             this.btnPesquisarOrcamento.Size = new System.Drawing.Size(83, 78);
             this.btnPesquisarOrcamento.TabIndex = 8;
@@ -102,7 +104,7 @@
             // 
             this.btnSairOrcamento.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSairOrcamento.Image = ((System.Drawing.Image)(resources.GetObject("btnSairOrcamento.Image")));
-            this.btnSairOrcamento.Location = new System.Drawing.Point(280, 12);
+            this.btnSairOrcamento.Location = new System.Drawing.Point(369, 11);
             this.btnSairOrcamento.Name = "btnSairOrcamento";
             this.btnSairOrcamento.Size = new System.Drawing.Size(83, 78);
             this.btnSairOrcamento.TabIndex = 9;
@@ -156,13 +158,22 @@
             // 
             this.btnMostrarTodosProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMostrarTodosProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnMostrarTodosProduto.Image")));
-            this.btnMostrarTodosProduto.Location = new System.Drawing.Point(369, 12);
+            this.btnMostrarTodosProduto.Location = new System.Drawing.Point(280, 11);
             this.btnMostrarTodosProduto.Name = "btnMostrarTodosProduto";
             this.btnMostrarTodosProduto.Size = new System.Drawing.Size(83, 78);
             this.btnMostrarTodosProduto.TabIndex = 22;
             this.toolTip1.SetToolTip(this.btnMostrarTodosProduto, "Mostrar Todos");
             this.btnMostrarTodosProduto.UseVisualStyleBackColor = true;
             this.btnMostrarTodosProduto.Click += new System.EventHandler(this.btnMostrarTodos_Click);
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCliente.Location = new System.Drawing.Point(108, 108);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(218, 30);
+            this.txtCliente.TabIndex = 25;
+            this.toolTip1.SetToolTip(this.txtCliente, "Digite aqui o E-mail");
             // 
             // lblTipoOrcamento
             // 
@@ -198,36 +209,54 @@
             // 
             this.lblData.AutoSize = true;
             this.lblData.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.Location = new System.Drawing.Point(563, 113);
+            this.lblData.Location = new System.Drawing.Point(587, 109);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(69, 25);
             this.lblData.TabIndex = 24;
             this.lblData.Text = "Data :";
             // 
-            // txtCliente
-            // 
-            this.txtCliente.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCliente.Location = new System.Drawing.Point(108, 108);
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(430, 30);
-            this.txtCliente.TabIndex = 25;
-            this.toolTip1.SetToolTip(this.txtCliente, "Digite aqui o E-mail");
-            // 
             // mskData
             // 
             this.mskData.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskData.Location = new System.Drawing.Point(654, 105);
+            this.mskData.Location = new System.Drawing.Point(662, 101);
             this.mskData.Mask = "00/00/0000";
             this.mskData.Name = "mskData";
-            this.mskData.Size = new System.Drawing.Size(153, 38);
+            this.mskData.Size = new System.Drawing.Size(145, 38);
             this.mskData.TabIndex = 26;
             this.mskData.ValidatingType = typeof(System.DateTime);
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Location = new System.Drawing.Point(332, 109);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(84, 25);
+            this.lblStatus.TabIndex = 27;
+            this.lblStatus.Text = "Status :";
+            // 
+            // cmbStatus
+            // 
+            this.cmbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "Aguardando",
+            "Aprovado",
+            "Reprovado",
+            "Vencido",
+            "Cancelado"});
+            this.cmbStatus.Location = new System.Drawing.Point(422, 106);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(159, 32);
+            this.cmbStatus.TabIndex = 28;
             // 
             // frmOrcamentoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 497);
+            this.Controls.Add(this.cmbStatus);
+            this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.mskData);
             this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.lblData);
@@ -273,5 +302,7 @@
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.MaskedTextBox mskData;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.ComboBox cmbStatus;
     }
 }

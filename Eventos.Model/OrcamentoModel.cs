@@ -11,9 +11,19 @@ namespace Eventos.Model
     {
         public int IdOrcamento { get; set; }
         public string TipoEvento { get; set; }
+        public string NomeCliente { get; set; }
         public double Total { get; set; }
         public DateTime DataEmissao { get; set; }
-        public string Aprovacao { get; set; }
+        public enum StatusAprovacao
+        {
+            Aprovado,
+            Aguardando,
+            Vencido,
+            Reprovado,
+            Cancelado
+        }
+        public StatusAprovacao Aprovacao { get; set; }
+
         public string LocalEvento { get; set; }
         public DateTime DataEvento { get; set; }
         public string HoraEvento { get; set; }

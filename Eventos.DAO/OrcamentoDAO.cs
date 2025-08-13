@@ -1,14 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Eventos.Model;
+using Microsoft.EntityFrameworkCore;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Eventos.Model;
 using System.Runtime.ConstrainedExecution;
 using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+using static Eventos.Model.Orcamento;
 
 // CONTINUAR CORRIGINDO AQUI!!!!
 namespace Eventos.DAO
@@ -27,6 +28,7 @@ namespace Eventos.DAO
                 conn.Open();
 
                 string query = "SELECT orcamento.id_orcamento AS Id_Orcamento, \r\n" +
+                "   orcamento.nome_cliente AS Nome_Cliente, \r\n" +
                 "   orcamento.tipo_evento AS Tipo_Evento, \r\n" +
                 "   orcamento.total AS Total, \r\n" +
                 "   orcamento.data_emissao AS Data_Emissao, \r\n" +
@@ -57,6 +59,7 @@ namespace Eventos.DAO
         {
 
             string query = "SELECT orcamento.id_orcamento AS Id_Orcamento, \r\n" +
+                "   orcamento.nome_cliente AS Nome_Cliente, \r\n" +
                 "   orcamento.tipo_evento AS Tipo_Evento, \r\n" +
                 "   orcamento.total AS Total, \r\n" +
                 "   orcamento.data_emissao AS Data_Emissao, \r\n" +
@@ -87,10 +90,46 @@ namespace Eventos.DAO
                 return dataTable;
             }
         }
+        public DataTable GetOrcamentoAsDataTableCliente(string nome_cliente)
+        {
+
+            string query = "SELECT orcamento.id_orcamento AS Id_Orcamento, \r\n" +
+                "   orcamento.nome_cliente AS Nome_Cliente, \r\n" +
+                "   orcamento.tipo_evento AS Tipo_Evento, \r\n" +
+                "   orcamento.total AS Total, \r\n" +
+                "   orcamento.data_emissao AS Data_Emissao, \r\n" +
+                "   orcamento.aprovacao AS Aprovacao, \r\n" +
+                "   orcamento.local_evento AS Local_Evento, \r\n" +
+                "   orcamento.data_evento AS Data_Evento, \r\n" +
+                "   orcamento.hora_evento AS Hora_Evento, \r\n" +
+                "   orcamento.validade AS Validade, \r\n" +
+                "   orcamento.tema AS Tema \r\n" +
+                "FROM \r\n" +
+                "   orcamento \r\n" +
+                "WHERE \r\n" +
+                "    orcamento.nome_cliente LIKE CONCAT('%',@nome_cliente,'%') \r\n" +
+                "ORDER BY \r\n" +
+                "   orcamento.nome_cliente \r\n";
+
+
+            using (MySqlConnection conn = dbContext.GetConnection())
+            {
+                conn.Open();
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@nome_cliente", nome_cliente);
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+        }
         public DataTable GetOrcamentoAsDataTableTema(string tema_evento)
         {
 
             string query = "SELECT orcamento.id_orcamento AS Id_Orcamento, \r\n" +
+                "   orcamento.nome_cliente AS Nome_Cliente, \r\n" +
                 "   orcamento.tipo_evento AS Tipo_Evento, \r\n" +
                 "   orcamento.total AS Total, \r\n" +
                 "   orcamento.data_emissao AS Data_Emissao, \r\n" +
@@ -125,6 +164,7 @@ namespace Eventos.DAO
         {
 
             string query = "SELECT orcamento.id_orcamento AS Id_Orcamento, \r\n" +
+                "   orcamento.nome_cliente AS Nome_Cliente, \r\n" +
                 "   orcamento.tipo_evento AS Tipo_Evento, \r\n" +
                 "   orcamento.total AS Total, \r\n" +
                 "   orcamento.data_emissao AS Data_Emissao, \r\n" +
@@ -155,7 +195,41 @@ namespace Eventos.DAO
                 return dataTable;
             }
         }
+        public DataTable GetOrcamentoAsDataTableStatus(string status)
+        {
 
+            string query = "SELECT orcamento.id_orcamento AS Id_Orcamento, \r\n" +
+                "   orcamento.nome_cliente AS Nome_Cliente, \r\n" +
+                "   orcamento.tipo_evento AS Tipo_Evento, \r\n" +
+                "   orcamento.total AS Total, \r\n" +
+                "   orcamento.data_emissao AS Data_Emissao, \r\n" +
+                "   orcamento.aprovacao AS Aprovacao, \r\n" +
+                "   orcamento.local_evento AS Local_Evento, \r\n" +
+                "   orcamento.data_evento AS Data_Evento, \r\n" +
+                "   orcamento.hora_evento AS Hora_Evento, \r\n" +
+                "   orcamento.validade AS Validade, \r\n" +
+                "   orcamento.tema AS Tema \r\n" +
+                "FROM \r\n" +
+                "   orcamento \r\n" +
+                "WHERE \r\n" +
+                "    orcamento.aprovacao LIKE CONCAT('%',@aprovacao,'%') \r\n" +
+                "ORDER BY \r\n" +
+                "   orcamento.aprovacao \r\n";
+
+
+            using (MySqlConnection conn = dbContext.GetConnection())
+            {
+                conn.Open();
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@aprovacao", status);
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+        }
         // Carregar dados da Pesquisa pelo nome do cliente TALVEZ AQUI
         public Orcamento GetByOrcamento(string Tipo_evento)
         {
@@ -167,6 +241,7 @@ namespace Eventos.DAO
 
 
                 string query = "SELECT orcamento.id_orcamento AS Id_Orcamento, \r\n" +
+                "   orcamento.nome_cliente AS Nome_Cliente, \r\n" +
                 "   orcamento.tipo_evento AS Tipo_Evento, \r\n" +
                 "   orcamento.total AS Total, \r\n" +
                 "   orcamento.data_emissao AS Data_Emissao, \r\n" +
@@ -197,7 +272,60 @@ namespace Eventos.DAO
                             TipoEvento = reader.GetString("Tipo_Evento"),
                             Total = reader.GetDouble("Total"),
                             DataEmissao = reader.GetDateTime("Data_Emissao"),
-                            Aprovacao = reader.GetString("Aprovacao"),
+                            Aprovacao = (StatusAprovacao)Enum.Parse(typeof(StatusAprovacao), reader["Aprovacao"].ToString()),
+                            LocalEvento = reader.GetString("Local_Evento"),
+                            DataEvento = reader.GetDateTime("Data_Evento"),
+                            HoraEvento = reader.GetString("Hora_Evento"),
+                            Tema = reader.GetString("Tema"),
+                            Validade = reader.GetString("Validade")
+                        };
+                    }
+                }
+            }
+            return orcamento;
+        }
+        public Orcamento GetByOrcamentoCliente(string Nome_cliente)
+        {
+            Orcamento orcamento = null;
+
+            using (MySqlConnection conn = dbContext.GetConnection())
+            {
+                conn.Open();
+
+
+                string query = "SELECT orcamento.id_orcamento AS Id_Orcamento, \r\n" +
+                "   orcamento.nome_cliente AS Nome_Cliente, \r\n" +
+                "   orcamento.tipo_evento AS Tipo_Evento, \r\n" +
+                "   orcamento.total AS Total, \r\n" +
+                "   orcamento.data_emissao AS Data_Emissao, \r\n" +
+                "   orcamento.aprovacao AS Aprovacao, \r\n" +
+                "   orcamento.local_evento AS Local_Evento, \r\n" +
+                "   orcamento.data_evento AS Data_Evento, \r\n" +
+                "   orcamento.hora_evento AS Hora_Evento, \r\n" +
+                "   orcamento.validade AS Validade, \r\n" +
+                "   orcamento.tema AS Tema \r\n" +
+                    "FROM \r\n" +
+                    "   orcamento \r\n" +
+                    "WHERE \r\n" +
+                    "   nome_cliente \r\n" +
+                    "LIKE CONCAT('%',@nome_cliente,'%') \r\n" +
+                    "ORDER BY \r\n" +
+                    "   orcamento.nome_cliente \r\n";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@nome_cliente", Nome_cliente);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        orcamento = new Orcamento()
+                        {
+                            IdOrcamento = reader.GetInt32("Id_Orcamento"),
+                            TipoEvento = reader.GetString("Tipo_Evento"),
+                            Total = reader.GetDouble("Total"),
+                            DataEmissao = reader.GetDateTime("Data_Emissao"),
+                            Aprovacao = (StatusAprovacao)Enum.Parse(typeof(StatusAprovacao), reader["Aprovacao"].ToString()),
                             LocalEvento = reader.GetString("Local_Evento"),
                             DataEvento = reader.GetDateTime("Data_Evento"),
                             HoraEvento = reader.GetString("Hora_Evento"),
@@ -219,6 +347,7 @@ namespace Eventos.DAO
 
 
                 string query = "SELECT orcamento.id_orcamento AS Id_Orcamento, \r\n" +
+                "   orcamento.nome_cliente AS Nome_Cliente, \r\n" +
                 "   orcamento.tipo_evento AS Tipo_Evento, \r\n" +
                 "   orcamento.total AS Total, \r\n" +
                 "   orcamento.data_emissao AS Data_Emissao, \r\n" +
@@ -247,9 +376,10 @@ namespace Eventos.DAO
                         {
                             IdOrcamento = reader.GetInt32("Id_Orcamento"),
                             TipoEvento = reader.GetString("Tipo_Evento"),
+                            NomeCliente = reader.GetString("Nome_Cliente"),
                             Total = reader.GetDouble("Total"),
                             DataEmissao = reader.GetDateTime("Data_Emissao"),
-                            Aprovacao = reader.GetString("Aprovacao"),
+                            Aprovacao = (StatusAprovacao)Enum.Parse(typeof(StatusAprovacao), reader["Aprovacao"].ToString()),
                             LocalEvento = reader.GetString("Local_Evento"),
                             DataEvento = reader.GetDateTime("Data_Evento"),
                             HoraEvento = reader.GetString("Hora_Evento"),
@@ -271,6 +401,7 @@ namespace Eventos.DAO
 
 
                 string query = "SELECT orcamento.id_orcamento AS Id_Orcamento, \r\n" +
+                "   orcamento.nome_cliente AS Nome_Cliente, \r\n" +
                 "   orcamento.tipo_evento AS Tipo_Evento, \r\n" +
                 "   orcamento.total AS Total, \r\n" +
                 "   orcamento.data_emissao AS Data_Emissao, \r\n" +
@@ -301,7 +432,61 @@ namespace Eventos.DAO
                             TipoEvento = reader.GetString("Tipo_Evento"),
                             Total = reader.GetDouble("Total"),
                             DataEmissao = reader.GetDateTime("Data_Emissao"),
-                            Aprovacao = reader.GetString("Aprovacao"),
+                            Aprovacao = (StatusAprovacao)Enum.Parse(typeof(StatusAprovacao), reader["Aprovacao"].ToString()),
+                            LocalEvento = reader.GetString("Local_Evento"),
+                            DataEvento = reader.GetDateTime("Data_Evento"),
+                            HoraEvento = reader.GetString("Hora_Evento"),
+                            Tema = reader.GetString("Tema"),
+                            Validade = reader.GetString("Validade")
+                        };
+                    }
+                }
+            }
+            return orcamento;
+        }
+        public Orcamento GetByOrcamentoStatus(string Status)
+        {
+            Orcamento orcamento = null;
+
+            using (MySqlConnection conn = dbContext.GetConnection())
+            {
+                conn.Open();
+
+
+                string query = "SELECT orcamento.id_orcamento AS Id_Orcamento, \r\n" +
+                "   orcamento.tipo_evento AS Tipo_Evento, \r\n" +
+                "   orcamento.nome_cliente AS Nome_Cliente, \r\n" +
+                "   orcamento.total AS Total, \r\n" +
+                "   orcamento.data_emissao AS Data_Emissao, \r\n" +
+                "   orcamento.aprovacao AS Aprovacao, \r\n" +
+                "   orcamento.local_evento AS Local_Evento, \r\n" +
+                "   orcamento.data_evento AS Data_Evento, \r\n" +
+                "   orcamento.hora_evento AS Hora_Evento, \r\n" +
+                "   orcamento.validade AS Validade, \r\n" +
+                "   orcamento.tema AS Tema \r\n" +
+                    "FROM \r\n" +
+                    "   orcamento \r\n" +
+                    "WHERE \r\n" +
+                    "   aprovacao \r\n" +
+                    "LIKE CONCAT('%',@aprovacao,'%') \r\n" +
+                    "ORDER BY \r\n" +
+                    "   orcamento.aprovacao \r\n";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@aprovacao", Status);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        orcamento = new Orcamento()
+                        {
+                            IdOrcamento = reader.GetInt32("Id_Orcamento"),
+                            TipoEvento = reader.GetString("Tipo_Evento"),
+                            NomeCliente = reader.GetString("Nome_Cliente"),
+                            Total = reader.GetDouble("Total"),
+                            DataEmissao = reader.GetDateTime("Data_Emissao"),
+                            Aprovacao = (StatusAprovacao)Enum.Parse(typeof(StatusAprovacao), reader["Aprovacao"].ToString()),
                             LocalEvento = reader.GetString("Local_Evento"),
                             DataEvento = reader.GetDateTime("Data_Evento"),
                             HoraEvento = reader.GetString("Hora_Evento"),
@@ -324,15 +509,16 @@ namespace Eventos.DAO
                 // Insere na tabela cliente
                 string query = "INSERT INTO \r\n" +
                     "orcamento \r\n" +
-                        "(tipo_evento, total, data_emissao, aprovacao, local_evento, data_evento, \r\n" +
+                        "(tipo_evento, total, nome_cliente, data_emissao, aprovacao, local_evento, data_evento, \r\n" +
                         " hora_evento, tema, validade) \r\n" +
                     "VALUES \r\n" +
-                        "(@tipo_evento, @total, @data_emissao, @aprovacao, @local_evento, @data_evento, \r\n" +
+                        "(@tipo_evento, @total, @nome_cliente, @data_emissao, @aprovacao, @local_evento, @data_evento, \r\n" +
                         " @hora_evento, @tema_evento, @validade);";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@tipo_evento", orcamento.TipoEvento);
                 cmd.Parameters.AddWithValue("@total", orcamento.Total);
+                cmd.Parameters.AddWithValue("@nome_cliente", orcamento.NomeCliente);
                 cmd.Parameters.AddWithValue("@data_emissao", orcamento.DataEmissao);
                 cmd.Parameters.AddWithValue("@aprovacao", orcamento.Aprovacao);
                 cmd.Parameters.AddWithValue("@local_evento", orcamento.LocalEvento);
@@ -356,6 +542,7 @@ namespace Eventos.DAO
                     "SET \r\n" +
                     "   orcamento.tipo_evento = @tipo_evento, \r\n" +
                     "   orcamento.total = @total, \r\n" +
+                    "   orcamento.nome_cliente = @nome_cliente, \r\n" +
                     "   orcamento.data_emissao = @data_emissao, \r\n" +
                     "   orcamento.aprovacao = @aprovacao, \r\n" +
                     "   orcamento.local_evento = @local_evento, \r\n" +
@@ -369,6 +556,7 @@ namespace Eventos.DAO
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@id_orcamento", orcamento.IdOrcamento);
                 cmd.Parameters.AddWithValue("@tipo_evento", orcamento.TipoEvento);
+                cmd.Parameters.AddWithValue("@nome_cliente", orcamento.NomeCliente);
                 cmd.Parameters.AddWithValue("@total", orcamento.Total);
                 cmd.Parameters.AddWithValue("@data_emissao", orcamento.DataEmissao);
                 cmd.Parameters.AddWithValue("@aprovacao", orcamento.Aprovacao);

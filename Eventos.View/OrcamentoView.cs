@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Eventos.Control;
+using Eventos.DAO;
+using Eventos.Model;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -12,10 +16,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Eventos.Control;
-using Eventos.DAO;
-using Eventos.Model;
-using MySql.Data.MySqlClient;
+using static Eventos.Model.Orcamento;
 
 namespace Eventos.View
 {
@@ -30,6 +31,8 @@ namespace Eventos.View
             txtTemaOrcamento.Enabled = false;
             txtCliente.Enabled = false;
             mskData.Enabled = false;
+            cmbStatus.Enabled = false;
+            cmbStatus.ResetText();
             txtTipoOrcamento.ResetText();
             txtCliente.ResetText();
             mskData.ResetText();
@@ -48,6 +51,8 @@ namespace Eventos.View
             txtTemaOrcamento.Enabled = true;
             txtCliente.Enabled = true;
             mskData.Enabled = true;
+            cmbStatus.Enabled = true;
+            cmbStatus.ResetText();
             txtTipoOrcamento.ResetText();
             txtCliente.ResetText();
             mskData.ResetText();
@@ -61,6 +66,8 @@ namespace Eventos.View
                 string tipo_evento = txtTipoOrcamento.Text;
                 string tema_evento = txtTemaOrcamento.Text;
                 string data_evento = mskData.Text;
+                string status = cmbStatus.Text;
+                string nome_cliente = txtCliente.Text;
 
                 if (string.IsNullOrEmpty(tipo_evento) && string.IsNullOrEmpty(tema_evento) && string.IsNullOrEmpty(data_evento))
                 {
@@ -79,13 +86,69 @@ namespace Eventos.View
                         txtTemaOrcamento.Enabled = false;
                         txtCliente.Enabled = false;
                         mskData.Enabled = false;
+                        cmbStatus.Enabled = false;
+                        cmbStatus.ResetText();
                         txtTipoOrcamento.ResetText();
                         txtCliente.ResetText();
                         mskData.ResetText();
                         txtTemaOrcamento.ResetText();
                         return;
                     }
+                    else
+                    {
+                        MessageBox.Show("Orçamento não encontrado.");
+                    }
                 }
+                if (!string.IsNullOrEmpty(nome_cliente))
+                {
+                    var orcamentocliente = orcamentoDAO.GetByOrcamentoCliente(nome_cliente);
+                    if (orcamentocliente != null)
+                    {
+                        DataTable dataTable = orcamentoDAO.GetOrcamentoAsDataTableCliente(nome_cliente);
+                        dataGridView1.DataSource = dataTable;
+                        txtTipoOrcamento.Enabled = false;
+                        txtTemaOrcamento.Enabled = false;
+                        txtCliente.Enabled = false;
+                        mskData.Enabled = false;
+                        cmbStatus.Enabled = false;
+                        cmbStatus.ResetText();
+                        txtTipoOrcamento.ResetText();
+                        txtCliente.ResetText();
+                        mskData.ResetText();
+                        txtTemaOrcamento.ResetText();
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Orçamento não encontrado.");
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(status))
+                {
+                    var orcamentostatus = orcamentoDAO.GetByOrcamentoStatus(status);
+                    if (orcamentostatus != null)
+                    {
+                        DataTable dataTable = orcamentoDAO.GetOrcamentoAsDataTableStatus(status);
+                        dataGridView1.DataSource = dataTable;
+                        txtTipoOrcamento.Enabled = false;
+                        txtTemaOrcamento.Enabled = false;
+                        txtCliente.Enabled = false;
+                        mskData.Enabled = false;
+                        cmbStatus.Enabled = false;
+                        cmbStatus.ResetText();
+                        txtTipoOrcamento.ResetText();
+                        txtCliente.ResetText();
+                        mskData.ResetText();
+                        txtTemaOrcamento.ResetText();
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Orçamento não encontrado.");
+                    }
+                }
+
 
                 if (!string.IsNullOrEmpty(tema_evento))
                 {
@@ -98,11 +161,17 @@ namespace Eventos.View
                         txtTemaOrcamento.Enabled = false;
                         txtCliente.Enabled = false;
                         mskData.Enabled = false;
+                        cmbStatus.Enabled = false;
+                        cmbStatus.ResetText();
                         txtTipoOrcamento.ResetText();
                         txtCliente.ResetText();
                         mskData.ResetText();
                         txtTemaOrcamento.ResetText();
                         return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Orçamento não encontrado.");
                     }
                 }
                 if (!string.IsNullOrEmpty(data_evento))
@@ -130,12 +199,12 @@ namespace Eventos.View
                             txtTemaOrcamento.ResetText();
                             return;
                         }
+                        else
+                        {
+                            MessageBox.Show("Orçamento não encontrado.");
+                        }
 
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Orçamento não encontrado.");
                 }
 
 
@@ -195,6 +264,5 @@ namespace Eventos.View
             CarregarDados();
 
         }
-
     }
 }
