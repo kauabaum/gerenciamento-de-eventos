@@ -173,8 +173,20 @@ INSERT INTO produto (descricao,tamanho,quantidade,custo,valor,id_categoria,id_te
 
   -- Tabela orcamento
 
-INSERT INTO orcamento (data_emissao,data_evento,hora_evento,total,local_evento,tipo_evento,tema,validade,aprovacao)
-  VALUES ("2025-05-20","2025-10-24","15:00","200.00","Rancho do Lago","Aniversário","Stitch","15 dias","sim");
+INSERT INTO orcamento (data_emissao,nome_cliente,data_evento,hora_evento,total,local_evento,tipo_evento,tema,validade,aprovacao)
+  VALUES ("2022-06-21","Pedro","2022-10-24","13:00","500.00","Rancho do Lago","Formatura","Medicina","10 dias","vencido");
+
+INSERT INTO orcamento (data_emissao,nome_cliente,data_evento,hora_evento,total,local_evento,tipo_evento,tema,validade,aprovacao)
+  VALUES ("2023-02-19","José","2024-01-22","14:30","200.00","Petrolifera","Conferência","Petroleo","15 dias","reprovado");
+
+INSERT INTO orcamento (data_emissao,nome_cliente,data_evento,hora_evento,total,local_evento,tipo_evento,tema,validade,aprovacao)
+  VALUES ("2025-01-13","Caue","2025-5-28","15:00","400.00","Panificadora São Pedro","Festa de 15 anos","Barbie","25 dias","cancelado");
+
+INSERT INTO orcamento (data_emissao,nome_cliente,data_evento,hora_evento,total,local_evento,tipo_evento,tema,validade,aprovacao)
+  VALUES ("2024-02-02","Jeferson","2024-05-20","17:30","100.00","Italiano","Casamento","Sorvete","30 dias","aprovado");
+
+INSERT INTO orcamento (data_emissao,nome_cliente,data_evento,hora_evento,total,local_evento,tipo_evento,tema,validade,aprovacao)
+  VALUES ("2025-02-13","Kaike","2025-05-25","18:10","300.00","Lopes","Aniversário","Stitch","40 dias","aguardando");
 
 
    -- Tabela itens_orcamento
