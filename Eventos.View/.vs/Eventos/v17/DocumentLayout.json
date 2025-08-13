@@ -3,26 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\lucas\\source\\repos\\projeto-eventos\\Eventos.View\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|c:\\users\\lucas\\source\\repos\\projeto-eventos\\eventos.view\\adicionarorcamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:adicionarorcamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|c:\\users\\lucas\\source\\repos\\projeto-eventos\\eventos.view\\adicionarorcamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:adicionarorcamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|c:\\users\\lucas\\source\\repos\\projeto-eventos\\eventos.view\\orcamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:orcamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|c:\\users\\lucas\\source\\repos\\projeto-eventos\\eventos.view\\produtoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:produtoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|c:\\users\\lucas\\source\\repos\\projeto-eventos\\eventos.view\\produtoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:produtoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8E4CCAC2-272D-4989-A1AA-AE50B5170DCB}|..\\Eventos.Model\\Eventos.Model.csproj|c:\\users\\lucas\\source\\repos\\projeto-eventos\\eventos.model\\orcamentomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC46E01A-EED6-41C9-998F-B241DBA9A772}|..\\Eventos.DAO\\Eventos.DAO.csproj|c:\\users\\lucas\\source\\repos\\projeto-eventos\\eventos.dao\\orcamentodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -51,8 +37,24 @@
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "OrcamentoView.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\lucas\\source\\repos\\projeto-eventos\\Eventos.View\\OrcamentoView.cs",
+              "RelativeDocumentMoniker": "OrcamentoView.cs",
+              "ToolTip": "C:\\Users\\lucas\\source\\repos\\projeto-eventos\\Eventos.View\\OrcamentoView.cs [Design]",
+              "RelativeToolTip": "OrcamentoView.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-13T22:54:58.383Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ProdutoView.cs",
               "DocumentMoniker": "C:\\Users\\lucas\\source\\repos\\projeto-eventos\\Eventos.View\\ProdutoView.cs",
               "RelativeDocumentMoniker": "ProdutoView.cs",
@@ -62,69 +64,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-13T22:51:54.43Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProdutoView.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\lucas\\source\\repos\\projeto-eventos\\Eventos.View\\ProdutoView.cs",
-              "RelativeDocumentMoniker": "ProdutoView.cs",
-              "ToolTip": "C:\\Users\\lucas\\source\\repos\\projeto-eventos\\Eventos.View\\ProdutoView.cs [Design]",
-              "RelativeToolTip": "ProdutoView.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T22:51:25.115Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "OrcamentoModel.cs",
-              "DocumentMoniker": "C:\\Users\\lucas\\source\\repos\\projeto-eventos\\Eventos.Model\\OrcamentoModel.cs",
-              "RelativeDocumentMoniker": "..\\Eventos.Model\\OrcamentoModel.cs",
-              "ToolTip": "C:\\Users\\lucas\\source\\repos\\projeto-eventos\\Eventos.Model\\OrcamentoModel.cs",
-              "RelativeToolTip": "..\\Eventos.Model\\OrcamentoModel.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAIA0wB0AAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T21:06:38.572Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "OrcamentoDAO.cs",
-              "DocumentMoniker": "C:\\Users\\lucas\\source\\repos\\projeto-eventos\\Eventos.DAO\\OrcamentoDAO.cs",
-              "RelativeDocumentMoniker": "..\\Eventos.DAO\\OrcamentoDAO.cs",
-              "ToolTip": "C:\\Users\\lucas\\source\\repos\\projeto-eventos\\Eventos.DAO\\OrcamentoDAO.cs",
-              "RelativeToolTip": "..\\Eventos.DAO\\OrcamentoDAO.cs",
-              "ViewState": "AgIAABoCAAAAAAAAAAAqwDECAABaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T20:55:59.33Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AdicionarOrcamentoView.cs",
-              "DocumentMoniker": "C:\\Users\\lucas\\source\\repos\\projeto-eventos\\Eventos.View\\AdicionarOrcamentoView.cs",
-              "RelativeDocumentMoniker": "AdicionarOrcamentoView.cs",
-              "ToolTip": "C:\\Users\\lucas\\source\\repos\\projeto-eventos\\Eventos.View\\AdicionarOrcamentoView.cs*",
-              "RelativeToolTip": "AdicionarOrcamentoView.cs*",
-              "ViewState": "AgIAAHsBAAAAAAAAAAAiwG8BAABiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T20:30:50.472Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AdicionarOrcamentoView.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\lucas\\source\\repos\\projeto-eventos\\Eventos.View\\AdicionarOrcamentoView.cs",
-              "RelativeDocumentMoniker": "AdicionarOrcamentoView.cs",
-              "ToolTip": "C:\\Users\\lucas\\source\\repos\\projeto-eventos\\Eventos.View\\AdicionarOrcamentoView.cs [Design]*",
-              "RelativeToolTip": "AdicionarOrcamentoView.cs [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T21:22:26.785Z",
-              "EditorCaption": " [Design]"
             }
           ]
         }
