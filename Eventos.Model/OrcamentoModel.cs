@@ -23,7 +23,6 @@ namespace Eventos.Model
             Cancelado
         }
         public StatusAprovacao Aprovacao { get; set; }
-
         public string LocalEvento { get; set; }
         public DateTime DataEvento { get; set; }
         public string HoraEvento { get; set; }

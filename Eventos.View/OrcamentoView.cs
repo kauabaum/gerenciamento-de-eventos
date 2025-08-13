@@ -41,8 +41,8 @@ namespace Eventos.View
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            //frmCategoriaView add = new frmCategoriaView();
-            //add.ShowDialog();
+            frmAdicionarOrcamentoView add = new frmAdicionarOrcamentoView();
+            add.ShowDialog();
         }
 
         private void btnLocalizar_Click(object sender, EventArgs e)

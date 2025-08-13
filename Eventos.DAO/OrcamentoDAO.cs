@@ -520,7 +520,7 @@ namespace Eventos.DAO
                 cmd.Parameters.AddWithValue("@total", orcamento.Total);
                 cmd.Parameters.AddWithValue("@nome_cliente", orcamento.NomeCliente);
                 cmd.Parameters.AddWithValue("@data_emissao", orcamento.DataEmissao);
-                cmd.Parameters.AddWithValue("@aprovacao", orcamento.Aprovacao);
+                cmd.Parameters.AddWithValue("@aprovacao", orcamento.Aprovacao.ToString());
                 cmd.Parameters.AddWithValue("@local_evento", orcamento.LocalEvento);
                 cmd.Parameters.AddWithValue("@data_evento", orcamento.DataEvento);
                 cmd.Parameters.AddWithValue("@hora_evento", orcamento.HoraEvento);
@@ -548,7 +548,7 @@ namespace Eventos.DAO
                     "   orcamento.local_evento = @local_evento, \r\n" +
                     "   orcamento.data_evento = @data_evento, \r\n" +
                     "   orcamento.hora_evento = @hora_evento, \r\n" +
-                    "   orcamento.tema = @tema_evento \r\n" +
+                    "   orcamento.tema = @tema_evento, \r\n" +
                     "   orcamento.validade = @validade \r\n" +
                     "WHERE \r\n" +
                     "   orcamento.id_orcamento = @id_orcamento\r\n";
@@ -559,7 +559,7 @@ namespace Eventos.DAO
                 cmd.Parameters.AddWithValue("@nome_cliente", orcamento.NomeCliente);
                 cmd.Parameters.AddWithValue("@total", orcamento.Total);
                 cmd.Parameters.AddWithValue("@data_emissao", orcamento.DataEmissao);
-                cmd.Parameters.AddWithValue("@aprovacao", orcamento.Aprovacao);
+                cmd.Parameters.AddWithValue("@aprovacao", orcamento.Aprovacao.ToString());
                 cmd.Parameters.AddWithValue("@local_evento", orcamento.LocalEvento);
                 cmd.Parameters.AddWithValue("@data_evento", orcamento.DataEvento);
                 cmd.Parameters.AddWithValue("@hora_evento", orcamento.HoraEvento);
