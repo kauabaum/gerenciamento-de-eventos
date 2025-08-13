@@ -121,6 +121,40 @@ namespace Eventos.DAO
                 return dataTable;
             }
         }
+        public DataTable GetOrcamentoAsDataTableData(string data_evento)
+        {
+
+            string query = "SELECT orcamento.id_orcamento AS Id_Orcamento, \r\n" +
+                "   orcamento.tipo_evento AS Tipo_Evento, \r\n" +
+                "   orcamento.total AS Total, \r\n" +
+                "   orcamento.data_emissao AS Data_Emissao, \r\n" +
+                "   orcamento.aprovacao AS Aprovacao, \r\n" +
+                "   orcamento.local_evento AS Local_Evento, \r\n" +
+                "   orcamento.data_evento AS Data_Evento, \r\n" +
+                "   orcamento.hora_evento AS Hora_Evento, \r\n" +
+                "   orcamento.validade AS Validade, \r\n" +
+                "   orcamento.tema AS Tema \r\n" +
+                "FROM \r\n" +
+                "   orcamento \r\n" +
+                "WHERE \r\n" +
+                "    orcamento.data_evento LIKE CONCAT('%',@data_evento,'%') \r\n" +
+                "ORDER BY \r\n" +
+                "   orcamento.data_evento \r\n";
+
+
+            using (MySqlConnection conn = dbContext.GetConnection())
+            {
+                conn.Open();
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@data_evento", data_evento);
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+        }
 
         // Carregar dados da Pesquisa pelo nome do cliente TALVEZ AQUI
         public Orcamento GetByOrcamento(string Tipo_evento)
@@ -204,6 +238,58 @@ namespace Eventos.DAO
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@tema_evento", Tema_evento);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        orcamento = new Orcamento()
+                        {
+                            IdOrcamento = reader.GetInt32("Id_Orcamento"),
+                            TipoEvento = reader.GetString("Tipo_Evento"),
+                            Total = reader.GetDouble("Total"),
+                            DataEmissao = reader.GetDateTime("Data_Emissao"),
+                            Aprovacao = reader.GetString("Aprovacao"),
+                            LocalEvento = reader.GetString("Local_Evento"),
+                            DataEvento = reader.GetDateTime("Data_Evento"),
+                            HoraEvento = reader.GetString("Hora_Evento"),
+                            Tema = reader.GetString("Tema"),
+                            Validade = reader.GetString("Validade")
+                        };
+                    }
+                }
+            }
+            return orcamento;
+        }
+        public Orcamento GetByOrcamentoData(string Data_evento)
+        {
+            Orcamento orcamento = null;
+
+            using (MySqlConnection conn = dbContext.GetConnection())
+            {
+                conn.Open();
+
+
+                string query = "SELECT orcamento.id_orcamento AS Id_Orcamento, \r\n" +
+                "   orcamento.tipo_evento AS Tipo_Evento, \r\n" +
+                "   orcamento.total AS Total, \r\n" +
+                "   orcamento.data_emissao AS Data_Emissao, \r\n" +
+                "   orcamento.aprovacao AS Aprovacao, \r\n" +
+                "   orcamento.local_evento AS Local_Evento, \r\n" +
+                "   orcamento.data_evento AS Data_Evento, \r\n" +
+                "   orcamento.hora_evento AS Hora_Evento, \r\n" +
+                "   orcamento.validade AS Validade, \r\n" +
+                "   orcamento.tema AS Tema \r\n" +
+                    "FROM \r\n" +
+                    "   orcamento \r\n" +
+                    "WHERE \r\n" +
+                    "   data_evento \r\n" +
+                    "LIKE CONCAT('%',@data_evento,'%') \r\n" +
+                    "ORDER BY \r\n" +
+                    "   orcamento.data_evento \r\n";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@data_evento", Data_evento);
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {

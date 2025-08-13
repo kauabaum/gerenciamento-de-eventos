@@ -40,9 +40,13 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.txtTipoOrcamento = new System.Windows.Forms.TextBox();
             this.txtTemaOrcamento = new System.Windows.Forms.TextBox();
+            this.btnMostrarTodosProduto = new System.Windows.Forms.Button();
             this.lblTipoOrcamento = new System.Windows.Forms.Label();
             this.lblTemaOrcamento = new System.Windows.Forms.Label();
-            this.btnMostrarTodosProduto = new System.Windows.Forms.Button();
+            this.lblCliente = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
+            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.mskData = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,7 +90,7 @@
             // 
             this.btnPesquisarOrcamento.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPesquisarOrcamento.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisarOrcamento.Image")));
-            this.btnPesquisarOrcamento.Location = new System.Drawing.Point(14, 101);
+            this.btnPesquisarOrcamento.Location = new System.Drawing.Point(191, 12);
             this.btnPesquisarOrcamento.Name = "btnPesquisarOrcamento";
             this.btnPesquisarOrcamento.Size = new System.Drawing.Size(83, 78);
             this.btnPesquisarOrcamento.TabIndex = 8;
@@ -98,7 +102,7 @@
             // 
             this.btnSairOrcamento.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSairOrcamento.Image = ((System.Drawing.Image)(resources.GetObject("btnSairOrcamento.Image")));
-            this.btnSairOrcamento.Location = new System.Drawing.Point(103, 102);
+            this.btnSairOrcamento.Location = new System.Drawing.Point(280, 12);
             this.btnSairOrcamento.Name = "btnSairOrcamento";
             this.btnSairOrcamento.Size = new System.Drawing.Size(83, 78);
             this.btnSairOrcamento.TabIndex = 9;
@@ -112,13 +116,13 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(14, 193);
+            this.dataGridView1.Location = new System.Drawing.Point(14, 158);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(793, 293);
+            this.dataGridView1.Size = new System.Drawing.Size(793, 328);
             this.dataGridView1.TabIndex = 11;
             // 
             // dataGridViewTextBoxColumn1
@@ -133,26 +137,38 @@
             // txtTipoOrcamento
             // 
             this.txtTipoOrcamento.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipoOrcamento.Location = new System.Drawing.Point(300, 36);
+            this.txtTipoOrcamento.Location = new System.Drawing.Point(539, 15);
             this.txtTipoOrcamento.Name = "txtTipoOrcamento";
-            this.txtTipoOrcamento.Size = new System.Drawing.Size(488, 30);
+            this.txtTipoOrcamento.Size = new System.Drawing.Size(268, 30);
             this.txtTipoOrcamento.TabIndex = 19;
             this.toolTip1.SetToolTip(this.txtTipoOrcamento, "Digite aqui o E-mail");
             // 
             // txtTemaOrcamento
             // 
             this.txtTemaOrcamento.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTemaOrcamento.Location = new System.Drawing.Point(388, 128);
+            this.txtTemaOrcamento.Location = new System.Drawing.Point(551, 57);
             this.txtTemaOrcamento.Name = "txtTemaOrcamento";
-            this.txtTemaOrcamento.Size = new System.Drawing.Size(399, 30);
+            this.txtTemaOrcamento.Size = new System.Drawing.Size(256, 30);
             this.txtTemaOrcamento.TabIndex = 21;
             this.toolTip1.SetToolTip(this.txtTemaOrcamento, "Digite aqui o E-mail");
+            // 
+            // btnMostrarTodosProduto
+            // 
+            this.btnMostrarTodosProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMostrarTodosProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnMostrarTodosProduto.Image")));
+            this.btnMostrarTodosProduto.Location = new System.Drawing.Point(369, 12);
+            this.btnMostrarTodosProduto.Name = "btnMostrarTodosProduto";
+            this.btnMostrarTodosProduto.Size = new System.Drawing.Size(83, 78);
+            this.btnMostrarTodosProduto.TabIndex = 22;
+            this.toolTip1.SetToolTip(this.btnMostrarTodosProduto, "Mostrar Todos");
+            this.btnMostrarTodosProduto.UseVisualStyleBackColor = true;
+            this.btnMostrarTodosProduto.Click += new System.EventHandler(this.btnMostrarTodos_Click);
             // 
             // lblTipoOrcamento
             // 
             this.lblTipoOrcamento.AutoSize = true;
             this.lblTipoOrcamento.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoOrcamento.Location = new System.Drawing.Point(210, 36);
+            this.lblTipoOrcamento.Location = new System.Drawing.Point(467, 16);
             this.lblTipoOrcamento.Name = "lblTipoOrcamento";
             this.lblTipoOrcamento.Size = new System.Drawing.Size(66, 25);
             this.lblTipoOrcamento.TabIndex = 18;
@@ -162,29 +178,60 @@
             // 
             this.lblTemaOrcamento.AutoSize = true;
             this.lblTemaOrcamento.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTemaOrcamento.Location = new System.Drawing.Point(294, 128);
+            this.lblTemaOrcamento.Location = new System.Drawing.Point(467, 58);
             this.lblTemaOrcamento.Name = "lblTemaOrcamento";
             this.lblTemaOrcamento.Size = new System.Drawing.Size(78, 25);
             this.lblTemaOrcamento.TabIndex = 20;
             this.lblTemaOrcamento.Text = "Tema :";
             // 
-            // btnMostrarTodosProduto
+            // lblCliente
             // 
-            this.btnMostrarTodosProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMostrarTodosProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnMostrarTodosProduto.Image")));
-            this.btnMostrarTodosProduto.Location = new System.Drawing.Point(196, 102);
-            this.btnMostrarTodosProduto.Name = "btnMostrarTodosProduto";
-            this.btnMostrarTodosProduto.Size = new System.Drawing.Size(83, 78);
-            this.btnMostrarTodosProduto.TabIndex = 22;
-            this.toolTip1.SetToolTip(this.btnMostrarTodosProduto, "Mostrar Todos");
-            this.btnMostrarTodosProduto.UseVisualStyleBackColor = true;
-            this.btnMostrarTodosProduto.Click += new System.EventHandler(this.btnMostrarTodos_Click);
+            this.lblCliente.AutoSize = true;
+            this.lblCliente.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCliente.Location = new System.Drawing.Point(12, 109);
+            this.lblCliente.Name = "lblCliente";
+            this.lblCliente.Size = new System.Drawing.Size(90, 25);
+            this.lblCliente.TabIndex = 23;
+            this.lblCliente.Text = "Cliente :";
+            // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.Location = new System.Drawing.Point(563, 113);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(69, 25);
+            this.lblData.TabIndex = 24;
+            this.lblData.Text = "Data :";
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCliente.Location = new System.Drawing.Point(108, 108);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(430, 30);
+            this.txtCliente.TabIndex = 25;
+            this.toolTip1.SetToolTip(this.txtCliente, "Digite aqui o E-mail");
+            // 
+            // mskData
+            // 
+            this.mskData.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskData.Location = new System.Drawing.Point(654, 105);
+            this.mskData.Mask = "00/00/0000";
+            this.mskData.Name = "mskData";
+            this.mskData.Size = new System.Drawing.Size(153, 38);
+            this.mskData.TabIndex = 26;
+            this.mskData.ValidatingType = typeof(System.DateTime);
             // 
             // frmOrcamentoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 497);
+            this.Controls.Add(this.mskData);
+            this.Controls.Add(this.txtCliente);
+            this.Controls.Add(this.lblData);
+            this.Controls.Add(this.lblCliente);
             this.Controls.Add(this.btnMostrarTodosProduto);
             this.Controls.Add(this.txtTemaOrcamento);
             this.Controls.Add(this.lblTemaOrcamento);
@@ -222,5 +269,9 @@
         private System.Windows.Forms.Label lblTemaOrcamento;
         private System.Windows.Forms.TextBox txtTemaOrcamento;
         private System.Windows.Forms.Button btnMostrarTodosProduto;
+        private System.Windows.Forms.Label lblCliente;
+        private System.Windows.Forms.Label lblData;
+        private System.Windows.Forms.TextBox txtCliente;
+        private System.Windows.Forms.MaskedTextBox mskData;
     }
 }

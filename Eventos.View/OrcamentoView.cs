@@ -1,20 +1,21 @@
-﻿using Eventos.Control;
-using Eventos.DAO;
-using Eventos.Model;
-using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Eventos.Control;
+using Eventos.DAO;
+using Eventos.Model;
+using MySql.Data.MySqlClient;
 
 namespace Eventos.View
 {
@@ -27,8 +28,11 @@ namespace Eventos.View
             InitializeComponent();
             txtTipoOrcamento.Enabled = false;
             txtTemaOrcamento.Enabled = false;
+            txtCliente.Enabled = false;
+            mskData.Enabled = false;
             txtTipoOrcamento.ResetText();
-            txtTemaOrcamento.ResetText();
+            txtCliente.ResetText();
+            mskData.ResetText();
             CarregarDados();
         }
 
@@ -42,7 +46,11 @@ namespace Eventos.View
         {
             txtTipoOrcamento.Enabled = true;
             txtTemaOrcamento.Enabled = true;
+            txtCliente.Enabled = true;
+            mskData.Enabled = true;
             txtTipoOrcamento.ResetText();
+            txtCliente.ResetText();
+            mskData.ResetText();
             txtTemaOrcamento.ResetText();
         }
 
@@ -52,9 +60,9 @@ namespace Eventos.View
             {
                 string tipo_evento = txtTipoOrcamento.Text;
                 string tema_evento = txtTemaOrcamento.Text;
+                string data_evento = mskData.Text;
 
-
-                if (string.IsNullOrEmpty(tipo_evento) && string.IsNullOrEmpty(tema_evento))
+                if (string.IsNullOrEmpty(tipo_evento) && string.IsNullOrEmpty(tema_evento) && string.IsNullOrEmpty(data_evento))
                 {
                     MessageBox.Show("Preencha pelo menos um campo para pesquisar.");
                     return;
@@ -67,8 +75,14 @@ namespace Eventos.View
                     {
                         DataTable dataTable = orcamentoDAO.GetOrcamentoAsDataTable(tipo_evento);
                         dataGridView1.DataSource = dataTable;
-                        txtTipoOrcamento.Clear();
-                        txtTemaOrcamento.Clear();
+                        txtTipoOrcamento.Enabled = false;
+                        txtTemaOrcamento.Enabled = false;
+                        txtCliente.Enabled = false;
+                        mskData.Enabled = false;
+                        txtTipoOrcamento.ResetText();
+                        txtCliente.ResetText();
+                        mskData.ResetText();
+                        txtTemaOrcamento.ResetText();
                         return;
                     }
                 }
@@ -80,21 +94,59 @@ namespace Eventos.View
                     {
                         DataTable dataTable = orcamentoDAO.GetOrcamentoAsDataTableTema(tema_evento);
                         dataGridView1.DataSource = dataTable;
-                        txtTipoOrcamento.Clear();
-                        txtTemaOrcamento.Clear();
+                        txtTipoOrcamento.Enabled = false;
+                        txtTemaOrcamento.Enabled = false;
+                        txtCliente.Enabled = false;
+                        mskData.Enabled = false;
+                        txtTipoOrcamento.ResetText();
+                        txtCliente.ResetText();
+                        mskData.ResetText();
+                        txtTemaOrcamento.ResetText();
                         return;
+                    }
+                }
+                if (!string.IsNullOrEmpty(data_evento))
+                {
+                    DateTime dataConvertida;
+                    // Verifica se a data fornecida está no formato esperado (dd/MM/yyyy)
+                    if (DateTime.TryParseExact(data_evento, "dd/MM/yyyy", new CultureInfo("pt-BR"), DateTimeStyles.None, out dataConvertida))
+                    {
+                        // Converter a data para o formato americano (yyyy-MM-dd) para enviar ao banco
+                        string dataFormatoAmericano = dataConvertida.ToString("yyyy-MM-dd");
+
+                        // Agora, você usa a data no formato americano para fazer a pesquisa no banco
+                        var orcamentodata = orcamentoDAO.GetByOrcamentoData(dataFormatoAmericano);
+                        if (orcamentodata != null)
+                        {
+                            DataTable dataTable = orcamentoDAO.GetOrcamentoAsDataTableData(dataFormatoAmericano);
+                            dataGridView1.DataSource = dataTable;
+                            txtTipoOrcamento.Enabled = false;
+                            txtTemaOrcamento.Enabled = false;
+                            txtCliente.Enabled = false;
+                            mskData.Enabled = false;
+                            txtTipoOrcamento.ResetText();
+                            txtCliente.ResetText();
+                            mskData.ResetText();
+                            txtTemaOrcamento.ResetText();
+                            return;
+                        }
+
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Orcamento não encontrado.");
+                    MessageBox.Show("Orçamento não encontrado.");
                 }
-                
+
 
                 // Limpar o TextBox
                 txtTipoOrcamento.Enabled = false;
                 txtTemaOrcamento.Enabled = false;
+                txtCliente.Enabled = false;
+                mskData.Enabled = false;
                 txtTipoOrcamento.ResetText();
+                txtCliente.ResetText();
+                mskData.ResetText();
                 txtTemaOrcamento.ResetText();
 
             }
@@ -104,12 +156,17 @@ namespace Eventos.View
             }
         }
 
+
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             // Limpar o TextBox
             txtTipoOrcamento.Enabled = false;
             txtTemaOrcamento.Enabled = false;
+            txtCliente.Enabled = false;
+            mskData.Enabled = false;
             txtTipoOrcamento.ResetText();
+            txtCliente.ResetText();
+            mskData.ResetText();
             txtTemaOrcamento.ResetText();
         }
 

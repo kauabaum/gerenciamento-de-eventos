@@ -1,23 +1,24 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\Projetos\\Eventos.View\\",
+  "WorkspaceRootPath": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|f:\\projetos\\eventos.view\\orcamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|c:\\users\\aluno sesi senai\\source\\repos\\projeto-eventos\\eventos.view\\orcamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:orcamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|F:\\Projetos\\Eventos.View\\orcamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{FC46E01A-EED6-41C9-998F-B241DBA9A772}|..\\Eventos.DAO\\Eventos.DAO.csproj|c:\\users\\aluno sesi senai\\source\\repos\\projeto-eventos\\eventos.dao\\orcamentodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\orcamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:orcamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FC46E01A-EED6-41C9-998F-B241DBA9A772}|..\\Eventos.DAO\\Eventos.DAO.csproj|f:\\projetos\\eventos.dao\\orcamentodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\Projetos\\Eventos.Model\\OrcamentoModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8E4CCAC2-272D-4989-A1AA-AE50B5170DCB}|..\\Eventos.Model\\Eventos.Model.csproj|f:\\projetos\\eventos.model\\orcamentomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC46E01A-EED6-41C9-998F-B241DBA9A772}|..\\Eventos.DAO\\Eventos.DAO.csproj|f:\\projetos\\eventos.dao\\produtodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|c:\\users\\aluno sesi senai\\source\\repos\\projeto-eventos\\eventos.view\\produtoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:produtoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,21 +28,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OrcamentoView.cs",
-              "DocumentMoniker": "F:\\Projetos\\Eventos.View\\OrcamentoView.cs",
-              "RelativeDocumentMoniker": "OrcamentoView.cs",
-              "ToolTip": "F:\\Projetos\\Eventos.View\\OrcamentoView.cs",
-              "RelativeToolTip": "OrcamentoView.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAYwFIAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-08T21:29:33.309Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
               "$type": "Bookmark",
@@ -57,40 +48,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "OrcamentoView.cs [Design]",
-              "DocumentMoniker": "F:\\Projetos\\Eventos.View\\OrcamentoView.cs",
+              "DocumentIndex": 0,
+              "Title": "OrcamentoView.cs",
+              "DocumentMoniker": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\OrcamentoView.cs",
               "RelativeDocumentMoniker": "OrcamentoView.cs",
-              "ToolTip": "F:\\Projetos\\Eventos.View\\OrcamentoView.cs [Design]",
-              "RelativeToolTip": "OrcamentoView.cs [Design]",
+              "ToolTip": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\OrcamentoView.cs",
+              "RelativeToolTip": "OrcamentoView.cs",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAiwIgAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-08T23:31:32.118Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OrcamentoDAO.cs",
-              "DocumentMoniker": "F:\\Projetos\\Eventos.DAO\\OrcamentoDAO.cs",
-              "RelativeDocumentMoniker": "..\\Eventos.DAO\\OrcamentoDAO.cs",
-              "ToolTip": "F:\\Projetos\\Eventos.DAO\\OrcamentoDAO.cs",
-              "RelativeToolTip": "..\\Eventos.DAO\\OrcamentoDAO.cs",
-              "ViewState": "AgIAAKoAAAAAAAAAAAAIwLwAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-08T21:13:04.695Z",
+              "WhenOpened": "2025-08-08T21:29:33.309Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProdutoDAO.cs",
-              "DocumentMoniker": "F:\\Projetos\\Eventos.DAO\\ProdutoDAO.cs",
-              "RelativeDocumentMoniker": "..\\Eventos.DAO\\ProdutoDAO.cs",
-              "ToolTip": "F:\\Projetos\\Eventos.DAO\\ProdutoDAO.cs",
-              "RelativeToolTip": "..\\Eventos.DAO\\ProdutoDAO.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAQwCEAAAA3AAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "OrcamentoDAO.cs",
+              "DocumentMoniker": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.DAO\\OrcamentoDAO.cs",
+              "RelativeDocumentMoniker": "..\\Eventos.DAO\\OrcamentoDAO.cs",
+              "ToolTip": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.DAO\\OrcamentoDAO.cs",
+              "RelativeToolTip": "..\\Eventos.DAO\\OrcamentoDAO.cs",
+              "ViewState": "AgIAAP8AAAAAAAAAAAAAAB4BAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-08T21:54:54.644Z",
+              "WhenOpened": "2025-08-13T13:36:39.504Z",
               "EditorCaption": ""
             },
             {
@@ -98,12 +77,33 @@
               "DocumentIndex": 3,
               "Title": "OrcamentoModel.cs",
               "DocumentMoniker": "F:\\Projetos\\Eventos.Model\\OrcamentoModel.cs",
-              "RelativeDocumentMoniker": "..\\Eventos.Model\\OrcamentoModel.cs",
               "ToolTip": "F:\\Projetos\\Eventos.Model\\OrcamentoModel.cs",
-              "RelativeToolTip": "..\\Eventos.Model\\OrcamentoModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-08T21:29:14.955Z",
+              "WhenOpened": "2025-08-08T21:29:14.955Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrcamentoView.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\OrcamentoView.cs",
+              "RelativeDocumentMoniker": "OrcamentoView.cs",
+              "ToolTip": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\OrcamentoView.cs [Design]",
+              "RelativeToolTip": "OrcamentoView.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-08T23:31:32.118Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProdutoView.cs",
+              "DocumentMoniker": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\ProdutoView.cs",
+              "RelativeDocumentMoniker": "ProdutoView.cs",
+              "ToolTip": "C:\\Users\\ALUNO SESI SENAI\\source\\repos\\projeto-eventos\\Eventos.View\\ProdutoView.cs",
+              "RelativeToolTip": "ProdutoView.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAIwIIAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-13T13:42:59.431Z",
               "EditorCaption": ""
             }
           ]

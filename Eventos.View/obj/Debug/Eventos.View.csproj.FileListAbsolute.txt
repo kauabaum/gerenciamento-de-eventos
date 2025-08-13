@@ -407,3 +407,4 @@ F:\Projetos\Eventos.View\bin\Debug\System.Numerics.Vectors.xml
 F:\Projetos\Eventos.View\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 F:\Projetos\Eventos.View\bin\Debug\System.Threading.Tasks.Extensions.xml
 F:\Projetos\Eventos.View\obj\Debug\Eventos..04F723CD.Up2Date
+C:\Users\ALUNO SESI SENAI\Source\Repos\projeto-eventos\Eventos.View\obj\Debug\Eventos.exe.config
