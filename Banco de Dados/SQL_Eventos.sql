@@ -87,6 +87,7 @@ FOREIGN KEY(id_receber) REFERENCES receber (id_receber) ON DELETE RESTRICT
 
 CREATE TABLE IF NOT EXISTS `eventos`.`orcamento` (
 id_orcamento INTEGER(14) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+nome_cliente VARCHAR(255) NOT NULL,
 tipo_evento VARCHAR(50) NOT NULL,
 total DOUBLE PRECISION NOT NULL,
 data_emissao DATE NOT NULL,
