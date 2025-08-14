@@ -426,5 +426,11 @@ namespace Eventos.View
                 MessageBox.Show($"Erro ao carregar dados: {ex.Message}");
             }
         }
+
+        private void btnAdicionarProdutoOrcamento_Click(object sender, EventArgs e)
+        {
+            frmItensOrcamentoView add = new frmItensOrcamentoView();
+            add.ShowDialog();
         }
+    }
     }

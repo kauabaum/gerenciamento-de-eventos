@@ -35,7 +35,6 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnLocalizar = new System.Windows.Forms.Button();
             this.lblCor = new System.Windows.Forms.Label();
-            this.txtCor = new System.Windows.Forms.TextBox();
             this.lblMensagem = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -45,8 +44,9 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnMostrarTodos = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.txtCodCor = new System.Windows.Forms.TextBox();
             this.lblCodCor = new System.Windows.Forms.Label();
+            this.txtCodCor = new System.Windows.Forms.TextBox();
+            this.txtCor = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,15 +113,6 @@
             this.toolTip1.SetToolTip(this.lblCor, "Digite na caixa...");
             this.lblCor.Click += new System.EventHandler(this.lblTema_Click);
             // 
-            // txtCor
-            // 
-            this.txtCor.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCor.Location = new System.Drawing.Point(144, 160);
-            this.txtCor.Name = "txtCor";
-            this.txtCor.Size = new System.Drawing.Size(350, 30);
-            this.txtCor.TabIndex = 5;
-            this.toolTip1.SetToolTip(this.txtCor, "Digite aqui o Tema");
-            // 
             // lblMensagem
             // 
             this.lblMensagem.AutoSize = true;
@@ -186,7 +177,7 @@
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(61, 365);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -215,15 +206,6 @@
             this.btnMostrarTodos.UseVisualStyleBackColor = true;
             this.btnMostrarTodos.Click += new System.EventHandler(this.btnMostrarTodos_Click);
             // 
-            // txtCodCor
-            // 
-            this.txtCodCor.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodCor.Location = new System.Drawing.Point(210, 196);
-            this.txtCodCor.Name = "txtCodCor";
-            this.txtCodCor.Size = new System.Drawing.Size(284, 30);
-            this.txtCodCor.TabIndex = 13;
-            this.toolTip1.SetToolTip(this.txtCodCor, "Digite aqui o Tema");
-            // 
             // lblCodCor
             // 
             this.lblCodCor.AutoSize = true;
@@ -234,6 +216,24 @@
             this.lblCodCor.TabIndex = 14;
             this.lblCodCor.Text = "Codigo da cor :";
             this.toolTip1.SetToolTip(this.lblCodCor, "Digite na caixa...");
+            // 
+            // txtCodCor
+            // 
+            this.txtCodCor.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodCor.Location = new System.Drawing.Point(210, 196);
+            this.txtCodCor.Name = "txtCodCor";
+            this.txtCodCor.Size = new System.Drawing.Size(284, 30);
+            this.txtCodCor.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.txtCodCor, "Digite aqui o Tema");
+            // 
+            // txtCor
+            // 
+            this.txtCor.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCor.Location = new System.Drawing.Point(144, 160);
+            this.txtCor.Name = "txtCor";
+            this.txtCor.Size = new System.Drawing.Size(350, 30);
+            this.txtCor.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.txtCor, "Digite aqui o Tema");
             // 
             // frmCorView
             // 
@@ -259,7 +259,7 @@
             this.MaximizeBox = false;
             this.Name = "frmCorView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tema";
+            this.Text = "Cor";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -273,7 +273,6 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnLocalizar;
         private System.Windows.Forms.Label lblCor;
-        private System.Windows.Forms.TextBox txtCor;
         private System.Windows.Forms.Label lblMensagem;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnPesquisar;
@@ -283,7 +282,8 @@
         private System.Windows.Forms.Button btnMostrarTodos;
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.TextBox txtCodCor;
         private System.Windows.Forms.Label lblCodCor;
+        private System.Windows.Forms.TextBox txtCodCor;
+        private System.Windows.Forms.TextBox txtCor;
     }
 }

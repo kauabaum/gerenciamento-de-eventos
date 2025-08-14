@@ -246,5 +246,40 @@ namespace Eventos.DAO
                 cmd.ExecuteNonQuery();
             }
         }
+        // Método para carregar os produtos no ComboBox
+        public List<Produto> GetProdutosParaComboBox()
+        {
+            List<Produto> produtos = new List<Produto>();
+
+            using (MySqlConnection conn = dbContext.GetConnection())
+            {
+                conn.Open();
+
+                string query = "SELECT produto.id_produto, produto.descricao, produto.quantidade, produto.valor " +
+                               "FROM produto " +
+                               "ORDER BY produto.descricao";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Produto produto = new Produto
+                        {
+                            IdProduto = reader.GetInt32("id_produto"),
+                            Descricao = reader.GetString("descricao"),
+                            Quantidade = reader.GetDouble("quantidade"),
+                            Valor = reader.GetDouble("valor")
+                        };
+
+                        produtos.Add(produto);
+                    }
+                }
+            }
+
+            return produtos;
+        }
+
     }
 }

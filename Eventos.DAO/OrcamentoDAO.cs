@@ -38,10 +38,10 @@ namespace Eventos.DAO
                 "   orcamento.hora_evento AS Hora_Evento, \r\n" +
                 "   orcamento.validade AS Validade, \r\n" +
                 "   orcamento.tema AS Tema \r\n" +
-                    "FROM \r\n" +
-                    "   orcamento \r\n" +
-                    "ORDER BY \r\n" +
-                    "   orcamento.tipo_evento \r\n";
+                "   FROM \r\n" +
+                "   orcamento \r\n" +
+                "   ORDER BY \r\n" +
+                "   orcamento.tipo_evento \r\n";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
@@ -53,6 +53,41 @@ namespace Eventos.DAO
 
             return dataTable;
         }
+        public DataTable GetOrcamentosComProdutos()
+        {
+            DataTable dataTable = new DataTable();
+
+            using (var dbContext = new DbContext())  // Usando o DbContext para acessar o banco de dados
+            {
+                // Definindo a consulta SQL para obter os orçamentos com itens agendados e os produtos
+                string query = "SELECT " +
+                               "    orcamento.nome_cliente AS Nome_Cliente, " +
+                               "    produto.descricao AS Nome_Produto, " +
+                               "    itens_orcamento.quantidade AS Quantidade, " +
+                               "    itens_orcamento.subtotal AS Subtotal, " +
+                               "    orcamento.id_orcamento AS Id_Orcamento, " +
+                               "    itens_orcamento.id_itens AS Id_Itens, " +
+                               "    produto.id_produto AS Id_Produto " +
+                               "FROM orcamento " +
+                               "JOIN itens_orcamento ON orcamento.id_orcamento = itens_orcamento.id_orcamento " +
+                               "JOIN produto ON itens_orcamento.id_produto = produto.id_produto " +
+                               "WHERE itens_orcamento.id_itens IS NOT NULL " +
+                               "ORDER BY orcamento.data_emissao";
+
+                // Criando o comando MySQL
+                MySqlCommand cmd = new MySqlCommand(query, dbContext.GetConnection());
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+
+                // Preenchendo o DataTable com os dados
+                adapter.Fill(dataTable);
+            }
+
+            return dataTable;
+        }
+
+
+
+
 
         // Carregar dados no Grid
         public DataTable GetOrcamentoAsDataTable(string tipo_evento)

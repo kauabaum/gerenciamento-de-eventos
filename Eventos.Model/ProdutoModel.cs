@@ -22,5 +22,13 @@ namespace Eventos.Model
         public string TemaNome { get; set; }
         public int IdCategoria { get; set; }
         public string CategoriaNome { get; set; }
+        public string DescricaoComQuantidadeValor
+        {
+            get
+            {
+                return $"{Descricao} - {Quantidade} disponível - R${Valor:F2}";
+            }
+        }
     }
+
 }

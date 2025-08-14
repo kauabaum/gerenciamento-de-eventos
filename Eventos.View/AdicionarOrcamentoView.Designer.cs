@@ -42,6 +42,10 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.txtNomeCliente = new System.Windows.Forms.TextBox();
             this.txtLocalEvento = new System.Windows.Forms.TextBox();
+            this.txtTipoOrcamento = new System.Windows.Forms.TextBox();
+            this.txtValidadeOrcamento = new System.Windows.Forms.TextBox();
+            this.btnAdicionarTemaOrcamento = new System.Windows.Forms.Button();
+            this.btnAdicionarProdutoOrcamento = new System.Windows.Forms.Button();
             this.lblTipoOrcamento = new System.Windows.Forms.Label();
             this.lblDataEmissaoOrcamento = new System.Windows.Forms.Label();
             this.lblClienteOrcamento = new System.Windows.Forms.Label();
@@ -58,9 +62,6 @@
             this.lblTemaOrcamento = new System.Windows.Forms.Label();
             this.cmbTemaEvento = new System.Windows.Forms.ComboBox();
             this.lblValidadeOrcamento = new System.Windows.Forms.Label();
-            this.txtTipoOrcamento = new System.Windows.Forms.TextBox();
-            this.txtValidadeOrcamento = new System.Windows.Forms.TextBox();
-            this.btnAdicionarTemaOrcamento = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +71,7 @@
             this.btnAdicionarProduto.AccessibleName = "";
             this.btnAdicionarProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdicionarProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionarProduto.Image")));
-            this.btnAdicionarProduto.Location = new System.Drawing.Point(24, 8);
+            this.btnAdicionarProduto.Location = new System.Drawing.Point(8, 8);
             this.btnAdicionarProduto.Name = "btnAdicionarProduto";
             this.btnAdicionarProduto.Size = new System.Drawing.Size(83, 78);
             this.btnAdicionarProduto.TabIndex = 0;
@@ -83,7 +84,7 @@
             // 
             this.btnSalvarProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvarProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvarProduto.Image")));
-            this.btnSalvarProduto.Location = new System.Drawing.Point(304, 8);
+            this.btnSalvarProduto.Location = new System.Drawing.Point(366, 9);
             this.btnSalvarProduto.Name = "btnSalvarProduto";
             this.btnSalvarProduto.Size = new System.Drawing.Size(83, 78);
             this.btnSalvarProduto.TabIndex = 1;
@@ -95,7 +96,7 @@
             // 
             this.btnEditarProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarProduto.Image")));
-            this.btnEditarProduto.Location = new System.Drawing.Point(160, 8);
+            this.btnEditarProduto.Location = new System.Drawing.Point(249, 9);
             this.btnEditarProduto.Name = "btnEditarProduto";
             this.btnEditarProduto.Size = new System.Drawing.Size(83, 78);
             this.btnEditarProduto.TabIndex = 2;
@@ -116,7 +117,7 @@
             // 
             this.btnExcluirProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluirProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluirProduto.Image")));
-            this.btnExcluirProduto.Location = new System.Drawing.Point(584, 8);
+            this.btnExcluirProduto.Location = new System.Drawing.Point(608, 9);
             this.btnExcluirProduto.Name = "btnExcluirProduto";
             this.btnExcluirProduto.Size = new System.Drawing.Size(83, 78);
             this.btnExcluirProduto.TabIndex = 7;
@@ -128,7 +129,7 @@
             // 
             this.btnSairProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSairProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnSairProduto.Image")));
-            this.btnSairProduto.Location = new System.Drawing.Point(712, 8);
+            this.btnSairProduto.Location = new System.Drawing.Point(724, 9);
             this.btnSairProduto.Name = "btnSairProduto";
             this.btnSairProduto.Size = new System.Drawing.Size(83, 78);
             this.btnSairProduto.TabIndex = 9;
@@ -140,7 +141,7 @@
             // 
             this.btnLimparProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimparProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnLimparProduto.Image")));
-            this.btnLimparProduto.Location = new System.Drawing.Point(448, 8);
+            this.btnLimparProduto.Location = new System.Drawing.Point(485, 9);
             this.btnLimparProduto.Name = "btnLimparProduto";
             this.btnLimparProduto.Size = new System.Drawing.Size(83, 78);
             this.btnLimparProduto.TabIndex = 10;
@@ -189,6 +190,48 @@
             this.txtLocalEvento.Size = new System.Drawing.Size(504, 30);
             this.txtLocalEvento.TabIndex = 56;
             this.toolTip1.SetToolTip(this.txtLocalEvento, "Digite aqui o E-mail");
+            // 
+            // txtTipoOrcamento
+            // 
+            this.txtTipoOrcamento.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipoOrcamento.Location = new System.Drawing.Point(552, 112);
+            this.txtTipoOrcamento.Name = "txtTipoOrcamento";
+            this.txtTipoOrcamento.Size = new System.Drawing.Size(248, 30);
+            this.txtTipoOrcamento.TabIndex = 65;
+            this.toolTip1.SetToolTip(this.txtTipoOrcamento, "Digite aqui o E-mail");
+            // 
+            // txtValidadeOrcamento
+            // 
+            this.txtValidadeOrcamento.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValidadeOrcamento.Location = new System.Drawing.Point(416, 256);
+            this.txtValidadeOrcamento.Name = "txtValidadeOrcamento";
+            this.txtValidadeOrcamento.Size = new System.Drawing.Size(88, 30);
+            this.txtValidadeOrcamento.TabIndex = 66;
+            this.toolTip1.SetToolTip(this.txtValidadeOrcamento, "Digite aqui o E-mail");
+            // 
+            // btnAdicionarTemaOrcamento
+            // 
+            this.btnAdicionarTemaOrcamento.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionarTemaOrcamento.Image")));
+            this.btnAdicionarTemaOrcamento.Location = new System.Drawing.Point(240, 248);
+            this.btnAdicionarTemaOrcamento.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdicionarTemaOrcamento.Name = "btnAdicionarTemaOrcamento";
+            this.btnAdicionarTemaOrcamento.Size = new System.Drawing.Size(49, 50);
+            this.btnAdicionarTemaOrcamento.TabIndex = 67;
+            this.toolTip1.SetToolTip(this.btnAdicionarTemaOrcamento, "Adicionar País");
+            this.btnAdicionarTemaOrcamento.UseVisualStyleBackColor = true;
+            this.btnAdicionarTemaOrcamento.Click += new System.EventHandler(this.btnAdicionarTemaOrcamento_Click);
+            // 
+            // btnAdicionarProdutoOrcamento
+            // 
+            this.btnAdicionarProdutoOrcamento.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionarProdutoOrcamento.Image")));
+            this.btnAdicionarProdutoOrcamento.Location = new System.Drawing.Point(127, 9);
+            this.btnAdicionarProdutoOrcamento.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdicionarProdutoOrcamento.Name = "btnAdicionarProdutoOrcamento";
+            this.btnAdicionarProdutoOrcamento.Size = new System.Drawing.Size(83, 77);
+            this.btnAdicionarProdutoOrcamento.TabIndex = 68;
+            this.toolTip1.SetToolTip(this.btnAdicionarProdutoOrcamento, "Adicionar Produto");
+            this.btnAdicionarProdutoOrcamento.UseVisualStyleBackColor = true;
+            this.btnAdicionarProdutoOrcamento.Click += new System.EventHandler(this.btnAdicionarProdutoOrcamento_Click);
             // 
             // lblTipoOrcamento
             // 
@@ -246,7 +289,7 @@
             this.mskTotalOrcamento.Location = new System.Drawing.Point(80, 160);
             this.mskTotalOrcamento.Mask = "0000000";
             this.mskTotalOrcamento.Name = "mskTotalOrcamento";
-            this.mskTotalOrcamento.Size = new System.Drawing.Size(128, 31);
+            this.mskTotalOrcamento.Size = new System.Drawing.Size(130, 31);
             this.mskTotalOrcamento.TabIndex = 52;
             // 
             // mskDataEmissao
@@ -352,41 +395,12 @@
             this.lblValidadeOrcamento.TabIndex = 63;
             this.lblValidadeOrcamento.Text = "Validade :";
             // 
-            // txtTipoOrcamento
-            // 
-            this.txtTipoOrcamento.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipoOrcamento.Location = new System.Drawing.Point(552, 112);
-            this.txtTipoOrcamento.Name = "txtTipoOrcamento";
-            this.txtTipoOrcamento.Size = new System.Drawing.Size(248, 30);
-            this.txtTipoOrcamento.TabIndex = 65;
-            this.toolTip1.SetToolTip(this.txtTipoOrcamento, "Digite aqui o E-mail");
-            // 
-            // txtValidadeOrcamento
-            // 
-            this.txtValidadeOrcamento.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValidadeOrcamento.Location = new System.Drawing.Point(416, 256);
-            this.txtValidadeOrcamento.Name = "txtValidadeOrcamento";
-            this.txtValidadeOrcamento.Size = new System.Drawing.Size(88, 30);
-            this.txtValidadeOrcamento.TabIndex = 66;
-            this.toolTip1.SetToolTip(this.txtValidadeOrcamento, "Digite aqui o E-mail");
-            // 
-            // btnAdicionarTemaOrcamento
-            // 
-            this.btnAdicionarTemaOrcamento.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionarTemaOrcamento.Image")));
-            this.btnAdicionarTemaOrcamento.Location = new System.Drawing.Point(240, 248);
-            this.btnAdicionarTemaOrcamento.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAdicionarTemaOrcamento.Name = "btnAdicionarTemaOrcamento";
-            this.btnAdicionarTemaOrcamento.Size = new System.Drawing.Size(49, 50);
-            this.btnAdicionarTemaOrcamento.TabIndex = 67;
-            this.toolTip1.SetToolTip(this.btnAdicionarTemaOrcamento, "Adicionar País");
-            this.btnAdicionarTemaOrcamento.UseVisualStyleBackColor = true;
-            this.btnAdicionarTemaOrcamento.Click += new System.EventHandler(this.btnAdicionarTemaOrcamento_Click);
-            // 
             // frmAdicionarOrcamentoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 497);
+            this.Controls.Add(this.btnAdicionarProdutoOrcamento);
             this.Controls.Add(this.btnAdicionarTemaOrcamento);
             this.Controls.Add(this.txtValidadeOrcamento);
             this.Controls.Add(this.txtTipoOrcamento);
@@ -460,5 +474,6 @@
         private System.Windows.Forms.TextBox txtTipoOrcamento;
         private System.Windows.Forms.TextBox txtValidadeOrcamento;
         private System.Windows.Forms.Button btnAdicionarTemaOrcamento;
+        private System.Windows.Forms.Button btnAdicionarProdutoOrcamento;
     }
 }

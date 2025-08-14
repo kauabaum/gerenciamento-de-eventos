@@ -617,3 +617,5 @@ C:\Users\lucas\Source\Repos\projeto-eventos\Eventos.View\obj\Debug\Eventos..04F7
 C:\Users\lucas\Source\Repos\projeto-eventos\Eventos.View\obj\Debug\Eventos.exe
 C:\Users\lucas\Source\Repos\projeto-eventos\Eventos.View\obj\Debug\Eventos.pdb
 C:\Users\lucas\Source\Repos\projeto-eventos\Eventos.View\obj\Debug\Eventos.View.frmAdicionarOrcamentoView.resources
+C:\Users\kaua.davi\Source\Repos\projeto-eventos\Eventos.View\obj\Debug\Eventos.View.frmItensOrcamentoView.resources
+C:\Users\kaua.davi\Source\Repos\projeto-eventos\Eventos.View\obj\Debug\Eventos.View.frmAdicionarOrcamentoView.resources
