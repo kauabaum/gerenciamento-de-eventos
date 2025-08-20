@@ -57,16 +57,13 @@ namespace Eventos.View
 
                 using (var dbContext = new DbContext())
                 {
-                    // Obter a conexão
                     var connection = dbContext.GetConnection();
 
-                    // Abrir a conexão se ela não estiver aberta
                     if (connection.State == System.Data.ConnectionState.Closed)
                     {
                         connection.Open();
                     }
 
-                    // Buscar o produto no banco
                     string query = "SELECT * FROM produto WHERE id_produto = @idProduto";
                     MySqlCommand cmd = new MySqlCommand(query, connection);
                     cmd.Parameters.AddWithValue("@idProduto", produtoId);
@@ -74,7 +71,6 @@ namespace Eventos.View
                     MySqlDataReader reader = cmd.ExecuteReader();
                     Produto produto = null;
 
-                    // Ler os dados do produto
                     if (reader.Read())
                     {
                         produto = new Produto
@@ -86,15 +82,12 @@ namespace Eventos.View
                         };
                     }
 
-                    reader.Close(); // Fechar o reader após ler os dados
+                    reader.Close();
 
-                    // Se o produto foi encontrado e a quantidade for suficiente
                     if (produto != null && produto.Quantidade >= quantidade)
                     {
-                        // Atualizar a quantidade do produto no estoque
                         produto.Quantidade -= quantidade;
 
-                        // Atualizar a quantidade no banco
                         string updateQuery = "UPDATE produto SET quantidade = @quantidade WHERE id_produto = @idProduto";
                         MySqlCommand updateCmd = new MySqlCommand(updateQuery, connection);
                         updateCmd.Parameters.AddWithValue("@quantidade", produto.Quantidade);
@@ -102,10 +95,8 @@ namespace Eventos.View
 
                         updateCmd.ExecuteNonQuery();
 
-                        // Calcular o subtotal
                         double subtotal = produto.Valor * quantidade;
 
-                        // Inserir o item no orçamento
                         string insertItemQuery = "INSERT INTO itens_orcamento (quantidade, subtotal, id_orcamento, id_produto) " +
                                                  "VALUES (@quantidade, @subtotal, @idOrcamento, @idProduto)";
                         MySqlCommand insertCmd = new MySqlCommand(insertItemQuery, connection);
@@ -123,7 +114,6 @@ namespace Eventos.View
                         MessageBox.Show("Quantidade insuficiente no estoque!");
                     }
 
-                    // Fechar a conexão após todas as operações
                     connection.Close();
                 }
             }
@@ -163,8 +153,8 @@ namespace Eventos.View
             var produtos = produtoDAO.GetProdutosParaComboBox();
 
             cmbProduto.DataSource = produtos;
-            cmbProduto.DisplayMember = "DescricaoComQuantidadeValor"; // Nome a ser exibido
-            cmbProduto.ValueMember = "IdProduto"; // O ID do produto
+            cmbProduto.DisplayMember = "DescricaoComQuantidadeValor";
+            cmbProduto.ValueMember = "IdProduto";
         }
 
         private void btnMostrarTodos_Click(object sender, EventArgs e)
@@ -174,26 +164,21 @@ namespace Eventos.View
         }
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            // Verifica se um item foi selecionado no DataGrid (Orçamento)
             if (dataGridView2.SelectedRows.Count > 0)
             {
-                // Obter o ID do orçamento da linha selecionada no DataGrid
                 int idOrcamento = Convert.ToInt32(dataGridView2.SelectedRows[0].Cells["Id_Orcamento"].Value);
 
-                // Obter o ID do item selecionado no orçamento
                 int itemId = Convert.ToInt32(dataGridView2.SelectedRows[0].Cells["Id_Itens"].Value);
 
-                using (var dbContext = new DbContext())  // Usando o DbContext para acessar o banco de dados
+                using (var dbContext = new DbContext()) 
                 {
                     var connection = dbContext.GetConnection();
 
-                    // Abrir a conexão uma única vez
                     if (connection.State == System.Data.ConnectionState.Closed)
                     {
                         connection.Open();
                     }
 
-                    // Buscar o item do orçamento no banco de dados
                     string queryItem = "SELECT * FROM itens_orcamento WHERE id_itens = @itemId";
                     MySqlCommand cmdItem = new MySqlCommand(queryItem, connection);
                     cmdItem.Parameters.AddWithValue("@itemId", itemId);
@@ -211,11 +196,11 @@ namespace Eventos.View
                         };
                     }
 
-                    readerItem.Close(); // Fechar o reader depois de usar
+                    readerItem.Close();
 
                     if (itemOrcamento != null)
                     {
-                        // Buscar o produto associado ao item do orçamento
+
                         string queryProduto = "SELECT * FROM produto WHERE id_produto = @idProduto";
                         MySqlCommand cmdProduto = new MySqlCommand(queryProduto, connection);
                         cmdProduto.Parameters.AddWithValue("@idProduto", itemOrcamento.IdProduto);
@@ -233,14 +218,12 @@ namespace Eventos.View
                             };
                         }
 
-                        readerProduto.Close(); // Fechar o reader depois de usar
+                        readerProduto.Close();
 
                         if (produto != null)
                         {
-                            // Atualiza a quantidade do produto no estoque (retorna a quantidade excluída ao estoque)
                             produto.Quantidade += itemOrcamento.Quantidade;
 
-                            // Atualizar o estoque no banco de dados
                             string updateEstoqueQuery = "UPDATE produto SET quantidade = @quantidade WHERE id_produto = @idProduto";
                             MySqlCommand updateEstoqueCmd = new MySqlCommand(updateEstoqueQuery, connection);
                             updateEstoqueCmd.Parameters.AddWithValue("@quantidade", produto.Quantidade);
@@ -248,7 +231,6 @@ namespace Eventos.View
 
                             updateEstoqueCmd.ExecuteNonQuery();
 
-                            // Excluir o item do orçamento
                             string deleteItemQuery = "DELETE FROM itens_orcamento WHERE id_itens = @itemId";
                             MySqlCommand deleteItemCmd = new MySqlCommand(deleteItemQuery, connection);
                             deleteItemCmd.Parameters.AddWithValue("@itemId", itemOrcamento.IdItens);
@@ -267,7 +249,6 @@ namespace Eventos.View
                         MessageBox.Show("Item não encontrado no orçamento.");
                     }
 
-                    // Fechar a conexão após todas as operações
                     connection.Close();
                 }
             }

@@ -177,13 +177,10 @@ namespace Eventos.View
                 if (!string.IsNullOrEmpty(data_evento))
                 {
                     DateTime dataConvertida;
-                    // Verifica se a data fornecida está no formato esperado (dd/MM/yyyy)
                     if (DateTime.TryParseExact(data_evento, "dd/MM/yyyy", new CultureInfo("pt-BR"), DateTimeStyles.None, out dataConvertida))
                     {
-                        // Converter a data para o formato americano (yyyy-MM-dd) para enviar ao banco
                         string dataFormatoAmericano = dataConvertida.ToString("yyyy-MM-dd");
 
-                        // Agora, você usa a data no formato americano para fazer a pesquisa no banco
                         var orcamentodata = orcamentoDAO.GetByOrcamentoData(dataFormatoAmericano);
                         if (orcamentodata != null)
                         {

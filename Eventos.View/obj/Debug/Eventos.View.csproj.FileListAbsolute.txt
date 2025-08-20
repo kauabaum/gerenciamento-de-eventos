@@ -619,3 +619,5 @@ C:\Users\lucas\Source\Repos\projeto-eventos\Eventos.View\obj\Debug\Eventos.pdb
 C:\Users\lucas\Source\Repos\projeto-eventos\Eventos.View\obj\Debug\Eventos.View.frmAdicionarOrcamentoView.resources
 C:\Users\kaua.davi\Source\Repos\projeto-eventos\Eventos.View\obj\Debug\Eventos.View.frmItensOrcamentoView.resources
 C:\Users\kaua.davi\Source\Repos\projeto-eventos\Eventos.View\obj\Debug\Eventos.View.frmAdicionarOrcamentoView.resources
+C:\Users\ALUNO SESI SENAI\Source\Repos\projeto-eventos\Eventos.View\obj\Debug\Eventos.View.frmItensOrcamentoView.resources
+C:\Users\ALUNO SESI SENAI\Source\Repos\projeto-eventos\Eventos.View\obj\Debug\Eventos.View.frmAdicionarOrcamentoView.resources

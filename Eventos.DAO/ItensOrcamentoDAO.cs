@@ -10,7 +10,6 @@ namespace Eventos.DAO
     {
         private DbContext dbContext = new DbContext();
 
-        // Adicionar um novo item ao orçamento
         public void Add(ItemOrcamento itemOrcamento)
         {
             using (MySqlConnection conn = dbContext.GetConnection())
@@ -30,7 +29,6 @@ namespace Eventos.DAO
             }
         }
 
-        // Atualizar um item do orçamento
         public void Update(ItemOrcamento itemOrcamento)
         {
             using (MySqlConnection conn = dbContext.GetConnection())
@@ -55,7 +53,6 @@ namespace Eventos.DAO
             }
         }
 
-        // Deletar um item do orçamento
         public void Delete(int idItens)
         {
             using (MySqlConnection conn = dbContext.GetConnection())
@@ -71,7 +68,6 @@ namespace Eventos.DAO
             }
         }
 
-        // Buscar um item pelo ID do orçamento
         public List<ItemOrcamento> GetByOrcamentoId(int idOrcamento)
         {
             List<ItemOrcamento> itensOrcamento = new List<ItemOrcamento>();
@@ -107,7 +103,6 @@ namespace Eventos.DAO
             return itensOrcamento;
         }
 
-        // Buscar todos os itens do orçamento
         public DataTable GetAll()
         {
             DataTable dataTable = new DataTable();

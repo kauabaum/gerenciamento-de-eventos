@@ -57,9 +57,8 @@ namespace Eventos.DAO
         {
             DataTable dataTable = new DataTable();
 
-            using (var dbContext = new DbContext())  // Usando o DbContext para acessar o banco de dados
+            using (var dbContext = new DbContext())
             {
-                // Definindo a consulta SQL para obter os orçamentos com itens agendados e os produtos
                 string query = "SELECT " +
                                "    orcamento.nome_cliente AS Nome_Cliente, " +
                                "    produto.descricao AS Nome_Produto, " +
@@ -74,11 +73,9 @@ namespace Eventos.DAO
                                "WHERE itens_orcamento.id_itens IS NOT NULL " +
                                "ORDER BY orcamento.data_emissao";
 
-                // Criando o comando MySQL
                 MySqlCommand cmd = new MySqlCommand(query, dbContext.GetConnection());
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
 
-                // Preenchendo o DataTable com os dados
                 adapter.Fill(dataTable);
             }
 
