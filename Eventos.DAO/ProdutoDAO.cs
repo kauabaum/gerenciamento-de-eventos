@@ -280,6 +280,5 @@ namespace Eventos.DAO
 
             return produtos;
         }
-
     }
 }

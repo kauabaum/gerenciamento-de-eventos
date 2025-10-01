@@ -28,6 +28,36 @@ namespace Eventos.DAO
                 cmd.ExecuteNonQuery();
             }
         }
+        public int SomarQuantidadeProdutoPorData(int idProduto, DateTime dataEvento)
+        {
+            int quantidadeTotal = 0;
+
+            using (MySqlConnection conn = dbContext.GetConnection())
+            {
+                conn.Open();
+
+                string query = @"
+            SELECT COALESCE(SUM(io.quantidade), 0) AS totalQuantidade
+            FROM itens_orcamento io
+            INNER JOIN orcamento o ON io.id_orcamento = o.id_orcamento
+            WHERE io.id_produto = @idProduto
+              AND DATE(o.data_evento) = @dataEvento;
+        ";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@idProduto", idProduto);
+                cmd.Parameters.AddWithValue("@dataEvento", dataEvento.Date);
+
+                object result = cmd.ExecuteScalar();
+
+                if (result != null && result != DBNull.Value)
+                {
+                    quantidadeTotal = Convert.ToInt32(result);
+                }
+            }
+
+            return quantidadeTotal;
+        }
 
         public void Update(ItemOrcamento itemOrcamento)
         {
@@ -123,5 +153,7 @@ namespace Eventos.DAO
 
             return dataTable;
         }
+
+
     }
 }

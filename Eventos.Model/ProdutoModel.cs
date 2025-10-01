@@ -26,7 +26,7 @@ namespace Eventos.Model
         {
             get
             {
-                return $"{Descricao} - {Quantidade} disponível - R${Valor:F2}";
+                return $"{Descricao} - {Quantidade} - R${Valor:F2}";
             }
         }
     }

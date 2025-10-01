@@ -55,22 +55,26 @@ namespace Eventos.View
                 int produtoId = Convert.ToInt32(cmbProduto.SelectedValue);
                 int quantidade = Convert.ToInt32(mskQuantidade.Text);
 
+                // Pega a data do evento do orçamento usando idOrcamento
+                DateTime dataEvento = (DateTime)orcamentoDAO.ObterDataEventoPorIdOrcamento(idOrcamento);
+
+                ItensOrcamentoDAO itensOrcamentoDAO = new ItensOrcamentoDAO();
+
+                // Busca estoque disponível para o produto nessa data
+                int quantidadeReservada = itensOrcamentoDAO.SomarQuantidadeProdutoPorData(produtoId, dataEvento);
+
                 using (var dbContext = new DbContext())
                 {
                     var connection = dbContext.GetConnection();
-
                     if (connection.State == System.Data.ConnectionState.Closed)
-                    {
                         connection.Open();
-                    }
 
-                    string query = "SELECT * FROM produto WHERE id_produto = @idProduto";
-                    MySqlCommand cmd = new MySqlCommand(query, connection);
-                    cmd.Parameters.AddWithValue("@idProduto", produtoId);
+                    string queryProduto = "SELECT * FROM produto WHERE id_produto = @idProduto";
+                    MySqlCommand cmdProduto = new MySqlCommand(queryProduto, connection);
+                    cmdProduto.Parameters.AddWithValue("@idProduto", produtoId);
 
-                    MySqlDataReader reader = cmd.ExecuteReader();
+                    MySqlDataReader reader = cmdProduto.ExecuteReader();
                     Produto produto = null;
-
                     if (reader.Read())
                     {
                         produto = new Produto
@@ -81,39 +85,39 @@ namespace Eventos.View
                             Valor = reader.GetDouble("valor")
                         };
                     }
-
                     reader.Close();
 
-                    if (produto != null && produto.Quantidade >= quantidade)
+                    if (produto != null)
                     {
-                        produto.Quantidade -= quantidade;
+                        double estoqueDisponivel = produto.Quantidade - quantidadeReservada;
 
-                        string updateQuery = "UPDATE produto SET quantidade = @quantidade WHERE id_produto = @idProduto";
-                        MySqlCommand updateCmd = new MySqlCommand(updateQuery, connection);
-                        updateCmd.Parameters.AddWithValue("@quantidade", produto.Quantidade);
-                        updateCmd.Parameters.AddWithValue("@idProduto", produto.IdProduto);
+                        if (estoqueDisponivel >= quantidade)
+                        {
+                            // Adiciona o item no orçamento (sem decrementar o estoque!)
+                            double subtotal = quantidade * produto.Valor;
 
-                        updateCmd.ExecuteNonQuery();
+                            string insertItemQuery = @"
+                    INSERT INTO itens_orcamento (quantidade, subtotal, id_orcamento, id_produto)
+                    VALUES (@quantidade, @subtotal, @idOrcamento, @idProduto)";
 
-                        double subtotal = produto.Valor * quantidade;
+                            MySqlCommand insertCmd = new MySqlCommand(insertItemQuery, connection);
+                            insertCmd.Parameters.AddWithValue("@quantidade", quantidade);
+                            insertCmd.Parameters.AddWithValue("@subtotal", subtotal);
+                            insertCmd.Parameters.AddWithValue("@idOrcamento", idOrcamento);
+                            insertCmd.Parameters.AddWithValue("@idProduto", produtoId);
+                            insertCmd.ExecuteNonQuery();
 
-                        string insertItemQuery = "INSERT INTO itens_orcamento (quantidade, subtotal, id_orcamento, id_produto) " +
-                                                 "VALUES (@quantidade, @subtotal, @idOrcamento, @idProduto)";
-                        MySqlCommand insertCmd = new MySqlCommand(insertItemQuery, connection);
-                        insertCmd.Parameters.AddWithValue("@quantidade", quantidade);
-                        insertCmd.Parameters.AddWithValue("@subtotal", subtotal);
-                        insertCmd.Parameters.AddWithValue("@idOrcamento", idOrcamento);
-                        insertCmd.Parameters.AddWithValue("@idProduto", produtoId);
-
-                        insertCmd.ExecuteNonQuery();
-
-                        MessageBox.Show("Produto adicionado ao orçamento com sucesso!");
+                            MessageBox.Show("Produto adicionado ao orçamento com sucesso!");
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Quantidade insuficiente para este produto na data do evento. Estoque disponível: {estoqueDisponivel}");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Quantidade insuficiente no estoque!");
+                        MessageBox.Show("Produto não encontrado.");
                     }
-
                     connection.Close();
                 }
             }
@@ -140,6 +144,10 @@ namespace Eventos.View
 
                 DataTable dataTable2 = orcamentoDAO.GetOrcamentosComProdutos();
                 dataGridView2.DataSource = dataTable2;
+
+                dataGridView1.Columns["Id_Orcamento"].Visible = false;
+                dataGridView2.Columns["Id_Orcamento"].Visible = false;
+                dataGridView2.Columns["Id_Itens"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -224,13 +232,6 @@ namespace Eventos.View
                         {
                             produto.Quantidade += itemOrcamento.Quantidade;
 
-                            string updateEstoqueQuery = "UPDATE produto SET quantidade = @quantidade WHERE id_produto = @idProduto";
-                            MySqlCommand updateEstoqueCmd = new MySqlCommand(updateEstoqueQuery, connection);
-                            updateEstoqueCmd.Parameters.AddWithValue("@quantidade", produto.Quantidade);
-                            updateEstoqueCmd.Parameters.AddWithValue("@idProduto", produto.IdProduto);
-
-                            updateEstoqueCmd.ExecuteNonQuery();
-
                             string deleteItemQuery = "DELETE FROM itens_orcamento WHERE id_itens = @itemId";
                             MySqlCommand deleteItemCmd = new MySqlCommand(deleteItemQuery, connection);
                             deleteItemCmd.Parameters.AddWithValue("@itemId", itemOrcamento.IdItens);
@@ -284,5 +285,30 @@ namespace Eventos.View
                 }
             }
         }
+        private void btnPesquisarItem_Click(object sender, EventArgs e)
+        {
+            string nome_cliente = txtPesquisaItem.Text;
+
+            if (string.IsNullOrEmpty(nome_cliente))
+            {
+                MessageBox.Show("Preencha pelo menos um campo para pesquisar.");
+                return;
+            }
+
+            if (!string.IsNullOrEmpty(nome_cliente))
+            {
+                var orcamentocliente = orcamentoDAO.GetByOrcamentoCliente(nome_cliente);
+                if (orcamentocliente != null)
+                {
+                    DataTable dataTable = orcamentoDAO.GetOrcamentoAsDataTableCliente(nome_cliente);
+                    dataGridView2.DataSource = dataTable;
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Orçamento não encontrado.");
+                }
+            }
+        }
     }
-   }
+}

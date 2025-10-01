@@ -42,13 +42,14 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.lblQuantidadeProduto = new System.Windows.Forms.Label();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.mskQuantidade = new System.Windows.Forms.MaskedTextBox();
             this.cmbProduto = new System.Windows.Forms.ComboBox();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPesquisaItem = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -130,13 +131,13 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 324);
+            this.dataGridView1.Location = new System.Drawing.Point(318, 326);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(343, 175);
+            this.dataGridView1.Size = new System.Drawing.Size(210, 175);
             this.dataGridView1.TabIndex = 11;
             // 
             // dataGridViewTextBoxColumn1
@@ -175,7 +176,7 @@
             // 
             this.btnPesquisar.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.Image")));
-            this.btnPesquisar.Location = new System.Drawing.Point(27, 241);
+            this.btnPesquisar.Location = new System.Drawing.Point(318, 241);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(83, 78);
             this.btnPesquisar.TabIndex = 8;
@@ -183,22 +184,11 @@
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(398, 294);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 25);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Itens :";
-            this.toolTip1.SetToolTip(this.label1, "Digite na caixa...");
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(139, 240);
+            this.label2.Location = new System.Drawing.Point(407, 241);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 25);
             this.label2.TabIndex = 20;
@@ -227,9 +217,9 @@
             // txtPesquisa
             // 
             this.txtPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesquisa.Location = new System.Drawing.Point(144, 268);
+            this.txtPesquisa.Location = new System.Drawing.Point(408, 272);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(205, 47);
+            this.txtPesquisa.Size = new System.Drawing.Size(120, 47);
             this.txtPesquisa.TabIndex = 17;
             // 
             // dataGridView2
@@ -238,33 +228,55 @@
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(393, 324);
+            this.dataGridView2.Location = new System.Drawing.Point(27, 326);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(135, 175);
+            this.dataGridView2.Size = new System.Drawing.Size(262, 175);
             this.dataGridView2.TabIndex = 18;
             // 
-            // label3
+            // button1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(398, 294);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 25);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Itens :";
+            this.button1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(27, 241);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(83, 78);
+            this.button1.TabIndex = 21;
+            this.toolTip1.SetToolTip(this.button1, "Pesquisar");
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnPesquisarItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(116, 241);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 25);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Item(Cliente) :";
+            this.toolTip1.SetToolTip(this.label1, "Digite na caixa...");
+            // 
+            // txtPesquisaItem
+            // 
+            this.txtPesquisaItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisaItem.Location = new System.Drawing.Point(117, 269);
+            this.txtPesquisaItem.Name = "txtPesquisaItem";
+            this.txtPesquisaItem.Size = new System.Drawing.Size(172, 47);
+            this.txtPesquisaItem.TabIndex = 23;
             // 
             // frmItensOrcamentoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 512);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtPesquisaItem);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.cmbProduto);
@@ -309,8 +321,9 @@
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.TextBox txtPesquisa;
         public System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtPesquisaItem;
     }
 }

@@ -62,6 +62,7 @@ namespace Eventos.DAO
                 string query = "SELECT " +
                                "    orcamento.nome_cliente AS Nome_Cliente, " +
                                "    produto.descricao AS Nome_Produto, " +
+                               "   orcamento.data_evento AS Data_Evento, \r\n" +
                                "    itens_orcamento.quantidade AS Quantidade, " +
                                "    itens_orcamento.subtotal AS Subtotal, " +
                                "    orcamento.id_orcamento AS Id_Orcamento, " +
@@ -619,6 +620,29 @@ namespace Eventos.DAO
                 cmd.Parameters.AddWithValue("@id_orcamento", orcamento.IdOrcamento);
                 cmd.ExecuteNonQuery();
             }
+        }
+        public DateTime? ObterDataEventoPorIdOrcamento(int idOrcamento)
+        {
+            DateTime? dataEvento = null;
+
+            using (MySqlConnection conn = dbContext.GetConnection())
+            {
+                conn.Open();
+
+                string query = "SELECT data_evento FROM orcamento WHERE id_orcamento = @id_orcamento LIMIT 1;";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@id_orcamento", idOrcamento);
+
+                object result = cmd.ExecuteScalar();
+
+                if (result != null && result != DBNull.Value)
+                {
+                    dataEvento = Convert.ToDateTime(result);
+                }
+            }
+
+            return dataEvento;
         }
     }
 }
