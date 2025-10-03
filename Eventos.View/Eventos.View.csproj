@@ -32,6 +32,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
@@ -167,6 +171,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdicionarAgendamentoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdicionarAgendamentoView.Designer.cs">
+      <DependentUpon>AdicionarAgendamentoView.cs</DependentUpon>
+    </Compile>
     <Compile Include="ItensOrcamentoView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +269,9 @@
     <Compile Include="TemaView.Designer.cs">
       <DependentUpon>TemaView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdicionarAgendamentoView.resx">
+      <DependentUpon>AdicionarAgendamentoView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ItensOrcamentoView.resx">
       <DependentUpon>ItensOrcamentoView.cs</DependentUpon>
     </EmbeddedResource>

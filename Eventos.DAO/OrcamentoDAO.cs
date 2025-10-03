@@ -53,6 +53,49 @@ namespace Eventos.DAO
 
             return dataTable;
         }
+        public Orcamento GetById(int idOrcamento)
+        {
+            Orcamento orc = null;
+
+            using (MySqlConnection conn = dbContext.GetConnection())
+            {
+                conn.Open();
+
+                string query = @"SELECT id_orcamento, nome_cliente, tipo_evento, total, 
+                                data_emissao, aprovacao, local_evento, data_evento, 
+                                hora_evento, validade, tema
+                                FROM orcamento
+                                WHERE id_orcamento = @id";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", idOrcamento);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            orc = new Orcamento
+                            {
+                                IdOrcamento = reader.GetInt32("Id_Orcamento"),
+                                TipoEvento = reader.GetString("Tipo_Evento"),
+                                Total = reader.GetDouble("Total"),
+                                DataEmissao = reader.GetDateTime("Data_Emissao"),
+                                Aprovacao = (StatusAprovacao)Enum.Parse(typeof(StatusAprovacao), reader["Aprovacao"].ToString()),
+                                LocalEvento = reader.GetString("Local_Evento"),
+                                DataEvento = reader.GetDateTime("Data_Evento"),
+                                HoraEvento = reader.GetString("Hora_Evento"),
+                                Tema = reader.GetString("Tema"),
+                                Validade = reader.GetString("Validade")
+                            };
+                        }
+                    }
+                }
+            }
+
+            return orc;
+        }
+
         public DataTable GetOrcamentosComProdutos()
         {
             DataTable dataTable = new DataTable();
@@ -62,9 +105,10 @@ namespace Eventos.DAO
                 string query = "SELECT " +
                                "    orcamento.nome_cliente AS Nome_Cliente, " +
                                "    produto.descricao AS Nome_Produto, " +
-                               "   orcamento.data_evento AS Data_Evento, \r\n" +
+                               "    orcamento.data_evento AS Data_Evento, \r\n" +
                                "    itens_orcamento.quantidade AS Quantidade, " +
                                "    itens_orcamento.subtotal AS Subtotal, " +
+                               "    orcamento.aprovacao AS Aprovacao, \r\n" +
                                "    orcamento.id_orcamento AS Id_Orcamento, " +
                                "    itens_orcamento.id_itens AS Id_Itens, " +
                                "    produto.id_produto AS Id_Produto " +

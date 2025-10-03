@@ -5,7 +5,7 @@ namespace Eventos
 {
     public class DbContext : IDisposable
     {
-        private string connectionString = "server=127.0.0.1;port=3312;database=eventos;user=root";
+        private string connectionString = "server=127.0.0.1;port=3306;database=eventos;user=root";
         private MySqlConnection _connection;
 
         public MySqlConnection GetConnection()

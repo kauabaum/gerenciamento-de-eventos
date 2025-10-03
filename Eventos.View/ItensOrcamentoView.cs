@@ -139,12 +139,19 @@ namespace Eventos.View
         {
             try
             {
+                // Orçamentos - apenas os que estão "Aguardando"
                 DataTable dataTable = orcamentoDAO.GetAll();
-                dataGridView1.DataSource = dataTable;
+                DataView dv = new DataView(dataTable);
+                dv.RowFilter = "Aprovacao = 'Aguardando'";
+                dataGridView1.DataSource = dv;
 
+                // Produtos - apenas os vinculados a orçamentos "Aguardando"
                 DataTable dataTable2 = orcamentoDAO.GetOrcamentosComProdutos();
-                dataGridView2.DataSource = dataTable2;
+                DataView dv2 = new DataView(dataTable2);
+                dv2.RowFilter = "Aprovacao = 'Aguardando'";
+                dataGridView2.DataSource = dv2;
 
+                // esconder IDs
                 dataGridView1.Columns["Id_Orcamento"].Visible = false;
                 dataGridView2.Columns["Id_Orcamento"].Visible = false;
                 dataGridView2.Columns["Id_Itens"].Visible = false;
@@ -154,6 +161,8 @@ namespace Eventos.View
                 MessageBox.Show($"Erro ao carregar dados: {ex.Message}");
             }
         }
+
+
         private void CarregarProdutosComboBox()
 
         {
