@@ -77,9 +77,176 @@ namespace Eventos.View
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string nome = txtNomeCliente.Text;
+                string tipo = txtTipoOrcamento.Text;
+                string total = mskTotalOrcamento.Text;
+                string data_emissao = mskDataEvento.Text;
+                string data_evento = mskDataEvento.Text;
+                string local = txtLocalEvento.Text;
+                string hora = mskHoraEvento.Text;
+                string tema = cmbTemaEvento.Text;
+                string validade = txtValidadeOrcamento.Text;
+                string status = cmbStatusOrcamento.Text;
 
+                if (string.IsNullOrEmpty(nome))
+                {
+                    MessageBox.Show("O Nome é obrigatório.");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(tipo))
+                {
+                    MessageBox.Show("O Tipo é obrigatório.");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(total))
+                {
+                    MessageBox.Show("O Total é obrigatório.");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(data_emissao))
+                {
+                    MessageBox.Show("A Data de Emissão é obrigatório.");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(local))
+                {
+                    MessageBox.Show("O Local do Evento é obrigatório.");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(hora))
+                {
+                    MessageBox.Show("A Hora do Evento é obrigatório.");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(tema))
+                {
+                    MessageBox.Show("O Tema é obrigatório.");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(validade))
+                {
+                    MessageBox.Show("A Validade é obrigatório.");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(status))
+                {
+                    MessageBox.Show("O Status é obrigatório.");
+                    return;
+                }
+
+                if (orcamentoIdSelecionado.HasValue)
+                {
+                    // Atualizar o cliente existente
+                    Orcamento orcamentoAtualizado = new Orcamento()
+                    {
+                        IdOrcamento = orcamentoIdSelecionado.Value,
+                        NomeCliente = nome,
+                        Total = Convert.ToDouble(total),
+                        TipoEvento = tipo,
+                        DataEmissao = Convert.ToDateTime(data_emissao),
+                        DataEvento = Convert.ToDateTime(data_evento),
+                        HoraEvento = hora,
+                        LocalEvento = local,
+                        Tema = tema,
+                        Validade = validade,
+                        Aprovacao = (StatusAprovacao)Enum.Parse(typeof(StatusAprovacao), status)
+                    };
+
+                    orcamentoDAO.Update(orcamentoAtualizado);
+                    MessageBox.Show("Orcamento atualizado com sucesso!");
+                }
+                else
+                {
+                    // Adicionar novo cliente
+                    Orcamento novoOrcamento = new Orcamento()
+                    {
+                        NomeCliente = nome,
+                        TipoEvento = tipo,
+                        Total = Convert.ToDouble(total),
+                        DataEmissao = Convert.ToDateTime(data_emissao),
+                        DataEvento = Convert.ToDateTime(data_evento),
+                        HoraEvento = hora,
+                        LocalEvento = local,
+                        Tema = tema,
+                        Validade = validade,
+                        Aprovacao = (StatusAprovacao)Enum.Parse(typeof(StatusAprovacao), status)
+                    };
+
+                    orcamentoDAO.Add(novoOrcamento);
+                    MessageBox.Show("Orcamento salvo com sucesso!");
+                }
+                if (status == "Aprovado" && orcamentoIdSelecionado.HasValue)
+                {
+                    // Cria um objeto Orcamento usando os dados da linha selecionada
+                    Orcamento orcamento = new Orcamento
+                    {
+                        IdOrcamento = orcamentoIdSelecionado.Value,
+                        TipoEvento = txtTipoOrcamento.Text,
+                        Total = Convert.ToDouble(mskTotalOrcamento.Text),
+                        DataEmissao = Convert.ToDateTime(mskDataEmissao.Text),
+                        DataEvento = Convert.ToDateTime(mskDataEvento.Text),
+                        HoraEvento = mskHoraEvento.Text,
+                        LocalEvento = txtLocalEvento.Text,
+                        Tema = cmbTemaEvento.Text,
+                    };
+
+                    // Passa o objeto direto para o formulário de agendamento
+                    frmAdicionarAgendamentoView tela = new frmAdicionarAgendamentoView(orcamento);
+                    tela.ShowDialog();
+                }
+
+
+                // Limpar o TextBox
+                txtNomeCliente.Text = string.Empty;
+                txtTipoOrcamento.Text = string.Empty;
+                mskTotalOrcamento.Text = string.Empty;
+                mskDataEmissao.Text = string.Empty;
+                mskDataEvento.Text = string.Empty;
+                txtLocalEvento.Text = string.Empty;
+                mskHoraEvento.Text = string.Empty;
+                cmbTemaEvento.Text = string.Empty;
+                txtValidadeOrcamento.Text = string.Empty;
+                cmbStatusOrcamento.Text = string.Empty;
+                txtNomeCliente.Enabled = false;
+                txtTipoOrcamento.Enabled = false;
+                mskTotalOrcamento.Enabled = false;
+                mskDataEmissao.Enabled = false;
+                mskDataEvento.Enabled = false;
+                txtLocalEvento.Enabled = false;
+                mskHoraEvento.Enabled = false;
+                cmbTemaEvento.Enabled = false;
+                txtValidadeOrcamento.Enabled = false;
+                cmbStatusOrcamento.Enabled = false;
+                txtNomeCliente.ResetText();
+                txtTipoOrcamento.ResetText();
+                mskTotalOrcamento.ResetText();
+                mskDataEmissao.ResetText();
+                mskDataEvento.ResetText();
+                txtLocalEvento.ResetText();
+                mskHoraEvento.ResetText();
+                cmbTemaEvento.ResetText();
+                txtValidadeOrcamento.ResetText();
+                cmbStatusOrcamento.ResetText();
+
+                // Recarregar os dados no DataGridView após salvar
+                CarregarDados();
+                CarregarTema();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao salvar cliente: {ex.Message}");
+            }
         }
-
 
 
         private int? orcamentoIdSelecionado = null;
@@ -249,94 +416,6 @@ namespace Eventos.View
                 {
                     row.Selected = false; // remove a seleção na hora
                 }
-            }
-        }
-        private void AbrirAgendamento() { }
-        private void SalvarOrcamento()
-        {
-            try
-            {
-                // 1️⃣ Captura valores dos campos
-                string nome = txtNomeCliente.Text.Trim();
-                string tipo = txtTipoOrcamento.Text.Trim();
-                string totalStr = mskTotalOrcamento.Text.Trim();
-                string dataEmissaoStr = mskDataEmissao.Text.Trim();
-                string dataEventoStr = mskDataEvento.Text.Trim();
-                string local = txtLocalEvento.Text.Trim();
-                string hora = mskHoraEvento.Text.Trim();
-                string tema = cmbTemaEvento.Text.Trim();
-                string validade = txtValidadeOrcamento.Text.Trim();
-                string statusStr = cmbStatusOrcamento.Text.Trim();
-
-                // 2️⃣ Validações básicas
-                if (string.IsNullOrEmpty(nome)) { MessageBox.Show("O Nome é obrigatório."); return; }
-                if (string.IsNullOrEmpty(tipo)) { MessageBox.Show("O Tipo é obrigatório."); return; }
-                if (string.IsNullOrEmpty(totalStr)) { MessageBox.Show("O Total é obrigatório."); return; }
-                if (string.IsNullOrEmpty(dataEmissaoStr)) { MessageBox.Show("A Data de Emissão é obrigatória."); return; }
-                if (string.IsNullOrEmpty(local)) { MessageBox.Show("O Local do Evento é obrigatório."); return; }
-                if (string.IsNullOrEmpty(hora)) { MessageBox.Show("A Hora do Evento é obrigatória."); return; }
-                if (string.IsNullOrEmpty(tema)) { MessageBox.Show("O Tema é obrigatório."); return; }
-                if (string.IsNullOrEmpty(validade)) { MessageBox.Show("A Validade é obrigatória."); return; }
-                if (string.IsNullOrEmpty(statusStr)) { MessageBox.Show("O Status é obrigatório."); return; }
-
-                // 3️⃣ Cria o objeto Orcamento
-                Orcamento orcamento = new Orcamento()
-                {
-                    NomeCliente = nome,
-                    TipoEvento = tipo,
-                    Total = Convert.ToDouble(totalStr),
-                    DataEmissao = Convert.ToDateTime(dataEmissaoStr),
-                    DataEvento = Convert.ToDateTime(dataEventoStr),
-                    HoraEvento = hora,
-                    LocalEvento = local,
-                    Tema = tema,
-                    Validade = validade,
-                    Aprovacao = (StatusAprovacao)Enum.Parse(typeof(StatusAprovacao), statusStr.Trim(), true)
-                };
-
-                if (orcamentoIdSelecionado.HasValue)
-                {
-                    orcamentoDAO.Update(orcamento);
-                    MessageBox.Show("Orçamento atualizado com sucesso!");
-                }
-                else
-                {
-                    orcamentoDAO.Add(orcamento);
-                    MessageBox.Show("Orçamento salvo com sucesso!");
-                }
-
-                // 6️⃣ Limpar e desabilitar campos
-                txtNomeCliente.Clear();
-                txtTipoOrcamento.Clear();
-                mskTotalOrcamento.Clear();
-                mskDataEmissao.Clear();
-                mskDataEvento.Clear();
-                txtLocalEvento.Clear();
-                mskHoraEvento.Clear();
-                cmbTemaEvento.SelectedIndex = -1;
-                txtValidadeOrcamento.Clear();
-
-                txtNomeCliente.Enabled = false;
-                txtTipoOrcamento.Enabled = false;
-                mskTotalOrcamento.Enabled = false;
-                mskDataEmissao.Enabled = false;
-                mskDataEvento.Enabled = false;
-                txtLocalEvento.Enabled = false;
-                mskHoraEvento.Enabled = false;
-                cmbTemaEvento.Enabled = false;
-                txtValidadeOrcamento.Enabled = false;
-                cmbStatusOrcamento.Enabled = false;
-
-                // 7️⃣ Recarrega dados e temas
-                CarregarDados();
-                CarregarTema();
-
-                // 8️⃣ Reseta ID selecionado
-                orcamentoIdSelecionado = null;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao salvar cliente: {ex.Message}");
             }
         }
 

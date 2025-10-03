@@ -1,4 +1,4 @@
-﻿namespace Eventos
+﻿namespace Eventos.View
 {
     partial class frmAdicionarAgendamentoView
     {
@@ -36,7 +36,9 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.txtLocalEvento = new System.Windows.Forms.TextBox();
-            this.txtTipoOrcamento = new System.Windows.Forms.TextBox();
+            this.txtTipoEvento = new System.Windows.Forms.TextBox();
+            this.txtTema = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             this.lblTipoOrcamento = new System.Windows.Forms.Label();
             this.lblDataEmissaoOrcamento = new System.Windows.Forms.Label();
             this.lblClienteOrcamento = new System.Windows.Forms.Label();
@@ -49,12 +51,10 @@
             this.mskHoraEvento = new System.Windows.Forms.MaskedTextBox();
             this.lblTemaOrcamento = new System.Windows.Forms.Label();
             this.cmbCliente = new System.Windows.Forms.ComboBox();
-            this.txtTema = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbTipos = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cmbParcelas = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnSalvarProduto
@@ -106,14 +106,32 @@
             this.txtLocalEvento.TabIndex = 56;
             this.toolTip1.SetToolTip(this.txtLocalEvento, "Digite aqui o E-mail");
             // 
-            // txtTipoOrcamento
+            // txtTipoEvento
             // 
-            this.txtTipoOrcamento.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipoOrcamento.Location = new System.Drawing.Point(92, 297);
-            this.txtTipoOrcamento.Name = "txtTipoOrcamento";
-            this.txtTipoOrcamento.Size = new System.Drawing.Size(173, 30);
-            this.txtTipoOrcamento.TabIndex = 65;
-            this.toolTip1.SetToolTip(this.txtTipoOrcamento, "Digite aqui o E-mail");
+            this.txtTipoEvento.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipoEvento.Location = new System.Drawing.Point(92, 297);
+            this.txtTipoEvento.Name = "txtTipoEvento";
+            this.txtTipoEvento.Size = new System.Drawing.Size(173, 30);
+            this.txtTipoEvento.TabIndex = 65;
+            this.toolTip1.SetToolTip(this.txtTipoEvento, "Digite aqui o E-mail");
+            // 
+            // txtTema
+            // 
+            this.txtTema.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTema.Location = new System.Drawing.Point(92, 256);
+            this.txtTema.Name = "txtTema";
+            this.txtTema.Size = new System.Drawing.Size(206, 30);
+            this.txtTema.TabIndex = 69;
+            this.toolTip1.SetToolTip(this.txtTema, "Digite aqui o E-mail");
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Location = new System.Drawing.Point(92, 469);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(492, 30);
+            this.txtTotal.TabIndex = 75;
+            this.toolTip1.SetToolTip(this.txtTotal, "Digite aqui o E-mail");
             // 
             // lblTipoOrcamento
             // 
@@ -149,7 +167,7 @@
             // 
             this.lblTotalOrcamento.AutoSize = true;
             this.lblTotalOrcamento.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalOrcamento.Location = new System.Drawing.Point(281, 470);
+            this.lblTotalOrcamento.Location = new System.Drawing.Point(14, 470);
             this.lblTotalOrcamento.Name = "lblTotalOrcamento";
             this.lblTotalOrcamento.Size = new System.Drawing.Size(72, 25);
             this.lblTotalOrcamento.TabIndex = 24;
@@ -233,15 +251,6 @@
             this.cmbCliente.Size = new System.Drawing.Size(467, 31);
             this.cmbCliente.TabIndex = 68;
             // 
-            // txtTema
-            // 
-            this.txtTema.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTema.Location = new System.Drawing.Point(92, 256);
-            this.txtTema.Name = "txtTema";
-            this.txtTema.Size = new System.Drawing.Size(206, 30);
-            this.txtTema.TabIndex = 69;
-            this.toolTip1.SetToolTip(this.txtTema, "Digite aqui o E-mail");
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -252,21 +261,22 @@
             this.label4.TabIndex = 71;
             this.label4.Text = "Forma de Pagamento :";
             // 
-            // comboBox1
+            // cmbTipos
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Tahoma", 14.25F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbTipos.Font = new System.Drawing.Font("Tahoma", 14.25F);
+            this.cmbTipos.FormattingEnabled = true;
+            this.cmbTipos.Items.AddRange(new object[] {
             "Pix",
             "Cartão de Debito",
-            "Cartão de Credito",
+            "Cartão de Crédito",
             "Boleto",
-            "Transferencia Bancaria",
-            "Crediario"});
-            this.comboBox1.Location = new System.Drawing.Point(247, 354);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(325, 31);
-            this.comboBox1.TabIndex = 72;
+            "Transferência Bancária",
+            "Crediário"});
+            this.cmbTipos.Location = new System.Drawing.Point(247, 354);
+            this.cmbTipos.Name = "cmbTipos";
+            this.cmbTipos.Size = new System.Drawing.Size(325, 31);
+            this.cmbTipos.TabIndex = 72;
+            this.cmbTipos.SelectedIndexChanged += new System.EventHandler(this.cmbTipos_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -278,9 +288,9 @@
             this.label3.TabIndex = 73;
             this.label3.Text = "Parcelamento :";
             // 
-            // comboBox2
+            // cmbParcelas
             // 
-            this.comboBox2.AutoCompleteCustomSource.AddRange(new string[] {
+            this.cmbParcelas.AutoCompleteCustomSource.AddRange(new string[] {
             "1x",
             "2x",
             "3x",
@@ -306,42 +316,48 @@
             "23x",
             "24x",
             "25x"});
-            this.comboBox2.Font = new System.Drawing.Font("Tahoma", 14.25F);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Pix",
-            "Cartão de Debito",
-            "Cartão de Credito",
-            "Boleto",
-            "Transferencia Bancaria",
-            "Crediario"});
-            this.comboBox2.Location = new System.Drawing.Point(171, 405);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(153, 31);
-            this.comboBox2.TabIndex = 74;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(359, 469);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(225, 30);
-            this.textBox1.TabIndex = 75;
-            this.toolTip1.SetToolTip(this.textBox1, "Digite aqui o E-mail");
+            this.cmbParcelas.Font = new System.Drawing.Font("Tahoma", 14.25F);
+            this.cmbParcelas.FormattingEnabled = true;
+            this.cmbParcelas.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"});
+            this.cmbParcelas.Location = new System.Drawing.Point(171, 405);
+            this.cmbParcelas.Name = "cmbParcelas";
+            this.cmbParcelas.Size = new System.Drawing.Size(153, 31);
+            this.cmbParcelas.TabIndex = 74;
+            this.cmbParcelas.SelectedIndexChanged += new System.EventHandler(this.cmbParcelas_SelectedIndexChanged);
             // 
             // frmAdicionarAgendamentoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(591, 503);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.cmbParcelas);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbTipos);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtTema);
             this.Controls.Add(this.cmbCliente);
-            this.Controls.Add(this.txtTipoOrcamento);
+            this.Controls.Add(this.txtTipoEvento);
             this.Controls.Add(this.lblTemaOrcamento);
             this.Controls.Add(this.mskHoraEvento);
             this.Controls.Add(this.label2);
@@ -385,13 +401,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MaskedTextBox mskHoraEvento;
         private System.Windows.Forms.Label lblTemaOrcamento;
-        private System.Windows.Forms.TextBox txtTipoOrcamento;
+        private System.Windows.Forms.TextBox txtTipoEvento;
         private System.Windows.Forms.ComboBox cmbCliente;
         private System.Windows.Forms.TextBox txtTema;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbTipos;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cmbParcelas;
+        private System.Windows.Forms.TextBox txtTotal;
     }
 }

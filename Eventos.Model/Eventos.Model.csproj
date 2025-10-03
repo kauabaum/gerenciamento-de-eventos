@@ -162,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ItensOrcamentoModel.cs" />
+    <Compile Include="AgendamentoModel.cs" />
     <Compile Include="OrcamentoModel.cs" />
     <Compile Include="ProdutoModel.cs" />
     <Compile Include="ClienteModel.cs" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,5 +29,10 @@ namespace Eventos.Model
         public string HoraEvento { get; set; }
         public string Tema { get; set; }
         public string Validade { get; set; }
+
+        public static implicit operator DataTable(Orcamento v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
