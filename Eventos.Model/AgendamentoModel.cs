@@ -11,6 +11,7 @@ namespace Eventos.Model
     {
         public int IdAgendamento { get; set; }
         public string TipoEvento { get; set; }
+        public string NomeCliente { get; set; }
         public int IdCliente { get; set; }
         public double Total { get; set; }
         public DateTime DataEmissao { get; set; }
@@ -18,5 +19,7 @@ namespace Eventos.Model
         public DateTime DataEvento { get; set; }
         public string HoraEvento { get; set; }
         public string Tema { get; set; }
+
     }
+
 }

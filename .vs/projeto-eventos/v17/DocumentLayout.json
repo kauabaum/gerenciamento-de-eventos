@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\projeto-eventos\\",
+  "WorkspaceRootPath": "C:\\Users\\kaua.davi\\source\\repos\\projeto-eventos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\projeto-eventos\\Eventos.View\\Eventos.View.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kaua.davi\\source\\repos\\projeto-eventos\\Eventos.View\\Eventos.View.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Eventos.View\\Eventos.View.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\projeto-eventos\\Eventos.View\\ProdutoView.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kaua.davi\\source\\repos\\projeto-eventos\\Eventos.View\\ProdutoView.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Eventos.View\\ProdutoView.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -44,9 +44,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Eventos.View.csproj.user",
-              "DocumentMoniker": "F:\\projeto-eventos\\Eventos.View\\Eventos.View.csproj.user",
+              "DocumentMoniker": "C:\\Users\\kaua.davi\\source\\repos\\projeto-eventos\\Eventos.View\\Eventos.View.csproj.user",
               "RelativeDocumentMoniker": "Eventos.View\\Eventos.View.csproj.user",
-              "ToolTip": "F:\\projeto-eventos\\Eventos.View\\Eventos.View.csproj.user",
+              "ToolTip": "C:\\Users\\kaua.davi\\source\\repos\\projeto-eventos\\Eventos.View\\Eventos.View.csproj.user",
               "RelativeToolTip": "Eventos.View\\Eventos.View.csproj.user",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003464|",
@@ -57,9 +57,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "ProdutoView.cs",
-              "DocumentMoniker": "F:\\projeto-eventos\\Eventos.View\\ProdutoView.cs",
+              "DocumentMoniker": "C:\\Users\\kaua.davi\\source\\repos\\projeto-eventos\\Eventos.View\\ProdutoView.cs",
               "RelativeDocumentMoniker": "Eventos.View\\ProdutoView.cs",
-              "ToolTip": "F:\\projeto-eventos\\Eventos.View\\ProdutoView.cs",
+              "ToolTip": "C:\\Users\\kaua.davi\\source\\repos\\projeto-eventos\\Eventos.View\\ProdutoView.cs",
               "RelativeToolTip": "Eventos.View\\ProdutoView.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

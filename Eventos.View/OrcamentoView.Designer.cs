@@ -47,7 +47,7 @@
             this.lblCliente = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
             this.mskData = new System.Windows.Forms.MaskedTextBox();
-            this.lblStatus = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -209,7 +209,7 @@
             // 
             this.lblData.AutoSize = true;
             this.lblData.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.Location = new System.Drawing.Point(587, 109);
+            this.lblData.Location = new System.Drawing.Point(573, 114);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(69, 25);
             this.lblData.TabIndex = 24;
@@ -218,36 +218,36 @@
             // mskData
             // 
             this.mskData.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskData.Location = new System.Drawing.Point(662, 101);
+            this.mskData.Location = new System.Drawing.Point(648, 108);
             this.mskData.Mask = "00/00/0000";
             this.mskData.Name = "mskData";
             this.mskData.Size = new System.Drawing.Size(145, 38);
             this.mskData.TabIndex = 26;
             this.mskData.ValidatingType = typeof(System.DateTime);
             // 
-            // lblStatus
+            // label1
             // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(332, 109);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(84, 25);
-            this.lblStatus.TabIndex = 27;
-            this.lblStatus.Text = "Status :";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(332, 109);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 25);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Status :";
             // 
             // cmbStatus
             // 
             this.cmbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStatus.FormattingEnabled = true;
             this.cmbStatus.Items.AddRange(new object[] {
-            "Aguardando",
             "Aprovado",
             "Reprovado",
+            "Aguardando",
             "Vencido",
             "Cancelado"});
             this.cmbStatus.Location = new System.Drawing.Point(422, 106);
             this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(159, 32);
+            this.cmbStatus.Size = new System.Drawing.Size(121, 32);
             this.cmbStatus.TabIndex = 28;
             // 
             // frmOrcamentoView
@@ -256,7 +256,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 497);
             this.Controls.Add(this.cmbStatus);
-            this.Controls.Add(this.lblStatus);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.mskData);
             this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.lblData);
@@ -276,7 +276,7 @@
             this.MaximizeBox = false;
             this.Name = "frmOrcamentoView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Orçamento";
+            this.Text = "Agendamento";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -302,7 +302,7 @@
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.MaskedTextBox mskData;
-        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbStatus;
     }
 }

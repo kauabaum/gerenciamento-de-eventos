@@ -183,6 +183,12 @@
     <Compile Include="ItensOrcamentoView.Designer.cs">
       <DependentUpon>ItensOrcamentoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgendamentoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgendamentoView.Designer.cs">
+      <DependentUpon>AgendamentoView.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrcamentoView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ItensOrcamentoView.resx">
       <DependentUpon>ItensOrcamentoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgendamentoView.resx">
+      <DependentUpon>AgendamentoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrcamentoView.resx">
       <DependentUpon>OrcamentoView.cs</DependentUpon>

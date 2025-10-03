@@ -182,6 +182,7 @@
             this.agendamentosToolStripMenuItem.Name = "agendamentosToolStripMenuItem";
             this.agendamentosToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.agendamentosToolStripMenuItem.Text = "Agendamentos";
+            this.agendamentosToolStripMenuItem.Click += new System.EventHandler(this.AgendamentoToolStripMenuItem_Click);
             // 
             // ajudaToolStripMenuItem
             // 

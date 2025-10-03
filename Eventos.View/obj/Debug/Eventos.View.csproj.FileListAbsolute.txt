@@ -728,3 +728,5 @@ F:\projeto-eventos\Eventos.View\obj\Debug\Eventos..04F723CD.Up2Date
 F:\projeto-eventos\Eventos.View\obj\Debug\Eventos.exe
 F:\projeto-eventos\Eventos.View\obj\Debug\Eventos.pdb
 F:\projeto-eventos\Eventos.View\obj\Debug\Eventos.exe.config
+C:\Users\kaua.davi\Source\Repos\projeto-eventos\Eventos.View\obj\Debug\Eventos.View.frmAdicionarAgendamentoView.resources
+C:\Users\kaua.davi\Source\Repos\projeto-eventos\Eventos.View\obj\Debug\Eventos.View.frmAgendamentoView.resources

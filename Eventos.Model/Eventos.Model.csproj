@@ -161,6 +161,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ParcelamentoModel.cs" />
     <Compile Include="ItensOrcamentoModel.cs" />
     <Compile Include="AgendamentoModel.cs" />
     <Compile Include="OrcamentoModel.cs" />

@@ -132,6 +132,34 @@ namespace Eventos.DAO
 
             return itensOrcamento;
         }
+        public double GetTotalPorOrcamento(int idOrcamento)
+        {
+            double total = 0;
+
+            using (MySqlConnection conn = dbContext.GetConnection())
+            {
+                conn.Open();
+
+                string query = @"
+            SELECT COALESCE(SUM(subtotal), 0) AS total
+            FROM itens_orcamento
+            WHERE id_orcamento = @id_orcamento;
+        ";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@id_orcamento", idOrcamento);
+
+                object result = cmd.ExecuteScalar();
+
+                if (result != null && result != DBNull.Value)
+                {
+                    total = Convert.ToDouble(result);
+                }
+            }
+
+            return total;
+        }
+
 
         public DataTable GetAll()
         {

@@ -27,19 +27,22 @@ namespace Eventos.DAO
             {
                 conn.Open();
 
-                string query = "SELECT agendamento.id_agendamento AS Id_Agendamento, \r\n" +
-                "   agendamento.nome_cliente AS Nome_Cliente, \r\n" +
-                "   agendamento.tipo_evento AS Tipo_Evento, \r\n" +
-                "   agendamento.total AS Total, \r\n" +
-                "   agendamento.data_emissao AS Data_Emissao, \r\n" +
-                "   agendamento.local_evento AS Local_Evento, \r\n" +
-                "   agendamento.data_evento AS Data_Evento, \r\n" +
-                "   agendamento.hora_evento AS Hora_Evento, \r\n" +
-                "   agendamento.tema AS Tema \r\n" +
-                "   FROM \r\n" +
-                "   agendamento \r\n" +
-                "   ORDER BY \r\n" +
-                "   agendamento.tipo_evento \r\n";
+                string query = @"
+            SELECT 
+                agendamento.id_agendamento AS Id_Agendamento,
+                agendamento.id_cliente AS Id_Cliente,
+                cliente.nome AS Nome_Cliente,
+                agendamento.tipo_evento AS Tipo_Evento,
+                agendamento.total AS Total,
+                agendamento.data_emissao AS Data_Emissao,
+                agendamento.local_evento AS Local_Evento,
+                agendamento.data_evento AS Data_Evento,
+                agendamento.hora_evento AS Hora_Evento,
+                agendamento.tema AS Tema
+            FROM agendamento
+            INNER JOIN cliente ON agendamento.id_cliente = cliente.id
+            ORDER BY agendamento.tipo_evento;
+        ";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
@@ -51,19 +54,31 @@ namespace Eventos.DAO
 
             return dataTable;
         }
+
         public Agendamento GetById(int idAgendamento)
         {
-            Agendamento orc = null;
+            Agendamento agendamento = null;
 
             using (MySqlConnection conn = dbContext.GetConnection())
             {
                 conn.Open();
 
-                string query = @"SELECT id_agendamento, id_cliente, tipo_evento, total, 
-                                data_emissao, local_evento, data_evento, 
-                                hora_evento, tema
-                                FROM agendamento
-                                WHERE id_agendamento = @id";
+                string query = @"
+            SELECT 
+                agendamento.id_agendamento,
+                agendamento.id_cliente,
+                cliente.nome AS nome_cliente,
+                agendamento.tipo_evento,
+                agendamento.total,
+                agendamento.data_emissao,
+                agendamento.local_evento,
+                agendamento.data_evento,
+                agendamento.hora_evento,
+                agendamento.tema
+            FROM agendamento
+            INNER JOIN cliente ON agendamento.id_cliente = cliente.id
+            WHERE agendamento.id_agendamento = @id
+        ";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
@@ -73,46 +88,51 @@ namespace Eventos.DAO
                     {
                         if (reader.Read())
                         {
-                            orc = new Agendamento
+                            agendamento = new Agendamento
                             {
-                                IdAgendamento = reader.GetInt32("Id_Agendamento"),
-                                IdCliente = reader.GetInt32("Id_Cliente"),
-                                TipoEvento = reader.GetString("Tipo_Evento"),
-                                Total = reader.GetDouble("Total"),
-                                DataEmissao = reader.GetDateTime("Data_Emissao"),
-                                LocalEvento = reader.GetString("Local_Evento"),
-                                DataEvento = reader.GetDateTime("Data_Evento"),
-                                HoraEvento = reader.GetString("Hora_Evento"),
-                                Tema = reader.GetString("Tema"),
+                                IdAgendamento = reader.GetInt32("id_agendamento"),
+                                IdCliente = reader.GetInt32("id_cliente"),
+                                NomeCliente = reader.GetString("nome_cliente"), // adicionando nome do cliente
+                                TipoEvento = reader.GetString("tipo_evento"),
+                                Total = reader.GetDouble("total"),
+                                DataEmissao = reader.GetDateTime("data_emissao"),
+                                LocalEvento = reader.GetString("local_evento"),
+                                DataEvento = reader.GetDateTime("data_evento"),
+                                HoraEvento = reader.GetString("hora_evento"),
+                                Tema = reader.GetString("tema"),
                             };
                         }
                     }
                 }
             }
 
-            return orc;
+            return agendamento;
         }
+
 
         // Carregar dados no Grid
         public DataTable GetAgendamentoAsDataTable(string tipo_evento)
         {
-
-            string query = "SELECT agendamento.id_agendamento AS Id_Agendamento, \r\n" +
-                "   agendamento.nome_cliente AS Nome_Cliente, \r\n" +
-                "   agendamento.tipo_evento AS Tipo_Evento, \r\n" +
-                "   agendamento.total AS Total, \r\n" +
-                "   agendamento.data_emissao AS Data_Emissao, \r\n" +
-                "   agendamento.local_evento AS Local_Evento, \r\n" +
-                "   agendamento.data_evento AS Data_Evento, \r\n" +
-                "   agendamento.hora_evento AS Hora_Evento, \r\n" +
-                "   agendamento.tema AS Tema \r\n" +
-                "FROM \r\n" +
-                "   agendamento \r\n" +
-                "WHERE \r\n" +
-                "    agendamento.tipo_evento LIKE CONCAT('%',@tipo_evento,'%') \r\n" +
-                "ORDER BY \r\n" +
-                "   agendamento.tipo_evento \r\n";
-
+            string query = @"
+        SELECT 
+            agendamento.id_agendamento AS Id_Agendamento,
+            cliente.id AS Id_Cliente,
+            cliente.nome AS Nome_Cliente,
+            agendamento.tipo_evento AS Tipo_Evento,
+            agendamento.total AS Total,
+            agendamento.data_emissao AS Data_Emissao,
+            agendamento.local_evento AS Local_Evento,
+            agendamento.data_evento AS Data_Evento,
+            agendamento.hora_evento AS Hora_Evento,
+            agendamento.tema AS Tema
+        FROM 
+            agendamento
+        INNER JOIN cliente ON agendamento.id_cliente = cliente.id
+        WHERE 
+            agendamento.tipo_evento LIKE CONCAT('%', @tipo_evento, '%')
+        ORDER BY 
+            agendamento.tipo_evento
+    ";
 
             using (MySqlConnection conn = dbContext.GetConnection())
             {
@@ -128,27 +148,31 @@ namespace Eventos.DAO
             }
         }
 
+
         // BUSCAR VIA CLIENTE
 
-        /*public DataTable GetAgendamentoAsDataTableCliente(string nome_cliente)
+        public DataTable GetAgendamentoAsDataTableCliente(string nome_cliente)
         {
-
-            string query = "SELECT agendamento.id_agendamento AS Id_Agendamento, \r\n" +
-                "   agendamento.nome_cliente AS Nome_Cliente, \r\n" +
-                "   agendamento.tipo_evento AS Tipo_Evento, \r\n" +
-                "   agendamento.total AS Total, \r\n" +
-                "   agendamento.data_emissao AS Data_Emissao, \r\n" +
-                "   agendamento.local_evento AS Local_Evento, \r\n" +
-                "   agendamento.data_evento AS Data_Evento, \r\n" +
-                "   agendamento.hora_evento AS Hora_Evento, \r\n" +
-                "   agendamento.tema AS Tema \r\n" +
-                "FROM \r\n" +
-                "   agendamento \r\n" +
-                "WHERE \r\n" +
-                "    agendamento.nome_cliente LIKE CONCAT('%',@nome_cliente,'%') \r\n" +
-                "ORDER BY \r\n" +
-                "   agendamento.nome_cliente \r\n";
-
+            string query = @"
+        SELECT 
+            agendamento.id_agendamento AS Id_Agendamento,
+            cliente.id AS Id_Cliente,
+            cliente.nome AS Nome_Cliente,
+            agendamento.tipo_evento AS Tipo_Evento,
+            agendamento.total AS Total,
+            agendamento.data_emissao AS Data_Emissao,
+            agendamento.local_evento AS Local_Evento,
+            agendamento.data_evento AS Data_Evento,
+            agendamento.hora_evento AS Hora_Evento,
+            agendamento.tema AS Tema
+        FROM 
+            agendamento
+        INNER JOIN cliente ON agendamento.id_cliente = cliente.id
+        WHERE 
+            cliente.nome LIKE CONCAT('%', @nome_cliente, '%')
+        ORDER BY 
+            cliente.nome
+    ";
 
             using (MySqlConnection conn = dbContext.GetConnection())
             {
@@ -163,26 +187,29 @@ namespace Eventos.DAO
                 return dataTable;
             }
         }
-        */
+
         public DataTable GetAgendamentoAsDataTableTema(string tema_evento)
         {
-
-            string query = "SELECT agendamento.id_agendamento AS Id_Agendamento, \r\n" +
-                "   agendamento.nome_cliente AS Nome_Cliente, \r\n" +
-                "   agendamento.tipo_evento AS Tipo_Evento, \r\n" +
-                "   agendamento.total AS Total, \r\n" +
-                "   agendamento.data_emissao AS Data_Emissao, \r\n" +
-                "   agendamento.local_evento AS Local_Evento, \r\n" +
-                "   agendamento.data_evento AS Data_Evento, \r\n" +
-                "   agendamento.hora_evento AS Hora_Evento, \r\n" +
-                "   agendamento.tema AS Tema \r\n" +
-                "FROM \r\n" +
-                "   agendamento \r\n" +
-                "WHERE \r\n" +
-                "    agendamento.tema LIKE CONCAT('%',@tema_evento,'%') \r\n" +
-                "ORDER BY \r\n" +
-                "   agendamento.tema \r\n";
-
+            string query = @"
+        SELECT 
+            agendamento.id_agendamento AS Id_Agendamento,
+            cliente.id AS Id_Cliente,
+            cliente.nome AS Nome_Cliente,
+            agendamento.tipo_evento AS Tipo_Evento,
+            agendamento.total AS Total,
+            agendamento.data_emissao AS Data_Emissao,
+            agendamento.local_evento AS Local_Evento,
+            agendamento.data_evento AS Data_Evento,
+            agendamento.hora_evento AS Hora_Evento,
+            agendamento.tema AS Tema
+        FROM 
+            agendamento
+        INNER JOIN cliente ON agendamento.id_cliente = cliente.id
+        WHERE 
+            agendamento.tema LIKE CONCAT('%', @tema_evento, '%')
+        ORDER BY 
+            agendamento.tema
+    ";
 
             using (MySqlConnection conn = dbContext.GetConnection())
             {
@@ -197,25 +224,29 @@ namespace Eventos.DAO
                 return dataTable;
             }
         }
+
         public DataTable GetAgendamentoAsDataTableData(string data_evento)
         {
-
-            string query = "SELECT agendamento.id_agendamento AS Id_Agendamento, \r\n" +
-                "   agendamento.nome_cliente AS Nome_Cliente, \r\n" +
-                "   agendamento.tipo_evento AS Tipo_Evento, \r\n" +
-                "   agendamento.total AS Total, \r\n" +
-                "   agendamento.data_emissao AS Data_Emissao, \r\n" +
-                "   agendamento.local_evento AS Local_Evento, \r\n" +
-                "   agendamento.data_evento AS Data_Evento, \r\n" +
-                "   agendamento.hora_evento AS Hora_Evento, \r\n" +
-                "   agendamento.tema AS Tema \r\n" +
-                "FROM \r\n" +
-                "   agendamento \r\n" +
-                "WHERE \r\n" +
-                "    agendamento.data_evento LIKE CONCAT('%',@data_evento,'%') \r\n" +
-                "ORDER BY \r\n" +
-                "   agendamento.data_evento \r\n";
-
+            string query = @"
+        SELECT 
+            agendamento.id_agendamento AS Id_Agendamento,
+            cliente.id AS Id_Cliente,
+            cliente.nome AS Nome_Cliente,
+            agendamento.tipo_evento AS Tipo_Evento,
+            agendamento.total AS Total,
+            agendamento.data_emissao AS Data_Emissao,
+            agendamento.local_evento AS Local_Evento,
+            agendamento.data_evento AS Data_Evento,
+            agendamento.hora_evento AS Hora_Evento,
+            agendamento.tema AS Tema
+        FROM 
+            agendamento
+        INNER JOIN cliente ON agendamento.id_cliente = cliente.id
+        WHERE 
+            agendamento.data_evento LIKE CONCAT('%', @data_evento, '%')
+        ORDER BY 
+            agendamento.data_evento
+    ";
 
             using (MySqlConnection conn = dbContext.GetConnection())
             {
@@ -230,6 +261,7 @@ namespace Eventos.DAO
                 return dataTable;
             }
         }
+
         // Carregar dados da Pesquisa pelo nome do cliente TALVEZ AQUI
         public Agendamento GetByAgendamento(string Tipo_evento)
         {
@@ -239,23 +271,26 @@ namespace Eventos.DAO
             {
                 conn.Open();
 
-
-                string query = "SELECT agendamento.id_agendamento AS Id_Agendamento, \r\n" +
-                "   agendamento.nome_cliente AS Nome_Cliente, \r\n" +
-                "   agendamento.tipo_evento AS Tipo_Evento, \r\n" +
-                "   agendamento.total AS Total, \r\n" +
-                "   agendamento.data_emissao AS Data_Emissao, \r\n" +
-                "   agendamento.local_evento AS Local_Evento, \r\n" +
-                "   agendamento.data_evento AS Data_Evento, \r\n" +
-                "   agendamento.hora_evento AS Hora_Evento, \r\n" +
-                "   agendamento.tema AS Tema \r\n" +
-                    "FROM \r\n" +
-                    "   agendamento \r\n" +
-                    "WHERE \r\n" +
-                    "   tipo_evento \r\n" +
-                    "LIKE CONCAT('%',@tipo_evento,'%') \r\n" +
-                    "ORDER BY \r\n" +
-                    "   agendamento.tipo_evento \r\n";
+                string query = @"
+            SELECT 
+                agendamento.id_agendamento AS Id_Agendamento,
+                cliente.id AS Id_Cliente,
+                cliente.nome AS Nome_Cliente,
+                agendamento.tipo_evento AS Tipo_Evento,
+                agendamento.total AS Total,
+                agendamento.data_emissao AS Data_Emissao,
+                agendamento.local_evento AS Local_Evento,
+                agendamento.data_evento AS Data_Evento,
+                agendamento.hora_evento AS Hora_Evento,
+                agendamento.tema AS Tema
+            FROM 
+                agendamento
+            INNER JOIN cliente ON agendamento.id_cliente = cliente.id
+            WHERE 
+                agendamento.tipo_evento LIKE CONCAT('%', @tipo_evento, '%')
+            ORDER BY 
+                agendamento.tipo_evento
+        ";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@tipo_evento", Tipo_evento);
@@ -267,6 +302,8 @@ namespace Eventos.DAO
                         agendamento = new Agendamento()
                         {
                             IdAgendamento = reader.GetInt32("Id_Agendamento"),
+                            IdCliente = reader.GetInt32("Id_Cliente"),
+                            NomeCliente = reader.GetString("Nome_Cliente"),
                             TipoEvento = reader.GetString("Tipo_Evento"),
                             Total = reader.GetDouble("Total"),
                             DataEmissao = reader.GetDateTime("Data_Emissao"),
@@ -278,8 +315,10 @@ namespace Eventos.DAO
                     }
                 }
             }
+
             return agendamento;
         }
+
 
 
         // BUSCAR PELO CLIENTE **FIXXX
@@ -291,25 +330,26 @@ namespace Eventos.DAO
             {
                 conn.Open();
 
-
-                string query = "SELECT agendamento.id_agendamento AS Id_Agendamento, \r\n" +
-                "   agendamento.nome_cliente AS Nome_Cliente, \r\n" +
-                "   agendamento.tipo_evento AS Tipo_Evento, \r\n" +
-                "   agendamento.total AS Total, \r\n" +
-                "   agendamento.data_emissao AS Data_Emissao, \r\n" +
-                "   agendamento.aprovacao AS Aprovacao, \r\n" +
-                "   agendamento.local_evento AS Local_Evento, \r\n" +
-                "   agendamento.data_evento AS Data_Evento, \r\n" +
-                "   agendamento.hora_evento AS Hora_Evento, \r\n" +
-                "   agendamento.validade AS Validade, \r\n" +
-                "   agendamento.tema AS Tema \r\n" +
-                    "FROM \r\n" +
-                    "   agendamento \r\n" +
-                    "WHERE \r\n" +
-                    "   nome_cliente \r\n" +
-                    "LIKE CONCAT('%',@nome_cliente,'%') \r\n" +
-                    "ORDER BY \r\n" +
-                    "   agendamento.nome_cliente \r\n";
+                string query = @"
+            SELECT 
+                agendamento.id_agendamento AS Id_Agendamento,
+                cliente.id AS Id_Cliente,
+                cliente.nome AS Nome_Cliente,
+                agendamento.tipo_evento AS Tipo_Evento,
+                agendamento.total AS Total,
+                agendamento.data_emissao AS Data_Emissao,
+                agendamento.local_evento AS Local_Evento,
+                agendamento.data_evento AS Data_Evento,
+                agendamento.hora_evento AS Hora_Evento,
+                agendamento.tema AS Tema
+            FROM 
+                agendamento
+            INNER JOIN cliente ON agendamento.id_cliente = cliente.id
+            WHERE 
+                cliente.nome LIKE CONCAT('%', @nome_cliente, '%')
+            ORDER BY 
+                cliente.nome
+        ";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@nome_cliente", Nome_cliente);
@@ -321,6 +361,8 @@ namespace Eventos.DAO
                         agendamento = new Agendamento()
                         {
                             IdAgendamento = reader.GetInt32("Id_Agendamento"),
+                            IdCliente = reader.GetInt32("Id_Cliente"),
+                            NomeCliente = reader.GetString("Nome_Cliente"),
                             TipoEvento = reader.GetString("Tipo_Evento"),
                             Total = reader.GetDouble("Total"),
                             DataEmissao = reader.GetDateTime("Data_Emissao"),
@@ -332,8 +374,10 @@ namespace Eventos.DAO
                     }
                 }
             }
+
             return agendamento;
         }
+
         public Agendamento GetByAgendamentoTema(string Tema_evento)
         {
             Agendamento agendamento = null;
@@ -342,23 +386,26 @@ namespace Eventos.DAO
             {
                 conn.Open();
 
-
-                string query = "SELECT agendamento.id_agendamento AS Id_Agendamento, \r\n" +
-                "   agendamento.nome_cliente AS Nome_Cliente, \r\n" +
-                "   agendamento.tipo_evento AS Tipo_Evento, \r\n" +
-                "   agendamento.total AS Total, \r\n" +
-                "   agendamento.data_emissao AS Data_Emissao, \r\n" +
-                "   agendamento.local_evento AS Local_Evento, \r\n" +
-                "   agendamento.data_evento AS Data_Evento, \r\n" +
-                "   agendamento.hora_evento AS Hora_Evento, \r\n" +
-                "   agendamento.tema AS Tema \r\n" +
-                    "FROM \r\n" +
-                    "   agendamento \r\n" +
-                    "WHERE \r\n" +
-                    "   tema \r\n" +
-                    "LIKE CONCAT('%',@tema_evento,'%') \r\n" +
-                    "ORDER BY \r\n" +
-                    "   agendamento.tema \r\n";
+                string query = @"
+            SELECT 
+                agendamento.id_agendamento AS Id_Agendamento,
+                cliente.id AS Id_Cliente,
+                cliente.nome AS Nome_Cliente,
+                agendamento.tipo_evento AS Tipo_Evento,
+                agendamento.total AS Total,
+                agendamento.data_emissao AS Data_Emissao,
+                agendamento.local_evento AS Local_Evento,
+                agendamento.data_evento AS Data_Evento,
+                agendamento.hora_evento AS Hora_Evento,
+                agendamento.tema AS Tema
+            FROM 
+                agendamento
+            INNER JOIN cliente ON agendamento.id_cliente = cliente.id
+            WHERE 
+                agendamento.tema LIKE CONCAT('%', @tema_evento, '%')
+            ORDER BY 
+                agendamento.tema
+        ";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@tema_evento", Tema_evento);
@@ -370,8 +417,9 @@ namespace Eventos.DAO
                         agendamento = new Agendamento()
                         {
                             IdAgendamento = reader.GetInt32("Id_Agendamento"),
-                            TipoEvento = reader.GetString("Tipo_Evento"),
                             IdCliente = reader.GetInt32("Id_Cliente"),
+                            NomeCliente = reader.GetString("Nome_Cliente"),
+                            TipoEvento = reader.GetString("Tipo_Evento"),
                             Total = reader.GetDouble("Total"),
                             DataEmissao = reader.GetDateTime("Data_Emissao"),
                             LocalEvento = reader.GetString("Local_Evento"),
@@ -382,8 +430,10 @@ namespace Eventos.DAO
                     }
                 }
             }
+
             return agendamento;
         }
+
         public Agendamento GetByAgendamentoData(string Data_evento)
         {
             Agendamento agendamento = null;
@@ -392,23 +442,26 @@ namespace Eventos.DAO
             {
                 conn.Open();
 
-
-                string query = "SELECT agendamento.id_agendamento AS Id_Agendamento, \r\n" +
-                "   agendamento.nome_cliente AS Nome_Cliente, \r\n" +
-                "   agendamento.tipo_evento AS Tipo_Evento, \r\n" +
-                "   agendamento.total AS Total, \r\n" +
-                "   agendamento.data_emissao AS Data_Emissao, \r\n" +
-                "   agendamento.local_evento AS Local_Evento, \r\n" +
-                "   agendamento.data_evento AS Data_Evento, \r\n" +
-                "   agendamento.hora_evento AS Hora_Evento, \r\n" +
-                "   agendamento.tema AS Tema \r\n" +
-                    "FROM \r\n" +
-                    "   agendamento \r\n" +
-                    "WHERE \r\n" +
-                    "   data_evento \r\n" +
-                    "LIKE CONCAT('%',@data_evento,'%') \r\n" +
-                    "ORDER BY \r\n" +
-                    "   agendamento.data_evento \r\n";
+                string query = @"
+            SELECT 
+                agendamento.id_agendamento AS Id_Agendamento,
+                cliente.id AS Id_Cliente,
+                cliente.nome AS Nome_Cliente,
+                agendamento.tipo_evento AS Tipo_Evento,
+                agendamento.total AS Total,
+                agendamento.data_emissao AS Data_Emissao,
+                agendamento.local_evento AS Local_Evento,
+                agendamento.data_evento AS Data_Evento,
+                agendamento.hora_evento AS Hora_Evento,
+                agendamento.tema AS Tema
+            FROM 
+                agendamento
+            INNER JOIN cliente ON agendamento.id_cliente = cliente.id
+            WHERE 
+                agendamento.data_evento LIKE CONCAT('%', @data_evento, '%')
+            ORDER BY 
+                agendamento.data_evento
+        ";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@data_evento", Data_evento);
@@ -421,6 +474,7 @@ namespace Eventos.DAO
                         {
                             IdAgendamento = reader.GetInt32("Id_Agendamento"),
                             IdCliente = reader.GetInt32("Id_Cliente"),
+                            NomeCliente = reader.GetString("Nome_Cliente"),
                             TipoEvento = reader.GetString("Tipo_Evento"),
                             Total = reader.GetDouble("Total"),
                             DataEmissao = reader.GetDateTime("Data_Emissao"),
@@ -432,8 +486,10 @@ namespace Eventos.DAO
                     }
                 }
             }
+
             return agendamento;
         }
+
 
         // Adicionar novo Cliente
         public void Add(Agendamento agendamento)
@@ -442,27 +498,29 @@ namespace Eventos.DAO
             {
                 conn.Open();
 
-                // Insere na tabela cliente
-                string query = "INSERT INTO \r\n" +
-                    "agendamento \r\n" +
-                        "(tipo_evento, total, nome_cliente, data_emissao, local_evento, data_evento, \r\n" +
-                        " hora_evento, tema) \r\n" +
-                    "VALUES \r\n" +
-                        "(@tipo_evento, @total, @nome_cliente, @data_emissao, @local_evento, @data_evento, \r\n" +
-                        " @hora_evento, @tema_evento);";
+                // Insere na tabela agendamento
+                string query = @"
+            INSERT INTO agendamento
+                (tipo_evento, total, id_cliente, data_emissao, local_evento, data_evento, 
+                 hora_evento, tema)
+            VALUES
+                (@tipo_evento, @total, @id_cliente, @data_emissao, @local_evento, @data_evento, 
+                 @hora_evento, @tema)
+        ";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@tipo_evento", agendamento.TipoEvento);
                 cmd.Parameters.AddWithValue("@total", agendamento.Total);
-                cmd.Parameters.AddWithValue("@nome_cliente", agendamento.IdCliente);
+                cmd.Parameters.AddWithValue("@id_cliente", agendamento.IdCliente); // <== corrigido
                 cmd.Parameters.AddWithValue("@data_emissao", agendamento.DataEmissao);
                 cmd.Parameters.AddWithValue("@local_evento", agendamento.LocalEvento);
                 cmd.Parameters.AddWithValue("@data_evento", agendamento.DataEvento);
                 cmd.Parameters.AddWithValue("@hora_evento", agendamento.HoraEvento);
-                cmd.Parameters.AddWithValue("@tema_evento", agendamento.Tema);
+                cmd.Parameters.AddWithValue("@tema", agendamento.Tema);
                 cmd.ExecuteNonQuery();
             }
         }
+
 
         // Atualizar/editar dados
         public void Update(Agendamento agendamento)
@@ -471,33 +529,35 @@ namespace Eventos.DAO
             {
                 conn.Open();
 
-                string query = "UPDATE \r\n" +
-                    "   agendamento \r\n" +
-                    "SET \r\n" +
-                    "   agendamento.tipo_evento = @tipo_evento, \r\n" +
-                    "   agendamento.total = @total, \r\n" +
-                    "   agendamento.id_cliente = @nome_cliente, \r\n" +
-                    "   agendamento.data_emissao = @data_emissao, \r\n" +
-                    "   agendamento.local_evento = @local_evento, \r\n" +
-                    "   agendamento.data_evento = @data_evento, \r\n" +
-                    "   agendamento.hora_evento = @hora_evento, \r\n" +
-                    "   agendamento.tema = @tema_evento \r\n" +
-                    "WHERE \r\n" +
-                    "   agendamento.id_agendamento = @id_agendamento\r\n";
+                string query = @"
+            UPDATE agendamento
+            SET 
+                tipo_evento = @tipo_evento,
+                total = @total,
+                id_cliente = @id_cliente,
+                data_emissao = @data_emissao,
+                local_evento = @local_evento,
+                data_evento = @data_evento,
+                hora_evento = @hora_evento,
+                tema = @tema
+            WHERE 
+                id_agendamento = @id_agendamento
+        ";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@id_agendamento", agendamento.IdAgendamento);
                 cmd.Parameters.AddWithValue("@tipo_evento", agendamento.TipoEvento);
-                cmd.Parameters.AddWithValue("@nome_cliente", agendamento.IdCliente);
+                cmd.Parameters.AddWithValue("@id_cliente", agendamento.IdCliente); // <== corrigido
                 cmd.Parameters.AddWithValue("@total", agendamento.Total);
                 cmd.Parameters.AddWithValue("@data_emissao", agendamento.DataEmissao);
                 cmd.Parameters.AddWithValue("@local_evento", agendamento.LocalEvento);
                 cmd.Parameters.AddWithValue("@data_evento", agendamento.DataEvento);
                 cmd.Parameters.AddWithValue("@hora_evento", agendamento.HoraEvento);
-                cmd.Parameters.AddWithValue("@tema_evento", agendamento.Tema);
+                cmd.Parameters.AddWithValue("@tema", agendamento.Tema); // <== padronizado
                 cmd.ExecuteNonQuery();
             }
         }
+
 
         // Excluir Dados
         public void Delete(Agendamento agendamento)

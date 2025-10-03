@@ -57,29 +57,39 @@ namespace Eventos.View
                 MessageBox.Show($"Erro ao carregar dados: {ex.Message}");
             }
         }
+
         private void PreencherCampos()
         {
+            // Pegar os itens do orçamento selecionado
+            ItensOrcamentoDAO itensDAO = new ItensOrcamentoDAO();
+            List<ItemOrcamento> itens = itensDAO.GetByOrcamentoId(orcamentoSelecionado.IdOrcamento);
+
+            // Somar todos os subtotais
+            double totalItens = itens.Sum(i => i.Subtotal);
+
+            // Somar o valor do orçamento em si (se houver diferença)
+            double totalOrcamento = orcamentoSelecionado.Total + totalItens;
+
+            // Guardar o valor real no Tag
+            txtTotal.Tag = totalOrcamento;
+
+            // Exibir 1x por padrão
+            txtTotal.Text = $"Total: {totalOrcamento:C} | 1x de {totalOrcamento:C}";
+
             mskDataEmissao.Text = orcamentoSelecionado.DataEmissao.ToShortDateString();
             mskDataEvento.Text = orcamentoSelecionado.DataEvento.ToShortDateString();
             txtLocalEvento.Text = orcamentoSelecionado.LocalEvento;
             txtTema.Text = orcamentoSelecionado.Tema;
             mskHoraEvento.Text = orcamentoSelecionado.HoraEvento;
             txtTipoEvento.Text = orcamentoSelecionado.TipoEvento;
-            txtTotal.Text = orcamentoSelecionado.Total.ToString("C");
-            mskDataEmissao.Enabled = false;
-            mskDataEvento.Enabled = false;
-            txtLocalEvento.Enabled = false;
-            txtTema.Enabled = false;
-            mskHoraEvento.Enabled = false;
-            txtTotal.Enabled = false;
-            txtTipoEvento.Enabled = false;
 
-            txtTotal.Tag = orcamentoSelecionado.Total; // guarda o valor real
-            txtTotal.Text = $"Total: {orcamentoSelecionado.Total:C} | 1x de {orcamentoSelecionado.Total:C}";
-
-            // Inicializa o combo de parcelas
-            cmbParcelas.SelectedItem = 1;
+            // Configura combo de parcelas
+            cmbParcelas.SelectedIndex = 0; // 1x
         }
+
+
+
+
         private void cmbTipos_SelectedIndexChanged(object sender, EventArgs e)
         {
             string tipo = cmbTipos.SelectedItem.ToString();
@@ -99,26 +109,31 @@ namespace Eventos.View
         // Quando a quantidade de parcelas mudar
         private void cmbParcelas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (txtTotal.Tag == null) return;
-
-            // Converte o valor do Tag para decimal de forma segura
-            decimal valorTotal;
-            if (!decimal.TryParse(txtTotal.Tag.ToString(), out valorTotal))
+            if (txtTotal.Tag == null)
                 return;
 
-            // Converte o número de parcelas selecionado
+            // Pegar o valor total real
+            double total = Convert.ToDouble(txtTotal.Tag);
+
+            // Pegar o número de parcelas selecionado
             int parcelas = 1;
+
             if (cmbParcelas.SelectedItem != null)
-                int.TryParse(cmbParcelas.SelectedItem.ToString(), out parcelas);
+            {
+                // Se estiver no formato "1x", "2x" etc.
+                string selected = cmbParcelas.SelectedItem.ToString();
+                selected = selected.Replace("x", "").Trim();
+                int.TryParse(selected, out parcelas);
+            }
 
-            if (parcelas == 0) parcelas = 1; // evita divisão por zero
+            // Calcular valor da parcela
+            double valorParcela = total / parcelas;
 
-            // Calcula o valor da parcela
-            decimal valorParcela = valorTotal / parcelas;
-
-            // Atualiza o txtTotal
-            txtTotal.Text = $"Total: {valorTotal:C} | {parcelas}x de {valorParcela:C}";
+            // Mostrar no txtTotal
+            txtTotal.Text = $"Total: {total:C} | {parcelas}x de {valorParcela:C}";
         }
+
+
 
 
         // Atualiza o txtTotal mostrando total e valor da parcela
