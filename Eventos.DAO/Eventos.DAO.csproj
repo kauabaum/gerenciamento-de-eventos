@@ -163,6 +163,7 @@
   <ItemGroup>
     <Compile Include="ItensOrcamentoDAO.cs" />
     <Compile Include="AgendamentoDAO.cs" />
+    <Compile Include="ReceberDAO.cs" />
     <Compile Include="ParcelamentoDAO.cs" />
     <Compile Include="OrcamentoDAO.cs" />
     <Compile Include="ProdutoDAO.cs" />

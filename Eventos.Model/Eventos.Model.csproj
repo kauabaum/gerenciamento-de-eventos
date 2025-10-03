@@ -161,10 +161,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OrcamentoModel - Cópia .cs" />
     <Compile Include="ParcelamentoModel.cs" />
     <Compile Include="ItensOrcamentoModel.cs" />
     <Compile Include="AgendamentoModel.cs" />
-    <Compile Include="OrcamentoModel.cs" />
+    <Compile Include="ReceberModel.cs" />
     <Compile Include="ProdutoModel.cs" />
     <Compile Include="ClienteModel.cs" />
     <Compile Include="RuaModel .cs" />

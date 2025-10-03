@@ -55,6 +55,10 @@
             this.cmbTipos = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbParcelas = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.mskPagamento = new System.Windows.Forms.MaskedTextBox();
+            this.lblValidadeOrcamento = new System.Windows.Forms.Label();
+            this.mskVencimento = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // btnSalvarProduto
@@ -67,6 +71,7 @@
             this.btnSalvarProduto.TabIndex = 1;
             this.toolTip1.SetToolTip(this.btnSalvarProduto, "Salvar");
             this.btnSalvarProduto.UseVisualStyleBackColor = true;
+            this.btnSalvarProduto.Click += new System.EventHandler(this.btnAdicionarAgendamento_Click);
             // 
             // lblMensagem
             // 
@@ -274,7 +279,7 @@
             "Crediário"});
             this.cmbTipos.Location = new System.Drawing.Point(247, 354);
             this.cmbTipos.Name = "cmbTipos";
-            this.cmbTipos.Size = new System.Drawing.Size(325, 31);
+            this.cmbTipos.Size = new System.Drawing.Size(294, 31);
             this.cmbTipos.TabIndex = 72;
             this.cmbTipos.SelectedIndexChanged += new System.EventHandler(this.cmbTipos_SelectedIndexChanged);
             // 
@@ -341,15 +346,59 @@
             "20"});
             this.cmbParcelas.Location = new System.Drawing.Point(171, 405);
             this.cmbParcelas.Name = "cmbParcelas";
-            this.cmbParcelas.Size = new System.Drawing.Size(153, 31);
+            this.cmbParcelas.Size = new System.Drawing.Size(94, 31);
             this.cmbParcelas.TabIndex = 74;
             this.cmbParcelas.SelectedIndexChanged += new System.EventHandler(this.cmbParcelas_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(271, 302);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(181, 25);
+            this.label5.TabIndex = 76;
+            this.label5.Text = "Data Pagamento :";
+            // 
+            // mskPagamento
+            // 
+            this.mskPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskPagamento.Location = new System.Drawing.Point(451, 298);
+            this.mskPagamento.Mask = "00/00/0000";
+            this.mskPagamento.Name = "mskPagamento";
+            this.mskPagamento.Size = new System.Drawing.Size(128, 31);
+            this.mskPagamento.TabIndex = 77;
+            this.mskPagamento.ValidatingType = typeof(System.DateTime);
+            // 
+            // lblValidadeOrcamento
+            // 
+            this.lblValidadeOrcamento.AutoSize = true;
+            this.lblValidadeOrcamento.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValidadeOrcamento.Location = new System.Drawing.Point(271, 411);
+            this.lblValidadeOrcamento.Name = "lblValidadeOrcamento";
+            this.lblValidadeOrcamento.Size = new System.Drawing.Size(136, 25);
+            this.lblValidadeOrcamento.TabIndex = 78;
+            this.lblValidadeOrcamento.Text = "Vencimento :";
+            // 
+            // mskVencimento
+            // 
+            this.mskVencimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskVencimento.Location = new System.Drawing.Point(413, 409);
+            this.mskVencimento.Mask = "00/00/0000";
+            this.mskVencimento.Name = "mskVencimento";
+            this.mskVencimento.Size = new System.Drawing.Size(128, 31);
+            this.mskVencimento.TabIndex = 79;
+            this.mskVencimento.ValidatingType = typeof(System.DateTime);
             // 
             // frmAdicionarAgendamentoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(591, 503);
+            this.Controls.Add(this.mskVencimento);
+            this.Controls.Add(this.lblValidadeOrcamento);
+            this.Controls.Add(this.mskPagamento);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.cmbParcelas);
             this.Controls.Add(this.label3);
@@ -409,5 +458,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbParcelas;
         private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.MaskedTextBox mskPagamento;
+        private System.Windows.Forms.Label lblValidadeOrcamento;
+        private System.Windows.Forms.MaskedTextBox mskVencimento;
     }
 }

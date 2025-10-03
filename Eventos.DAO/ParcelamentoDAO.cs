@@ -18,15 +18,16 @@ namespace Eventos.DAO
 
                 string query = @"
                     INSERT INTO parcelamento
-                        (id_agendamento, tipo_pagamento, data_pagamento, valor, vencimento)
+                        (id_receber, tipo_pagamento, data_pagamento, valor, parcela, vencimento)
                     VALUES
-                        (@id_agendamento, @tipo_pagamento, @data_pagamento, @valor, @vencimento);
+                        (@id_receber, @tipo_pagamento, @data_pagamento, @valor, @parcela, @vencimento);
                 ";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@id_agendamento", parcelamento.IdAgendamento);
                 cmd.Parameters.AddWithValue("@tipo_pagamento", parcelamento.TipoPagamento);
+                cmd.Parameters.AddWithValue("@id_receber", parcelamento.IdReceber);
                 cmd.Parameters.AddWithValue("@data_pagamento", parcelamento.DataPagamento);
+                cmd.Parameters.AddWithValue("@parcela", parcelamento.Parcela);
                 cmd.Parameters.AddWithValue("@valor", parcelamento.Valor);
                 cmd.Parameters.AddWithValue("@vencimento", parcelamento.Vencimento);
 
@@ -44,7 +45,6 @@ namespace Eventos.DAO
                 string query = @"
                     UPDATE parcelamento
                     SET 
-                        id_agendamento = @id_agendamento,
                         tipo_pagamento = @tipo_pagamento,
                         data_pagamento = @data_pagamento,
                         valor = @valor,
@@ -54,7 +54,6 @@ namespace Eventos.DAO
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@id", parcelamento.IdParcelamento);
-                cmd.Parameters.AddWithValue("@id_agendamento", parcelamento.IdAgendamento);
                 cmd.Parameters.AddWithValue("@tipo_pagamento", parcelamento.TipoPagamento);
                 cmd.Parameters.AddWithValue("@data_pagamento", parcelamento.DataPagamento);
                 cmd.Parameters.AddWithValue("@valor", parcelamento.Valor);
@@ -81,32 +80,6 @@ namespace Eventos.DAO
         }
 
         // Buscar parcelas por agendamento
-        public DataTable GetParcelasPorAgendamento(int idAgendamento)
-        {
-            DataTable dataTable = new DataTable();
-
-            using (MySqlConnection conn = dbContext.GetConnection())
-            {
-                conn.Open();
-
-                string query = @"
-                    SELECT id, id_agendamento, tipo_pagamento, data_pagamento, valor, vencimento
-                    FROM parcelamento
-                    WHERE id_agendamento = @id_agendamento
-                    ORDER BY vencimento;
-                ";
-
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@id_agendamento", idAgendamento);
-
-                using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
-                {
-                    adapter.Fill(dataTable);
-                }
-            }
-
-            return dataTable;
-        }
 
         // Buscar uma parcela pelo ID
         public Parcelamento GetById(int id)
@@ -118,7 +91,7 @@ namespace Eventos.DAO
                 conn.Open();
 
                 string query = @"
-                    SELECT id, id_agendamento, tipo_pagamento, data_pagamento, valor, vencimento
+                    SELECT id, tipo_pagamento, data_pagamento, valor, vencimento
                     FROM parcelamento
                     WHERE id = @id
                     LIMIT 1;
@@ -134,7 +107,6 @@ namespace Eventos.DAO
                         parcelamento = new Parcelamento()
                         {
                             IdParcelamento = reader.GetInt32("id"),
-                            IdAgendamento = reader.GetInt32("id_agendamento"),
                             TipoPagamento = reader.GetString("tipo_pagamento"),
                             DataPagamento = reader.GetDateTime("data_pagamento"),
                             Valor = reader.GetDouble("valor"),

@@ -1,17 +1,23 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\kaua.davi\\source\\repos\\projeto-eventos\\Eventos.View\\",
+  "WorkspaceRootPath": "F:\\ATUAL EVENTOS\\Eventos.View\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|C:\\Users\\kaua.davi\\source\\repos\\projeto-eventos\\Eventos.View\\adicionaragendamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:adicionaragendamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|c:\\users\\kaua.davi\\source\\repos\\projeto-eventos\\eventos.view\\adicionaragendamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|F:\\ATUAL EVENTOS\\Eventos.View\\adicionaragendamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:adicionaragendamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8E4CCAC2-272D-4989-A1AA-AE50B5170DCB}|..\\Eventos.Model\\Eventos.Model.csproj|c:\\users\\kaua.davi\\source\\repos\\projeto-eventos\\eventos.model\\agendamentomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|f:\\atual eventos\\eventos.view\\adicionaragendamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:adicionaragendamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E4CCAC2-272D-4989-A1AA-AE50B5170DCB}|..\\Eventos.Model\\Eventos.Model.csproj|f:\\atual eventos\\eventos.model\\parcelamentomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC46E01A-EED6-41C9-998F-B241DBA9A772}|..\\Eventos.DAO\\Eventos.DAO.csproj|f:\\atual eventos\\eventos.dao\\parcelamentodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC46E01A-EED6-41C9-998F-B241DBA9A772}|..\\Eventos.DAO\\Eventos.DAO.csproj|f:\\atual eventos\\eventos.dao\\receberdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,21 +27,8 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AgendamentoModel.cs",
-              "DocumentMoniker": "C:\\Users\\kaua.davi\\source\\repos\\projeto-eventos\\Eventos.Model\\AgendamentoModel.cs",
-              "RelativeDocumentMoniker": "..\\Eventos.Model\\AgendamentoModel.cs",
-              "ToolTip": "C:\\Users\\kaua.davi\\source\\repos\\projeto-eventos\\Eventos.Model\\AgendamentoModel.cs",
-              "RelativeToolTip": "..\\Eventos.Model\\AgendamentoModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T17:20:03.646Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -58,11 +51,50 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "ParcelamentoModel.cs",
+              "DocumentMoniker": "F:\\ATUAL EVENTOS\\Eventos.Model\\ParcelamentoModel.cs",
+              "RelativeDocumentMoniker": "..\\Eventos.Model\\ParcelamentoModel.cs",
+              "ToolTip": "F:\\ATUAL EVENTOS\\Eventos.Model\\ParcelamentoModel.cs",
+              "RelativeToolTip": "..\\Eventos.Model\\ParcelamentoModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-03T22:52:39.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ParcelamentoDAO.cs",
+              "DocumentMoniker": "F:\\ATUAL EVENTOS\\Eventos.DAO\\ParcelamentoDAO.cs",
+              "RelativeDocumentMoniker": "..\\Eventos.DAO\\ParcelamentoDAO.cs",
+              "ToolTip": "F:\\ATUAL EVENTOS\\Eventos.DAO\\ParcelamentoDAO.cs",
+              "RelativeToolTip": "..\\Eventos.DAO\\ParcelamentoDAO.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBYAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-03T22:44:31.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ReceberDAO.cs",
+              "DocumentMoniker": "F:\\ATUAL EVENTOS\\Eventos.DAO\\ReceberDAO.cs",
+              "RelativeDocumentMoniker": "..\\Eventos.DAO\\ReceberDAO.cs",
+              "ToolTip": "F:\\ATUAL EVENTOS\\Eventos.DAO\\ReceberDAO.cs",
+              "RelativeToolTip": "..\\Eventos.DAO\\ReceberDAO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-03T21:53:58.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "AdicionarAgendamentoView.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\kaua.davi\\source\\repos\\projeto-eventos\\Eventos.View\\AdicionarAgendamentoView.cs",
+              "DocumentMoniker": "F:\\ATUAL EVENTOS\\Eventos.View\\AdicionarAgendamentoView.cs",
               "RelativeDocumentMoniker": "AdicionarAgendamentoView.cs",
-              "ToolTip": "C:\\Users\\kaua.davi\\source\\repos\\projeto-eventos\\Eventos.View\\AdicionarAgendamentoView.cs [Design]",
+              "ToolTip": "F:\\ATUAL EVENTOS\\Eventos.View\\AdicionarAgendamentoView.cs [Design]",
               "RelativeToolTip": "AdicionarAgendamentoView.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-03T17:08:28.155Z",
@@ -70,13 +102,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AdicionarAgendamentoView.cs",
-              "DocumentMoniker": "C:\\Users\\kaua.davi\\source\\repos\\projeto-eventos\\Eventos.View\\AdicionarAgendamentoView.cs",
+              "DocumentMoniker": "F:\\ATUAL EVENTOS\\Eventos.View\\AdicionarAgendamentoView.cs",
               "RelativeDocumentMoniker": "AdicionarAgendamentoView.cs",
-              "ToolTip": "C:\\Users\\kaua.davi\\source\\repos\\projeto-eventos\\Eventos.View\\AdicionarAgendamentoView.cs",
+              "ToolTip": "F:\\ATUAL EVENTOS\\Eventos.View\\AdicionarAgendamentoView.cs",
               "RelativeToolTip": "AdicionarAgendamentoView.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAFgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAO0AAAAAAAAAAAAowAYBAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-03T13:44:01.686Z",
               "EditorCaption": ""

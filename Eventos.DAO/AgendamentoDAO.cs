@@ -54,6 +54,18 @@ namespace Eventos.DAO
 
             return dataTable;
         }
+        public int GetLastInsertedId()
+        {
+            using (MySqlConnection conn = dbContext.GetConnection())
+            {
+                conn.Open();
+
+                string query = "SELECT LAST_INSERT_ID();";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                return Convert.ToInt32(cmd.ExecuteScalar());
+            }
+        }
 
         public Agendamento GetById(int idAgendamento)
         {
@@ -492,34 +504,80 @@ namespace Eventos.DAO
 
 
         // Adicionar novo Cliente
-        public void Add(Agendamento agendamento)
+        public int Add(Agendamento agendamento)
         {
             using (MySqlConnection conn = dbContext.GetConnection())
             {
                 conn.Open();
 
-                // Insere na tabela agendamento
-                string query = @"
-            INSERT INTO agendamento
-                (tipo_evento, total, id_cliente, data_emissao, local_evento, data_evento, 
-                 hora_evento, tema)
-            VALUES
-                (@tipo_evento, @total, @id_cliente, @data_emissao, @local_evento, @data_evento, 
-                 @hora_evento, @tema)
-        ";
+                string query = @"INSERT INTO agendamento
+                         (tipo_evento, total, id_cliente, data_emissao, local_evento, data_evento, hora_evento, tema)
+                         VALUES
+                         (@tipo_evento, @total, @id_cliente, @data_emissao, @local_evento, @data_evento, @hora_evento, @tema);";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@tipo_evento", agendamento.TipoEvento);
                 cmd.Parameters.AddWithValue("@total", agendamento.Total);
-                cmd.Parameters.AddWithValue("@id_cliente", agendamento.IdCliente); // <== corrigido
+                cmd.Parameters.AddWithValue("@id_cliente", agendamento.IdCliente);
                 cmd.Parameters.AddWithValue("@data_emissao", agendamento.DataEmissao);
                 cmd.Parameters.AddWithValue("@local_evento", agendamento.LocalEvento);
                 cmd.Parameters.AddWithValue("@data_evento", agendamento.DataEvento);
                 cmd.Parameters.AddWithValue("@hora_evento", agendamento.HoraEvento);
                 cmd.Parameters.AddWithValue("@tema", agendamento.Tema);
+
                 cmd.ExecuteNonQuery();
+
+                // Retorna o ID gerado automaticamente pelo banco
+                cmd.CommandText = "SELECT LAST_INSERT_ID();";
+                int idGerado = Convert.ToInt32(cmd.ExecuteScalar());
+
+                return idGerado;
             }
         }
+        public Agendamento GetByClienteDataTipo(int idCliente, DateTime dataEvento, string tipoEvento)
+        {
+            Agendamento agendamento = null;
+            using (MySqlConnection conn = dbContext.GetConnection())
+            {
+                conn.Open();
+                string query = @"SELECT  id_cliente, tipo_evento, total, data_emissao, local_evento, data_evento, hora_evento, tema
+                         FROM agendamento
+                         WHERE id_cliente = @id_cliente
+                           AND data_evento = @data_evento
+                           AND tipo_evento = @tipo_evento
+                         LIMIT 1";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id_cliente", idCliente);
+                    cmd.Parameters.AddWithValue("@data_evento", dataEvento);
+                    cmd.Parameters.AddWithValue("@tipo_evento", tipoEvento);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            agendamento = new Agendamento()
+                            {
+                                IdAgendamento = reader.GetInt32("id_agendamento"),
+                                IdCliente = reader.GetInt32("id_cliente"),
+                                TipoEvento = reader.GetString("tipo_evento"),
+                                Total = reader.GetDouble("total"),
+                                DataEmissao = reader.GetDateTime("data_emissao"),
+                                LocalEvento = reader.GetString("local_evento"),
+                                DataEvento = reader.GetDateTime("data_evento"),
+                                HoraEvento = reader.GetString("hora_evento"),
+                                Tema = reader.GetString("tema")
+                            };
+                        }
+                    }
+                }
+            }
+            return agendamento;
+        }
+
+
+
 
 
         // Atualizar/editar dados
