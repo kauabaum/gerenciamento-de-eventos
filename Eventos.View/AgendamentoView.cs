@@ -56,10 +56,9 @@ namespace Eventos.View
                 string tipo_evento = txtTipoOrcamento.Text;
                 string tema_evento = txtTemaOrcamento.Text;
                 string data_evento = mskData.Text;
-
                 string nome_cliente = txtCliente.Text;
 
-                if (string.IsNullOrEmpty(tipo_evento) && string.IsNullOrEmpty(tema_evento) && string.IsNullOrEmpty(data_evento))
+                if (string.IsNullOrEmpty(tipo_evento) && string.IsNullOrEmpty(tema_evento) && string.IsNullOrEmpty(data_evento) && string.IsNullOrEmpty(nome_cliente))
                 {
                     MessageBox.Show("Preencha pelo menos um campo para pesquisar.");
                     return;
@@ -67,8 +66,8 @@ namespace Eventos.View
 
                 if (!string.IsNullOrEmpty(tipo_evento))
                 {
-                    var orcamento = agendamentoDAO.GetByAgendamento(tipo_evento);
-                    if (orcamento != null)
+                    var agendamento = agendamentoDAO.GetByAgendamento(tipo_evento);
+                    if (agendamento != null)
                     {
                         DataTable dataTable = agendamentoDAO.GetAgendamentoAsDataTable(tipo_evento);
                         dataGridView1.DataSource = dataTable;
@@ -87,10 +86,10 @@ namespace Eventos.View
                         MessageBox.Show("Orçamento não encontrado.");
                     }
                 }
-                /*if (!string.IsNullOrEmpty(nome_cliente))
+                if (!string.IsNullOrEmpty(nome_cliente))
                 {
-                    var orcamentocliente = agendamentoDAO.GetByAgendamentoCliente(nome_cliente);
-                    if (orcamentocliente != null)
+                    var agendamentocliente = agendamentoDAO.GetByAgendamentoCliente(nome_cliente);
+                    if (agendamentocliente != null)
                     {
                         DataTable dataTable = agendamentoDAO.GetAgendamentoAsDataTableCliente(nome_cliente);
                         dataGridView1.DataSource = dataTable;
@@ -98,8 +97,6 @@ namespace Eventos.View
                         txtTemaOrcamento.Enabled = false;
                         txtCliente.Enabled = false;
                         mskData.Enabled = false;
-                        cmbStatus.Enabled = false;
-                        cmbStatus.ResetText();
                         txtTipoOrcamento.ResetText();
                         txtCliente.ResetText();
                         mskData.ResetText();
@@ -110,7 +107,7 @@ namespace Eventos.View
                     {
                         MessageBox.Show("Orçamento não encontrado.");
                     }
-                }*/
+                }
 
                 if (!string.IsNullOrEmpty(tema_evento))
                 {
@@ -209,6 +206,9 @@ namespace Eventos.View
             {
                 DataTable dataTable = agendamentoDAO.GetAll();
                 dataGridView1.DataSource = dataTable;
+
+                dataGridView1.Columns["Id_Agendamento"].Visible = false;
+                dataGridView1.Columns["Id_Cliente"].Visible = false;
 
             }
             catch (Exception ex)

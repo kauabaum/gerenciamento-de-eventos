@@ -276,7 +276,7 @@
             this.MaximizeBox = false;
             this.Name = "frmOrcamentoView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Agendamento";
+            this.Text = "Orcamento";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

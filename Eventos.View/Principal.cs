@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Eventos.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,15 @@ namespace Eventos.View
 {
     public partial class frmPrincipal : Form
     {
+        private AgendamentoDAO agendamentoDAO;
+        private ParcelamentoDAO parcelamentoDAO;
         public frmPrincipal()
         {
             InitializeComponent();
+            agendamentoDAO = new AgendamentoDAO();
+            parcelamentoDAO = new ParcelamentoDAO();
+            CarregarAgendamentosSemana();
+            CarregarParcelasPendentes();
         }
 
         private void cadastrosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -55,5 +62,22 @@ namespace Eventos.View
             frmAgendamentoView add = new frmAgendamentoView();
             add.ShowDialog();
         }
+        private void CarregarAgendamentosSemana()
+        {
+            DataTable dt = agendamentoDAO.GetAgendamentosDaSemana();
+            grdAgenda.DataSource = dt;
+            grdAgenda.Columns["Id_Agendamento"].Visible = false;
+            grdAgenda.Columns["Id_Cliente"].Visible = false;
+        }
+        private void CarregarParcelasPendentes()
+        {
+            DataTable dt = parcelamentoDAO.GetParcelasPendentes();
+            grdPendente.DataSource = null;
+            grdPendente.DataSource = dt;
+            grdPendente.Columns["Id_Agendamento"].Visible = false;
+            grdPendente.Columns["Id_Parcela"].Visible = false;
+        }
+
+
     }
 }

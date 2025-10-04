@@ -118,5 +118,43 @@ namespace Eventos.DAO
 
             return parcelamento;
         }
+        public DataTable GetParcelasPendentes()
+        {
+            string query = @"
+        SELECT 
+            p.id_parcela AS Id_Parcela,
+            a.id_agendamento AS Id_Agendamento,
+            c.nome AS Nome_Cliente,
+            p.parcela AS Parcela,
+            p.valor AS Valor,
+            p.data_pagamento AS Data_Pagamento,
+            p.vencimento AS Vencimento,
+            p.tipo_pagamento AS Tipo_Pagamento
+        FROM 
+            parcelamento p
+        INNER JOIN receber r ON p.id_receber = r.id_receber
+        INNER JOIN agendamento a ON r.id_agendamento = a.id_agendamento
+        INNER JOIN cliente c ON a.id_cliente = c.id_cliente
+        WHERE 
+            p.vencimento >= CURDATE()   -- só as que ainda não venceram
+        ORDER BY 
+            p.vencimento ASC;
+    ";
+
+            using (MySqlConnection conn = dbContext.GetConnection())
+            {
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    return dt;
+                }
+            }
+        }
+
+
+
     }
 }

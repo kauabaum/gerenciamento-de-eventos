@@ -179,7 +179,8 @@ namespace Eventos.View
                         LocalEvento = local,
                         Tema = tema,
                         Validade = validade,
-                        Aprovacao = (StatusAprovacao)Enum.Parse(typeof(StatusAprovacao), status)
+                        Aprovacao = (StatusAprovacao)Enum.Parse(typeof(StatusAprovacao), "Aguardando")
+
                     };
 
                     orcamentoDAO.Add(novoOrcamento);

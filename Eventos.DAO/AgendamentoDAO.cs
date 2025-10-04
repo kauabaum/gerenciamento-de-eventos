@@ -40,7 +40,7 @@ namespace Eventos.DAO
                 agendamento.hora_evento AS Hora_Evento,
                 agendamento.tema AS Tema
             FROM agendamento
-            INNER JOIN cliente ON agendamento.id_cliente = cliente.id
+            INNER JOIN cliente ON agendamento.id_cliente = cliente.id_cliente
             ORDER BY agendamento.tipo_evento;
         ";
 
@@ -66,6 +66,53 @@ namespace Eventos.DAO
                 return Convert.ToInt32(cmd.ExecuteScalar());
             }
         }
+        public DataTable GetAgendamentosDaSemana()
+        {
+            string query = @"
+        SELECT 
+            agendamento.id_agendamento AS Id_Agendamento,
+            agendamento.id_cliente AS Id_Cliente,
+            cliente.nome AS Nome_Cliente,
+            agendamento.tipo_evento AS Tipo_Evento,
+            agendamento.total AS Total,
+            agendamento.data_emissao AS Data_Emissao,
+            agendamento.local_evento AS Local_Evento,
+            agendamento.data_evento AS Data_Evento,
+            agendamento.hora_evento AS Hora_Evento,
+            agendamento.tema AS Tema
+        FROM 
+            agendamento
+        INNER JOIN cliente ON agendamento.id_cliente = cliente.id_cliente
+        WHERE 
+            agendamento.data_evento BETWEEN @inicioSemana AND @fimSemana
+        ORDER BY 
+            agendamento.data_evento ASC
+    ";
+
+            // Calcula a segunda-feira e domingo da semana atual
+            DateTime hoje = DateTime.Today;
+            int diffParaSegunda = (7 + (hoje.DayOfWeek - DayOfWeek.Monday)) % 7;
+            DateTime inicioSemana = hoje.AddDays(-diffParaSegunda); // segunda-feira
+            DateTime fimSemana = inicioSemana.AddDays(6); // domingo
+
+            using (MySqlConnection conn = dbContext.GetConnection())
+            {
+                conn.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@inicioSemana", inicioSemana.Date);
+                    cmd.Parameters.AddWithValue("@fimSemana", fimSemana.Date);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    return dataTable;
+                }
+            }
+        }
+
 
         public Agendamento GetById(int idAgendamento)
         {
@@ -88,7 +135,7 @@ namespace Eventos.DAO
                 agendamento.hora_evento,
                 agendamento.tema
             FROM agendamento
-            INNER JOIN cliente ON agendamento.id_cliente = cliente.id
+            INNER JOIN cliente ON agendamento.id_cliente = cliente.id_cliente
             WHERE agendamento.id_agendamento = @id
         ";
 
@@ -128,7 +175,7 @@ namespace Eventos.DAO
             string query = @"
         SELECT 
             agendamento.id_agendamento AS Id_Agendamento,
-            cliente.id AS Id_Cliente,
+            agendamento.id_cliente AS Id_Cliente,
             cliente.nome AS Nome_Cliente,
             agendamento.tipo_evento AS Tipo_Evento,
             agendamento.total AS Total,
@@ -139,7 +186,7 @@ namespace Eventos.DAO
             agendamento.tema AS Tema
         FROM 
             agendamento
-        INNER JOIN cliente ON agendamento.id_cliente = cliente.id
+        INNER JOIN cliente ON agendamento.id_cliente = cliente.id_cliente
         WHERE 
             agendamento.tipo_evento LIKE CONCAT('%', @tipo_evento, '%')
         ORDER BY 
@@ -168,7 +215,7 @@ namespace Eventos.DAO
             string query = @"
         SELECT 
             agendamento.id_agendamento AS Id_Agendamento,
-            cliente.id AS Id_Cliente,
+            agendamento.id_cliente AS Id_Cliente,
             cliente.nome AS Nome_Cliente,
             agendamento.tipo_evento AS Tipo_Evento,
             agendamento.total AS Total,
@@ -179,7 +226,7 @@ namespace Eventos.DAO
             agendamento.tema AS Tema
         FROM 
             agendamento
-        INNER JOIN cliente ON agendamento.id_cliente = cliente.id
+        INNER JOIN cliente ON agendamento.id_cliente = cliente.id_cliente
         WHERE 
             cliente.nome LIKE CONCAT('%', @nome_cliente, '%')
         ORDER BY 
@@ -205,7 +252,7 @@ namespace Eventos.DAO
             string query = @"
         SELECT 
             agendamento.id_agendamento AS Id_Agendamento,
-            cliente.id AS Id_Cliente,
+            agendamento.id_cliente AS Id_Cliente,
             cliente.nome AS Nome_Cliente,
             agendamento.tipo_evento AS Tipo_Evento,
             agendamento.total AS Total,
@@ -216,7 +263,7 @@ namespace Eventos.DAO
             agendamento.tema AS Tema
         FROM 
             agendamento
-        INNER JOIN cliente ON agendamento.id_cliente = cliente.id
+        INNER JOIN cliente ON agendamento.id_cliente = cliente.id_cliente
         WHERE 
             agendamento.tema LIKE CONCAT('%', @tema_evento, '%')
         ORDER BY 
@@ -242,7 +289,7 @@ namespace Eventos.DAO
             string query = @"
         SELECT 
             agendamento.id_agendamento AS Id_Agendamento,
-            cliente.id AS Id_Cliente,
+            agendamento.id_cliente AS Id_Cliente,
             cliente.nome AS Nome_Cliente,
             agendamento.tipo_evento AS Tipo_Evento,
             agendamento.total AS Total,
@@ -253,7 +300,7 @@ namespace Eventos.DAO
             agendamento.tema AS Tema
         FROM 
             agendamento
-        INNER JOIN cliente ON agendamento.id_cliente = cliente.id
+        INNER JOIN cliente ON agendamento.id_cliente = cliente.id_cliente
         WHERE 
             agendamento.data_evento LIKE CONCAT('%', @data_evento, '%')
         ORDER BY 
@@ -286,7 +333,7 @@ namespace Eventos.DAO
                 string query = @"
             SELECT 
                 agendamento.id_agendamento AS Id_Agendamento,
-                cliente.id AS Id_Cliente,
+                agendamento.id_cliente AS Id_Cliente,
                 cliente.nome AS Nome_Cliente,
                 agendamento.tipo_evento AS Tipo_Evento,
                 agendamento.total AS Total,
@@ -297,7 +344,7 @@ namespace Eventos.DAO
                 agendamento.tema AS Tema
             FROM 
                 agendamento
-            INNER JOIN cliente ON agendamento.id_cliente = cliente.id
+            INNER JOIN cliente ON agendamento.id_cliente = cliente.id_cliente
             WHERE 
                 agendamento.tipo_evento LIKE CONCAT('%', @tipo_evento, '%')
             ORDER BY 
@@ -345,7 +392,7 @@ namespace Eventos.DAO
                 string query = @"
             SELECT 
                 agendamento.id_agendamento AS Id_Agendamento,
-                cliente.id AS Id_Cliente,
+                agendamento.id_cliente AS Id_Cliente,
                 cliente.nome AS Nome_Cliente,
                 agendamento.tipo_evento AS Tipo_Evento,
                 agendamento.total AS Total,
@@ -356,7 +403,7 @@ namespace Eventos.DAO
                 agendamento.tema AS Tema
             FROM 
                 agendamento
-            INNER JOIN cliente ON agendamento.id_cliente = cliente.id
+            INNER JOIN cliente ON agendamento.id_cliente = cliente.id_cliente
             WHERE 
                 cliente.nome LIKE CONCAT('%', @nome_cliente, '%')
             ORDER BY 
@@ -364,7 +411,7 @@ namespace Eventos.DAO
         ";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@nome_cliente", Nome_cliente);
+                cmd.Parameters.AddWithValue("@nome_cliente", Nome_cliente.Trim());
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -401,7 +448,7 @@ namespace Eventos.DAO
                 string query = @"
             SELECT 
                 agendamento.id_agendamento AS Id_Agendamento,
-                cliente.id AS Id_Cliente,
+                agendamento.id_cliente AS Id_Cliente,
                 cliente.nome AS Nome_Cliente,
                 agendamento.tipo_evento AS Tipo_Evento,
                 agendamento.total AS Total,
@@ -412,7 +459,7 @@ namespace Eventos.DAO
                 agendamento.tema AS Tema
             FROM 
                 agendamento
-            INNER JOIN cliente ON agendamento.id_cliente = cliente.id
+            INNER JOIN cliente ON agendamento.id_cliente = cliente.id_cliente
             WHERE 
                 agendamento.tema LIKE CONCAT('%', @tema_evento, '%')
             ORDER BY 
@@ -457,7 +504,7 @@ namespace Eventos.DAO
                 string query = @"
             SELECT 
                 agendamento.id_agendamento AS Id_Agendamento,
-                cliente.id AS Id_Cliente,
+                agendamento.id_cliente AS Id_Cliente,
                 cliente.nome AS Nome_Cliente,
                 agendamento.tipo_evento AS Tipo_Evento,
                 agendamento.total AS Total,
@@ -468,7 +515,7 @@ namespace Eventos.DAO
                 agendamento.tema AS Tema
             FROM 
                 agendamento
-            INNER JOIN cliente ON agendamento.id_cliente = cliente.id
+            INNER JOIN cliente ON agendamento.id_cliente = cliente.id_cliente
             WHERE 
                 agendamento.data_evento LIKE CONCAT('%', @data_evento, '%')
             ORDER BY 

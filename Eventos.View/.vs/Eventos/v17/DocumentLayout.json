@@ -3,21 +3,23 @@
   "WorkspaceRootPath": "F:\\ATUAL EVENTOS\\Eventos.View\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|F:\\ATUAL EVENTOS\\Eventos.View\\adicionaragendamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:adicionaragendamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{FC46E01A-EED6-41C9-998F-B241DBA9A772}|..\\Eventos.DAO\\Eventos.DAO.csproj|f:\\atual eventos\\eventos.dao\\parcelamentodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|f:\\atual eventos\\eventos.view\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|f:\\atual eventos\\eventos.view\\adicionaragendamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:adicionaragendamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8E4CCAC2-272D-4989-A1AA-AE50B5170DCB}|..\\Eventos.Model\\Eventos.Model.csproj|f:\\atual eventos\\eventos.model\\parcelamentomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|f:\\atual eventos\\eventos.view\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FC46E01A-EED6-41C9-998F-B241DBA9A772}|..\\Eventos.DAO\\Eventos.DAO.csproj|f:\\atual eventos\\eventos.dao\\parcelamentodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC46E01A-EED6-41C9-998F-B241DBA9A772}|..\\Eventos.DAO\\Eventos.DAO.csproj|f:\\atual eventos\\eventos.dao\\receberdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|f:\\atual eventos\\eventos.view\\adicionarorcamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:adicionarorcamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,7 +29,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -51,66 +53,66 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ParcelamentoModel.cs",
-              "DocumentMoniker": "F:\\ATUAL EVENTOS\\Eventos.Model\\ParcelamentoModel.cs",
-              "RelativeDocumentMoniker": "..\\Eventos.Model\\ParcelamentoModel.cs",
-              "ToolTip": "F:\\ATUAL EVENTOS\\Eventos.Model\\ParcelamentoModel.cs",
-              "RelativeToolTip": "..\\Eventos.Model\\ParcelamentoModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAArAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Principal.cs [Design]",
+              "DocumentMoniker": "F:\\ATUAL EVENTOS\\Eventos.View\\Principal.cs",
+              "RelativeDocumentMoniker": "Principal.cs",
+              "ToolTip": "F:\\ATUAL EVENTOS\\Eventos.View\\Principal.cs [Design]",
+              "RelativeToolTip": "Principal.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T22:52:39.972Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ParcelamentoDAO.cs",
-              "DocumentMoniker": "F:\\ATUAL EVENTOS\\Eventos.DAO\\ParcelamentoDAO.cs",
-              "RelativeDocumentMoniker": "..\\Eventos.DAO\\ParcelamentoDAO.cs",
-              "ToolTip": "F:\\ATUAL EVENTOS\\Eventos.DAO\\ParcelamentoDAO.cs",
-              "RelativeToolTip": "..\\Eventos.DAO\\ParcelamentoDAO.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBYAAABZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T22:44:31.407Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ReceberDAO.cs",
-              "DocumentMoniker": "F:\\ATUAL EVENTOS\\Eventos.DAO\\ReceberDAO.cs",
-              "RelativeDocumentMoniker": "..\\Eventos.DAO\\ReceberDAO.cs",
-              "ToolTip": "F:\\ATUAL EVENTOS\\Eventos.DAO\\ReceberDAO.cs",
-              "RelativeToolTip": "..\\Eventos.DAO\\ReceberDAO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T21:53:58.149Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AdicionarAgendamentoView.cs [Design]",
-              "DocumentMoniker": "F:\\ATUAL EVENTOS\\Eventos.View\\AdicionarAgendamentoView.cs",
-              "RelativeDocumentMoniker": "AdicionarAgendamentoView.cs",
-              "ToolTip": "F:\\ATUAL EVENTOS\\Eventos.View\\AdicionarAgendamentoView.cs [Design]",
-              "RelativeToolTip": "AdicionarAgendamentoView.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T17:08:28.155Z",
+              "WhenOpened": "2025-10-04T02:06:53.733Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AdicionarAgendamentoView.cs",
               "DocumentMoniker": "F:\\ATUAL EVENTOS\\Eventos.View\\AdicionarAgendamentoView.cs",
               "RelativeDocumentMoniker": "AdicionarAgendamentoView.cs",
               "ToolTip": "F:\\ATUAL EVENTOS\\Eventos.View\\AdicionarAgendamentoView.cs",
               "RelativeToolTip": "AdicionarAgendamentoView.cs",
-              "ViewState": "AgIAAO0AAAAAAAAAAAAowAYBAABOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T13:44:01.686Z",
+              "WhenOpened": "2025-10-04T02:05:12.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AdicionarOrcamentoView.cs",
+              "DocumentMoniker": "F:\\ATUAL EVENTOS\\Eventos.View\\AdicionarOrcamentoView.cs",
+              "RelativeDocumentMoniker": "AdicionarOrcamentoView.cs",
+              "ToolTip": "F:\\ATUAL EVENTOS\\Eventos.View\\AdicionarOrcamentoView.cs",
+              "RelativeToolTip": "AdicionarOrcamentoView.cs",
+              "ViewState": "AgIAAOkBAAAAAAAAAAAuwLUAAABmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-04T01:57:05.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Principal.cs",
+              "DocumentMoniker": "F:\\ATUAL EVENTOS\\Eventos.View\\Principal.cs",
+              "RelativeDocumentMoniker": "Principal.cs",
+              "ToolTip": "F:\\ATUAL EVENTOS\\Eventos.View\\Principal.cs",
+              "RelativeToolTip": "Principal.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAuwE0AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-04T01:40:39.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ParcelamentoDAO.cs",
+              "DocumentMoniker": "F:\\ATUAL EVENTOS\\Eventos.DAO\\ParcelamentoDAO.cs",
+              "RelativeDocumentMoniker": "..\\Eventos.DAO\\ParcelamentoDAO.cs",
+              "ToolTip": "F:\\ATUAL EVENTOS\\Eventos.DAO\\ParcelamentoDAO.cs",
+              "RelativeToolTip": "..\\Eventos.DAO\\ParcelamentoDAO.cs",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAwwH0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-03T22:44:31.407Z",
               "EditorCaption": ""
             }
           ]
