@@ -81,6 +81,7 @@ data_pagamento DATE,
 valor DOUBLE PRECISION NOT NULL,
 vencimento DATE NOT NULL,
 parcela VARCHAR(50) NOT NULL,
+status_pagamento INTEGER(1) NOT NULL DEFAULT 0,
 id_receber INTEGER(14) NOT NULL,
 FOREIGN KEY(id_receber) REFERENCES receber (id_receber) ON DELETE RESTRICT
 );
