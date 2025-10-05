@@ -229,14 +229,14 @@ INSERT INTO receber (data_emissao,valor_total,id_agendamento)
 
   -- Tabela parcelamento
 
-INSERT INTO parcelamento (tipo_pagamento,data_pagamento,valor,vencimento,parcela,id_receber)
-  VALUES ("Cartão","2025-05-20","50.00","2025-05-20","1-4","1");
+INSERT INTO parcelamento (tipo_pagamento,data_pagamento,valor,vencimento,parcela,id_receber,status_pagamento)
+  VALUES ("Cartão","2025-05-20","50.00","2025-05-20","1-4","1","0");
 
-INSERT INTO parcelamento (tipo_pagamento,data_pagamento,valor,vencimento,parcela,id_receber)
-  VALUES ("Cartão","0000-00-00","50.00","2025-06-20","2-4","1");
+INSERT INTO parcelamento (tipo_pagamento,data_pagamento,valor,vencimento,parcela,id_receber,status_pagamento)
+  VALUES ("Cartão","0000-00-00","50.00","2025-06-20","2-4","1","1");
 
-INSERT INTO parcelamento (tipo_pagamento,data_pagamento,valor,vencimento,parcela,id_receber)
-  VALUES ("Cartão","0000-00-00","50.00","2025-07-20","3-4","1");
+INSERT INTO parcelamento (tipo_pagamento,data_pagamento,valor,vencimento,parcela,id_receber,status_pagamento)
+  VALUES ("Cartão","0000-00-00","50.00","2025-07-20","3-4","1","0");
 
-INSERT INTO parcelamento (tipo_pagamento,data_pagamento,valor,vencimento,parcela,id_receber)
-  VALUES ("Cartão","0000-00-00","50.00","2025-08-20","4-4","1");
+INSERT INTO parcelamento (tipo_pagamento,data_pagamento,valor,vencimento,parcela,id_receber,status_pagamento)
+  VALUES ("Cartão","0000-00-00","50.00","2025-08-20","4-4","1","1");
