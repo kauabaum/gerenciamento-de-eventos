@@ -34,6 +34,40 @@ namespace Eventos.DAO
                 cmd.ExecuteNonQuery();
             }
         }
+        public DataTable GetAllParcelas()
+        {
+            string query = @"
+        SELECT 
+            p.id_parcela AS Id_Parcela,
+            p.id_receber AS Id_Receber,
+            c.nome AS Nome_Cliente,
+            p.tipo_pagamento AS Tipo_Pagamento,
+            p.valor AS Valor,
+            p.parcela AS Parcela,
+            p.status_pagamento AS Status_Pagamento,
+            p.data_pagamento AS Data_Pagamento,
+            p.vencimento AS Vencimento
+        FROM 
+            parcelamento p
+        INNER JOIN receber r ON p.id_receber = r.id_receber
+        INNER JOIN agendamento a ON r.id_agendamento = a.id_agendamento
+        INNER JOIN cliente c ON a.id_cliente = c.id_cliente
+        ORDER BY 
+            p.vencimento ASC;
+    ";
+
+            using (MySqlConnection conn = dbContext.GetConnection())
+            {
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    return dt;
+                }
+            }
+        }
 
         // Atualizar parcela
         public void Update(Parcelamento parcelamento)
@@ -125,11 +159,14 @@ namespace Eventos.DAO
             p.id_parcela AS Id_Parcela,
             r.id_receber AS Id_Receber,
             c.nome AS Nome_Cliente,
+            p.tipo_pagamento AS Tipo_Pagamento,
             p.valor AS Valor,
+            p.parcela AS Parcela,
+            p.data_pagamento AS Data_Pagamento,
             p.vencimento AS Data_Vencimento,
             CASE 
                 WHEN p.vencimento < CURDATE() THEN 'Vencido'
-                ELSE 'A Vencer'
+                ELSE 'No prazo'
             END AS Status
         FROM 
             parcelamento p

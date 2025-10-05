@@ -161,6 +161,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ItensAgendamentoDAO.cs" />
     <Compile Include="ItensOrcamentoDAO.cs" />
     <Compile Include="AgendamentoDAO.cs" />
     <Compile Include="ReceberDAO.cs" />

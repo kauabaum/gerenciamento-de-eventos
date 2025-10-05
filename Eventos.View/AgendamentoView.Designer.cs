@@ -46,7 +46,6 @@
             this.lblCliente = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
             this.mskData = new System.Windows.Forms.MaskedTextBox();
-            this.btnExcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,7 +74,7 @@
             // 
             this.btnPesquisarOrcamento.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPesquisarOrcamento.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisarOrcamento.Image")));
-            this.btnPesquisarOrcamento.Location = new System.Drawing.Point(108, 9);
+            this.btnPesquisarOrcamento.Location = new System.Drawing.Point(124, 9);
             this.btnPesquisarOrcamento.Name = "btnPesquisarOrcamento";
             this.btnPesquisarOrcamento.Size = new System.Drawing.Size(83, 78);
             this.btnPesquisarOrcamento.TabIndex = 8;
@@ -87,7 +86,7 @@
             // 
             this.btnSairOrcamento.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSairOrcamento.Image = ((System.Drawing.Image)(resources.GetObject("btnSairOrcamento.Image")));
-            this.btnSairOrcamento.Location = new System.Drawing.Point(286, 9);
+            this.btnSairOrcamento.Location = new System.Drawing.Point(338, 9);
             this.btnSairOrcamento.Name = "btnSairOrcamento";
             this.btnSairOrcamento.Size = new System.Drawing.Size(83, 78);
             this.btnSairOrcamento.TabIndex = 9;
@@ -131,7 +130,7 @@
             // txtTemaOrcamento
             // 
             this.txtTemaOrcamento.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTemaOrcamento.Location = new System.Drawing.Point(551, 57);
+            this.txtTemaOrcamento.Location = new System.Drawing.Point(551, 56);
             this.txtTemaOrcamento.Name = "txtTemaOrcamento";
             this.txtTemaOrcamento.Size = new System.Drawing.Size(256, 30);
             this.txtTemaOrcamento.TabIndex = 21;
@@ -141,7 +140,7 @@
             // 
             this.btnMostrarTodosProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMostrarTodosProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnMostrarTodosProduto.Image")));
-            this.btnMostrarTodosProduto.Location = new System.Drawing.Point(197, 9);
+            this.btnMostrarTodosProduto.Location = new System.Drawing.Point(231, 9);
             this.btnMostrarTodosProduto.Name = "btnMostrarTodosProduto";
             this.btnMostrarTodosProduto.Size = new System.Drawing.Size(83, 78);
             this.btnMostrarTodosProduto.TabIndex = 22;
@@ -162,7 +161,7 @@
             // 
             this.lblTipoOrcamento.AutoSize = true;
             this.lblTipoOrcamento.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoOrcamento.Location = new System.Drawing.Point(467, 16);
+            this.lblTipoOrcamento.Location = new System.Drawing.Point(448, 20);
             this.lblTipoOrcamento.Name = "lblTipoOrcamento";
             this.lblTipoOrcamento.Size = new System.Drawing.Size(66, 25);
             this.lblTipoOrcamento.TabIndex = 18;
@@ -172,7 +171,7 @@
             // 
             this.lblTemaOrcamento.AutoSize = true;
             this.lblTemaOrcamento.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTemaOrcamento.Location = new System.Drawing.Point(467, 58);
+            this.lblTemaOrcamento.Location = new System.Drawing.Point(448, 61);
             this.lblTemaOrcamento.Name = "lblTemaOrcamento";
             this.lblTemaOrcamento.Size = new System.Drawing.Size(78, 25);
             this.lblTemaOrcamento.TabIndex = 20;
@@ -192,7 +191,7 @@
             // 
             this.lblData.AutoSize = true;
             this.lblData.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.Location = new System.Drawing.Point(351, 109);
+            this.lblData.Location = new System.Drawing.Point(397, 108);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(139, 25);
             this.lblData.TabIndex = 24;
@@ -201,30 +200,18 @@
             // mskData
             // 
             this.mskData.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskData.Location = new System.Drawing.Point(496, 101);
+            this.mskData.Location = new System.Drawing.Point(560, 101);
             this.mskData.Mask = "00/00/0000";
             this.mskData.Name = "mskData";
             this.mskData.Size = new System.Drawing.Size(145, 38);
             this.mskData.TabIndex = 26;
             this.mskData.ValidatingType = typeof(System.DateTime);
             // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
-            this.btnExcluir.Location = new System.Drawing.Point(375, 9);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(83, 78);
-            this.btnExcluir.TabIndex = 27;
-            this.toolTip1.SetToolTip(this.btnExcluir, "Excluir");
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            // 
             // frmAgendamentoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 497);
-            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.mskData);
             this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.lblData);
@@ -267,6 +254,5 @@
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.MaskedTextBox mskData;
-        private System.Windows.Forms.Button btnExcluir;
     }
 }

@@ -58,6 +58,37 @@ namespace Eventos.DAO
                 }
             }
         }
+        public DataTable GetAllReceber()
+        {
+            string query = @"
+        SELECT 
+            r.id_receber AS Id_Receber,
+            r.id_agendamento AS Id_Agendamento,
+            c.nome AS Nome_Cliente,
+            r.data_emissao AS Data_Emissao,
+            r.valor_total AS Valor_Total
+        FROM 
+            receber r
+        INNER JOIN agendamento a ON r.id_agendamento = a.id_agendamento
+        INNER JOIN cliente c ON a.id_cliente = c.id_cliente
+        ORDER BY 
+            r.data_emissao DESC;
+    ";
+
+            using (MySqlConnection conn = dbContext.GetConnection())
+            {
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    return dt;
+                }
+            }
+        }
+
+
         public void InserirRecebimento(int idAgendamento, double valorTotal)
         {
             string query = @"

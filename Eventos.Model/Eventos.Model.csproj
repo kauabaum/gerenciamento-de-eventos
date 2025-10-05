@@ -161,7 +161,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OrcamentoModel - Cópia .cs" />
+    <Compile Include="ItensAgendamentoModel.cs" />
+    <Compile Include="OrcamentoModel.cs" />
     <Compile Include="ParcelamentoModel.cs" />
     <Compile Include="ItensOrcamentoModel.cs" />
     <Compile Include="AgendamentoModel.cs" />

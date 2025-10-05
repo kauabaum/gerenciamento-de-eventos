@@ -45,8 +45,6 @@
             this.lblCliente = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
             this.mskData = new System.Windows.Forms.MaskedTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -65,7 +63,7 @@
             this.btnAdicionarOrcamento.Size = new System.Drawing.Size(83, 78);
             this.btnAdicionarOrcamento.TabIndex = 0;
             this.btnAdicionarOrcamento.Tag = "";
-            this.toolTip1.SetToolTip(this.btnAdicionarOrcamento, "Adicionar");
+            this.toolTip1.SetToolTip(this.btnAdicionarOrcamento, "Confirmar Pagamento");
             this.btnAdicionarOrcamento.UseVisualStyleBackColor = true;
             this.btnAdicionarOrcamento.Click += new System.EventHandler(this.btnMarcarComoPago_Click);
             // 
@@ -194,41 +192,19 @@
             this.lblData.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblData.Location = new System.Drawing.Point(467, 64);
             this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(174, 25);
+            this.lblData.Size = new System.Drawing.Size(144, 25);
             this.lblData.TabIndex = 24;
-            this.lblData.Text = "Data Pagamento:";
+            this.lblData.Text = "Data Emissao:";
             // 
             // mskData
             // 
             this.mskData.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskData.Location = new System.Drawing.Point(648, 56);
+            this.mskData.Location = new System.Drawing.Point(633, 56);
             this.mskData.Mask = "00/00/0000";
             this.mskData.Name = "mskData";
             this.mskData.Size = new System.Drawing.Size(145, 38);
             this.mskData.TabIndex = 26;
             this.mskData.ValidatingType = typeof(System.DateTime);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(534, 110);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 25);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "Status :";
-            // 
-            // cmbStatus
-            // 
-            this.cmbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Items.AddRange(new object[] {
-            "Pago",
-            "Pendente"});
-            this.cmbStatus.Location = new System.Drawing.Point(637, 109);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(156, 32);
-            this.cmbStatus.TabIndex = 28;
             // 
             // dataGridView2
             // 
@@ -273,8 +249,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.cmbStatus);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.mskData);
             this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.lblData);
@@ -317,8 +291,6 @@
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.MaskedTextBox mskData;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbStatus;
         public System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

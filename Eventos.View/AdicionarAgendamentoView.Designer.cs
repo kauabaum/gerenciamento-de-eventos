@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdicionarAgendamentoView));
             this.btnSalvarProduto = new System.Windows.Forms.Button();
             this.lblMensagem = new System.Windows.Forms.Label();
-            this.btnSairProduto = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.txtLocalEvento = new System.Windows.Forms.TextBox();
@@ -59,6 +58,7 @@
             this.mskPagamento = new System.Windows.Forms.MaskedTextBox();
             this.lblValidadeOrcamento = new System.Windows.Forms.Label();
             this.mskVencimento = new System.Windows.Forms.MaskedTextBox();
+            this.btnSairProduto = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSalvarProduto
@@ -81,17 +81,6 @@
             this.lblMensagem.Name = "lblMensagem";
             this.lblMensagem.Size = new System.Drawing.Size(0, 23);
             this.lblMensagem.TabIndex = 6;
-            // 
-            // btnSairProduto
-            // 
-            this.btnSairProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSairProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnSairProduto.Image")));
-            this.btnSairProduto.Location = new System.Drawing.Point(489, 12);
-            this.btnSairProduto.Name = "btnSairProduto";
-            this.btnSairProduto.Size = new System.Drawing.Size(83, 78);
-            this.btnSairProduto.TabIndex = 9;
-            this.toolTip1.SetToolTip(this.btnSairProduto, "Sair");
-            this.btnSairProduto.UseVisualStyleBackColor = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -390,6 +379,18 @@
             this.mskVencimento.TabIndex = 79;
             this.mskVencimento.ValidatingType = typeof(System.DateTime);
             // 
+            // btnSairProduto
+            // 
+            this.btnSairProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSairProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnSairProduto.Image")));
+            this.btnSairProduto.Location = new System.Drawing.Point(489, 12);
+            this.btnSairProduto.Name = "btnSairProduto";
+            this.btnSairProduto.Size = new System.Drawing.Size(83, 78);
+            this.btnSairProduto.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.btnSairProduto, "Sair");
+            this.btnSairProduto.UseVisualStyleBackColor = true;
+            this.btnSairProduto.Click += new System.EventHandler(this.btnSair_Click);
+            // 
             // frmAdicionarAgendamentoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -435,7 +436,6 @@
         #endregion
         private System.Windows.Forms.Button btnSalvarProduto;
         private System.Windows.Forms.Label lblMensagem;
-        private System.Windows.Forms.Button btnSairProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label lblTipoOrcamento;
@@ -462,5 +462,6 @@
         private System.Windows.Forms.MaskedTextBox mskPagamento;
         private System.Windows.Forms.Label lblValidadeOrcamento;
         private System.Windows.Forms.MaskedTextBox mskVencimento;
+        private System.Windows.Forms.Button btnSairProduto;
     }
 }

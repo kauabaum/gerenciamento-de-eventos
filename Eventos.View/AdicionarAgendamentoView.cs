@@ -226,19 +226,22 @@ namespace Eventos.View
                     Tema = txtTema.Text
                 };
                 AgendamentoDAO agendamentoDAO = new AgendamentoDAO();
-                int idAgendamento = agendamentoDAO.Add(agendamento); // retorna ID gerado
+                int idAgendamento = agendamentoDAO.Add(agendamento);
 
                 // --- 6) Cria Receber ---
                 Receber receber = new Receber
                 {
                     IdAgendamento = idAgendamento,
                     DataEmissao = DateTime.Now,
-                    ValorTotal = Convert.ToDouble(total)
+                    ValorTotal = (parcelas > 1 ? Convert.ToDouble(total) : 0) // <= Ajuste principal
                 };
                 ReceberDAO receberDAO = new ReceberDAO();
-                int idReceber = receberDAO.Add(receber); // retorna ID do receber
+                int idReceber = receberDAO.Add(receber);
 
-                // --- 7) Se houver mais de 1 parcela, cria Parcelamento ---
+                // --- 7) Cria Parcelamento ---
+                ParcelamentoDAO parcelamentoDAO = new ParcelamentoDAO();
+                string tipoPagamento = cmbTipos.Text;
+
                 if (parcelas > 1)
                 {
                     decimal valorParcela = Math.Round(total / parcelas, 2);
@@ -247,9 +250,6 @@ namespace Eventos.View
                     decimal[] parcelasValores = new decimal[parcelas];
                     for (int i = 0; i < parcelas; i++) parcelasValores[i] = valorParcela;
                     if (diferenca != 0) parcelasValores[parcelas - 1] += diferenca;
-
-                    ParcelamentoDAO parcelamentoDAO = new ParcelamentoDAO();
-                    string tipoPagamento = cmbTipos.Text;
 
                     for (int i = 0; i < parcelas; i++)
                     {
@@ -260,22 +260,58 @@ namespace Eventos.View
                             Valor = Convert.ToDouble(parcelasValores[i]),
                             DataPagamento = dataPagamentoBase.AddMonths(i),
                             Vencimento = vencimentoBase.AddMonths(i),
-                            Parcela = $"{i + 1}-{parcelas}" // rótulo dinâmico
+                            Parcela = $"{i + 1}-{parcelas}"
                         };
                         parcelamentoDAO.Add(p);
                     }
+                }
+                else
+                {
+                    // --- Pagamento à vista: cria parcela única 1-1 ---
+                    Parcelamento parcelaUnica = new Parcelamento
+                    {
+                        IdReceber = idReceber,
+                        TipoPagamento = tipoPagamento,
+                        Valor = Convert.ToDouble(total),
+                        DataPagamento = dataPagamentoBase,
+                        Vencimento = vencimentoBase,
+                        Parcela = "1-1"
+                    };
+                    parcelamentoDAO.Add(parcelaUnica);
+                }
 
+                // --- 8) Copiar Itens do Orçamento ---
+                ItensOrcamentoDAO itensOrcDAO = new ItensOrcamentoDAO();
+                List<ItemOrcamento> itensOrc = itensOrcDAO.GetByOrcamentoId(orcamentoSelecionado.IdOrcamento);
+                ItensAgendamentoDAO itensAgDAO = new ItensAgendamentoDAO();
+
+                foreach (var item in itensOrc)
+                {
+                    ItemAgendamento novoItem = new ItemAgendamento
+                    {
+                        IdAgendamento = idAgendamento,
+                        IdProduto = item.IdProduto,
+                        Quantidade = item.Quantidade,
+                        Subtotal = item.Subtotal
+                    };
+
+                    itensAgDAO.Add(novoItem);
                 }
 
                 MessageBox.Show("Agendamento, receber e parcelamento adicionados com sucesso!");
+
+                this.Close();
+                frmAgendamentoView telaAgendamento = new frmAgendamentoView();
+                telaAgendamento.Show();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao salvar: " + ex.Message);
             }
         }
-
-
-
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
