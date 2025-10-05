@@ -188,10 +188,11 @@ namespace Eventos.View
                 }
                 if (status == "Aprovado" && orcamentoIdSelecionado.HasValue)
                 {
-                    // Cria um objeto Orcamento usando os dados da linha selecionada
+                    // Preenche o objeto completo antes de abrir o formulário
                     Orcamento orcamento = new Orcamento
                     {
                         IdOrcamento = orcamentoIdSelecionado.Value,
+                        NomeCliente = txtNomeCliente.Text,     // mantém o nome
                         TipoEvento = txtTipoOrcamento.Text,
                         Total = Convert.ToDouble(mskTotalOrcamento.Text),
                         DataEmissao = Convert.ToDateTime(mskDataEmissao.Text),
@@ -199,11 +200,21 @@ namespace Eventos.View
                         HoraEvento = mskHoraEvento.Text,
                         LocalEvento = txtLocalEvento.Text,
                         Tema = cmbTemaEvento.Text,
+                        Validade = txtValidadeOrcamento.Text,  // mantém a validade
+                        Aprovacao = StatusAprovacao.Aprovado   // status inicial
                     };
 
+
                     // Passa o objeto direto para o formulário de agendamento
-                    frmAdicionarAgendamentoView tela = new frmAdicionarAgendamentoView(orcamento);
-                    tela.ShowDialog();
+                    frmAdicionarAgendamentoView form = new frmAdicionarAgendamentoView(orcamento);
+                    DialogResult resultado = form.ShowDialog();
+                    if (resultado == DialogResult.Cancel)
+                    {
+                        orcamento.Aprovacao = StatusAprovacao.Aguardando;
+                        OrcamentoDAO orcamentoDAO = new OrcamentoDAO();
+                        orcamentoDAO.Update(orcamento);
+                    }
+
                 }
 
 

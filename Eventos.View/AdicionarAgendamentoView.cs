@@ -233,7 +233,7 @@ namespace Eventos.View
                 {
                     IdAgendamento = idAgendamento,
                     DataEmissao = DateTime.Now,
-                    ValorTotal = (parcelas > 1 ? Convert.ToDouble(total) : 0) // <= Ajuste principal
+                    ValorTotal = (parcelas > 1 ? 0 : Convert.ToDouble(total)) // <-- ajuste aqui
                 };
                 ReceberDAO receberDAO = new ReceberDAO();
                 int idReceber = receberDAO.Add(receber);
@@ -280,6 +280,7 @@ namespace Eventos.View
                     parcelamentoDAO.Add(parcelaUnica);
                 }
 
+
                 // --- 8) Copiar Itens do Orçamento ---
                 ItensOrcamentoDAO itensOrcDAO = new ItensOrcamentoDAO();
                 List<ItemOrcamento> itensOrc = itensOrcDAO.GetByOrcamentoId(orcamentoSelecionado.IdOrcamento);
@@ -299,10 +300,13 @@ namespace Eventos.View
                 }
 
                 MessageBox.Show("Agendamento, receber e parcelamento adicionados com sucesso!");
-
+                this.DialogResult = DialogResult.OK; // <== Adiciona esta linha
                 this.Close();
+
                 frmAgendamentoView telaAgendamento = new frmAgendamentoView();
                 telaAgendamento.Show();
+
+
             }
             catch (Exception ex)
             {
@@ -311,7 +315,8 @@ namespace Eventos.View
         }
         private void btnSair_Click(object sender, EventArgs e)
         {
-            Close();
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }
