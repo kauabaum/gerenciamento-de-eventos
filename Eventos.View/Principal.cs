@@ -62,6 +62,11 @@ namespace Eventos.View
             frmAgendamentoView add = new frmAgendamentoView();
             add.ShowDialog();
         }
+        private void financeiroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFinanceiroView add = new frmFinanceiroView();
+            add.ShowDialog();
+        }
         private void CarregarAgendamentosSemana()
         {
             DataTable dt = agendamentoDAO.GetAgendamentosDaSemana();
@@ -74,7 +79,7 @@ namespace Eventos.View
             DataTable dt = parcelamentoDAO.GetParcelasPendentes();
             grdPendente.DataSource = null;
             grdPendente.DataSource = dt;
-            grdPendente.Columns["Id_Agendamento"].Visible = false;
+            grdPendente.Columns["Id_Receber"].Visible = false;
             grdPendente.Columns["Id_Parcela"].Visible = false;
         }
 

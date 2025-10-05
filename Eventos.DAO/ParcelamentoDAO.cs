@@ -123,20 +123,21 @@ namespace Eventos.DAO
             string query = @"
         SELECT 
             p.id_parcela AS Id_Parcela,
-            a.id_agendamento AS Id_Agendamento,
+            r.id_receber AS Id_Receber,
             c.nome AS Nome_Cliente,
-            p.parcela AS Parcela,
             p.valor AS Valor,
-            p.data_pagamento AS Data_Pagamento,
-            p.vencimento AS Vencimento,
-            p.tipo_pagamento AS Tipo_Pagamento
+            p.vencimento AS Data_Vencimento,
+            CASE 
+                WHEN p.vencimento < CURDATE() THEN 'Vencido'
+                ELSE 'A Vencer'
+            END AS Status
         FROM 
             parcelamento p
         INNER JOIN receber r ON p.id_receber = r.id_receber
         INNER JOIN agendamento a ON r.id_agendamento = a.id_agendamento
         INNER JOIN cliente c ON a.id_cliente = c.id_cliente
         WHERE 
-            p.vencimento >= CURDATE()   -- só as que ainda não venceram
+            p.status_pagamento = 0
         ORDER BY 
             p.vencimento ASC;
     ";
@@ -150,6 +151,22 @@ namespace Eventos.DAO
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
                     return dt;
+                }
+            }
+        }
+
+
+        public void MarcarParcelaComoPaga(int idParcela)
+        {
+            string query = "UPDATE parcelamento SET status_pagamento = 1, data_pagamento = NOW() WHERE id_parcela = @idParcela";
+
+            using (MySqlConnection conn = dbContext.GetConnection())
+            {
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@idParcela", idParcela);
+                    cmd.ExecuteNonQuery();
                 }
             }
         }

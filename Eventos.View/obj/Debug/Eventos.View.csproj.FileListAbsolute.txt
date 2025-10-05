@@ -838,3 +838,5 @@ F:\ATUAL EVENTOS\Eventos.View\obj\Debug\Eventos.View.csproj.CoreCompileInputs.ca
 F:\ATUAL EVENTOS\Eventos.View\obj\Debug\Eventos..04F723CD.Up2Date
 F:\ATUAL EVENTOS\Eventos.View\obj\Debug\Eventos.exe
 F:\ATUAL EVENTOS\Eventos.View\obj\Debug\Eventos.pdb
+F:\Projeto-Eventos\Eventos.View\obj\Debug\Eventos.View.frmAgendamentoView.resources
+F:\Projeto-Eventos\Eventos.View\obj\Debug\Eventos.View.frmFinanceiroView.resources

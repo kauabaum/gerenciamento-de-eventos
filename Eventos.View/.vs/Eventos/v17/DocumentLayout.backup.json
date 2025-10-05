@@ -1,25 +1,24 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\ATUAL EVENTOS\\Eventos.View\\",
+  "WorkspaceRootPath": "F:\\Projeto-Eventos\\Eventos.View\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FC46E01A-EED6-41C9-998F-B241DBA9A772}|..\\Eventos.DAO\\Eventos.DAO.csproj|f:\\atual eventos\\eventos.dao\\parcelamentodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|f:\\projeto-eventos\\eventos.view\\financeiroview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:financeiroview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|f:\\atual eventos\\eventos.view\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|f:\\atual eventos\\eventos.view\\adicionaragendamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:adicionaragendamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|f:\\atual eventos\\eventos.view\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|f:\\projeto-eventos\\eventos.view\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|f:\\atual eventos\\eventos.view\\adicionarorcamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:adicionarorcamentoview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FC46E01A-EED6-41C9-998F-B241DBA9A772}|..\\Eventos.DAO\\Eventos.DAO.csproj|f:\\projeto-eventos\\eventos.dao\\receberdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC46E01A-EED6-41C9-998F-B241DBA9A772}|..\\Eventos.DAO\\Eventos.DAO.csproj|f:\\projeto-eventos\\eventos.dao\\parcelamentodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|f:\\projeto-eventos\\eventos.view\\financeiroview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4F6E17BF-1595-48DF-87B9-236E3218A50F}|Eventos.View.csproj|solutionrelative:financeiroview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,7 +28,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,66 +53,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Principal.cs [Design]",
-              "DocumentMoniker": "F:\\ATUAL EVENTOS\\Eventos.View\\Principal.cs",
-              "RelativeDocumentMoniker": "Principal.cs",
-              "ToolTip": "F:\\ATUAL EVENTOS\\Eventos.View\\Principal.cs [Design]",
-              "RelativeToolTip": "Principal.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-04T02:06:53.733Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AdicionarAgendamentoView.cs",
-              "DocumentMoniker": "F:\\ATUAL EVENTOS\\Eventos.View\\AdicionarAgendamentoView.cs",
-              "RelativeDocumentMoniker": "AdicionarAgendamentoView.cs",
-              "ToolTip": "F:\\ATUAL EVENTOS\\Eventos.View\\AdicionarAgendamentoView.cs",
-              "RelativeToolTip": "AdicionarAgendamentoView.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-04T02:05:12.002Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AdicionarOrcamentoView.cs",
-              "DocumentMoniker": "F:\\ATUAL EVENTOS\\Eventos.View\\AdicionarOrcamentoView.cs",
-              "RelativeDocumentMoniker": "AdicionarOrcamentoView.cs",
-              "ToolTip": "F:\\ATUAL EVENTOS\\Eventos.View\\AdicionarOrcamentoView.cs",
-              "RelativeToolTip": "AdicionarOrcamentoView.cs",
-              "ViewState": "AgIAAOkBAAAAAAAAAAAuwLUAAABmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-04T01:57:05.923Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Principal.cs",
-              "DocumentMoniker": "F:\\ATUAL EVENTOS\\Eventos.View\\Principal.cs",
+              "DocumentMoniker": "F:\\Projeto-Eventos\\Eventos.View\\Principal.cs",
               "RelativeDocumentMoniker": "Principal.cs",
-              "ToolTip": "F:\\ATUAL EVENTOS\\Eventos.View\\Principal.cs",
+              "ToolTip": "F:\\Projeto-Eventos\\Eventos.View\\Principal.cs",
               "RelativeToolTip": "Principal.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAuwE0AAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAD4AAAAAAAAAAIAwwFEAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-04T01:40:39.21Z",
+              "WhenOpened": "2025-10-05T04:16:13.456Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ParcelamentoDAO.cs",
-              "DocumentMoniker": "F:\\ATUAL EVENTOS\\Eventos.DAO\\ParcelamentoDAO.cs",
-              "RelativeDocumentMoniker": "..\\Eventos.DAO\\ParcelamentoDAO.cs",
-              "ToolTip": "F:\\ATUAL EVENTOS\\Eventos.DAO\\ParcelamentoDAO.cs",
-              "RelativeToolTip": "..\\Eventos.DAO\\ParcelamentoDAO.cs",
-              "ViewState": "AgIAAHUAAAAAAAAAAAAwwH0AAAAvAAAAAAAAAA==",
+              "Title": "FinanceiroView.cs",
+              "DocumentMoniker": "F:\\Projeto-Eventos\\Eventos.View\\FinanceiroView.cs",
+              "RelativeDocumentMoniker": "FinanceiroView.cs",
+              "ToolTip": "F:\\Projeto-Eventos\\Eventos.View\\FinanceiroView.cs",
+              "RelativeToolTip": "FinanceiroView.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAwwEkAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T22:44:31.407Z",
+              "WhenOpened": "2025-10-05T03:50:37.615Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ReceberDAO.cs",
+              "DocumentMoniker": "F:\\Projeto-Eventos\\Eventos.DAO\\ReceberDAO.cs",
+              "RelativeDocumentMoniker": "..\\Eventos.DAO\\ReceberDAO.cs",
+              "ToolTip": "F:\\Projeto-Eventos\\Eventos.DAO\\ReceberDAO.cs",
+              "RelativeToolTip": "..\\Eventos.DAO\\ReceberDAO.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAwwGMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T03:44:46.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ParcelamentoDAO.cs",
+              "DocumentMoniker": "F:\\Projeto-Eventos\\Eventos.DAO\\ParcelamentoDAO.cs",
+              "RelativeDocumentMoniker": "..\\Eventos.DAO\\ParcelamentoDAO.cs",
+              "ToolTip": "F:\\Projeto-Eventos\\Eventos.DAO\\ParcelamentoDAO.cs",
+              "RelativeToolTip": "..\\Eventos.DAO\\ParcelamentoDAO.cs",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAowH0AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T03:46:09.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FinanceiroView.cs [Design]",
+              "DocumentMoniker": "F:\\Projeto-Eventos\\Eventos.View\\FinanceiroView.cs",
+              "RelativeDocumentMoniker": "FinanceiroView.cs",
+              "ToolTip": "F:\\Projeto-Eventos\\Eventos.View\\FinanceiroView.cs [Design]",
+              "RelativeToolTip": "FinanceiroView.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T03:43:10.068Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
