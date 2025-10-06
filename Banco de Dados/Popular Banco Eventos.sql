@@ -233,10 +233,10 @@ INSERT INTO parcelamento (tipo_pagamento,data_pagamento,valor,vencimento,parcela
   VALUES ("Cartão","2025-05-20","50.00","2025-05-20","1-4","1","0");
 
 INSERT INTO parcelamento (tipo_pagamento,data_pagamento,valor,vencimento,parcela,id_receber,status_pagamento)
-  VALUES ("Cartão","0000-00-00","50.00","2025-06-20","2-4","1","1");
+  VALUES ("Cartão","2025-02-13","50.00","2025-06-20","2-4","1","1");
 
 INSERT INTO parcelamento (tipo_pagamento,data_pagamento,valor,vencimento,parcela,id_receber,status_pagamento)
-  VALUES ("Cartão","0000-00-00","50.00","2025-07-20","3-4","1","0");
+  VALUES ("Cartão","2025-08-22","50.00","2025-07-20","3-4","1","0");
 
 INSERT INTO parcelamento (tipo_pagamento,data_pagamento,valor,vencimento,parcela,id_receber,status_pagamento)
-  VALUES ("Cartão","0000-00-00","50.00","2025-08-20","4-4","1","1");
+  VALUES ("Cartão","2025-03-25","50.00","2025-08-20","4-4","1","1");
