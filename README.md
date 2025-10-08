@@ -1,129 +1,125 @@
-🎉 Sistema de Gerenciamento de Eventos
+# 🎉 Sistema de Gerenciamento de Eventos
 
-Sistema completo de gerenciamento de eventos, desenvolvido em C# com Windows Forms, durante o segundo ano do curso técnico em Análise e Desenvolvimento de Sistemas.
+> 💻 Desenvolvido em **C# (Windows Forms)** durante o **segundo ano do curso técnico em Análise e Desenvolvimento de Sistemas**  
+> 📅 Projeto acadêmico com foco em **CRUD, POO e arquitetura em camadas (MVC + DAO)**  
 
-O projeto tem como objetivo aplicar conceitos de programação orientada a objetos (POO), CRUD, banco de dados relacional e arquitetura em camadas (MVC + DAO), resultando em uma aplicação desktop completa para gestão de eventos, clientes, produtos, orçamentos e financeiro.
+---
 
+## 🧭 Visão Geral
 
-🧭 Visão Geral
+O **Sistema de Gerenciamento de Eventos** é uma aplicação desktop completa voltada para o **controle de clientes, produtos, orçamentos, agendamentos e financeiro**.  
+Desenvolvido como projeto técnico, ele aplica conceitos de **programação orientada a objetos (POO)** e **operações CRUD** com banco de dados relacional, unindo praticidade e aprendizado em um único sistema.
 
-O sistema foi projetado para auxiliar empresas e profissionais do ramo de eventos no gerenciamento de clientes, produtos, orçamentos e agendamentos, integrando tudo em um fluxo automatizado e eficiente.
+---
 
-Com uma interface amigável, o usuário pode realizar desde o cadastro de clientes com busca automática de endereço, até o controle financeiro de pagamentos e parcelas.
+## ✨ Funcionalidades Principais
 
+### 👤 **Clientes**
+- CRUD completo (cadastro, edição, exclusão e busca)
+- Busca automática de endereço (CEP, cidade, estado, rua, bairro)
+- Filtro e pesquisa por nome
 
-✨ Funcionalidades Principais
+### 📦 **Produtos**
+- Cadastro de produtos e serviços
+- Definição de preço e descrição
+- Atualização e exclusão de registros
 
-👤 Módulo de Clientes
+### 🧾 **Orçamentos**
+- Criação de orçamentos vinculados a clientes
+- Seleção de produtos e cálculo automático do valor total
+- Controle de status (Aprovado, Pendente, Cancelado)
+- Geração automática de agendamentos
 
-Cadastro, edição e exclusão (CRUD completo)
+### 📅 **Agendamentos**
+- Associação com cliente e orçamento
+- Exibição de data, horário e local
+- Evita conflitos de horários duplicados
 
-Busca automática de endereço (CEP, cidade, estado, rua e bairro)
+### 💰 **Financeiro**
+- Registro de pagamentos e parcelas
+- Cálculo automático de valores pendentes
+- Atualização do status conforme quitação
 
-Listagem com filtros e pesquisa
+---
 
-📦 Módulo de Produtos
+## 🧱 Estrutura do Projeto
 
-Cadastro de produtos e serviços
-
-Definição de preço e descrição
-
-Atualização e exclusão de produtos
-
-🧾 Módulo de Orçamentos
-
-Criação de orçamentos vinculados a clientes
-
-Seleção de produtos e cálculo automático do valor total
-
-Controle de status (Aprovado, Pendente, Cancelado)
-
-Geração automática de agendamento a partir do orçamento
-
-📅 Módulo de Agendamentos
-
-Associação com cliente e orçamento
-
-Exibição de data, horário e local
-
-Evita conflitos de horários duplicados
-
-💰 Módulo Financeiro
-
-Registro de pagamentos e parcelas
-
-Cálculo automático de valores pendentes
-
-Atualização de status conforme quitação
-
-
-🧱 Estrutura do Projeto
 Eventos/
- ├── Eventos.View/          # Interface gráfica (Windows Forms)
- ├── Eventos.Model/         # Modelos de dados (Cliente, Produto, Orcamento, etc.)
- ├── Eventos.DAO/           # Acesso ao banco de dados (Data Access Object)
- ├── Eventos.Control/       # Lógica de negócio e validações
- └── Banco-de-dados/        # Scripts SQL e base de dados
-
-🧠 Tecnologias Utilizadas
-Camada	Tecnologias
-Linguagem	C# (.NET Framework / .NET 6)
-Interface	Windows Forms
-Banco de Dados	SQL Server / Mysql
-Arquitetura	MVC + DAO
-Padrões	CRUD, POO, Validação de dados, Tratamento de exceções
-🚀 Como Executar o Projeto
-
-Clone o repositório:
-
-git clone https://github.com/kauabaum/Sistema-de-Gerenciamento-de-Eventos.git
+├── Eventos.View/ # Interface gráfica (Windows Forms)
+├── Eventos.Model/ # Modelos (Cliente, Produto, Orçamento, etc.)
+├── Eventos.DAO/ # Acesso ao banco de dados (Data Access Object)
+├── Eventos.Control/ # Lógica de controle e validações
+└── Banco.de.Dados/ # Scripts e arquivos de banco de dados
 
 
-Abra o projeto no Visual Studio.
+---
 
-Configure a string de conexão no arquivo Eventos.DAO/Db.Context.
+## 🧠 Tecnologias Utilizadas
 
-Importe o script SQL localizado em /Banco-de-Dados.
+| Camada | Tecnologias |
+|--------|--------------|
+| **Linguagem** | C# (.NET Framework / .NET 6) |
+| **Interface** | Windows Forms |
+| **Banco de Dados** | SQL Server / MySQL |
+| **Arquitetura** | MVC + DAO |
+| **Recursos** | CRUD, POO, validação, tratamento de exceções |
 
-Execute o projeto e aproveite! 🎉
+---
 
+## 🚀 Como Executar o Projeto
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/kauabaum/gerenciamento-de-eventos.git
+
+Abra o projeto no Visual Studio
+
+Configure a string de conexão no arquivo Eventos.DAO/Db.Context
+
+Importe o script SQL da pasta /Banco.de.Dados
+
+Execute o projeto e aproveite 🎉
+
+---
 
 📸 Telas Principais
 
-(Adicione aqui prints das telas de Clientes, Produtos, Orçamentos, Agendamentos e Financeiro)
+(Adicione prints das telas de Clientes, Produtos, Orçamentos, Agendamentos e Financeiro)
+
+---
 
 💡 Destaques Técnicos
 
-CRUD completo em todas as entidades
+✅ CRUD completo em todas as entidades
+✅ Busca automática de endereço (CEP)
+✅ Relacionamento entre clientes, orçamentos e agendamentos
+✅ Cálculo automático no módulo financeiro
+✅ Interface intuitiva e organizada
+✅ Estrutura modular e expansível
 
-Busca automática de endereço via base de dados
-
-Relacionamentos entre clientes, orçamentos e agendamentos
-
-Controle financeiro com cálculo automático
-
-Interface intuitiva e responsiva em Windows Forms
-
-Estrutura modular e escalável
-
-🧾 Licença
-
-Este projeto está sob a licença MIT — uso livre para fins acadêmicos e de aprendizado.
+---
 
 📘 Contexto Acadêmico
 
-Este projeto foi desenvolvido durante o segundo ano do curso técnico em Informática, com o objetivo de:
+📚 Projeto desenvolvido durante o segundo ano do curso técnico em Análise e Desenvolvimento de Sistemas, com os objetivos de:
 
-Praticar conceitos de programação orientada a objetos (POO)
+Aplicar conceitos de Programação Orientada a Objetos (POO)
 
-Aplicar operações CRUD em banco de dados
+Implementar operações CRUD com banco de dados
 
-Estruturar um sistema completo com arquitetura em camadas
+Utilizar arquitetura em camadas (MVC + DAO)
 
-Desenvolver uma interface desktop funcional e moderna
+Criar uma aplicação desktop funcional e organizada
+
+🧾 Licença
+
+Este projeto está sob a licença MIT — uso livre para fins educacionais e aprendizado.
 
 ✍️ Autor
 
 [Kauã Davi de Senia Baum]
-🎓 Estudante de curso técnico em Análise e Desenvolvimento de Sistemas - Sesi/Senai - Irati PR
-💻 Desenvolvido com foco em boas práticas, aprendizado e aplicação real de C# com Windows Forms.
+🎓 Estudante de Curso Técnico em Análise e Desenvolvimento de Sistemas
+💻 Apaixonado por desenvolvimento e boas práticas de programação
+
+📫 Contato: [kaua.baum@outlook.com]
+🌐 GitHub: https://github.com/kauabaum
