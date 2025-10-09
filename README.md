@@ -45,11 +45,11 @@ Desenvolvido como projeto técnico, ele aplica conceitos de **programação orie
 ## 🧱 Estrutura do Projeto
 
 Eventos/
-├── Eventos.View/ # Interface gráfica (Windows Forms)
-├── Eventos.Model/ # Modelos (Cliente, Produto, Orçamento, etc.)
-├── Eventos.DAO/ # Acesso ao banco de dados (Data Access Object)
-├── Eventos.Control/ # Lógica de controle e validações
-└── Banco.de.Dados/ # Scripts e arquivos de banco de dados
+--├── Eventos.View/ # Interface gráfica (Windows Forms)
+--├── Eventos.Model/ # Modelos (Cliente, Produto, Orçamento, etc.)
+--├── Eventos.DAO/ # Acesso ao banco de dados (Data Access Object)
+--├── Eventos.Control/ # Lógica de controle e validações
+--└── Banco.de.Dados/ # Scripts e arquivos de banco de dados
 
 
 ---
