@@ -84,8 +84,26 @@ Execute o projeto e aproveite 🎉
 
 📸 Telas Principais
 
-(Adicione prints das telas de Clientes, Produtos, Orçamentos, Agendamentos e Financeiro)
-
+## Clientes
+   ```bash
+   https://imgur.com/zvqmClu
+ ```
+## Financeiro
+   ```bash
+   https://imgur.com/zDPPRmu
+ ```
+## Orçamento
+   ```bash
+   https://imgur.com/Y6OCaMu
+ ```
+## Produto
+   ```bash
+   https://imgur.com/zKJe250
+ ```
+ ## Tela Inicial
+   ```bash
+   https://imgur.com/nNPyhhG
+ ```
 ---
 
 💡 Destaques Técnicos
