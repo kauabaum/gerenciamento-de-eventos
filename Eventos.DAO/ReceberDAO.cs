@@ -25,7 +25,7 @@ namespace Eventos.DAO
 
                 cmd.ExecuteNonQuery();
 
-                // Retorna o ID gerado no AUTO_INCREMENT
+                // Retorna o ID gerado no banco
                 return (int)cmd.LastInsertedId;
             }
         }
@@ -124,7 +124,7 @@ namespace Eventos.DAO
                     if (result != null && result != DBNull.Value)
                         return Convert.ToInt32(result);
                     else
-                        return 0; // ou lance uma exceção se quiser tratar isso
+                        return 0;
                 }
             }
         }

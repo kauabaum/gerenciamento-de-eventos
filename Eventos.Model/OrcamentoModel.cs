@@ -15,6 +15,8 @@ namespace Eventos.Model
         public string NomeCliente { get; set; }
         public double Total { get; set; }
         public DateTime DataEmissao { get; set; }
+
+        // pega o enum do status
         public enum StatusAprovacao
         {
             Aprovado,

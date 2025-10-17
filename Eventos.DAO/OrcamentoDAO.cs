@@ -308,7 +308,7 @@ namespace Eventos.DAO
                 return dataTable;
             }
         }
-        // Carregar dados da Pesquisa pelo nome do cliente TALVEZ AQUI
+        // Carregar dados da Pesquisa pelo tipo
         public Orcamento GetByOrcamento(string Tipo_evento)
         {
             Orcamento orcamento = null;
@@ -577,14 +577,14 @@ namespace Eventos.DAO
             return orcamento;
         }
 
-        // Adicionar novo Cliente
+        // Adicionar novo orcamento
         public void Add(Orcamento orcamento)
         {
             using (MySqlConnection conn = dbContext.GetConnection())
             {
                 conn.Open();
 
-                // Insere na tabela cliente
+                // Insere na tabela
                 string query = "INSERT INTO \r\n" +
                     "orcamento \r\n" +
                         "(tipo_evento, total, nome_cliente, data_emissao, aprovacao, local_evento, data_evento, \r\n" +

@@ -140,7 +140,6 @@ namespace Eventos.DAO
                             Rua_nome = reader.GetString("Rua"),
                             Cep_rua = reader.GetString("CEP"),
 
-                            // necessário adionar esse campo no Model para que o objeto traga o nome do bairro
                             Bairro_nome = reader.GetString("Bairro"),
                             Cidade_nome = reader.GetString("Cidade"),
                             Estado_nome = reader.GetString("Estado")
@@ -190,8 +189,6 @@ namespace Eventos.DAO
                             IdRua = reader.GetInt32("Id"),
                             Rua_nome = reader.GetString("Rua"),
                             Cep_rua = reader.GetString("CEP"),
-
-                            // necessário adionar esse campo no Model para que o objeto traga o nome do bairro
                             Bairro_nome = reader.GetString("Bairro"),
                             Cidade_nome = reader.GetString("Cidade")
                         };
@@ -206,7 +203,6 @@ namespace Eventos.DAO
         {
             List<BairroCidade> listaDeBairros = new List<BairroCidade>();
 
-            // Conexão com o banco de dados (ajuste a string de conexão conforme necessário)
             string connectionString = "sua_string_de_conexao";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {

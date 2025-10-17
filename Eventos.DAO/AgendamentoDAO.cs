@@ -151,7 +151,7 @@ namespace Eventos.DAO
                             {
                                 IdAgendamento = reader.GetInt32("id_agendamento"),
                                 IdCliente = reader.GetInt32("id_cliente"),
-                                NomeCliente = reader.GetString("nome_cliente"), // adicionando nome do cliente
+                                NomeCliente = reader.GetString("nome_cliente"),
                                 TipoEvento = reader.GetString("tipo_evento"),
                                 Total = reader.GetDouble("total"),
                                 DataEmissao = reader.GetDateTime("data_emissao"),
@@ -321,7 +321,7 @@ namespace Eventos.DAO
             }
         }
 
-        // Carregar dados da Pesquisa pelo nome do cliente TALVEZ AQUI
+        // Carregar dados da Pesquisa pelo tipo TALVEZ AQUI
         public Agendamento GetByAgendamento(string Tipo_evento)
         {
             Agendamento agendamento = null;
@@ -550,7 +550,7 @@ namespace Eventos.DAO
         }
 
 
-        // Adicionar novo Cliente
+        // Adicionar novo agendamento
         public int Add(Agendamento agendamento)
         {
             using (MySqlConnection conn = dbContext.GetConnection())
@@ -574,7 +574,7 @@ namespace Eventos.DAO
 
                 cmd.ExecuteNonQuery();
 
-                // Retorna o ID gerado automaticamente pelo banco
+                // Retorna o ID do banco
                 cmd.CommandText = "SELECT LAST_INSERT_ID();";
                 int idGerado = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -652,13 +652,13 @@ namespace Eventos.DAO
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@id_agendamento", agendamento.IdAgendamento);
                 cmd.Parameters.AddWithValue("@tipo_evento", agendamento.TipoEvento);
-                cmd.Parameters.AddWithValue("@id_cliente", agendamento.IdCliente); // <== corrigido
+                cmd.Parameters.AddWithValue("@id_cliente", agendamento.IdCliente);
                 cmd.Parameters.AddWithValue("@total", agendamento.Total);
                 cmd.Parameters.AddWithValue("@data_emissao", agendamento.DataEmissao);
                 cmd.Parameters.AddWithValue("@local_evento", agendamento.LocalEvento);
                 cmd.Parameters.AddWithValue("@data_evento", agendamento.DataEvento);
                 cmd.Parameters.AddWithValue("@hora_evento", agendamento.HoraEvento);
-                cmd.Parameters.AddWithValue("@tema", agendamento.Tema); // <== padronizado
+                cmd.Parameters.AddWithValue("@tema", agendamento.Tema);
                 cmd.ExecuteNonQuery();
             }
         }

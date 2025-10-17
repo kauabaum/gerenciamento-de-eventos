@@ -30,17 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFinanceiroView));
-            this.btnAdicionarOrcamento = new System.Windows.Forms.Button();
-            this.btnLocalizarOrcamento = new System.Windows.Forms.Button();
             this.lblMensagem = new System.Windows.Forms.Label();
-            this.btnPesquisarOrcamento = new System.Windows.Forms.Button();
-            this.btnSairOrcamento = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.txtTipoOrcamento = new System.Windows.Forms.TextBox();
-            this.btnMostrarTodosProduto = new System.Windows.Forms.Button();
             this.txtCliente = new System.Windows.Forms.TextBox();
+            this.btnMostrarTodosProduto = new System.Windows.Forms.Button();
+            this.btnSairOrcamento = new System.Windows.Forms.Button();
+            this.btnPesquisarOrcamento = new System.Windows.Forms.Button();
+            this.btnLocalizarOrcamento = new System.Windows.Forms.Button();
+            this.btnAdicionarOrcamento = new System.Windows.Forms.Button();
             this.lblTipoOrcamento = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
@@ -52,33 +52,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnAdicionarOrcamento
-            // 
-            this.btnAdicionarOrcamento.AccessibleDescription = "";
-            this.btnAdicionarOrcamento.AccessibleName = "";
-            this.btnAdicionarOrcamento.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionarOrcamento.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionarOrcamento.Image")));
-            this.btnAdicionarOrcamento.Location = new System.Drawing.Point(13, 11);
-            this.btnAdicionarOrcamento.Name = "btnAdicionarOrcamento";
-            this.btnAdicionarOrcamento.Size = new System.Drawing.Size(83, 78);
-            this.btnAdicionarOrcamento.TabIndex = 0;
-            this.btnAdicionarOrcamento.Tag = "";
-            this.toolTip1.SetToolTip(this.btnAdicionarOrcamento, "Confirmar Pagamento");
-            this.btnAdicionarOrcamento.UseVisualStyleBackColor = true;
-            this.btnAdicionarOrcamento.Click += new System.EventHandler(this.btnMarcarComoPago_Click);
-            // 
-            // btnLocalizarOrcamento
-            // 
-            this.btnLocalizarOrcamento.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLocalizarOrcamento.Image = ((System.Drawing.Image)(resources.GetObject("btnLocalizarOrcamento.Image")));
-            this.btnLocalizarOrcamento.Location = new System.Drawing.Point(102, 11);
-            this.btnLocalizarOrcamento.Name = "btnLocalizarOrcamento";
-            this.btnLocalizarOrcamento.Size = new System.Drawing.Size(83, 78);
-            this.btnLocalizarOrcamento.TabIndex = 3;
-            this.toolTip1.SetToolTip(this.btnLocalizarOrcamento, "Localizar");
-            this.btnLocalizarOrcamento.UseVisualStyleBackColor = true;
-            this.btnLocalizarOrcamento.Click += new System.EventHandler(this.btnLocalizar_Click);
-            // 
             // lblMensagem
             // 
             this.lblMensagem.AutoSize = true;
@@ -87,30 +60,6 @@
             this.lblMensagem.Name = "lblMensagem";
             this.lblMensagem.Size = new System.Drawing.Size(0, 23);
             this.lblMensagem.TabIndex = 6;
-            // 
-            // btnPesquisarOrcamento
-            // 
-            this.btnPesquisarOrcamento.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisarOrcamento.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisarOrcamento.Image")));
-            this.btnPesquisarOrcamento.Location = new System.Drawing.Point(191, 11);
-            this.btnPesquisarOrcamento.Name = "btnPesquisarOrcamento";
-            this.btnPesquisarOrcamento.Size = new System.Drawing.Size(83, 78);
-            this.btnPesquisarOrcamento.TabIndex = 8;
-            this.toolTip1.SetToolTip(this.btnPesquisarOrcamento, "Pesquisar");
-            this.btnPesquisarOrcamento.UseVisualStyleBackColor = true;
-            this.btnPesquisarOrcamento.Click += new System.EventHandler(this.btnPesquisar_Click);
-            // 
-            // btnSairOrcamento
-            // 
-            this.btnSairOrcamento.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSairOrcamento.Image = ((System.Drawing.Image)(resources.GetObject("btnSairOrcamento.Image")));
-            this.btnSairOrcamento.Location = new System.Drawing.Point(369, 11);
-            this.btnSairOrcamento.Name = "btnSairOrcamento";
-            this.btnSairOrcamento.Size = new System.Drawing.Size(83, 78);
-            this.btnSairOrcamento.TabIndex = 9;
-            this.toolTip1.SetToolTip(this.btnSairOrcamento, "Sair");
-            this.btnSairOrcamento.UseVisualStyleBackColor = true;
-            this.btnSairOrcamento.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // dataGridView1
             // 
@@ -145,18 +94,6 @@
             this.txtTipoOrcamento.TabIndex = 19;
             this.toolTip1.SetToolTip(this.txtTipoOrcamento, "Digite aqui o E-mail");
             // 
-            // btnMostrarTodosProduto
-            // 
-            this.btnMostrarTodosProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMostrarTodosProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnMostrarTodosProduto.Image")));
-            this.btnMostrarTodosProduto.Location = new System.Drawing.Point(280, 11);
-            this.btnMostrarTodosProduto.Name = "btnMostrarTodosProduto";
-            this.btnMostrarTodosProduto.Size = new System.Drawing.Size(83, 78);
-            this.btnMostrarTodosProduto.TabIndex = 22;
-            this.toolTip1.SetToolTip(this.btnMostrarTodosProduto, "Mostrar Todos");
-            this.btnMostrarTodosProduto.UseVisualStyleBackColor = true;
-            this.btnMostrarTodosProduto.Click += new System.EventHandler(this.btnMostrarTodos_Click);
-            // 
             // txtCliente
             // 
             this.txtCliente.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -165,6 +102,79 @@
             this.txtCliente.Size = new System.Drawing.Size(409, 30);
             this.txtCliente.TabIndex = 25;
             this.toolTip1.SetToolTip(this.txtCliente, "Digite aqui o E-mail");
+            // 
+            // btnMostrarTodosProduto
+            // 
+            this.btnMostrarTodosProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnMostrarTodosProduto.BackgroundImage = global::Eventos.Properties.Resources.mostrarcinza;
+            this.btnMostrarTodosProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMostrarTodosProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMostrarTodosProduto.Location = new System.Drawing.Point(280, 11);
+            this.btnMostrarTodosProduto.Name = "btnMostrarTodosProduto";
+            this.btnMostrarTodosProduto.Size = new System.Drawing.Size(83, 78);
+            this.btnMostrarTodosProduto.TabIndex = 22;
+            this.toolTip1.SetToolTip(this.btnMostrarTodosProduto, "Mostrar Todos");
+            this.btnMostrarTodosProduto.UseVisualStyleBackColor = false;
+            this.btnMostrarTodosProduto.Click += new System.EventHandler(this.btnMostrarTodos_Click);
+            // 
+            // btnSairOrcamento
+            // 
+            this.btnSairOrcamento.BackColor = System.Drawing.Color.Transparent;
+            this.btnSairOrcamento.BackgroundImage = global::Eventos.Properties.Resources.leave;
+            this.btnSairOrcamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSairOrcamento.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSairOrcamento.Location = new System.Drawing.Point(369, 11);
+            this.btnSairOrcamento.Name = "btnSairOrcamento";
+            this.btnSairOrcamento.Size = new System.Drawing.Size(83, 78);
+            this.btnSairOrcamento.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.btnSairOrcamento, "Sair");
+            this.btnSairOrcamento.UseVisualStyleBackColor = false;
+            this.btnSairOrcamento.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // btnPesquisarOrcamento
+            // 
+            this.btnPesquisarOrcamento.BackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisarOrcamento.BackgroundImage = global::Eventos.Properties.Resources.pesquisarcinza;
+            this.btnPesquisarOrcamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPesquisarOrcamento.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisarOrcamento.Location = new System.Drawing.Point(191, 11);
+            this.btnPesquisarOrcamento.Name = "btnPesquisarOrcamento";
+            this.btnPesquisarOrcamento.Size = new System.Drawing.Size(83, 78);
+            this.btnPesquisarOrcamento.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.btnPesquisarOrcamento, "Pesquisar");
+            this.btnPesquisarOrcamento.UseVisualStyleBackColor = false;
+            this.btnPesquisarOrcamento.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // btnLocalizarOrcamento
+            // 
+            this.btnLocalizarOrcamento.BackColor = System.Drawing.Color.Transparent;
+            this.btnLocalizarOrcamento.BackgroundImage = global::Eventos.Properties.Resources.selecionarcinz;
+            this.btnLocalizarOrcamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLocalizarOrcamento.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLocalizarOrcamento.Location = new System.Drawing.Point(102, 11);
+            this.btnLocalizarOrcamento.Name = "btnLocalizarOrcamento";
+            this.btnLocalizarOrcamento.Size = new System.Drawing.Size(83, 78);
+            this.btnLocalizarOrcamento.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.btnLocalizarOrcamento, "Localizar");
+            this.btnLocalizarOrcamento.UseVisualStyleBackColor = false;
+            this.btnLocalizarOrcamento.Click += new System.EventHandler(this.btnLocalizar_Click);
+            // 
+            // btnAdicionarOrcamento
+            // 
+            this.btnAdicionarOrcamento.AccessibleDescription = "";
+            this.btnAdicionarOrcamento.AccessibleName = "";
+            this.btnAdicionarOrcamento.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdicionarOrcamento.BackgroundImage = global::Eventos.Properties.Resources.confirmarpagamento;
+            this.btnAdicionarOrcamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdicionarOrcamento.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdicionarOrcamento.Location = new System.Drawing.Point(13, 11);
+            this.btnAdicionarOrcamento.Name = "btnAdicionarOrcamento";
+            this.btnAdicionarOrcamento.Size = new System.Drawing.Size(83, 78);
+            this.btnAdicionarOrcamento.TabIndex = 0;
+            this.btnAdicionarOrcamento.Tag = "";
+            this.toolTip1.SetToolTip(this.btnAdicionarOrcamento, "Confirmar Pagamento");
+            this.btnAdicionarOrcamento.UseVisualStyleBackColor = false;
+            this.btnAdicionarOrcamento.Click += new System.EventHandler(this.btnMarcarComoPago_Click);
             // 
             // lblTipoOrcamento
             // 
@@ -245,6 +255,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(821, 497);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -263,6 +274,7 @@
             this.Controls.Add(this.btnAdicionarOrcamento);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmFinanceiroView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

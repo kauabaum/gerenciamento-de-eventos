@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Eventos.DAO;
-using Eventos.Control;
+using Eventos.Controller;
 
 namespace Eventos.View
 {
@@ -343,6 +343,7 @@ namespace Eventos.View
             {
                 DataTable dataTable = clienteDao.GetAll();
                 dataGridView1.DataSource = dataTable;
+                dataGridView1.Columns["Id"].Visible = false;
             }
             catch (Exception ex)
             {

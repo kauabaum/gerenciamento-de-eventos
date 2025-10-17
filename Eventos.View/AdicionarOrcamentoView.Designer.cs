@@ -30,13 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdicionarOrcamentoView));
-            this.btnAdicionarProduto = new System.Windows.Forms.Button();
-            this.btnSalvarProduto = new System.Windows.Forms.Button();
-            this.btnEditarProduto = new System.Windows.Forms.Button();
             this.lblMensagem = new System.Windows.Forms.Label();
-            this.btnExcluirProduto = new System.Windows.Forms.Button();
-            this.btnSairProduto = new System.Windows.Forms.Button();
-            this.btnLimparProduto = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -44,8 +38,14 @@
             this.txtLocalEvento = new System.Windows.Forms.TextBox();
             this.txtTipoOrcamento = new System.Windows.Forms.TextBox();
             this.txtValidadeOrcamento = new System.Windows.Forms.TextBox();
-            this.btnAdicionarTemaOrcamento = new System.Windows.Forms.Button();
             this.btnAdicionarProdutoOrcamento = new System.Windows.Forms.Button();
+            this.btnAdicionarTemaOrcamento = new System.Windows.Forms.Button();
+            this.btnLimparProduto = new System.Windows.Forms.Button();
+            this.btnSairProduto = new System.Windows.Forms.Button();
+            this.btnExcluirProduto = new System.Windows.Forms.Button();
+            this.btnEditarProduto = new System.Windows.Forms.Button();
+            this.btnSalvarProduto = new System.Windows.Forms.Button();
+            this.btnAdicionarProduto = new System.Windows.Forms.Button();
             this.lblTipoOrcamento = new System.Windows.Forms.Label();
             this.lblDataEmissaoOrcamento = new System.Windows.Forms.Label();
             this.lblClienteOrcamento = new System.Windows.Forms.Label();
@@ -65,45 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnAdicionarProduto
-            // 
-            this.btnAdicionarProduto.AccessibleDescription = "";
-            this.btnAdicionarProduto.AccessibleName = "";
-            this.btnAdicionarProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionarProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionarProduto.Image")));
-            this.btnAdicionarProduto.Location = new System.Drawing.Point(8, 8);
-            this.btnAdicionarProduto.Name = "btnAdicionarProduto";
-            this.btnAdicionarProduto.Size = new System.Drawing.Size(83, 78);
-            this.btnAdicionarProduto.TabIndex = 0;
-            this.btnAdicionarProduto.Tag = "";
-            this.toolTip1.SetToolTip(this.btnAdicionarProduto, "Adicionar");
-            this.btnAdicionarProduto.UseVisualStyleBackColor = true;
-            this.btnAdicionarProduto.Click += new System.EventHandler(this.btnAdicionar_Click);
-            // 
-            // btnSalvarProduto
-            // 
-            this.btnSalvarProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvarProduto.Image")));
-            this.btnSalvarProduto.Location = new System.Drawing.Point(366, 9);
-            this.btnSalvarProduto.Name = "btnSalvarProduto";
-            this.btnSalvarProduto.Size = new System.Drawing.Size(83, 78);
-            this.btnSalvarProduto.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.btnSalvarProduto, "Salvar");
-            this.btnSalvarProduto.UseVisualStyleBackColor = true;
-            this.btnSalvarProduto.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // btnEditarProduto
-            // 
-            this.btnEditarProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarProduto.Image")));
-            this.btnEditarProduto.Location = new System.Drawing.Point(249, 9);
-            this.btnEditarProduto.Name = "btnEditarProduto";
-            this.btnEditarProduto.Size = new System.Drawing.Size(83, 78);
-            this.btnEditarProduto.TabIndex = 2;
-            this.toolTip1.SetToolTip(this.btnEditarProduto, "Editar");
-            this.btnEditarProduto.UseVisualStyleBackColor = true;
-            this.btnEditarProduto.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
             // lblMensagem
             // 
             this.lblMensagem.AutoSize = true;
@@ -112,42 +73,6 @@
             this.lblMensagem.Name = "lblMensagem";
             this.lblMensagem.Size = new System.Drawing.Size(0, 23);
             this.lblMensagem.TabIndex = 6;
-            // 
-            // btnExcluirProduto
-            // 
-            this.btnExcluirProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluirProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluirProduto.Image")));
-            this.btnExcluirProduto.Location = new System.Drawing.Point(608, 9);
-            this.btnExcluirProduto.Name = "btnExcluirProduto";
-            this.btnExcluirProduto.Size = new System.Drawing.Size(83, 78);
-            this.btnExcluirProduto.TabIndex = 7;
-            this.toolTip1.SetToolTip(this.btnExcluirProduto, "Excluir");
-            this.btnExcluirProduto.UseVisualStyleBackColor = true;
-            this.btnExcluirProduto.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
-            // btnSairProduto
-            // 
-            this.btnSairProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSairProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnSairProduto.Image")));
-            this.btnSairProduto.Location = new System.Drawing.Point(724, 9);
-            this.btnSairProduto.Name = "btnSairProduto";
-            this.btnSairProduto.Size = new System.Drawing.Size(83, 78);
-            this.btnSairProduto.TabIndex = 9;
-            this.toolTip1.SetToolTip(this.btnSairProduto, "Sair");
-            this.btnSairProduto.UseVisualStyleBackColor = true;
-            this.btnSairProduto.Click += new System.EventHandler(this.btnSair_Click);
-            // 
-            // btnLimparProduto
-            // 
-            this.btnLimparProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimparProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnLimparProduto.Image")));
-            this.btnLimparProduto.Location = new System.Drawing.Point(485, 9);
-            this.btnLimparProduto.Name = "btnLimparProduto";
-            this.btnLimparProduto.Size = new System.Drawing.Size(83, 78);
-            this.btnLimparProduto.TabIndex = 10;
-            this.toolTip1.SetToolTip(this.btnLimparProduto, "Limpar");
-            this.btnLimparProduto.UseVisualStyleBackColor = true;
-            this.btnLimparProduto.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // dataGridView1
             // 
@@ -209,29 +134,120 @@
             this.txtValidadeOrcamento.TabIndex = 66;
             this.toolTip1.SetToolTip(this.txtValidadeOrcamento, "Digite aqui o E-mail");
             // 
-            // btnAdicionarTemaOrcamento
-            // 
-            this.btnAdicionarTemaOrcamento.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionarTemaOrcamento.Image")));
-            this.btnAdicionarTemaOrcamento.Location = new System.Drawing.Point(240, 248);
-            this.btnAdicionarTemaOrcamento.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAdicionarTemaOrcamento.Name = "btnAdicionarTemaOrcamento";
-            this.btnAdicionarTemaOrcamento.Size = new System.Drawing.Size(49, 50);
-            this.btnAdicionarTemaOrcamento.TabIndex = 67;
-            this.toolTip1.SetToolTip(this.btnAdicionarTemaOrcamento, "Adicionar País");
-            this.btnAdicionarTemaOrcamento.UseVisualStyleBackColor = true;
-            this.btnAdicionarTemaOrcamento.Click += new System.EventHandler(this.btnAdicionarTemaOrcamento_Click);
-            // 
             // btnAdicionarProdutoOrcamento
             // 
-            this.btnAdicionarProdutoOrcamento.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionarProdutoOrcamento.Image")));
+            this.btnAdicionarProdutoOrcamento.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdicionarProdutoOrcamento.BackgroundImage = global::Eventos.Properties.Resources.produtos;
+            this.btnAdicionarProdutoOrcamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdicionarProdutoOrcamento.Location = new System.Drawing.Point(127, 9);
             this.btnAdicionarProdutoOrcamento.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdicionarProdutoOrcamento.Name = "btnAdicionarProdutoOrcamento";
             this.btnAdicionarProdutoOrcamento.Size = new System.Drawing.Size(83, 77);
             this.btnAdicionarProdutoOrcamento.TabIndex = 68;
             this.toolTip1.SetToolTip(this.btnAdicionarProdutoOrcamento, "Adicionar Produto");
-            this.btnAdicionarProdutoOrcamento.UseVisualStyleBackColor = true;
+            this.btnAdicionarProdutoOrcamento.UseVisualStyleBackColor = false;
             this.btnAdicionarProdutoOrcamento.Click += new System.EventHandler(this.btnAdicionarProdutoOrcamento_Click);
+            // 
+            // btnAdicionarTemaOrcamento
+            // 
+            this.btnAdicionarTemaOrcamento.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdicionarTemaOrcamento.BackgroundImage = global::Eventos.Properties.Resources.adicionarverde;
+            this.btnAdicionarTemaOrcamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdicionarTemaOrcamento.Location = new System.Drawing.Point(240, 248);
+            this.btnAdicionarTemaOrcamento.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdicionarTemaOrcamento.Name = "btnAdicionarTemaOrcamento";
+            this.btnAdicionarTemaOrcamento.Size = new System.Drawing.Size(49, 50);
+            this.btnAdicionarTemaOrcamento.TabIndex = 67;
+            this.toolTip1.SetToolTip(this.btnAdicionarTemaOrcamento, "Adicionar País");
+            this.btnAdicionarTemaOrcamento.UseVisualStyleBackColor = false;
+            this.btnAdicionarTemaOrcamento.Click += new System.EventHandler(this.btnAdicionarTemaOrcamento_Click);
+            // 
+            // btnLimparProduto
+            // 
+            this.btnLimparProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimparProduto.BackgroundImage = global::Eventos.Properties.Resources.limparcinza;
+            this.btnLimparProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimparProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimparProduto.Location = new System.Drawing.Point(485, 9);
+            this.btnLimparProduto.Name = "btnLimparProduto";
+            this.btnLimparProduto.Size = new System.Drawing.Size(83, 78);
+            this.btnLimparProduto.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.btnLimparProduto, "Limpar");
+            this.btnLimparProduto.UseVisualStyleBackColor = false;
+            this.btnLimparProduto.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
+            // btnSairProduto
+            // 
+            this.btnSairProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnSairProduto.BackgroundImage = global::Eventos.Properties.Resources.leave;
+            this.btnSairProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSairProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSairProduto.Location = new System.Drawing.Point(724, 9);
+            this.btnSairProduto.Name = "btnSairProduto";
+            this.btnSairProduto.Size = new System.Drawing.Size(83, 78);
+            this.btnSairProduto.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.btnSairProduto, "Sair");
+            this.btnSairProduto.UseVisualStyleBackColor = false;
+            this.btnSairProduto.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // btnExcluirProduto
+            // 
+            this.btnExcluirProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnExcluirProduto.BackgroundImage = global::Eventos.Properties.Resources.remover;
+            this.btnExcluirProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExcluirProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluirProduto.Location = new System.Drawing.Point(608, 9);
+            this.btnExcluirProduto.Name = "btnExcluirProduto";
+            this.btnExcluirProduto.Size = new System.Drawing.Size(83, 78);
+            this.btnExcluirProduto.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.btnExcluirProduto, "Excluir");
+            this.btnExcluirProduto.UseVisualStyleBackColor = false;
+            this.btnExcluirProduto.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // btnEditarProduto
+            // 
+            this.btnEditarProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditarProduto.BackgroundImage = global::Eventos.Properties.Resources.editarcinza;
+            this.btnEditarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditarProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarProduto.Location = new System.Drawing.Point(249, 9);
+            this.btnEditarProduto.Name = "btnEditarProduto";
+            this.btnEditarProduto.Size = new System.Drawing.Size(83, 78);
+            this.btnEditarProduto.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.btnEditarProduto, "Editar");
+            this.btnEditarProduto.UseVisualStyleBackColor = false;
+            this.btnEditarProduto.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnSalvarProduto
+            // 
+            this.btnSalvarProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalvarProduto.BackgroundImage = global::Eventos.Properties.Resources.confirmarnovo;
+            this.btnSalvarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalvarProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvarProduto.Location = new System.Drawing.Point(366, 9);
+            this.btnSalvarProduto.Name = "btnSalvarProduto";
+            this.btnSalvarProduto.Size = new System.Drawing.Size(83, 78);
+            this.btnSalvarProduto.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.btnSalvarProduto, "Salvar");
+            this.btnSalvarProduto.UseVisualStyleBackColor = false;
+            this.btnSalvarProduto.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnAdicionarProduto
+            // 
+            this.btnAdicionarProduto.AccessibleDescription = "";
+            this.btnAdicionarProduto.AccessibleName = "";
+            this.btnAdicionarProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdicionarProduto.BackgroundImage = global::Eventos.Properties.Resources.adicionarverde;
+            this.btnAdicionarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdicionarProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdicionarProduto.Location = new System.Drawing.Point(8, 8);
+            this.btnAdicionarProduto.Name = "btnAdicionarProduto";
+            this.btnAdicionarProduto.Size = new System.Drawing.Size(83, 78);
+            this.btnAdicionarProduto.TabIndex = 0;
+            this.btnAdicionarProduto.Tag = "";
+            this.toolTip1.SetToolTip(this.btnAdicionarProduto, "Adicionar");
+            this.btnAdicionarProduto.UseVisualStyleBackColor = false;
+            this.btnAdicionarProduto.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // lblTipoOrcamento
             // 
@@ -399,6 +415,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(821, 497);
             this.Controls.Add(this.btnAdicionarProdutoOrcamento);
             this.Controls.Add(this.btnAdicionarTemaOrcamento);
@@ -431,6 +448,7 @@
             this.Controls.Add(this.lblTotalOrcamento);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmAdicionarOrcamentoView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

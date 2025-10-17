@@ -52,63 +52,66 @@
             // 
             this.btnAdicionar.AccessibleDescription = "";
             this.btnAdicionar.AccessibleName = "";
+            this.btnAdicionar.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdicionar.BackgroundImage = global::Eventos.Properties.Resources.adicionarverde;
+            this.btnAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdicionar.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionar.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionar.Image")));
-            this.btnAdicionar.Location = new System.Drawing.Point(36, 54);
-            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdicionar.Location = new System.Drawing.Point(27, 44);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(111, 96);
+            this.btnAdicionar.Size = new System.Drawing.Size(83, 78);
             this.btnAdicionar.TabIndex = 0;
             this.btnAdicionar.Tag = "";
             this.toolTip1.SetToolTip(this.btnAdicionar, "Adicionar");
-            this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.UseVisualStyleBackColor = false;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // btnSalvar
             // 
+            this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalvar.BackgroundImage = global::Eventos.Properties.Resources.confirmarnovo;
+            this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSalvar.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.Location = new System.Drawing.Point(440, 54);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalvar.Location = new System.Drawing.Point(330, 44);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(111, 96);
+            this.btnSalvar.Size = new System.Drawing.Size(83, 78);
             this.btnSalvar.TabIndex = 1;
             this.toolTip1.SetToolTip(this.btnSalvar, "Salvar");
-            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnEditar
             // 
+            this.btnEditar.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditar.BackgroundImage = global::Eventos.Properties.Resources.editarcinza;
+            this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEditar.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.Location = new System.Drawing.Point(305, 54);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Location = new System.Drawing.Point(229, 44);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(111, 96);
+            this.btnEditar.Size = new System.Drawing.Size(83, 78);
             this.btnEditar.TabIndex = 2;
             this.toolTip1.SetToolTip(this.btnEditar, "Editar");
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnLocalizar
             // 
+            this.btnLocalizar.BackColor = System.Drawing.Color.Transparent;
+            this.btnLocalizar.BackgroundImage = global::Eventos.Properties.Resources.selecionarcinz;
+            this.btnLocalizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLocalizar.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLocalizar.Image = ((System.Drawing.Image)(resources.GetObject("btnLocalizar.Image")));
-            this.btnLocalizar.Location = new System.Drawing.Point(170, 54);
-            this.btnLocalizar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLocalizar.Location = new System.Drawing.Point(128, 44);
             this.btnLocalizar.Name = "btnLocalizar";
-            this.btnLocalizar.Size = new System.Drawing.Size(111, 96);
+            this.btnLocalizar.Size = new System.Drawing.Size(83, 78);
             this.btnLocalizar.TabIndex = 3;
             this.toolTip1.SetToolTip(this.btnLocalizar, "Localizar");
-            this.btnLocalizar.UseVisualStyleBackColor = true;
+            this.btnLocalizar.UseVisualStyleBackColor = false;
             this.btnLocalizar.Click += new System.EventHandler(this.btnLocalizar_Click);
             // 
             // lblPais
             // 
             this.lblPais.AutoSize = true;
             this.lblPais.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPais.Location = new System.Drawing.Point(75, 220);
-            this.lblPais.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPais.Location = new System.Drawing.Point(56, 179);
             this.lblPais.Name = "lblPais";
             this.lblPais.Size = new System.Drawing.Size(63, 25);
             this.lblPais.TabIndex = 4;
@@ -117,10 +120,9 @@
             // txtPais
             // 
             this.txtPais.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPais.Location = new System.Drawing.Point(193, 217);
-            this.txtPais.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPais.Location = new System.Drawing.Point(145, 176);
             this.txtPais.Name = "txtPais";
-            this.txtPais.Size = new System.Drawing.Size(466, 30);
+            this.txtPais.Size = new System.Drawing.Size(350, 30);
             this.txtPais.TabIndex = 5;
             this.toolTip1.SetToolTip(this.txtPais, "Digite aqui o Pais");
             // 
@@ -128,62 +130,65 @@
             // 
             this.lblMensagem.AutoSize = true;
             this.lblMensagem.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensagem.Location = new System.Drawing.Point(419, 401);
-            this.lblMensagem.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMensagem.Location = new System.Drawing.Point(314, 326);
             this.lblMensagem.Name = "lblMensagem";
             this.lblMensagem.Size = new System.Drawing.Size(0, 23);
             this.lblMensagem.TabIndex = 6;
             // 
             // btnExcluir
             // 
+            this.btnExcluir.BackColor = System.Drawing.Color.Transparent;
+            this.btnExcluir.BackgroundImage = global::Eventos.Properties.Resources.remover;
+            this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExcluir.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
-            this.btnExcluir.Location = new System.Drawing.Point(574, 54);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExcluir.Location = new System.Drawing.Point(430, 44);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(111, 96);
+            this.btnExcluir.Size = new System.Drawing.Size(83, 78);
             this.btnExcluir.TabIndex = 7;
             this.toolTip1.SetToolTip(this.btnExcluir, "Excluir");
-            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnPesquisar
             // 
+            this.btnPesquisar.BackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisar.BackgroundImage = global::Eventos.Properties.Resources.pesquisarcinza;
+            this.btnPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPesquisar.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.Image")));
-            this.btnPesquisar.Location = new System.Drawing.Point(81, 300);
-            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPesquisar.Location = new System.Drawing.Point(61, 244);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(111, 96);
+            this.btnPesquisar.Size = new System.Drawing.Size(83, 78);
             this.btnPesquisar.TabIndex = 8;
             this.toolTip1.SetToolTip(this.btnPesquisar, "Pesquisar");
-            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.UseVisualStyleBackColor = false;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // btnSair
             // 
+            this.btnSair.BackColor = System.Drawing.Color.Transparent;
+            this.btnSair.BackgroundImage = global::Eventos.Properties.Resources.leave;
+            this.btnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSair.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
-            this.btnSair.Location = new System.Drawing.Point(548, 476);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSair.Location = new System.Drawing.Point(411, 387);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(111, 96);
+            this.btnSair.Size = new System.Drawing.Size(83, 78);
             this.btnSair.TabIndex = 9;
             this.toolTip1.SetToolTip(this.btnSair, "Sair");
-            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnLimpar
             // 
+            this.btnLimpar.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimpar.BackgroundImage = global::Eventos.Properties.Resources.limparcinza;
+            this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpar.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpar.Image")));
-            this.btnLimpar.Location = new System.Drawing.Point(325, 300);
-            this.btnLimpar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLimpar.Location = new System.Drawing.Point(244, 244);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(111, 96);
+            this.btnLimpar.Size = new System.Drawing.Size(83, 78);
             this.btnLimpar.TabIndex = 10;
             this.toolTip1.SetToolTip(this.btnLimpar, "Limpar");
-            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.UseVisualStyleBackColor = false;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // dataGridView1
@@ -192,12 +197,13 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(81, 449);
+            this.dataGridView1.Location = new System.Drawing.Point(61, 365);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(427, 152);
+            this.dataGridView1.Size = new System.Drawing.Size(320, 124);
             this.dataGridView1.TabIndex = 11;
             // 
             // dataGridViewTextBoxColumn1
@@ -211,22 +217,24 @@
             // 
             // btnMostrarTodos
             // 
+            this.btnMostrarTodos.BackColor = System.Drawing.Color.Transparent;
+            this.btnMostrarTodos.BackgroundImage = global::Eventos.Properties.Resources.mostrarcinza;
+            this.btnMostrarTodos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMostrarTodos.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMostrarTodos.Image = ((System.Drawing.Image)(resources.GetObject("btnMostrarTodos.Image")));
-            this.btnMostrarTodos.Location = new System.Drawing.Point(548, 300);
-            this.btnMostrarTodos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMostrarTodos.Location = new System.Drawing.Point(411, 244);
             this.btnMostrarTodos.Name = "btnMostrarTodos";
-            this.btnMostrarTodos.Size = new System.Drawing.Size(111, 96);
+            this.btnMostrarTodos.Size = new System.Drawing.Size(83, 78);
             this.btnMostrarTodos.TabIndex = 12;
             this.toolTip1.SetToolTip(this.btnMostrarTodos, "Mostrar Todos");
-            this.btnMostrarTodos.UseVisualStyleBackColor = true;
+            this.btnMostrarTodos.UseVisualStyleBackColor = false;
             this.btnMostrarTodos.Click += new System.EventHandler(this.btnMostrarTodos_Click);
             // 
             // frmPaisView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 630);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
+            this.ClientSize = new System.Drawing.Size(539, 512);
             this.Controls.Add(this.btnMostrarTodos);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnLimpar);
@@ -241,7 +249,7 @@
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnAdicionar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmPaisView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

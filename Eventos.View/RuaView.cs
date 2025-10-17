@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Eventos.DAO;
-using Eventos.Control;
+using Eventos.Controller;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Eventos.View

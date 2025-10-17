@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.grdPendente = new System.Windows.Forms.DataGridView();
             this.lbl_receber = new System.Windows.Forms.Label();
@@ -52,20 +53,26 @@
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnCarregar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblDataHora = new System.Windows.Forms.Label();
+            this.lblHora = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grdPendente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdAgenda)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // grdPendente
             // 
             this.grdPendente.AllowUserToOrderColumns = true;
             this.grdPendente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdPendente.Location = new System.Drawing.Point(106, 490);
+            this.grdPendente.Location = new System.Drawing.Point(58, 490);
             this.grdPendente.Margin = new System.Windows.Forms.Padding(2);
             this.grdPendente.Name = "grdPendente";
             this.grdPendente.RowHeadersWidth = 51;
-            this.grdPendente.Size = new System.Drawing.Size(923, 259);
+            this.grdPendente.Size = new System.Drawing.Size(1028, 259);
             this.grdPendente.TabIndex = 11;
             // 
             // lbl_receber
@@ -73,7 +80,7 @@
             this.lbl_receber.AutoSize = true;
             this.lbl_receber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.lbl_receber.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbl_receber.Location = new System.Drawing.Point(455, 446);
+            this.lbl_receber.Location = new System.Drawing.Point(467, 447);
             this.lbl_receber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_receber.Name = "lbl_receber";
             this.lbl_receber.Size = new System.Drawing.Size(210, 24);
@@ -85,7 +92,7 @@
             this.lbl_Semana.AutoSize = true;
             this.lbl_Semana.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.lbl_Semana.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbl_Semana.Location = new System.Drawing.Point(476, 92);
+            this.lbl_Semana.Location = new System.Drawing.Point(477, 86);
             this.lbl_Semana.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Semana.Name = "lbl_Semana";
             this.lbl_Semana.Size = new System.Drawing.Size(178, 24);
@@ -106,12 +113,12 @@
             // lbl_titulo
             // 
             this.lbl_titulo.AutoSize = true;
-            this.lbl_titulo.Font = new System.Drawing.Font("Mongolian Baiti", 21.75F, System.Drawing.FontStyle.Bold);
+            this.lbl_titulo.Font = new System.Drawing.Font("Rubik", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_titulo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbl_titulo.Location = new System.Drawing.Point(294, 42);
+            this.lbl_titulo.Location = new System.Drawing.Point(288, 43);
             this.lbl_titulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_titulo.Name = "lbl_titulo";
-            this.lbl_titulo.Size = new System.Drawing.Size(484, 30);
+            this.lbl_titulo.Size = new System.Drawing.Size(535, 34);
             this.lbl_titulo.TabIndex = 7;
             this.lbl_titulo.Text = "Bem Vindo a sua Agenda de Eventos";
             // 
@@ -132,7 +139,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1155, 26);
+            this.menuStrip1.Size = new System.Drawing.Size(1160, 26);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -266,29 +273,79 @@
             this.sobreToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.sobreToolStripMenuItem.Text = "Sobre";
             // 
+            // btnCarregar
+            // 
+            this.btnCarregar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCarregar.BackgroundImage = global::Eventos.Properties.Resources.recarregar;
+            this.btnCarregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCarregar.Location = new System.Drawing.Point(1087, 37);
+            this.btnCarregar.Name = "btnCarregar";
+            this.btnCarregar.Size = new System.Drawing.Size(61, 57);
+            this.btnCarregar.TabIndex = 14;
+            this.btnCarregar.Tag = "";
+            this.toolTip1.SetToolTip(this.btnCarregar, "Atualizar");
+            this.btnCarregar.UseVisualStyleBackColor = false;
+            this.btnCarregar.Click += new System.EventHandler(this.Recarregar_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::Eventos.Properties.Resources.logo;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(-17, 29);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(117, 100);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblDataHora
+            // 
+            this.lblDataHora.AutoSize = true;
+            this.lblDataHora.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataHora.Location = new System.Drawing.Point(892, 77);
+            this.lblDataHora.Name = "lblDataHora";
+            this.lblDataHora.Size = new System.Drawing.Size(108, 25);
+            this.lblDataHora.TabIndex = 110;
+            this.lblDataHora.Text = "00/00/0000";
+            // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.Location = new System.Drawing.Point(876, 32);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(146, 45);
+            this.lblHora.TabIndex = 111;
+            this.lblHora.Text = "00:00:00";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1155, 687);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
+            this.ClientSize = new System.Drawing.Size(1160, 775);
+            this.Controls.Add(this.lblHora);
+            this.Controls.Add(this.lblDataHora);
+            this.Controls.Add(this.btnCarregar);
+            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.grdAgenda);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grdPendente);
             this.Controls.Add(this.lbl_receber);
             this.Controls.Add(this.lbl_Semana);
-            this.Controls.Add(this.grdAgenda);
             this.Controls.Add(this.lbl_titulo);
-            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agenda de Eventos";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdPendente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdAgenda)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,5 +376,10 @@
         private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnCarregar;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label lblDataHora;
+        private System.Windows.Forms.Label lblHora;
     }
 }

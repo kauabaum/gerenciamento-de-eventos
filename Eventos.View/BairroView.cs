@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Eventos.DAO;
-using Eventos.Control;
+using Eventos.Controller;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Eventos.View
@@ -248,8 +248,8 @@ namespace Eventos.View
 
                 // Define a fonte de dados do ComboBox, exibindo o cidade e estado com o id como valor
                 cbbCidade.DataSource = listaDeCidades;
-                cbbCidade.DisplayMember = "CidadeEstadoConcatenado";  // Exibirá o nome do cidade e do Estado no ComboBox
-                cbbCidade.ValueMember = "IdCidade";       // Associará o IdCidade como valor
+                cbbCidade.DisplayMember = "CidadeEstadoConcatenado"; 
+                cbbCidade.ValueMember = "IdCidade";
 
                 // Acessa o id_cidade selecionado diretamente pelo SelectedValue
                 int cidadeSelecionado = Convert.ToInt32(cbbCidade.SelectedValue);

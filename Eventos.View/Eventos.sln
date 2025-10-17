@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventos.Model", "..\Eventos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventos.DAO", "..\Eventos.DAO\Eventos.DAO.csproj", "{FC46E01A-EED6-41C9-998F-B241DBA9A772}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventos.Control", "..\Eventos.Entidades\Eventos.Control.csproj", "{5FE4EC18-B624-48E4-9F12-2F0388B6D2D3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventos.Controller", "..\Eventos.Entidades\Eventos.Controller.csproj", "{5FE4EC18-B624-48E4-9F12-2F0388B6D2D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

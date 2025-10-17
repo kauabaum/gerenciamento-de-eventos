@@ -100,7 +100,7 @@ namespace Eventos.DAO
             }
         }
 
-        // Carregar dados da Pesquisa pelo nome do cliente TALVEZ AQUI
+        // Carregar dados da Pesquisa pela descricao
         public Produto GetByProduto(string Descricao)
         {
             Produto produto = null;
@@ -163,14 +163,14 @@ namespace Eventos.DAO
             return produto;
         }
 
-        // Adicionar novo Cliente
+        // Adicionar novo produto
         public void Add(Produto produto)
         {
             using (MySqlConnection conn = dbContext.GetConnection())
             {
                 conn.Open();
 
-                // Insere na tabela cliente
+                // Insere na tabela produto
                 string query = "INSERT INTO \r\n" +
                     "produto \r\n" +
                         "(descricao, tamanho, quantidade, valor, custo, id_cor, \r\n" +
@@ -246,7 +246,7 @@ namespace Eventos.DAO
                 cmd.ExecuteNonQuery();
             }
         }
-        // Método para carregar os produtos no ComboBox
+        // carregar os produtos no ComboBox
         public List<Produto> GetProdutosParaComboBox()
         {
             List<Produto> produtos = new List<Produto>();

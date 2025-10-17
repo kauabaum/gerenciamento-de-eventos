@@ -30,7 +30,7 @@ namespace Eventos.Model
         public int IdEstado { get; set; }
         public string Estado_nome { get; set; }
 
-        // Propriedade para exibir bairro, cidade e estado juntos
+        // mostra bairro estado e cidade
         public string BairroCidadeConcatenado
         {
             get { return $"{Bairro_nome} - {Cidade_nome} - {Estado_nome}"; }

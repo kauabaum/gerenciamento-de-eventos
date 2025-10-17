@@ -1,4 +1,4 @@
-﻿using Eventos.Control;
+﻿using Eventos.Controller;
 using Eventos.DAO;
 using Eventos.Model;
 using MySql.Data.MySqlClient;

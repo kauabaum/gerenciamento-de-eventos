@@ -1,4 +1,4 @@
-﻿using Eventos.Control;
+﻿using Eventos.Controller;
 using Eventos.DAO;
 using Eventos.Model;
 using MySql.Data.MySqlClient;
@@ -146,7 +146,7 @@ namespace Eventos.View
 
                 if (orcamentoIdSelecionado.HasValue)
                 {
-                    // Atualizar o cliente existente
+                    // Atualizar o orcamento existente
                     Orcamento orcamentoAtualizado = new Orcamento()
                     {
                         IdOrcamento = orcamentoIdSelecionado.Value,
@@ -167,7 +167,7 @@ namespace Eventos.View
                 }
                 else
                 {
-                    // Adicionar novo cliente
+                    // Adicionar novo orcamento
                     Orcamento novoOrcamento = new Orcamento()
                     {
                         NomeCliente = nome,
@@ -192,7 +192,7 @@ namespace Eventos.View
                     Orcamento orcamento = new Orcamento
                     {
                         IdOrcamento = orcamentoIdSelecionado.Value,
-                        NomeCliente = txtNomeCliente.Text,     // mantém o nome
+                        NomeCliente = txtNomeCliente.Text,
                         TipoEvento = txtTipoOrcamento.Text,
                         Total = Convert.ToDouble(mskTotalOrcamento.Text),
                         DataEmissao = Convert.ToDateTime(mskDataEmissao.Text),
@@ -200,8 +200,8 @@ namespace Eventos.View
                         HoraEvento = mskHoraEvento.Text,
                         LocalEvento = txtLocalEvento.Text,
                         Tema = cmbTemaEvento.Text,
-                        Validade = txtValidadeOrcamento.Text,  // mantém a validade
-                        Aprovacao = StatusAprovacao.Aprovado   // status inicial
+                        Validade = txtValidadeOrcamento.Text,
+                        Aprovacao = StatusAprovacao.Aprovado 
                     };
 
 
@@ -250,7 +250,6 @@ namespace Eventos.View
                 txtValidadeOrcamento.ResetText();
                 cmbStatusOrcamento.ResetText();
 
-                // Recarregar os dados no DataGridView após salvar
                 CarregarDados();
                 CarregarTema();
             }
@@ -320,8 +319,6 @@ namespace Eventos.View
                     txtValidadeOrcamento.ResetText();
                     cmbStatusOrcamento.ResetText();
 
-
-                    // Recarregar os dados no DataGridView após salvar
                     CarregarDados();
                     CarregarTema();
                 }
@@ -384,7 +381,7 @@ namespace Eventos.View
                         {
                             case "Aprovado":
                                 row.DefaultCellStyle.BackColor = Color.LightGreen;
-                                row.ReadOnly = true; // trava edição
+                                row.ReadOnly = true;
                                 break;
 
                             case "Reprovado":
@@ -426,7 +423,7 @@ namespace Eventos.View
                 if (row.Cells["Aprovacao"].Value != null &&
                     row.Cells["Aprovacao"].Value.ToString() == "Aprovado")
                 {
-                    row.Selected = false; // remove a seleção na hora
+                    row.Selected = false; 
                 }
             }
         }

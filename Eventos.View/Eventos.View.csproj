@@ -331,6 +331,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="PaisView.resx">
       <DependentUpon>PaisView.cs</DependentUpon>
@@ -363,14 +364,92 @@
       <Project>{fc46e01a-eed6-41c9-998f-b241dba9a772}</Project>
       <Name>Eventos.DAO</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Eventos.Entidades\Eventos.Control.csproj">
+    <ProjectReference Include="..\Eventos.Entidades\Eventos.Controller.csproj">
       <Project>{5fe4ec18-b624-48e4-9f12-2f0388b6d2d3}</Project>
-      <Name>Eventos.Control</Name>
+      <Name>Eventos.Controller</Name>
     </ProjectReference>
     <ProjectReference Include="..\Eventos.Model\Eventos.Model.csproj">
       <Project>{8e4ccac2-272d-4989-a1aa-ae50b5170dcb}</Project>
       <Name>Eventos.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cópia de Btek Logo Cima.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Btek somente Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adicionar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\localiza.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pesquisa1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pesquisar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edtar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\confirmarnovo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\limpar4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mostratudo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\selecionar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adicionar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adicionarverde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\selecionarcinz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pesquisarcinza.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editarcinza.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\limparcinza.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mostrarcinza.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\produtos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\confirmarpagamento.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atualizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recarregar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

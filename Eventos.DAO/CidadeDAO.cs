@@ -127,7 +127,6 @@ namespace Eventos.DAO
                             IdCidade = reader.GetInt32("Id"),
                             Cidade_nome = reader.GetString("Cidade"),
                             
-                            // necessário adionar esse campo no Model para que o objeto traga o nome do estado
                             Estado_nome = reader.GetString("Estado"),
                             Pais_nome = reader.GetString("País")
                         };
@@ -143,7 +142,6 @@ namespace Eventos.DAO
         {
             List<EstadoPais> listaDeEstados = new List<EstadoPais>();
 
-            // Conexão com o banco de dados (ajuste a string de conexão conforme necessário)
             string connectionString = "sua_string_de_conexao";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {

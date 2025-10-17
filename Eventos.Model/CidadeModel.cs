@@ -25,7 +25,7 @@ namespace Eventos.Model
         public int IdPais { get; set; }
         public string Pais_nome { get; set; }
 
-        // Propriedade para exibir estado e país juntos
+        // mostra estado e pais junto
         public string EstadoPaisConcatenado
         {
             get { return $"{Estado_nome} - {Pais_nome}"; }

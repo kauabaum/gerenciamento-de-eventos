@@ -1,4 +1,4 @@
-﻿using Eventos.Control;
+﻿using Eventos.Controller;
 using Eventos.DAO;
 using Eventos.Model;
 using MySql.Data.MySqlClient;
@@ -93,7 +93,7 @@ namespace Eventos.View
 
                         if (estoqueDisponivel >= quantidade)
                         {
-                            // Adiciona o item no orçamento (sem decrementar o estoque!)
+                            // Adiciona o item no orçamento
                             double subtotal = quantidade * produto.Valor;
 
                             string insertItemQuery = @"

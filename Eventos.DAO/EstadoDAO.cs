@@ -112,7 +112,6 @@ namespace Eventos.DAO
                         {
                             IdEstado = reader.GetInt32("Id"),
                             Estado_nome = reader.GetString("Estado"),
-                            // necessário adicionar esse campo no Model para que o objeto traga o nome do país
                             Pais_nome = reader.GetString("País")
                         };
                     }

@@ -69,51 +69,59 @@
             // 
             this.btnAdicionarProduto.AccessibleDescription = "";
             this.btnAdicionarProduto.AccessibleName = "";
+            this.btnAdicionarProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdicionarProduto.BackgroundImage = global::Eventos.Properties.Resources.adicionarverde;
+            this.btnAdicionarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdicionarProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionarProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionarProduto.Image")));
             this.btnAdicionarProduto.Location = new System.Drawing.Point(13, 11);
             this.btnAdicionarProduto.Name = "btnAdicionarProduto";
             this.btnAdicionarProduto.Size = new System.Drawing.Size(83, 78);
             this.btnAdicionarProduto.TabIndex = 0;
             this.btnAdicionarProduto.Tag = "";
             this.toolTip1.SetToolTip(this.btnAdicionarProduto, "Adicionar");
-            this.btnAdicionarProduto.UseVisualStyleBackColor = true;
+            this.btnAdicionarProduto.UseVisualStyleBackColor = false;
             this.btnAdicionarProduto.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // btnSalvarProduto
             // 
+            this.btnSalvarProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalvarProduto.BackgroundImage = global::Eventos.Properties.Resources.confirmarnovo;
+            this.btnSalvarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSalvarProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvarProduto.Image")));
             this.btnSalvarProduto.Location = new System.Drawing.Point(369, 11);
             this.btnSalvarProduto.Name = "btnSalvarProduto";
             this.btnSalvarProduto.Size = new System.Drawing.Size(83, 78);
             this.btnSalvarProduto.TabIndex = 1;
             this.toolTip1.SetToolTip(this.btnSalvarProduto, "Salvar");
-            this.btnSalvarProduto.UseVisualStyleBackColor = true;
+            this.btnSalvarProduto.UseVisualStyleBackColor = false;
             this.btnSalvarProduto.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnEditarProduto
             // 
+            this.btnEditarProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditarProduto.BackgroundImage = global::Eventos.Properties.Resources.editarcinza;
+            this.btnEditarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEditarProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarProduto.Image")));
             this.btnEditarProduto.Location = new System.Drawing.Point(280, 11);
             this.btnEditarProduto.Name = "btnEditarProduto";
             this.btnEditarProduto.Size = new System.Drawing.Size(83, 78);
             this.btnEditarProduto.TabIndex = 2;
             this.toolTip1.SetToolTip(this.btnEditarProduto, "Editar");
-            this.btnEditarProduto.UseVisualStyleBackColor = true;
+            this.btnEditarProduto.UseVisualStyleBackColor = false;
             this.btnEditarProduto.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnLocalizarProduto
             // 
+            this.btnLocalizarProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnLocalizarProduto.BackgroundImage = global::Eventos.Properties.Resources.selecionarcinz;
+            this.btnLocalizarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLocalizarProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLocalizarProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnLocalizarProduto.Image")));
             this.btnLocalizarProduto.Location = new System.Drawing.Point(102, 11);
             this.btnLocalizarProduto.Name = "btnLocalizarProduto";
             this.btnLocalizarProduto.Size = new System.Drawing.Size(83, 78);
             this.btnLocalizarProduto.TabIndex = 3;
             this.toolTip1.SetToolTip(this.btnLocalizarProduto, "Localizar");
-            this.btnLocalizarProduto.UseVisualStyleBackColor = true;
+            this.btnLocalizarProduto.UseVisualStyleBackColor = false;
             this.btnLocalizarProduto.Click += new System.EventHandler(this.btnLocalizar_Click);
             // 
             // lblMensagem
@@ -127,50 +135,58 @@
             // 
             // btnExcluirProduto
             // 
+            this.btnExcluirProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnExcluirProduto.BackgroundImage = global::Eventos.Properties.Resources.remover;
+            this.btnExcluirProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExcluirProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluirProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluirProduto.Image")));
             this.btnExcluirProduto.Location = new System.Drawing.Point(547, 11);
             this.btnExcluirProduto.Name = "btnExcluirProduto";
             this.btnExcluirProduto.Size = new System.Drawing.Size(83, 78);
             this.btnExcluirProduto.TabIndex = 7;
             this.toolTip1.SetToolTip(this.btnExcluirProduto, "Excluir");
-            this.btnExcluirProduto.UseVisualStyleBackColor = true;
+            this.btnExcluirProduto.UseVisualStyleBackColor = false;
             this.btnExcluirProduto.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnPesquisarProduto
             // 
+            this.btnPesquisarProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisarProduto.BackgroundImage = global::Eventos.Properties.Resources.pesquisarcinza;
+            this.btnPesquisarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPesquisarProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisarProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisarProduto.Image")));
             this.btnPesquisarProduto.Location = new System.Drawing.Point(191, 11);
             this.btnPesquisarProduto.Name = "btnPesquisarProduto";
             this.btnPesquisarProduto.Size = new System.Drawing.Size(83, 78);
             this.btnPesquisarProduto.TabIndex = 8;
             this.toolTip1.SetToolTip(this.btnPesquisarProduto, "Pesquisar");
-            this.btnPesquisarProduto.UseVisualStyleBackColor = true;
+            this.btnPesquisarProduto.UseVisualStyleBackColor = false;
             this.btnPesquisarProduto.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // btnSairProduto
             // 
+            this.btnSairProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnSairProduto.BackgroundImage = global::Eventos.Properties.Resources.leave;
+            this.btnSairProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSairProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSairProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnSairProduto.Image")));
             this.btnSairProduto.Location = new System.Drawing.Point(725, 11);
             this.btnSairProduto.Name = "btnSairProduto";
             this.btnSairProduto.Size = new System.Drawing.Size(83, 78);
             this.btnSairProduto.TabIndex = 9;
             this.toolTip1.SetToolTip(this.btnSairProduto, "Sair");
-            this.btnSairProduto.UseVisualStyleBackColor = true;
+            this.btnSairProduto.UseVisualStyleBackColor = false;
             this.btnSairProduto.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnLimparProduto
             // 
+            this.btnLimparProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimparProduto.BackgroundImage = global::Eventos.Properties.Resources.limparcinza;
+            this.btnLimparProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimparProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimparProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnLimparProduto.Image")));
             this.btnLimparProduto.Location = new System.Drawing.Point(458, 11);
             this.btnLimparProduto.Name = "btnLimparProduto";
             this.btnLimparProduto.Size = new System.Drawing.Size(83, 78);
             this.btnLimparProduto.TabIndex = 10;
             this.toolTip1.SetToolTip(this.btnLimparProduto, "Limpar");
-            this.btnLimparProduto.UseVisualStyleBackColor = true;
+            this.btnLimparProduto.UseVisualStyleBackColor = false;
             this.btnLimparProduto.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // dataGridView1
@@ -199,14 +215,16 @@
             // 
             // btnMostrarTodosProduto
             // 
+            this.btnMostrarTodosProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnMostrarTodosProduto.BackgroundImage = global::Eventos.Properties.Resources.mostrarcinza;
+            this.btnMostrarTodosProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMostrarTodosProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMostrarTodosProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnMostrarTodosProduto.Image")));
             this.btnMostrarTodosProduto.Location = new System.Drawing.Point(636, 11);
             this.btnMostrarTodosProduto.Name = "btnMostrarTodosProduto";
             this.btnMostrarTodosProduto.Size = new System.Drawing.Size(83, 78);
             this.btnMostrarTodosProduto.TabIndex = 12;
             this.toolTip1.SetToolTip(this.btnMostrarTodosProduto, "Mostrar Todos");
-            this.btnMostrarTodosProduto.UseVisualStyleBackColor = true;
+            this.btnMostrarTodosProduto.UseVisualStyleBackColor = false;
             this.btnMostrarTodosProduto.Click += new System.EventHandler(this.btnMostrarTodos_Click);
             // 
             // txtDescricaoProduto
@@ -238,38 +256,44 @@
             // 
             // btnAdicionarCategoriaProduto
             // 
-            this.btnAdicionarCategoriaProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionarCategoriaProduto.Image")));
+            this.btnAdicionarCategoriaProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdicionarCategoriaProduto.BackgroundImage = global::Eventos.Properties.Resources.adicionarverde;
+            this.btnAdicionarCategoriaProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdicionarCategoriaProduto.Location = new System.Drawing.Point(292, 249);
             this.btnAdicionarCategoriaProduto.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdicionarCategoriaProduto.Name = "btnAdicionarCategoriaProduto";
             this.btnAdicionarCategoriaProduto.Size = new System.Drawing.Size(49, 49);
             this.btnAdicionarCategoriaProduto.TabIndex = 39;
             this.toolTip1.SetToolTip(this.btnAdicionarCategoriaProduto, "Adicionar País");
-            this.btnAdicionarCategoriaProduto.UseVisualStyleBackColor = true;
+            this.btnAdicionarCategoriaProduto.UseVisualStyleBackColor = false;
             this.btnAdicionarCategoriaProduto.Click += new System.EventHandler(this.btnAdicionarCategoriaProduto_Click);
             // 
             // btnAdicionarCorProduto
             // 
-            this.btnAdicionarCorProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionarCorProduto.Image")));
+            this.btnAdicionarCorProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdicionarCorProduto.BackgroundImage = global::Eventos.Properties.Resources.adicionarverde;
+            this.btnAdicionarCorProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdicionarCorProduto.Location = new System.Drawing.Point(741, 249);
             this.btnAdicionarCorProduto.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdicionarCorProduto.Name = "btnAdicionarCorProduto";
             this.btnAdicionarCorProduto.Size = new System.Drawing.Size(49, 49);
             this.btnAdicionarCorProduto.TabIndex = 45;
             this.toolTip1.SetToolTip(this.btnAdicionarCorProduto, "Adicionar País");
-            this.btnAdicionarCorProduto.UseVisualStyleBackColor = true;
+            this.btnAdicionarCorProduto.UseVisualStyleBackColor = false;
             this.btnAdicionarCorProduto.Click += new System.EventHandler(this.btnAdicionarCorProduto_Click);
             // 
             // btnAdicionarTemaProduto
             // 
-            this.btnAdicionarTemaProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionarTemaProduto.Image")));
+            this.btnAdicionarTemaProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdicionarTemaProduto.BackgroundImage = global::Eventos.Properties.Resources.adicionarverde;
+            this.btnAdicionarTemaProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdicionarTemaProduto.Location = new System.Drawing.Point(741, 195);
             this.btnAdicionarTemaProduto.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdicionarTemaProduto.Name = "btnAdicionarTemaProduto";
             this.btnAdicionarTemaProduto.Size = new System.Drawing.Size(49, 50);
             this.btnAdicionarTemaProduto.TabIndex = 48;
             this.toolTip1.SetToolTip(this.btnAdicionarTemaProduto, "Adicionar País");
-            this.btnAdicionarTemaProduto.UseVisualStyleBackColor = true;
+            this.btnAdicionarTemaProduto.UseVisualStyleBackColor = false;
             this.btnAdicionarTemaProduto.Click += new System.EventHandler(this.btnAdicionarTemaProduto_Click);
             // 
             // txtQuantidadeProduto
@@ -399,6 +423,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(821, 497);
             this.Controls.Add(this.txtCustoProduto);
             this.Controls.Add(this.btnAdicionarTemaProduto);
@@ -431,6 +456,7 @@
             this.Controls.Add(this.lblQuantidadeProduto);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmProdutoView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

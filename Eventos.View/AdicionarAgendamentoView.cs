@@ -1,4 +1,4 @@
-﻿using Eventos.Control;
+﻿using Eventos.Controller;
 using Eventos.DAO;
 using Eventos.Model;
 using MySql.Data.MySqlClient;
@@ -38,7 +38,7 @@ namespace Eventos.View
 
             try
             {
-                // Obtém os dados do banco de dados usando o EstadoDAO
+                // pega os dados do banco de dados usando o EstadoDAO
                 DataTable dataTable = clienteDAO.GetAll();
 
                 // Verifica se as colunas necessárias estão presentes
@@ -61,20 +61,18 @@ namespace Eventos.View
 
         private void PreencherCampos()
         {
-            // Pegar os itens do orçamento selecionado
             ItensOrcamentoDAO itensDAO = new ItensOrcamentoDAO();
             List<ItemOrcamento> itens = itensDAO.GetByOrcamentoId(orcamentoSelecionado.IdOrcamento);
 
             // Somar todos os subtotais
             double totalItens = itens.Sum(i => i.Subtotal);
 
-            // Somar o valor do orçamento em si (se houver diferença)
+            // Somar o valor do orçamento
             double totalOrcamento = orcamentoSelecionado.Total + totalItens;
 
-            // Guardar o valor real no Tag
+            // Guardar o valor real
             txtTotal.Tag = totalOrcamento;
 
-            // Exibir 1x por padrão
             txtTotal.Text = $"Total: {totalOrcamento:C} | 1x de {totalOrcamento:C}";
 
             mskDataEmissao.Text = orcamentoSelecionado.DataEmissao.ToShortDateString();
@@ -91,8 +89,7 @@ namespace Eventos.View
             txtTipoEvento.Enabled = false;
             txtTotal.Enabled = false;
 
-            // Configura combo de parcelas
-            cmbParcelas.SelectedIndex = 0; // 1x
+            cmbParcelas.SelectedIndex = 0;
         }
 
 
@@ -128,7 +125,7 @@ namespace Eventos.View
 
             if (cmbParcelas.SelectedItem != null)
             {
-                // Se estiver no formato "1x", "2x" etc.
+                // Se estiver no formato "1x", "2x"
                 string selected = cmbParcelas.SelectedItem.ToString();
                 selected = selected.Replace("x", "").Trim();
                 int.TryParse(selected, out parcelas);
@@ -147,7 +144,7 @@ namespace Eventos.View
         // Atualiza o txtTotal mostrando total e valor da parcela
         private void AtualizarTotal(int parcelas)
         {
-            decimal total = Convert.ToDecimal(txtTotal.Tag); // pega o total original do Tag
+            decimal total = Convert.ToDecimal(txtTotal.Tag);
             decimal valorParcela = total / parcelas;
             txtTotal.Text = $"Total: {total:C} | {parcelas}x de {valorParcela:C}";
         }
@@ -158,7 +155,6 @@ namespace Eventos.View
             {
                 var culture = CultureInfo.GetCultureInfo("pt-BR");
 
-                // --- 1) ID do cliente ---
                 if (cmbCliente.SelectedValue == null)
                 {
                     MessageBox.Show("Selecione um cliente.");
@@ -166,7 +162,6 @@ namespace Eventos.View
                 }
                 int idCliente = Convert.ToInt32(cmbCliente.SelectedValue);
 
-                // --- 2) Total ---
                 decimal total;
                 string raw = txtTotal.Text ?? "";
                 int idxR = raw.IndexOf('R');
@@ -190,7 +185,6 @@ namespace Eventos.View
                     return;
                 }
 
-                // --- 3) Datas ---
                 DateTime dataEvento;
                 if (!DateTime.TryParseExact(mskDataEvento.Text, "dd/MM/yyyy", culture, DateTimeStyles.None, out dataEvento))
                 {
@@ -205,7 +199,6 @@ namespace Eventos.View
                 if (!DateTime.TryParseExact(mskVencimento.Text, "dd/MM/yyyy", culture, DateTimeStyles.None, out vencimentoBase))
                     vencimentoBase = dataPagamentoBase;
 
-                // --- 4) Parcelas ---
                 int parcelas = 1;
                 if (cmbParcelas.SelectedItem != null)
                 {
@@ -213,7 +206,6 @@ namespace Eventos.View
                     if (!int.TryParse(sel, out parcelas) || parcelas <= 0) parcelas = 1;
                 }
 
-                // --- 5) Cria Agendamento ---
                 Agendamento agendamento = new Agendamento
                 {
                     IdCliente = idCliente,
@@ -228,17 +220,15 @@ namespace Eventos.View
                 AgendamentoDAO agendamentoDAO = new AgendamentoDAO();
                 int idAgendamento = agendamentoDAO.Add(agendamento);
 
-                // --- 6) Cria Receber ---
                 Receber receber = new Receber
                 {
                     IdAgendamento = idAgendamento,
                     DataEmissao = DateTime.Now,
-                    ValorTotal = (parcelas > 1 ? 0 : Convert.ToDouble(total)) // <-- ajuste aqui
+                    ValorTotal = (parcelas > 1 ? 0 : Convert.ToDouble(total))
                 };
                 ReceberDAO receberDAO = new ReceberDAO();
                 int idReceber = receberDAO.Add(receber);
 
-                // --- 7) Cria Parcelamento ---
                 ParcelamentoDAO parcelamentoDAO = new ParcelamentoDAO();
                 string tipoPagamento = cmbTipos.Text;
 
@@ -267,7 +257,6 @@ namespace Eventos.View
                 }
                 else
                 {
-                    // --- Pagamento à vista: cria parcela única 1-1 ---
                     Parcelamento parcelaUnica = new Parcelamento
                     {
                         IdReceber = idReceber,
@@ -281,7 +270,6 @@ namespace Eventos.View
                 }
 
 
-                // --- 8) Copiar Itens do Orçamento ---
                 ItensOrcamentoDAO itensOrcDAO = new ItensOrcamentoDAO();
                 List<ItemOrcamento> itensOrc = itensOrcDAO.GetByOrcamentoId(orcamentoSelecionado.IdOrcamento);
                 ItensAgendamentoDAO itensAgDAO = new ItensAgendamentoDAO();
@@ -300,7 +288,7 @@ namespace Eventos.View
                 }
 
                 MessageBox.Show("Agendamento, receber e parcelamento adicionados com sucesso!");
-                this.DialogResult = DialogResult.OK; // <== Adiciona esta linha
+                this.DialogResult = DialogResult.OK;
                 this.Close();
 
                 frmAgendamentoView telaAgendamento = new frmAgendamentoView();

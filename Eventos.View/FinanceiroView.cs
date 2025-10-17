@@ -1,4 +1,4 @@
-﻿using Eventos.Control;
+﻿using Eventos.Controller;
 using Eventos.DAO;
 using Eventos.Model;
 using MySql.Data.MySqlClient;
@@ -132,16 +132,16 @@ namespace Eventos.View
                     int idReceber = Convert.ToInt32(dataGridView2.CurrentRow.Cells["Id_Receber"].Value);
                     double valor = Convert.ToDouble(dataGridView2.CurrentRow.Cells["Valor"].Value);
 
-                    // 🔹 1. Pega o id_agendamento do receber
+                    // 1 Pega o id_agendamento do receber
                     int idAgendamento = receberDAO.GetIdAgendamentoPorReceber(idReceber);
 
-                    // 🔹 2. Cria o recebimento
+                    // 2 Cria o recebimento
                     receberDAO.InserirRecebimento(idAgendamento, valor);
 
-                    // 🔹 3. Atualiza status da parcela
+                    // 3 Atualiza status da parcela
                     parcelamentoDAO.MarcarParcelaComoPaga(idParcela);
 
-                    // 🔹 4. Atualiza os grids
+                    // 4 Atualiza os grids
                     CarregarFinanceiro();
 
                     MessageBox.Show("Parcela marcada como paga com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);

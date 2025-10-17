@@ -38,6 +38,7 @@
             this.txtTipoEvento = new System.Windows.Forms.TextBox();
             this.txtTema = new System.Windows.Forms.TextBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
+            this.btnSairProduto = new System.Windows.Forms.Button();
             this.lblTipoOrcamento = new System.Windows.Forms.Label();
             this.lblDataEmissaoOrcamento = new System.Windows.Forms.Label();
             this.lblClienteOrcamento = new System.Windows.Forms.Label();
@@ -58,19 +59,20 @@
             this.mskPagamento = new System.Windows.Forms.MaskedTextBox();
             this.lblValidadeOrcamento = new System.Windows.Forms.Label();
             this.mskVencimento = new System.Windows.Forms.MaskedTextBox();
-            this.btnSairProduto = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSalvarProduto
             // 
+            this.btnSalvarProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalvarProduto.BackgroundImage = global::Eventos.Properties.Resources.confirmarnovo;
+            this.btnSalvarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSalvarProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvarProduto.Image")));
             this.btnSalvarProduto.Location = new System.Drawing.Point(17, 12);
             this.btnSalvarProduto.Name = "btnSalvarProduto";
             this.btnSalvarProduto.Size = new System.Drawing.Size(83, 78);
             this.btnSalvarProduto.TabIndex = 1;
             this.toolTip1.SetToolTip(this.btnSalvarProduto, "Salvar");
-            this.btnSalvarProduto.UseVisualStyleBackColor = true;
+            this.btnSalvarProduto.UseVisualStyleBackColor = false;
             this.btnSalvarProduto.Click += new System.EventHandler(this.btnAdicionarAgendamento_Click);
             // 
             // lblMensagem
@@ -126,6 +128,20 @@
             this.txtTotal.Size = new System.Drawing.Size(492, 30);
             this.txtTotal.TabIndex = 75;
             this.toolTip1.SetToolTip(this.txtTotal, "Digite aqui o E-mail");
+            // 
+            // btnSairProduto
+            // 
+            this.btnSairProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnSairProduto.BackgroundImage = global::Eventos.Properties.Resources.leave;
+            this.btnSairProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSairProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSairProduto.Location = new System.Drawing.Point(489, 12);
+            this.btnSairProduto.Name = "btnSairProduto";
+            this.btnSairProduto.Size = new System.Drawing.Size(83, 78);
+            this.btnSairProduto.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.btnSairProduto, "Sair");
+            this.btnSairProduto.UseVisualStyleBackColor = false;
+            this.btnSairProduto.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // lblTipoOrcamento
             // 
@@ -379,22 +395,11 @@
             this.mskVencimento.TabIndex = 79;
             this.mskVencimento.ValidatingType = typeof(System.DateTime);
             // 
-            // btnSairProduto
-            // 
-            this.btnSairProduto.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSairProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnSairProduto.Image")));
-            this.btnSairProduto.Location = new System.Drawing.Point(489, 12);
-            this.btnSairProduto.Name = "btnSairProduto";
-            this.btnSairProduto.Size = new System.Drawing.Size(83, 78);
-            this.btnSairProduto.TabIndex = 9;
-            this.toolTip1.SetToolTip(this.btnSairProduto, "Sair");
-            this.btnSairProduto.UseVisualStyleBackColor = true;
-            this.btnSairProduto.Click += new System.EventHandler(this.btnSair_Click);
-            // 
             // frmAdicionarAgendamentoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(591, 503);
             this.Controls.Add(this.mskVencimento);
             this.Controls.Add(this.lblValidadeOrcamento);
@@ -424,10 +429,11 @@
             this.Controls.Add(this.btnSalvarProduto);
             this.Controls.Add(this.lblTotalOrcamento);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmAdicionarAgendamentoView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Adicionar Agendamento";
+            this.Text = "Fazer Agendamento";
             this.ResumeLayout(false);
             this.PerformLayout();
 
